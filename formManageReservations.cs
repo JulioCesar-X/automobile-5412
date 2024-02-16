@@ -108,6 +108,7 @@ namespace Automobile
         {
             if (validarForm())
             {
+                //primeiro botao ok
                 textBoxInicio.Text = dateTimePicker1.Value.ToString().Substring(0, 10) + " " + listBox1.Text;
             }
         }
