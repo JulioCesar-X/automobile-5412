@@ -1,7 +1,4 @@
-﻿using System;
-using System.Text;
-
-namespace Automobile
+﻿namespace Automobile
 {
     public class Veiculo
     {
@@ -86,7 +83,6 @@ namespace Automobile
 
         public override string ToString()
         {
-            Console.OutputEncoding = Encoding.UTF8;
 
             return $"ID: {VeiculoId}\t Modelo: {VeiculoModelo}\t Preço de Aluguer: {VeiculoPreco} €\t STATUS: {VeiculoStatus}\t";
         }

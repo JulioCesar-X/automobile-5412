@@ -1,7 +1,4 @@
-﻿using System;
-using System.Text;
-
-namespace Automobile
+﻿namespace Automobile
 {
     public class Camiao : Veiculo
     {
@@ -38,7 +35,6 @@ namespace Automobile
 
         public override string ToString()
         {
-            Console.OutputEncoding = Encoding.UTF8;
 
             return base.ToString() + $"Peso Máximo suportado: {PesoMaximo} kg";
         }

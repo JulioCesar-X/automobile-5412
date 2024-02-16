@@ -113,11 +113,11 @@
     <Compile Include="Resources\ClassesModel\Camioneta.cs" />
     <Compile Include="Resources\ClassesModel\Carro.cs" />
     <Compile Include="EmpresaModel.cs" />
+    <Compile Include="Resources\ClassesModel\EmpresaException.cs" />
     <Compile Include="Resources\ClassesModel\Mota.cs" />
     <Compile Include="Resources\ClassesModel\Reserva.cs" />
     <Compile Include="Resources\ClassesModel\User.cs" />
     <Compile Include="Resources\ClassesModel\Veiculo.cs" />
-    <Compile Include="Resources\ClassesModel\VeiculoException.cs" />
     <EmbeddedResource Include="formAdicionarVeiculo.resx">
       <DependentUpon>formAdicionarVeiculo.cs</DependentUpon>
     </EmbeddedResource>

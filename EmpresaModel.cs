@@ -19,7 +19,9 @@ namespace Automobile
         {
             Veiculos = new List<object>();
             Users = new List<User>();
+
             CriarListaDefaultUsers();
+            CriarListaVeiculosDefault();
         }
 
 
@@ -30,22 +32,22 @@ namespace Automobile
 
             if (Users.Any(user => user.Id == newUser.Id))
             {
-                throw new ArgumentException($"Id \"{newUser.Id}\" inválido");
+                throw new UserDuplicadoException(newUser.Id);
 
             }
             else if (Users.Any(user => user.Password == newUser.Password))
             {
-                throw new ArgumentException("Password inválido");
+                throw new ArgumentException("Password já existe");
             }
             else
             {
                 Users.Add(newUser);
             }
         }
-
         public bool ValidarLogin(string username, string password)
         {
             User userRequerido = Users.Find(user => user.UserName == username);
+
             if (userRequerido == null)
             {
                 throw new ArgumentException($"Username \"{username}\" inválido");
@@ -61,7 +63,6 @@ namespace Automobile
             }
 
         }
-
         private void CriarListaDefaultUsers()
         {
 
@@ -69,7 +70,7 @@ namespace Automobile
             User func2 = new User("#", "Rodrigo", "atec123");
             User func3 = new User("#", "Francisco", "atec123");
             User func4 = new User("#", "Julio", "atec123");
-            User func5 = new User("#", "", "atec"); //ADMIN
+            User func5 = new User("#", "", ""); //ADMIN
 
             Users.Add(func1);
             Users.Add(func2);
@@ -79,6 +80,27 @@ namespace Automobile
 
         }
 
+        private void CriarListaVeiculosDefault()
+        {
+            Carro veiculo1 = new Carro(01, "Corsa", 88.70m, "Disponivel", 5, "manual");
+            Mota veiculo2 = new Mota(02, "XTZ", 55.80m, "Disponivel", 300);
+            Camiao veiculo3 = new Camiao(03, "BUGVERDE", 150.99m, "Disponivel", 44000);
+            Camioneta veiculo4 = new Camioneta(04, "Venom", 500.99m, "Disponivel", 2, 5);
+            Carro veiculo5 = new Carro(05, "Corsa", 88.70m, "Disponivel", 5, "manual");
+            Mota veiculo6 = new Mota(06, "XTZ", 55.80m, "Disponivel", 300);
+            Camiao veiculo7 = new Camiao(07, "BUGVERDE", 150.99m, "Disponivel", 44000);
+            Camioneta veiculo8 = new Camioneta(08, "Venom", 500.99m, "Disponivel", 2, 5);
+
+            Veiculos.Add(veiculo1);
+            Veiculos.Add(veiculo2);
+            Veiculos.Add(veiculo3);
+            Veiculos.Add(veiculo4);
+            Veiculos.Add(veiculo5);
+            Veiculos.Add(veiculo6);
+            Veiculos.Add(veiculo7);
+            Veiculos.Add(veiculo8);
+
+        }
 
 
         public void AdicionarVeiculo(object veiculo)
@@ -98,39 +120,31 @@ namespace Automobile
 
             Veiculos.Add(veiculo);
         }
-        public void VerListaVeiculos(string tipoRequerido)
+
+        public bool VerListaVeiculosDoTipo(string tipoRequerido)
         {
             Console.OutputEncoding = Encoding.UTF8;
 
             if (Veiculos.Count == 0)
             {
-                throw new ArgumentException("Lista vazia");
+                throw new ArgumentException("Lista de veiculos vazia");
+
             }
-            else if (tipoRequerido != null)
+            else if (ExisteVeiculoDesseTipo(tipoRequerido))
             {
-                if (Veiculos.Any(v => v.GetType().Name == tipoRequerido))
-                {
-                    foreach (var item in Veiculos)
-                    {
-                        string tipoVeiculo = item.GetType().Name;
-
-                        if (tipoVeiculo == tipoRequerido)
-                        {
-                            Console.WriteLine(item);
-                        }
-
-                    }
-                }
+                return true;
             }
             else
             {
-
-                foreach (var item in Veiculos)
-                {
-                    Console.WriteLine(item);
-                }
-
+                throw new ArgumentException("Veiculo desse tipo esgotado");
             }
+
+        }
+
+        public bool ExisteVeiculoDesseTipo(string tipoRequerido)
+        {
+
+            return Veiculos.Any(v => v.GetType().Name == tipoRequerido);
 
         }
 

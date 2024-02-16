@@ -172,5 +172,10 @@ namespace Automobile
             formLoginSystem.Show();
             MessageBox.Show("A sua sessão foi terminada com sucesso!", "Sessão Terminada", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void PnlFormLoader_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

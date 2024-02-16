@@ -100,16 +100,20 @@ namespace Automobile
             }
         }
 
-        public static void VerListaVeiculos(string tipo)
+        public static bool VerListaVeiculosDoTipo(string tipo)
         {
             try
             {
-                Controlador.VerListaVeiculos(tipo);
+                Controlador.VerListaVeiculosDoTipo(tipo);
+
+                return true;
+
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
+                return false;
             }
         }
 
