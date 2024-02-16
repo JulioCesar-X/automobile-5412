@@ -21,11 +21,14 @@ namespace Automobile
                 btn_manage_users.Text = "Manage Users";
                 btn_manage_users.Enabled = true;
 
+                lb_user_logado.Text = "# Admin";
+
                 lb_title.ForeColor = System.Drawing.Color.SlateGray;
 
                 this.BackColor = System.Drawing.Color.Black;
                 panel_system_control.BackColor = System.Drawing.Color.Black;
 
+                btnChangeAccount.BackColor = System.Drawing.Color.Black;
                 btnManageFiles.BackColor = System.Drawing.Color.Black;
                 btnManageReservations.BackColor = System.Drawing.Color.Black;
                 btnVehicleMaintenance.BackColor = System.Drawing.Color.Black;
@@ -37,6 +40,7 @@ namespace Automobile
 
                 PnlFormLoader.BackColor = System.Drawing.Color.DarkGray;
 
+                btnChangeAccount.ForeColor = System.Drawing.Color.SlateGray;
                 btnManageFiles.ForeColor = System.Drawing.Color.SlateGray;
                 btnManageReservations.ForeColor = System.Drawing.Color.SlateGray;
                 btnVehicleMaintenance.ForeColor = System.Drawing.Color.SlateGray;
@@ -148,6 +152,25 @@ namespace Automobile
         private void button7_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btn_manage_users_Click(object sender, EventArgs e)
+        {
+            lb_title.Text = "Manage Users";
+            this.PnlFormLoader.Controls.Clear();
+            formManageUsers FormManageUsers = new formManageUsers() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            FormManageUsers.FormBorderStyle = FormBorderStyle.None;
+            this.PnlFormLoader.Controls.Add(FormManageUsers);
+            FormManageUsers.Show();
+        }
+
+        private void btnChangeAccount_Click(object sender, EventArgs e)
+        {
+            FormLoginSystem formLoginSystem = new FormLoginSystem();
+            this.Hide();
+            formLoginSystem.FormClosed += (s, args) => this.Close();
+            formLoginSystem.Show();
+            MessageBox.Show("A sua sessão foi terminada com sucesso!", "Sessão Terminada", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

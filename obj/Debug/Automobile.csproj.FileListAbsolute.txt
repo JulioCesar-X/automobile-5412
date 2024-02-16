@@ -67,3 +67,4 @@ C:\AUTOMOBILE\automobile-5412\obj\Debug\Automobile.csproj.GenerateResource.cache
 C:\AUTOMOBILE\automobile-5412\obj\Debug\Automobile.csproj.CoreCompileInputs.cache
 C:\AUTOMOBILE\automobile-5412\obj\Debug\Automobile.exe
 C:\AUTOMOBILE\automobile-5412\obj\Debug\Automobile.pdb
+C:\AUTOMOBILE\automobile-5412\obj\Debug\Automobile.formManageUsers.resources

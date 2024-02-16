@@ -83,6 +83,12 @@
     <Compile Include="formManageReservations.Designer.cs">
       <DependentUpon>formManageReservations.cs</DependentUpon>
     </Compile>
+    <Compile Include="formManageUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formManageUsers.Designer.cs">
+      <DependentUpon>formManageUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="formVehicleMaintenance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formManageReservations.resx">
       <DependentUpon>formManageReservations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formManageUsers.resx">
+      <DependentUpon>formManageUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formVehicleMaintenance.resx">
       <DependentUpon>formVehicleMaintenance.cs</DependentUpon>
