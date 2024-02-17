@@ -2,23 +2,23 @@
 {
     public class Veiculo
     {
-        private int _veiculoId = -1;
-        private string _veiculoModelo = "N/A";
-        private string _veiculoStatus = "N/A";
-        private decimal _veiculoPreco = -1;
+        private string _veiculoMatricula;
+        private string _veiculoModelo;
+        private string _veiculoStatus;
+        private decimal _veiculoPreco;
 
-        public int VeiculoId
+        public string VeiculoMatricula
         {
             get
             {
 
-                return _veiculoId;
+                return _veiculoMatricula;
             }
             set
             {
 
                 //TODO: Checar na empresa se ja tem algum veiculo com esse id registrado antes de trocar
-                _veiculoId = value;
+                _veiculoMatricula = value;
             }
 
         }
@@ -72,9 +72,9 @@
 
         }
 
-        public Veiculo(int veiculoId, string veiculoModelo, decimal veiculoPreco, string veiculoStatus)
+        public Veiculo(string veiculoMatricula, string veiculoModelo, decimal veiculoPreco, string veiculoStatus)
         {
-            VeiculoId = veiculoId;
+            VeiculoMatricula = veiculoMatricula;
             VeiculoModelo = veiculoModelo;
             VeiculoPreco = veiculoPreco;
             VeiculoStatus = veiculoStatus;
@@ -84,7 +84,7 @@
         public override string ToString()
         {
 
-            return $"ID: {VeiculoId}\t Modelo: {VeiculoModelo}\t Preço de Aluguer: {VeiculoPreco} €\t STATUS: {VeiculoStatus}\t";
+            return $"ID: {VeiculoMatricula}\t Modelo: {VeiculoModelo}\t Preço de Aluguer: {VeiculoPreco} €\t STATUS: {VeiculoStatus}\t";
         }
 
     }

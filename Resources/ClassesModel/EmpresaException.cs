@@ -46,7 +46,7 @@ namespace Automobile
 
     public class VeiculoDuplicadoException : EmpresaException
     {
-        public VeiculoDuplicadoException(int veiculoId) : base($"Um veículo com o ID \"{veiculoId}\" já existe na lista de veículos.")
+        public VeiculoDuplicadoException(string veiculoMatricula) : base($"Um veículo com a Matricula \"{veiculoMatricula}\" já existe na lista de veículos.")
         {
 
         }

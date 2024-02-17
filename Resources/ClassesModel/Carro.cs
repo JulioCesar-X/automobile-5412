@@ -13,7 +13,7 @@
             }
             set
             {
-                if (value < 3 || value > 5)
+                if (value != 3 && value != 5)
                 {
                     throw new NumeroPortasInvalidoException(value);
                 }
@@ -44,7 +44,7 @@
             }
         }
 
-        public Carro(int veiculoId, string veiculoModelo, decimal veiculoPreco, string veiculoStatus, int numeroPortas, string tipoCaixa) : base(veiculoId, veiculoModelo, veiculoPreco, veiculoStatus)
+        public Carro(string veiculoMatricula, string veiculoModelo, decimal veiculoPreco, string veiculoStatus, int numeroPortas, string tipoCaixa) : base(veiculoMatricula, veiculoModelo, veiculoPreco, veiculoStatus)
         {
             NumeroPortas = numeroPortas;
             TipoCaixa = tipoCaixa;

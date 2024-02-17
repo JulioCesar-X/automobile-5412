@@ -82,14 +82,14 @@ namespace Automobile
 
         private void CriarListaVeiculosDefault()
         {
-            Carro veiculo1 = new Carro(01, "Corsa", 88.70m, "Disponivel", 5, "manual");
-            Mota veiculo2 = new Mota(02, "XTZ", 55.80m, "Disponivel", 300);
-            Camiao veiculo3 = new Camiao(03, "BUGVERDE", 150.99m, "Disponivel", 44000);
-            Camioneta veiculo4 = new Camioneta(04, "Venom", 500.99m, "Disponivel", 2, 5);
-            Carro veiculo5 = new Carro(05, "Corsa", 88.70m, "Disponivel", 5, "manual");
-            Mota veiculo6 = new Mota(06, "XTZ", 55.80m, "Disponivel", 300);
-            Camiao veiculo7 = new Camiao(07, "BUGVERDE", 150.99m, "Disponivel", 44000);
-            Camioneta veiculo8 = new Camioneta(08, "Venom", 500.99m, "Disponivel", 2, 5);
+            Carro veiculo1 = new Carro("01", "Corsa", 88.70m, "Disponivel", 5, "manual");
+            Mota veiculo2 = new Mota("02", "XTZ", 55.80m, "Disponivel", 300);
+            Camiao veiculo3 = new Camiao("03", "BUGVERDE", 150.99m, "Disponivel", 44000);
+            Camioneta veiculo4 = new Camioneta("04", "Venom", 500.99m, "Disponivel", 2, 5);
+            Carro veiculo5 = new Carro("05", "Corsa", 88.70m, "Disponivel", 5, "manual");
+            Mota veiculo6 = new Mota("06", "XTZ", 55.80m, "Disponivel", 300);
+            Camiao veiculo7 = new Camiao("07", "BUGVERDE", 150.99m, "Disponivel", 44000);
+            Camioneta veiculo8 = new Camioneta("08", "Venom", 500.99m, "Disponivel", 2, 5);
 
             Veiculos.Add(veiculo1);
             Veiculos.Add(veiculo2);
@@ -105,20 +105,25 @@ namespace Automobile
 
         public void AdicionarVeiculo(object veiculo)
         {
-            var tipoVeiculo = veiculo.GetType();
 
-            // pego de um tipo de dado object seu tipo natural e a propriedade "veiculoId", usando a reflexão
-            PropertyInfo propriedadeVeiculoId = tipoVeiculo.GetProperty("VeiculoId");
-            //passo para variavel novoveiculo o valor que é (int) da propriedade veiculo id desse veiculo
-            int novoVeiculoId = (int)propriedadeVeiculoId.GetValue(veiculo);
 
-            // Verifica se há um veículo com o mesmo ID na lista usando a reflexão
-            if (Veiculos.Any(v => (int)propriedadeVeiculoId.GetValue(v) == novoVeiculoId))
+            //do veiculo que quero adicionar
+            string matriculaRequerida = GetMatricula(veiculo);
+
+            // Verifica se há um veículo na minha lista com a mesma Matricula usando a reflexão
+            if (Veiculos.Any(v => GetMatricula(v) == matriculaRequerida))
             {
-                throw new VeiculoDuplicadoException(novoVeiculoId);
+                throw new VeiculoDuplicadoException(matriculaRequerida);
             }
 
             Veiculos.Add(veiculo);
+        }
+
+        public string GetMatricula(object veiculo)
+        {
+            PropertyInfo propriedadeMatricula = veiculo.GetType().GetProperty("VeiculoMatricula");
+
+            return propriedadeMatricula.GetValue(veiculo).ToString();
         }
 
         public bool VerListaVeiculosDoTipo(string tipoRequerido)

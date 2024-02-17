@@ -26,7 +26,7 @@
             }
         }
 
-        public Mota(int veiculoId, string veiculoModelo, decimal veiculoPreco, string veiculoStatus, int cilindrada) : base(veiculoId, veiculoModelo, veiculoPreco, veiculoStatus)
+        public Mota(string veiculoMatricula, string veiculoModelo, decimal veiculoPreco, string veiculoStatus, int cilindrada) : base(veiculoMatricula, veiculoModelo, veiculoPreco, veiculoStatus)
         {
             Cilindrada = cilindrada;
         }

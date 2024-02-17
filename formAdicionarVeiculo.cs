@@ -1,30 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Globalization;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Automobile
 {
     public partial class formAdicionarVeiculo : Form
     {
+        private string _modelo { get; set; }
+        private string _matricula { get; set; }
+        private decimal _preco { get; set; }
+
+
         public formAdicionarVeiculo()
         {
             InitializeComponent();
+
+            btn_criar.Enabled = false;
         }
 
 
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            
 
-
-            switch (comboBox1.SelectedIndex)
+            switch (cb_tipo.SelectedIndex)
             {
                 case 0:
                     lblNmrPortas.Visible = true;
@@ -39,6 +37,10 @@ namespace Automobile
                     textBoxNmrMaxPassageiros.Visible = false;
                     lblPesoMaxSuportado.Visible = false;
                     textBoxPesoMaxSuportado.Visible = false;
+                    btn_criar.Enabled = true;
+                    lb_preco.Visible = true;
+                    tb_preco.Visible = true;
+
                     break;
                 case 1:
                     lblCilindrada.Visible = true;
@@ -53,6 +55,10 @@ namespace Automobile
                     textBoxNmrMaxPassageiros.Visible = false;
                     lblPesoMaxSuportado.Visible = false;
                     textBoxPesoMaxSuportado.Visible = false;
+                    btn_criar.Enabled = true;
+                    lb_preco.Enabled = true;
+                    tb_preco.Enabled = true;
+
                     break;
                 case 2:
                     lblNmrEixos.Visible = true;
@@ -67,6 +73,10 @@ namespace Automobile
                     comboBoxTipoCaixa.Visible = false;
                     lblPesoMaxSuportado.Visible = false;
                     textBoxPesoMaxSuportado.Visible = false;
+                    btn_criar.Enabled = true;
+                    lb_preco.Enabled = true;
+                    tb_preco.Enabled = true;
+
                     break;
                 case 3:
                     lblPesoMaxSuportado.Visible = true;
@@ -81,7 +91,85 @@ namespace Automobile
                     comboBoxNmrPortas.Visible = false;
                     lblTipoCaixa.Visible = false;
                     comboBoxTipoCaixa.Visible = false;
+                    btn_criar.Enabled = true;
+                    lb_preco.Enabled = true;
+                    tb_preco.Enabled = true;
+
                     break;
+            }
+        }
+
+        private void btn_criar_Click(object sender, EventArgs e)
+        {
+            switch (cb_tipo.SelectedIndex)
+            {
+                case 0:
+
+                    int numPortas = int.Parse(comboBoxNmrPortas.SelectedItem.ToString());
+                    string tipoCaixa = comboBoxTipoCaixa.SelectedItem.ToString();
+
+                    if (EmpresaController.CriarCarro(_matricula, _modelo, _preco, "Disponivel", numPortas, tipoCaixa))
+                    {
+                        tb_id_matricula.Clear();
+                        tb_modelo_marca.Clear();
+                        tb_preco.Clear();
+                        comboBoxNmrPortas.SelectedItem = null;
+                        comboBoxTipoCaixa.SelectedItem = null;
+
+                    }
+
+                    break;
+                case 1:
+
+
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+            }
+        }
+
+        private void tb_modelo_marca_TextChanged(object sender, EventArgs e)
+        {
+            _modelo = tb_modelo_marca.Text;
+        }
+
+        private void tb_id_matricula_TextChanged(object sender, EventArgs e)
+        {
+            _matricula = tb_id_matricula.Text.Trim();
+        }
+
+        private void textBoxPesoMaxSuportado_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxNmrMaxPassageiros_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tb_preco_TextChanged(object sender, EventArgs e)
+        {
+            string precoText = tb_preco.Text.Trim();
+
+            // Especificar a cultura inglesa (onde o ponto é o separador decimal)
+            CultureInfo culture = CultureInfo.InvariantCulture;
+
+            if (!decimal.TryParse(precoText, NumberStyles.Number, culture, out decimal _precoConvertido))
+            {
+                // Verifica se o texto inserido é vazio, caso seja, não mostra o MessageBox
+                if (!string.IsNullOrEmpty(precoText))
+                {
+                    MessageBox.Show("Por favor, insira um valor de preço válido.");
+                }
+            }
+            else
+            {
+                _preco = _precoConvertido;
             }
         }
     }

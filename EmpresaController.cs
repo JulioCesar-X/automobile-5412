@@ -19,11 +19,11 @@ namespace Automobile
         public static string userLogado;
 
 
-        public static bool CriarCaminhao(int veiculoId, string veiculoModelo, decimal veiculoPreco, string veiculoStatus, int pesoMaximo)
+        public static bool CriarCaminhao(string veiculoMatricula, string veiculoModelo, decimal veiculoPreco, string veiculoStatus, int pesoMaximo)
         {
             try
             {
-                Camiao caminhao = new Camiao(veiculoId, veiculoModelo, veiculoPreco, veiculoStatus, pesoMaximo);
+                Camiao caminhao = new Camiao(veiculoMatricula, veiculoModelo, veiculoPreco, veiculoStatus, pesoMaximo);
                 Controlador.AdicionarVeiculo(caminhao);
 
                 return true;
@@ -39,11 +39,11 @@ namespace Automobile
                 return false;
             }
         }
-        public static bool CriarMota(int veiculoId, string veiculoModelo, decimal veiculoPreco, string veiculoStatus, int cilindrada)
+        public static bool CriarMota(string veiculoMatricula, string veiculoModelo, decimal veiculoPreco, string veiculoStatus, int cilindrada)
         {
             try
             {
-                Mota novaMota = new Mota(veiculoId, veiculoModelo, veiculoPreco, veiculoStatus, cilindrada);
+                Mota novaMota = new Mota(veiculoMatricula, veiculoModelo, veiculoPreco, veiculoStatus, cilindrada);
                 Controlador.AdicionarVeiculo(novaMota);
 
                 return true;
@@ -60,11 +60,11 @@ namespace Automobile
             }
         }
 
-        public static bool CriarCarro(int veiculoId, string veiculoModelo, decimal veiculoPreco, string veiculoStatus, int numeroPortas, string tipoCaixa)
+        public static bool CriarCarro(string veiculoMatricula, string veiculoModelo, decimal veiculoPreco, string veiculoStatus, int numeroPortas, string tipoCaixa)
         {
             try
             {
-                Carro novoCarro = new Carro(veiculoId, veiculoModelo, veiculoPreco, veiculoStatus, numeroPortas, tipoCaixa);
+                Carro novoCarro = new Carro(veiculoMatricula, veiculoModelo, veiculoPreco, veiculoStatus, numeroPortas, tipoCaixa);
                 Controlador.AdicionarVeiculo(novoCarro);
                 return true;
             }
@@ -80,11 +80,11 @@ namespace Automobile
             }
         }
 
-        public static bool CriarCamioneta(int veiculoId, string veiculoModelo, decimal veiculoPreco, string veiculoStatus, int numeroEixos, int numeroPassageiros)
+        public static bool CriarCamioneta(string VeiculoMatricula, string veiculoModelo, decimal veiculoPreco, string veiculoStatus, int numeroEixos, int numeroPassageiros)
         {
             try
             {
-                Camioneta novaCamioneta = new Camioneta(veiculoId, veiculoModelo, veiculoPreco, veiculoStatus, numeroEixos, numeroPassageiros);
+                Camioneta novaCamioneta = new Camioneta(VeiculoMatricula, veiculoModelo, veiculoPreco, veiculoStatus, numeroEixos, numeroPassageiros);
                 Controlador.AdicionarVeiculo(novaCamioneta);
                 return true;
             }
