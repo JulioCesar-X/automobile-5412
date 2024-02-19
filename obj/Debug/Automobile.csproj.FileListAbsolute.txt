@@ -69,3 +69,22 @@ C:\AUTOMOBILE\automobile-5412\obj\Debug\Automobile.exe
 C:\AUTOMOBILE\automobile-5412\obj\Debug\Automobile.pdb
 C:\AUTOMOBILE\automobile-5412\obj\Debug\Automobile.formManageUsers.resources
 C:\Users\julio\Downloads\Automobile\obj\Debug\Automobile.formManageUsers.resources
+C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\bin\Debug\Automobile.exe.config
+C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\bin\Debug\Automobile.exe
+C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\bin\Debug\Automobile.pdb
+C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\obj\Debug\Automobile.csproj.AssemblyReference.cache
+C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\obj\Debug\Automobile.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\obj\Debug\Automobile.formAdicionarVeiculo.resources
+C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\obj\Debug\Automobile.formChangeVehicleStatus.resources
+C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\obj\Debug\Automobile.FormLoginSystem.resources
+C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\obj\Debug\Automobile.formManageFiles.resources
+C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\obj\Debug\Automobile.formManageReservations.resources
+C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\obj\Debug\Automobile.formManageUsers.resources
+C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\obj\Debug\Automobile.formVehicleMaintenance.resources
+C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\obj\Debug\Automobile.formVeiculosDisponiveisAlugar.resources
+C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\obj\Debug\Automobile.FormPainelControlo.resources
+C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\obj\Debug\Automobile.Properties.Resources.resources
+C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\obj\Debug\Automobile.csproj.GenerateResource.cache
+C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\obj\Debug\Automobile.csproj.CoreCompileInputs.cache
+C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\obj\Debug\Automobile.exe
+C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\obj\Debug\Automobile.pdb
