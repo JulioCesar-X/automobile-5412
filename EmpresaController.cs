@@ -46,6 +46,7 @@ namespace Automobile
                 Mota novaMota = new Mota(veiculoMatricula, veiculoModelo, veiculoPreco, veiculoStatus, cilindrada);
                 Controlador.AdicionarVeiculo(novaMota);
 
+
                 return true;
             }
             catch (CilindradaInvalidaException ex)
