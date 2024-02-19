@@ -6,10 +6,9 @@ namespace Automobile
 {
     public partial class formAdicionarVeiculo : Form
     {
-        private string _modelo { get; set; }
-        private string _matricula { get; set; }
-        private decimal _preco { get; set; }
-
+        private string _modelo;
+        private string _matricula;
+        private decimal _preco;
 
         public formAdicionarVeiculo()
         {
@@ -56,10 +55,11 @@ namespace Automobile
                     lblPesoMaxSuportado.Visible = false;
                     textBoxPesoMaxSuportado.Visible = false;
                     btn_criar.Enabled = true;
-                    lb_preco.Enabled = true;
-                    tb_preco.Enabled = true;
+                    lb_preco.Visible = true;
+                    tb_preco.Visible = true;
 
                     break;
+
                 case 2:
                     lblNmrEixos.Visible = true;
                     comboBoxNmrEixos.Visible = true;
@@ -74,10 +74,11 @@ namespace Automobile
                     lblPesoMaxSuportado.Visible = false;
                     textBoxPesoMaxSuportado.Visible = false;
                     btn_criar.Enabled = true;
-                    lb_preco.Enabled = true;
-                    tb_preco.Enabled = true;
+                    lb_preco.Visible = true;
+                    tb_preco.Visible = true;
 
                     break;
+
                 case 3:
                     lblPesoMaxSuportado.Visible = true;
                     textBoxPesoMaxSuportado.Visible = true;
@@ -92,8 +93,8 @@ namespace Automobile
                     lblTipoCaixa.Visible = false;
                     comboBoxTipoCaixa.Visible = false;
                     btn_criar.Enabled = true;
-                    lb_preco.Enabled = true;
-                    tb_preco.Enabled = true;
+                    lb_preco.Visible = true;
+                    tb_preco.Visible = true;
 
                     break;
             }
@@ -119,7 +120,20 @@ namespace Automobile
                     }
 
                     break;
+
                 case 1:
+
+                    string[] aux = comboBoxCilindrada.SelectedItem.ToString().Split('c'); // [150 , cc]
+
+                    int cilindrada = int.Parse(aux[0]);
+
+                    if (EmpresaController.CriarMota(_matricula, _modelo, _preco, "Disponivel", cilindrada))
+                    {
+                        tb_id_matricula.Clear();
+                        tb_modelo_marca.Clear();
+                        tb_preco.Clear();
+                        comboBoxCilindrada.SelectedItem = null;
+                    }
 
 
                     break;

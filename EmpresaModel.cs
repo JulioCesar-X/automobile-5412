@@ -22,6 +22,7 @@ namespace Automobile
 
             CriarListaDefaultUsers();
             CriarListaVeiculosDefault();
+
         }
 
 
@@ -112,11 +113,12 @@ namespace Automobile
 
             // Verifica se há um veículo na minha lista com a mesma Matricula usando a reflexão
             if (Veiculos.Any(v => GetMatricula(v) == matriculaRequerida))
+            //[ carro , mota, camiao]
             {
                 throw new VeiculoDuplicadoException(matriculaRequerida);
-            }
+            }               //ArgumentException()
 
-            Veiculos.Add(veiculo);
+            Veiculos.Add(veiculo);// realmente a mota está salva
         }
 
         public string GetMatricula(object veiculo)
