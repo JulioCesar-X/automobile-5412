@@ -25,6 +25,7 @@ namespace Automobile
             InitializeComponent();
             //Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
 
+            
 
         }
 
@@ -69,9 +70,16 @@ namespace Automobile
 
         }
 
-        private void tb_username_TextChanged(object sender, EventArgs e)
-        {
+        
 
+        private void tb_username_Enter(object sender, EventArgs e)
+        {
+            tb_username.Clear();
+        }
+
+        private void tb_password_Enter(object sender, EventArgs e)
+        {
+            tb_password.Clear();
         }
     }
 }

@@ -17,7 +17,6 @@ namespace Automobile
         {
             InitializeComponent();
 
-            empresaModel = new EmpresaModel();
         }
 
         private void formManageUsers_Load(object sender, EventArgs e)
@@ -27,7 +26,7 @@ namespace Automobile
             dataGridView1.Columns.Add("Password", "Password");
 
             // Preencha o DataGridView com os dados dos usuários da lista em EmpresaModel
-            foreach (var user in empresaModel.Users)
+            foreach (var user in EmpresaController.Controlador.Users)
             {
                 dataGridView1.Rows.Add(user.Id, user.Name, user.Password);
             }
@@ -39,7 +38,7 @@ namespace Automobile
             dataGridView1.Rows.Clear();
 
             // Preenche o DataGridView com os dados dos usuários da lista em EmpresaModel
-            foreach (var user in empresaModel.Users)
+            foreach (var user in EmpresaController.Controlador.Users)
             {
                 dataGridView1.Rows.Add(user.Id, user.Name, user.Password);
             }
@@ -49,7 +48,7 @@ namespace Automobile
         {
             string username = textBoxUsername.Text;
             string password = textBoxPassword.Text;
-            empresaModel.Users.Add(new User("#", username, password));
+            EmpresaController.Controlador.Users.Add(new User("#", username, password));
 
             atualizarDataGridView();
         }
@@ -66,13 +65,13 @@ namespace Automobile
             string senhaParaRemover = textBoxPasswordRemove.Text;
 
             // Procura o usuário na lista pelo nome
-            var usuarioParaRemover = empresaModel.Users.FirstOrDefault(u => u.Name == nomeParaRemover);
+            var usuarioParaRemover = EmpresaController.Controlador.Users.FirstOrDefault(u => u.Name == nomeParaRemover);
 
             // Verifica se o usuário foi encontrado e se a senha corresponde
             if (usuarioParaRemover != null && usuarioParaRemover.Password == senhaParaRemover)
             {
                 // Remove o usuário da lista
-                empresaModel.Users.Remove(usuarioParaRemover);
+                EmpresaController.Controlador.Users.Remove(usuarioParaRemover);
                 // Atualize o DataGridView para refletir a lista atualizada de usuários
                 atualizarDataGridView();
             }
