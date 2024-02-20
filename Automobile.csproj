@@ -89,11 +89,11 @@
     <Compile Include="formManageUsers.Designer.cs">
       <DependentUpon>formManageUsers.cs</DependentUpon>
     </Compile>
-    <Compile Include="formVehicleMaintenance.cs">
+    <Compile Include="formTimeSimulation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formVehicleMaintenance.Designer.cs">
-      <DependentUpon>formVehicleMaintenance.cs</DependentUpon>
+    <Compile Include="formTimeSimulation.Designer.cs">
+      <DependentUpon>formTimeSimulation.cs</DependentUpon>
     </Compile>
     <Compile Include="formVeiculosDisponiveisAlugar.cs">
       <SubType>Form</SubType>
@@ -136,8 +136,8 @@
     <EmbeddedResource Include="formManageUsers.resx">
       <DependentUpon>formManageUsers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formVehicleMaintenance.resx">
-      <DependentUpon>formVehicleMaintenance.cs</DependentUpon>
+    <EmbeddedResource Include="formTimeSimulation.resx">
+      <DependentUpon>formTimeSimulation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formVeiculosDisponiveisAlugar.resx">
       <DependentUpon>formVeiculosDisponiveisAlugar.cs</DependentUpon>

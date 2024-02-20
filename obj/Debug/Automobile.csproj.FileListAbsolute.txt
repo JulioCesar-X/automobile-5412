@@ -59,7 +59,6 @@ C:\AUTOMOBILE\automobile-5412\obj\Debug\Automobile.formChangeVehicleStatus.resou
 C:\AUTOMOBILE\automobile-5412\obj\Debug\Automobile.FormLoginSystem.resources
 C:\AUTOMOBILE\automobile-5412\obj\Debug\Automobile.formManageFiles.resources
 C:\AUTOMOBILE\automobile-5412\obj\Debug\Automobile.formManageReservations.resources
-C:\AUTOMOBILE\automobile-5412\obj\Debug\Automobile.formVehicleMaintenance.resources
 C:\AUTOMOBILE\automobile-5412\obj\Debug\Automobile.formVeiculosDisponiveisAlugar.resources
 C:\AUTOMOBILE\automobile-5412\obj\Debug\Automobile.FormPainelControlo.resources
 C:\AUTOMOBILE\automobile-5412\obj\Debug\Automobile.Properties.Resources.resources
@@ -88,3 +87,4 @@ C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\autom
 C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\obj\Debug\Automobile.csproj.CoreCompileInputs.cache
 C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\obj\Debug\Automobile.exe
 C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\obj\Debug\Automobile.pdb
+C:\AUTOMOBILE\automobile-5412\obj\Debug\Automobile.formTimeSimulation.resources
