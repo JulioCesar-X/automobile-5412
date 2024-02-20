@@ -151,5 +151,21 @@ namespace Automobile
             }
 
         }
+
+        public static bool CriarReserva(DateTime DataInicio, DateTime DataFim, object veiculo)
+        {
+            try 
+            {
+                Reserva novareserva = new Reserva(veiculo,DataInicio,DataFim);
+                Controlador.AdicionarReserva(novareserva);
+                return true;
+            }
+            catch (ReservaException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            
+        }
     }
 }
