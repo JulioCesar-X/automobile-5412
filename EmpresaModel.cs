@@ -13,10 +13,6 @@ namespace Automobile
 
         public List<User> Users { get; set; }
 
-        
-
-
-
 
         public EmpresaModel()
         {
