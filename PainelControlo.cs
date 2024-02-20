@@ -50,15 +50,33 @@ namespace Automobile
                 btn_veichle.ForeColor = System.Drawing.Color.SlateGray;
                 btn_exit.ForeColor = System.Drawing.Color.SlateGray;
 
+                lblDateTime.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"); // Formato da data e hora
+                Controls.Add(lblDateTime);
+
+                // Inicie um timer para atualizar a label da data e hora a cada segundo
+                Timer timerAdmin = new Timer();
+                timerAdmin.Interval = 1000; // Intervalo de atualização em milissegundos (1 segundo)
+                timerAdmin.Tick += (sender, e) =>
+                {
+                    lblDateTime.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                };
+                timerAdmin.Start();
 
             }
 
-            //lblTitle.Text = "Add Veichle";
-            //this.PnlFormLoader.Controls.Clear();
-            //formAdicionarVeiculo FormAdicionarVeiculo = new formAdicionarVeiculo() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            //FormAdicionarVeiculo.FormBorderStyle = FormBorderStyle.None;
-            //this.PnlFormLoader.Controls.Add(FormAdicionarVeiculo);
-            //FormAdicionarVeiculo.Show();
+           
+            lblDateTime.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"); // Formato da data e hora
+            Controls.Add(lblDateTime);
+
+            // Inicie um timer para atualizar a label da data e hora a cada segundo
+            Timer timer = new Timer();
+            timer.Interval = 1000; // Intervalo de atualização em milissegundos (1 segundo)
+            timer.Tick += (sender, e) =>
+            {
+                lblDateTime.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+            };
+            timer.Start();
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -116,12 +134,12 @@ namespace Automobile
 
         private void btnVehicleMaintenance_Click(object sender, EventArgs e)
         {
-            lb_title.Text = "Vehicle Maintenance";
+            lb_title.Text = "Time Simulation & Billing";
             this.PnlFormLoader.Controls.Clear();
-            formVehicleMaintenance FormVehicleMaintenance = new formVehicleMaintenance() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            FormVehicleMaintenance.FormBorderStyle = FormBorderStyle.None;
-            this.PnlFormLoader.Controls.Add(FormVehicleMaintenance);
-            FormVehicleMaintenance.Show();
+            formTimeSimulation FormTimeSimulation = new formTimeSimulation() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            FormTimeSimulation.FormBorderStyle = FormBorderStyle.None;
+            this.PnlFormLoader.Controls.Add(FormTimeSimulation);
+            FormTimeSimulation.Show();
         }
 
         private void btnManageReservations_Click(object sender, EventArgs e)
@@ -174,6 +192,11 @@ namespace Automobile
         }
 
         private void PnlFormLoader_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblDateTime_Click(object sender, EventArgs e)
         {
 
         }

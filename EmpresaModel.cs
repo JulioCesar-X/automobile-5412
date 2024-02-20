@@ -13,11 +13,18 @@ namespace Automobile
 
         public List<User> Users { get; set; }
 
+        public List<Reserva> Reservas { get; set; }
+
+        
+
+
+
 
         public EmpresaModel()
         {
             Veiculos = new List<object>();
             Users = new List<User>();
+            Reservas = new List<Reserva>();
 
             CriarListaDefaultUsers();
             CriarListaVeiculosDefault();
@@ -152,6 +159,11 @@ namespace Automobile
 
             return Veiculos.Any(v => v.GetType().Name == tipoRequerido);
 
+        }
+
+        public void AdicionarReserva(Reserva novareserva)
+        {
+            Reservas.Add(novareserva); 
         }
 
 

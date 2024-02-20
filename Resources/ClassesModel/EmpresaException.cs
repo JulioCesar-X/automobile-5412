@@ -113,4 +113,15 @@ namespace Automobile
         }
     }
 
+    //Para Reserva
+    public class ReservaException : EmpresaException 
+    {
+        public ReservaException(DateTime DataInicio) : base($"Data de Inicio inválida: \" {DataInicio}\".Pode reservar no dia atual ou depois.")
+        {
+            
+        }
+    }
+
+    
+
 }
