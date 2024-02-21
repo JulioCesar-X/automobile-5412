@@ -101,11 +101,11 @@ namespace Automobile
             }
         }
 
-        public static bool VerListaVeiculosDoTipo(string tipo)
+        public static bool ValidarListaVeiculosDoTipo(string tipo)
         {
             try
             {
-                Controlador.VerListaVeiculosDoTipo(tipo);
+                Controlador.ValidarListaVeiculosDoTipo(tipo);
 
                 return true;
 
@@ -154,9 +154,9 @@ namespace Automobile
 
         public static bool CriarReserva(DateTime DataInicio, DateTime DataFim, object veiculo)
         {
-            try 
+            try
             {
-                Reserva novareserva = new Reserva(veiculo,DataInicio,DataFim);
+                Reserva novareserva = new Reserva(veiculo, DataInicio, DataFim);
                 Controlador.AdicionarReserva(novareserva);
                 return true;
             }
@@ -165,7 +165,8 @@ namespace Automobile
                 MessageBox.Show(ex.Message);
                 return false;
             }
-            
+
         }
+
     }
 }

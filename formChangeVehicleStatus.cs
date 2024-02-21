@@ -1,93 +1,140 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Automobile
 {
     public partial class formChangeVehicleStatus : Form
     {
+        private static string _tipoVeiculo;
         public formChangeVehicleStatus()
         {
             InitializeComponent();
 
-            DataGridViewComboBoxColumn comboBoxColumn = new DataGridViewComboBoxColumn();
-            DataGridViewComboBoxColumn comboBoxColumn1 = new DataGridViewComboBoxColumn();
-            DataGridViewComboBoxColumn comboBoxColumn2 = new DataGridViewComboBoxColumn();
-            DataGridViewComboBoxColumn comboBoxColumn3 = new DataGridViewComboBoxColumn();
+        }
 
-            comboBoxColumn.HeaderText = "Estado";
-            comboBoxColumn1.HeaderText = "Estado";
-            comboBoxColumn2.HeaderText = "Estado";
-            comboBoxColumn3.HeaderText = "Estado";
-            comboBoxColumn.Name = "comboBoxColumn";
+        private void AdicionarColunas(DataGridView dgv_veiculos_, string tipoVeiculo, string[] colunas)
+        {
+            //limpamos a dgv anterior
+            dgv_veiculos_.Columns.Clear();
 
-            // Adicione opções ao ComboBox
-            comboBoxColumn.Items.Add("Disponível");
-            comboBoxColumn.Items.Add("Alugado");
-            comboBoxColumn.Items.Add("Reservado");
-            comboBoxColumn.Items.Add("Manutenção");
+            //add as colunas especificas para a grid dgv_veiculos__veiculos_
+            foreach (var coluna in colunas)
+            {
+                //add coluna name
+                dgv_veiculos_.Columns.Add(coluna, coluna);
+            }
 
-            comboBoxColumn1.Items.Add("Disponível");
-            comboBoxColumn1.Items.Add("Alugado");
-            comboBoxColumn1.Items.Add("Reservado");
-            comboBoxColumn1.Items.Add("Manutenção");
 
-            comboBoxColumn2.Items.Add("Disponível");
-            comboBoxColumn2.Items.Add("Alugado");
-            comboBoxColumn2.Items.Add("Reservado");
-            comboBoxColumn2.Items.Add("Manutenção");
+            // Add a coluna de ComboBox do status
+            DataGridViewComboBoxColumn cb_status = new DataGridViewComboBoxColumn();
+            cb_status.HeaderText = "Estado";
+            cb_status.Name = "Estado";
 
-            comboBoxColumn3.Items.Add("Disponível");
-            comboBoxColumn3.Items.Add("Alugado");
-            comboBoxColumn3.Items.Add("Reservado");
-            comboBoxColumn3.Items.Add("Manutenção");
+            // Add as opções ao ComboBox de estado
+            cb_status.Items.Add("Disponível");
+            cb_status.Items.Add("Alugado");
+            cb_status.Items.Add("Reservado");
+            cb_status.Items.Add("Em manutenção");
 
-            // Adicione a coluna preenchida ao DataGridView
-            dataGridViewCarros.Columns.Add(comboBoxColumn);
-            dataGridViewMotas.Columns.Add(comboBoxColumn1);
-            dataGridViewCamionetas.Columns.Add(comboBoxColumn2);
-            dataGridViewCamioes.Columns.Add(comboBoxColumn3);
+            if (EmpresaController.userLogado != "#")
+            {
+                //Assim apenas o admin pode alterar diretamente o status do veiculo
+                cb_status.ReadOnly = true;
+            }
+
+            //add a ComboBox do status ao dgv
+            dgv_veiculos_.Columns.Add(cb_status);
+
+            //completar os espaços vazios na grid
+            dgv_veiculos_.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
         }
 
         private void comboBoxFiltrar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            switch (comboBoxFiltrar.SelectedIndex)
+
+            dgv_veiculos.Columns.Clear();
+
+
+            switch (cb_filtrar.SelectedIndex)
             {
                 case 0:
-                    dataGridViewCarros.Visible = true;
-                    dataGridViewMotas.Visible = false;
-                    dataGridViewCamionetas.Visible = false;
-                    dataGridViewCamioes.Visible = false;
+
+                    AdicionarColunas(dgv_veiculos, "Carro", new string[] { "Matrícula", "Marca", "Nº Portas", "Tipo de Caixa", "Preço / dia" });
+
                     break;
+
                 case 1:
-                    dataGridViewMotas.Visible = true;
-                    dataGridViewCarros.Visible = false;
-                    dataGridViewCamionetas.Visible = false;
-                    dataGridViewCamioes.Visible = false;
+
+                    AdicionarColunas(dgv_veiculos, "Mota", new string[] { "Matrícula", "Marca", "Cilindrada", "Preço / dia" });
+
                     break;
+
                 case 2:
-                    dataGridViewCamionetas.Visible = true;
-                    dataGridViewMotas.Visible = false;
-                    dataGridViewCarros.Visible = false;
-                    dataGridViewCamioes.Visible = false;
+
+                    AdicionarColunas(dgv_veiculos, "Camioneta", new string[] { "Matrícula", "Marca", "Nº de Eixos", "Nº Máx. Passageiros", "Preço / dia" });
+
                     break;
+
                 case 3:
-                    dataGridViewCamioes.Visible = true;
-                    dataGridViewCamionetas.Visible = false;
-                    dataGridViewMotas.Visible = false;
-                    dataGridViewCarros.Visible = false;
+
+                    AdicionarColunas(dgv_veiculos, "Camiao", new string[] { "Matrícula", "Marca", "Peso Máx. Suportado", "Preço / dia" });
+
                     break;
             }
+            _tipoVeiculo = cb_filtrar.SelectedItem.ToString();
         }
 
-        
+        private void cb_status_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+            bool flag = EmpresaController.ValidarListaVeiculosDoTipo(_tipoVeiculo);
+
+            if (flag)
+            {
+                //se existir veiculos do tipo selecionado deve limpar as linhas e mostrar as novas
+                dgv_veiculos.Rows.Clear();
+
+                var listaRequerida = EmpresaController.Controlador.ListaVeciulosDoTipo(_tipoVeiculo);
+
+                switch (cb_status.SelectedIndex)
+                {
+                    case 0: //Disponivel
+
+                        foreach (var veiculo in listaRequerida)
+                        {
+                            if (veiculo.VeiculoStatus == "Disponivel")
+                            {
+                                dgv_veiculos.Rows.Add(veiculo);
+                            }
+                        }
+
+
+
+                        break;
+
+                    case 1:
+
+                        AdicionarColunas(dgv_veiculos, "Motas", new string[] { "Matrícula", "Marca", "Cilindrada", "Preço / dia" });
+
+                        break;
+
+                    case 2:
+
+                        AdicionarColunas(dgv_veiculos, "Camionetas", new string[] { "Matrícula", "Marca", "Nº de Eixos", "Nº Máx. Passageiros", "Preço / dia" });
+
+                        break;
+
+                    case 3:
+
+                        AdicionarColunas(dgv_veiculos, "Camiões", new string[] { "Matrícula", "Marca", "Peso Máx. Suportado", "Preço / dia" });
+
+                        break;
+
+                }
+            }
+
+        }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace Automobile
 {
@@ -9,22 +8,22 @@ namespace Automobile
         private DateTime _datainicio;
         private DateTime _datafim;
 
-        public DateTime DataInicio 
-        { 
+        public DateTime DataInicio
+        {
             get
             {
                 return _datainicio;
             }
-            set 
+            set
             {
                 DateTime hoje = DateTime.Today;
-                if (DataInicio < hoje) 
+                if (DataInicio < hoje)
                 {
                     throw new ReservaException(value);
                 }
-            } 
+            }
         }
-        public DateTime DataFim 
+        public DateTime DataFim
         {
             get
             {
@@ -32,11 +31,12 @@ namespace Automobile
             }
             set
             {
-            } 
+
+            }
         }
 
 
-        public Reserva( object veiculo, DateTime datainicio, DateTime datafim) 
+        public Reserva(object veiculo, DateTime datainicio, DateTime datafim)
         {
             _veiculo = veiculo;
             _datainicio = datainicio;

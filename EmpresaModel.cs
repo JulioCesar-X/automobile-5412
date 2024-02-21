@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using System.Text;
 
 namespace Automobile
@@ -9,20 +8,22 @@ namespace Automobile
     internal class EmpresaModel
     {
 
-        public List<object> Veiculos { get; set; }
+        //public List<object> Veiculos { get; set; }
 
+        public List<Veiculo> Veiculos { get; set; }
         public List<User> Users { get; set; }
 
         public List<Reserva> Reservas { get; set; }
 
-        
+
 
 
 
 
         public EmpresaModel()
         {
-            Veiculos = new List<object>();
+            //Veiculos = new List<object>();
+            Veiculos = new List<Veiculo>();
             Users = new List<User>();
             Reservas = new List<Reserva>();
 
@@ -110,31 +111,48 @@ namespace Automobile
         }
 
 
-        public void AdicionarVeiculo(object veiculo)
+        //public void AdicionarVeiculo(object veiculo)
+        //{
+
+
+        //    //do veiculo que quero adicionar
+        //    string matriculaRequerida = GetMatricula(veiculo);
+
+        //    // Verifica se há um veículo na minha lista com a mesma Matricula usando a reflexão
+        //    if (Veiculos.Any(v => GetMatricula(v) == matriculaRequerida))
+        //    //[ carro , mota, camiao]
+        //    {
+        //        throw new VeiculoDuplicadoException(matriculaRequerida);
+        //    }               //ArgumentException()
+
+        //    Veiculos.Add(veiculo);
+        //}
+
+        //public string GetMatricula(object veiculo)
+        //{
+        //    PropertyInfo propriedadeMatricula = veiculo.GetType().GetProperty("VeiculoMatricula");
+
+        //    return propriedadeMatricula.GetValue(veiculo).ToString();
+        //}
+
+
+        public void AdicionarVeiculo(Veiculo veiculo)
         {
 
 
             //do veiculo que quero adicionar
-            string matriculaRequerida = GetMatricula(veiculo);
+            string matriculaRequerida = veiculo.VeiculoMatricula;
 
             // Verifica se há um veículo na minha lista com a mesma Matricula usando a reflexão
-            if (Veiculos.Any(v => GetMatricula(v) == matriculaRequerida))
+            if (Veiculos.Any(v => v.VeiculoMatricula == matriculaRequerida))
             //[ carro , mota, camiao]
             {
                 throw new VeiculoDuplicadoException(matriculaRequerida);
             }               //ArgumentException()
 
-            Veiculos.Add(veiculo);// realmente a mota está salva
+            Veiculos.Add(veiculo);
         }
-
-        public string GetMatricula(object veiculo)
-        {
-            PropertyInfo propriedadeMatricula = veiculo.GetType().GetProperty("VeiculoMatricula");
-
-            return propriedadeMatricula.GetValue(veiculo).ToString();
-        }
-
-        public bool VerListaVeiculosDoTipo(string tipoRequerido)
+        public bool ValidarListaVeiculosDoTipo(string tipoRequerido)
         {
             Console.OutputEncoding = Encoding.UTF8;
 
@@ -163,10 +181,24 @@ namespace Automobile
 
         public void AdicionarReserva(Reserva novareserva)
         {
-            Reservas.Add(novareserva); 
+            Reservas.Add(novareserva);
         }
 
+        public List<Veiculo> ListaVeciulosDoTipo(string tipoRequerido)
+        {
+            var listaRequerida = new List<Veiculo>();
 
+            foreach (var veiculo in Veiculos)
+            {
+                if (veiculo.GetType().Name == tipoRequerido)
+                {
+                    listaRequerida.Add(veiculo);
+                }
+            }
+
+            return listaRequerida;
+
+        }
     }
 
 
