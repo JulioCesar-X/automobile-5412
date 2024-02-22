@@ -40,6 +40,13 @@ namespace Automobile
                     lb_preco.Visible = true;
                     tb_preco.Visible = true;
 
+                    //int numPortas = int.Parse(comboBoxNmrPortas.SelectedIndex.ToString());
+                    //string tipoCaixa = comboBoxTipoCaixa.SelectedIndex.ToString();
+                    //if (EmpresaController.CriarCarro(_matricula, _modelo, _preco, "Disponivel", numPortas, tipoCaixa))
+                    //{
+                    //    LimparCampos();
+                    //}
+
                     break;
                 case 1:
                     lblCilindrada.Visible = true;
@@ -57,6 +64,13 @@ namespace Automobile
                     btn_criar.Enabled = true;
                     lb_preco.Visible = true;
                     tb_preco.Visible = true;
+
+                    string[] aux = comboBoxCilindrada.SelectedItem.ToString().Split('c'); // [150 , cc]
+                    int cilindrada = int.Parse(aux[0]);
+                    if (EmpresaController.CriarMota(_matricula, _modelo, _preco, "Disponivel", cilindrada))
+                    {
+                        LimparCampos();
+                    }
 
                     break;
 
@@ -77,6 +91,11 @@ namespace Automobile
                     lb_preco.Visible = true;
                     tb_preco.Visible = true;
 
+                    int pesoMaximo = int.Parse(textBoxPesoMaxSuportado.Text.Trim());
+                    if (EmpresaController.CriarCamiao(_matricula, _modelo, _preco, "Disponivel", pesoMaximo))
+                    {
+                        LimparCampos();
+                    }
                     break;
 
                 case 3:
@@ -95,6 +114,13 @@ namespace Automobile
                     btn_criar.Enabled = true;
                     lb_preco.Visible = true;
                     tb_preco.Visible = true;
+
+                    int numeroEixos = int.Parse(comboBoxNmrEixos.SelectedItem.ToString());
+                    int numeroPassageiros = int.Parse(textBoxNmrMaxPassageiros.Text.Trim());
+                    if (EmpresaController.CriarCamioneta(_matricula, _modelo, _preco, "Disponivel", numeroEixos, numeroPassageiros))
+                    {
+                        LimparCampos();
+                    }
 
                     break;
             }
@@ -185,6 +211,19 @@ namespace Automobile
             {
                 _preco = _precoConvertido;
             }
+        }
+
+        private void LimparCampos()
+        {
+            tb_id_matricula.Clear();
+            tb_modelo_marca.Clear();
+            tb_preco.Clear();
+            comboBoxNmrPortas.SelectedItem = null;
+            comboBoxTipoCaixa.SelectedItem = null;
+            comboBoxCilindrada.SelectedItem = null;
+            textBoxPesoMaxSuportado.Clear();
+            comboBoxNmrEixos.SelectedItem = null;
+            textBoxNmrMaxPassageiros.Clear();
         }
     }
 }
