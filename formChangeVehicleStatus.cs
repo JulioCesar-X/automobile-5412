@@ -5,7 +5,8 @@ namespace Automobile
 {
     public partial class formChangeVehicleStatus : Form
     {
-        private static string _tipoVeiculo;
+        public static string TipoVeiculo { get; set; }
+
         public formChangeVehicleStatus()
         {
             InitializeComponent();
@@ -31,7 +32,7 @@ namespace Automobile
             cb_status.Name = "Estado";
 
             // Add as opções ao ComboBox de estado
-            cb_status.Items.Add("Disponível");
+            cb_status.Items.Add("Disponivel");
             cb_status.Items.Add("Alugado");
             cb_status.Items.Add("Reservado");
             cb_status.Items.Add("Em manutenção");
@@ -60,54 +61,64 @@ namespace Automobile
             {
                 case 0:
 
-                    AdicionarColunas(dgv_veiculos, "Carro", new string[] { "Matrícula", "Marca", "Nº Portas", "Tipo de Caixa", "Preço / dia" });
-
+                    AdicionarColunas(dgv_veiculos, "Carro", new string[] { "Matrícula", "Modelo", "Nº Portas", "Tipo de Caixa", "Preço / dia" });
+                    TipoVeiculo = "Carro";
                     break;
 
                 case 1:
 
-                    AdicionarColunas(dgv_veiculos, "Mota", new string[] { "Matrícula", "Marca", "Cilindrada", "Preço / dia" });
-
+                    AdicionarColunas(dgv_veiculos, "Mota", new string[] { "Matrícula", "Modelo", "Cilindrada", "Preço / dia" });
+                    TipoVeiculo = "Mota";
                     break;
 
                 case 2:
 
-                    AdicionarColunas(dgv_veiculos, "Camioneta", new string[] { "Matrícula", "Marca", "Nº de Eixos", "Nº Máx. Passageiros", "Preço / dia" });
-
+                    AdicionarColunas(dgv_veiculos, "Camioneta", new string[] { "Matrícula", "Modelo", "Nº de Eixos", "Nº Máx. Passageiros", "Preço / dia" });
+                    TipoVeiculo = "Camioneta";
                     break;
 
                 case 3:
 
-                    AdicionarColunas(dgv_veiculos, "Camiao", new string[] { "Matrícula", "Marca", "Peso Máx. Suportado", "Preço / dia" });
-
+                    AdicionarColunas(dgv_veiculos, "Camiao", new string[] { "Matrícula", "Modelo", "Peso Máx. Suportado", "Preço / dia" });
+                    TipoVeiculo = "Camiao";
                     break;
             }
-            _tipoVeiculo = cb_filtrar.SelectedItem.ToString();
+
         }
 
         private void cb_status_SelectedIndexChanged(object sender, EventArgs e)
         {
 
 
-            bool flag = EmpresaController.ValidarListaVeiculosDoTipo(_tipoVeiculo);
+            bool flag = EmpresaController.ValidarListaVeiculosDoTipo(TipoVeiculo);
 
             if (flag)
             {
                 //se existir veiculos do tipo selecionado deve limpar as linhas e mostrar as novas
                 dgv_veiculos.Rows.Clear();
 
-                var listaRequerida = EmpresaController.Controlador.ListaVeciulosDoTipo(_tipoVeiculo);
+                var listaRequerida = EmpresaController.Controlador.ListaVeciulosDoTipo(TipoVeiculo);
 
                 switch (cb_status.SelectedIndex)
                 {
                     case 0: //Disponivel
 
+
                         foreach (var veiculo in listaRequerida)
                         {
-                            if (veiculo.VeiculoStatus == "Disponivel")
+                            if (EmpresaController.Controlador.GetStatus(veiculo) == "Disponivel")
                             {
-                                dgv_veiculos.Rows.Add(veiculo);
+
+                                dgv_veiculos.Rows.Add(
+                                EmpresaController.Controlador.GetMatricula(veiculo),
+                                EmpresaController.Controlador.GetModelo(veiculo),
+                                EmpresaController.Controlador.GetNumPortas(veiculo),
+                                EmpresaController.Controlador.GetTipoDeCaixa(veiculo),
+                                EmpresaController.Controlador.GetPrecoPorDia(veiculo),
+                                EmpresaController.Controlador.GetStatus(veiculo)
+                                );
                             }
+
                         }
 
 
@@ -116,19 +127,19 @@ namespace Automobile
 
                     case 1:
 
-                        AdicionarColunas(dgv_veiculos, "Motas", new string[] { "Matrícula", "Marca", "Cilindrada", "Preço / dia" });
+                        AdicionarColunas(dgv_veiculos, "Motas", new string[] { "Matrícula", "Modelo", "Cilindrada", "Preço / dia" });
 
                         break;
 
                     case 2:
 
-                        AdicionarColunas(dgv_veiculos, "Camionetas", new string[] { "Matrícula", "Marca", "Nº de Eixos", "Nº Máx. Passageiros", "Preço / dia" });
+                        AdicionarColunas(dgv_veiculos, "Camionetas", new string[] { "Matrícula", "Modelo", "Nº de Eixos", "Nº Máx. Passageiros", "Preço / dia" });
 
                         break;
 
                     case 3:
 
-                        AdicionarColunas(dgv_veiculos, "Camiões", new string[] { "Matrícula", "Marca", "Peso Máx. Suportado", "Preço / dia" });
+                        AdicionarColunas(dgv_veiculos, "Camiões", new string[] { "Matrícula", "Modelo", "Peso Máx. Suportado", "Preço / dia" });
 
                         break;
 

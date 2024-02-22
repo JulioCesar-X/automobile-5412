@@ -74,11 +74,11 @@
             // dgv_veiculos
             // 
             this.dgv_veiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_veiculos.Location = new System.Drawing.Point(45, 110);
+            this.dgv_veiculos.Location = new System.Drawing.Point(12, 110);
             this.dgv_veiculos.Name = "dgv_veiculos";
             this.dgv_veiculos.RowHeadersWidth = 62;
             this.dgv_veiculos.RowTemplate.Height = 28;
-            this.dgv_veiculos.Size = new System.Drawing.Size(1030, 394);
+            this.dgv_veiculos.Size = new System.Drawing.Size(1075, 396);
             this.dgv_veiculos.TabIndex = 6;
             // 
             // cb_status
