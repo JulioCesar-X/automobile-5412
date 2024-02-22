@@ -29,7 +29,7 @@ namespace Automobile
                     dataGridViewMotas.Visible = false;
                     dataGridViewCamionetas.Visible = false;
                     dgv_veiculos_disponiveis.Visible = false;
-                    VeiculosDisponiveis = new List<object>();
+                   
 
                     
                     break;
@@ -38,6 +38,7 @@ namespace Automobile
                     dataGridViewCarros.Visible = false;
                     dataGridViewCamionetas.Visible = false;
                     dgv_veiculos_disponiveis.Visible = false;
+
                     break;
                 case 2:
                     dataGridViewCamionetas.Visible = true;
@@ -127,7 +128,7 @@ namespace Automobile
             
         }
 
-        private List<object> GetListDoTipo(string tipo) 
+        private void GetListDoTipo(string tipo) 
         {
             bool flag = EmpresaController.ValidarListaVeiculosDoTipo(tipo);
 
@@ -136,15 +137,15 @@ namespace Automobile
                 var minhaLista = EmpresaController.Controlador.Veiculos;
                 foreach (var veiculo in minhaLista)
                 {
-                    if () 
+                    if (veiculo.GetType().Name == tipo) 
                     {
-
+                        VeiculosDisponiveis.Add(veiculo);
                     }
-                    VeiculosDisponiveis.Add(veiculo);
+           
                 }
                 
             }
-            return;
+            //
         }
     }
 }

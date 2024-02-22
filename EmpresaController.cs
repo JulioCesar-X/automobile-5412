@@ -19,7 +19,7 @@ namespace Automobile
         public static string userLogado;
 
 
-        public static bool CriarCamiao(string veiculoMatricula, string veiculoModelo, decimal veiculoPreco, string veiculoStatus, int pesoMaximo)
+        public static bool CriarCaminhao(string veiculoMatricula, string veiculoModelo, decimal veiculoPreco, string veiculoStatus, int pesoMaximo)
         {
             try
             {
@@ -63,7 +63,6 @@ namespace Automobile
 
         public static bool CriarCarro(string veiculoMatricula, string veiculoModelo, decimal veiculoPreco, string veiculoStatus, int numeroPortas, string tipoCaixa)
         {
-            
             try
             {
                 Carro novoCarro = new Carro(veiculoMatricula, veiculoModelo, veiculoPreco, veiculoStatus, numeroPortas, tipoCaixa);
@@ -111,7 +110,7 @@ namespace Automobile
                 return true;
 
             }
-            catch (Exception ex)
+            catch (ArgumentException ex)
             {
 
                 MessageBox.Show(ex.Message);
@@ -167,8 +166,7 @@ namespace Automobile
                 return false;
             }
 
-        }
-
+        }  
 
     }
 }
