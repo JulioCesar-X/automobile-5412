@@ -113,7 +113,12 @@ namespace Automobile
         //Button Change Vehicle Status
         private void button2_Click(object sender, EventArgs e)
         {
+            if (EmpresaController.userLogado == "#")
+            {
+                //lb_title.Text = "Change Vehicle Status";
+            }
             lb_title.Text = "Change Vehicle Status";
+            lb_title.Text = "List of Vehicles";
             this.PnlFormLoader.Controls.Clear();
             formChangeVehicleStatus FormChangeVehicleStatus = new formChangeVehicleStatus() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             FormChangeVehicleStatus.FormBorderStyle = FormBorderStyle.None;

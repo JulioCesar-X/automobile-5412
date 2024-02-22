@@ -81,5 +81,10 @@ namespace Automobile
         {
             tb_password.Clear();
         }
+
+        private void tb_username_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
