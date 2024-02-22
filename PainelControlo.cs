@@ -21,6 +21,8 @@ namespace Automobile
                 btn_manage_users.Text = "Manage Users";
                 btn_manage_users.Enabled = true;
 
+                btn_change_veichle_status.Text = "Change Vehicles Status";
+
                 lb_user_logado.Text = "# Admin";
 
                 lb_title.ForeColor = System.Drawing.Color.SlateGray;
@@ -113,17 +115,18 @@ namespace Automobile
         //Button Change Vehicle Status
         private void button2_Click(object sender, EventArgs e)
         {
-            if (EmpresaController.userLogado == "#")
-            {
-                //lb_title.Text = "Change Vehicle Status";
-            }
-            lb_title.Text = "Change Vehicle Status";
             lb_title.Text = "List of Vehicles";
             this.PnlFormLoader.Controls.Clear();
             formChangeVehicleStatus FormChangeVehicleStatus = new formChangeVehicleStatus() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             FormChangeVehicleStatus.FormBorderStyle = FormBorderStyle.None;
             this.PnlFormLoader.Controls.Add(FormChangeVehicleStatus);
             FormChangeVehicleStatus.Show();
+
+            if (EmpresaController.userLogado == "#")
+            {
+                lb_title.Text = "Change Vehicle Status";
+            }
+            
         }
 
         //Button Vehicles Available for Rent

@@ -40,9 +40,9 @@
             // 
             this.lb_filtrar.AutoSize = true;
             this.lb_filtrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_filtrar.Location = new System.Drawing.Point(28, 39);
+            this.lb_filtrar.Location = new System.Drawing.Point(25, 31);
             this.lb_filtrar.Name = "lb_filtrar";
-            this.lb_filtrar.Size = new System.Drawing.Size(103, 32);
+            this.lb_filtrar.Size = new System.Drawing.Size(89, 29);
             this.lb_filtrar.TabIndex = 1;
             this.lb_filtrar.Text = "Filtrar:";
             // 
@@ -54,10 +54,9 @@
             "Mota",
             "Camioneta",
             "Camiao"});
-            this.cb_filtrar.Location = new System.Drawing.Point(135, 45);
-            this.cb_filtrar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cb_filtrar.Location = new System.Drawing.Point(120, 36);
             this.cb_filtrar.Name = "cb_filtrar";
-            this.cb_filtrar.Size = new System.Drawing.Size(136, 28);
+            this.cb_filtrar.Size = new System.Drawing.Size(121, 24);
             this.cb_filtrar.TabIndex = 2;
             this.cb_filtrar.SelectedIndexChanged += new System.EventHandler(this.comboBoxFiltrar_SelectedIndexChanged);
             // 
@@ -65,21 +64,23 @@
             // 
             this.lb_status.AutoSize = true;
             this.lb_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_status.Location = new System.Drawing.Point(323, 39);
+            this.lb_status.Location = new System.Drawing.Point(287, 31);
             this.lb_status.Name = "lb_status";
-            this.lb_status.Size = new System.Drawing.Size(110, 32);
+            this.lb_status.Size = new System.Drawing.Size(92, 29);
             this.lb_status.TabIndex = 1;
             this.lb_status.Text = "Status:";
             // 
             // dgv_veiculos
             // 
             this.dgv_veiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_veiculos.Location = new System.Drawing.Point(12, 110);
+            this.dgv_veiculos.Location = new System.Drawing.Point(11, 88);
+            this.dgv_veiculos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_veiculos.Name = "dgv_veiculos";
             this.dgv_veiculos.RowHeadersWidth = 62;
             this.dgv_veiculos.RowTemplate.Height = 28;
-            this.dgv_veiculos.Size = new System.Drawing.Size(1075, 396);
+            this.dgv_veiculos.Size = new System.Drawing.Size(956, 317);
             this.dgv_veiculos.TabIndex = 6;
+            this.dgv_veiculos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_veiculos_CellContentClick);
             // 
             // cb_status
             // 
@@ -89,25 +90,26 @@
             "Alugado",
             "Reservado",
             "Em manutenção"});
-            this.cb_status.Location = new System.Drawing.Point(439, 45);
+            this.cb_status.Location = new System.Drawing.Point(390, 36);
+            this.cb_status.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cb_status.Name = "cb_status";
-            this.cb_status.Size = new System.Drawing.Size(161, 28);
+            this.cb_status.Size = new System.Drawing.Size(144, 24);
             this.cb_status.TabIndex = 7;
             this.cb_status.SelectedIndexChanged += new System.EventHandler(this.cb_status_SelectedIndexChanged);
             // 
             // formChangeVehicleStatus
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(1099, 734);
+            this.ClientSize = new System.Drawing.Size(977, 587);
             this.Controls.Add(this.cb_status);
             this.Controls.Add(this.dgv_veiculos);
             this.Controls.Add(this.cb_filtrar);
             this.Controls.Add(this.lb_status);
             this.Controls.Add(this.lb_filtrar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "formChangeVehicleStatus";
             this.Text = "formChangeVehicleStatus";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_veiculos)).EndInit();
