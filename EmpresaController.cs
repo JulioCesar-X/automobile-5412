@@ -19,7 +19,7 @@ namespace Automobile
         public static string userLogado;
 
 
-        public static bool CriarCaminhao(string veiculoMatricula, string veiculoModelo, decimal veiculoPreco, string veiculoStatus, int pesoMaximo)
+        public static bool CriarCamiao(string veiculoMatricula, string veiculoModelo, decimal veiculoPreco, string veiculoStatus, int pesoMaximo)
         {
             try
             {
@@ -166,7 +166,7 @@ namespace Automobile
                 return false;
             }
 
-        }  
+        }
 
     }
 }

@@ -211,6 +211,34 @@ namespace Automobile
             return listaFiltrada;
 
         }
+
+        internal object GetCilindrada(object veiculo)
+        {
+            PropertyInfo propriedadeCilindrada = veiculo.GetType().GetProperty("Cilindrada");
+
+            return propriedadeCilindrada.GetValue(veiculo).ToString();
+        }
+
+        internal object GetNumMaxPassageiros(object veiculo)
+        {
+            PropertyInfo propriedadeNumeroPassageiros = veiculo.GetType().GetProperty("NumeroPassageiros");
+
+            return propriedadeNumeroPassageiros.GetValue(veiculo).ToString();
+        }
+
+        internal object GetNumEixos(object veiculo)
+        {
+            PropertyInfo propriedadeNumeroEixos = veiculo.GetType().GetProperty("NumeroEixos");
+
+            return propriedadeNumeroEixos.GetValue(veiculo).ToString();
+        }
+
+        internal object GetPesoMaxSuportado(object veiculo)
+        {
+            PropertyInfo propriedadePesoMaximo = veiculo.GetType().GetProperty("PesoMaximo");
+
+            return propriedadePesoMaximo.GetValue(veiculo).ToString();
+        }
     }
 
 

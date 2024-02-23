@@ -259,7 +259,7 @@
             // 
             this.lblPesoMaxSuportado.AutoSize = true;
             this.lblPesoMaxSuportado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPesoMaxSuportado.Location = new System.Drawing.Point(346, 298);
+            this.lblPesoMaxSuportado.Location = new System.Drawing.Point(346, 302);
             this.lblPesoMaxSuportado.Name = "lblPesoMaxSuportado";
             this.lblPesoMaxSuportado.Size = new System.Drawing.Size(282, 25);
             this.lblPesoMaxSuportado.TabIndex = 32;
