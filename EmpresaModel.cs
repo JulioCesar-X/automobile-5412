@@ -97,6 +97,33 @@ namespace Automobile
             Camiao veiculo7 = new Camiao("07", "BUGVERDE", 150.99m, "Disponivel", 44000);
             Camioneta veiculo8 = new Camioneta("08", "Venom", 500.99m, "Disponivel", 2, 5);
 
+            Carro veiculo9 = new Carro("09", "Corsa", 88.70m, "Alugado", 5, "manual");
+            Mota veiculo10 = new Mota("10", "XTZ", 55.80m, "Alugado", 300);
+            Camiao veiculo11 = new Camiao("11", "BUGVERDE", 150.99m, "Alugado", 44000);
+            Camioneta veiculo12 = new Camioneta("12", "Venom", 500.99m, "Alugado", 2, 5);
+            Carro veiculo13 = new Carro("13", "Corsa", 88.70m, "Alugado", 5, "manual");
+            Mota veiculo14 = new Mota("14", "XTZ", 55.80m, "Alugado", 300);
+            Camiao veiculo15 = new Camiao("15", "BUGVERDE", 150.99m, "Alugado", 44000);
+            Camioneta veiculo16 = new Camioneta("16", "Venom", 500.99m, "Alugado", 2, 5);
+
+            Carro veiculo17 = new Carro("17", "Corsa", 88.70m, "Reservado", 5, "manual");
+            Mota veiculo18 = new Mota("18", "XTZ", 55.80m, "Reservado", 300);
+            Camiao veiculo19 = new Camiao("19", "BUGVERDE", 150.99m, "Reservado", 44000);
+            Camioneta veiculo20 = new Camioneta("20", "Venom", 500.99m, "Reservado", 2, 5);
+            Carro veiculo21 = new Carro("21", "Corsa", 88.70m, "Reservado", 5, "manual");
+            Mota veiculo22 = new Mota("22", "XTZ", 55.80m, "Reservado", 300);
+            Camiao veiculo23 = new Camiao("23", "BUGVERDE", 150.99m, "Reservado", 44000);
+            Camioneta veiculo24 = new Camioneta("24", "Venom", 500.99m, "Reservado", 2, 5);
+
+            Carro veiculo25 = new Carro("25", "Corsa", 88.70m, "Em manutenção", 5, "manual");
+            Mota veiculo26 = new Mota("26", "XTZ", 55.80m, "Em manutenção", 300);
+            Camiao veiculo27 = new Camiao("27", "BUGVERDE", 150.99m, "Em manutenção", 44000);
+            Camioneta veiculo28 = new Camioneta("28", "Venom", 500.99m, "Em manutenção", 2, 5);
+            Carro veiculo29 = new Carro("29", "Corsa", 88.70m, "Em manutenção", 5, "manual");
+            Mota veiculo30 = new Mota("30", "XTZ", 55.80m, "Em manutenção", 300);
+            Camiao veiculo31 = new Camiao("31", "BUGVERDE", 150.99m, "Em manutenção", 44000);
+            Camioneta veiculo32 = new Camioneta("32", "Venom", 500.99m, "Em manutenção", 2, 5);
+
             Veiculos.Add(veiculo1);
             Veiculos.Add(veiculo2);
             Veiculos.Add(veiculo3);
@@ -105,6 +132,34 @@ namespace Automobile
             Veiculos.Add(veiculo6);
             Veiculos.Add(veiculo7);
             Veiculos.Add(veiculo8);
+
+            Veiculos.Add(veiculo9);
+            Veiculos.Add(veiculo10);
+            Veiculos.Add(veiculo11);
+            Veiculos.Add(veiculo12);
+            Veiculos.Add(veiculo13);
+            Veiculos.Add(veiculo14);
+            Veiculos.Add(veiculo15);
+            Veiculos.Add(veiculo16);
+
+            Veiculos.Add(veiculo17);
+            Veiculos.Add(veiculo18);
+            Veiculos.Add(veiculo19);
+            Veiculos.Add(veiculo20);
+            Veiculos.Add(veiculo21);
+            Veiculos.Add(veiculo22);
+            Veiculos.Add(veiculo23);
+            Veiculos.Add(veiculo24);
+
+            Veiculos.Add(veiculo25);
+            Veiculos.Add(veiculo26);
+            Veiculos.Add(veiculo27);
+            Veiculos.Add(veiculo28);
+            Veiculos.Add(veiculo29);
+            Veiculos.Add(veiculo30);
+            Veiculos.Add(veiculo31);
+            Veiculos.Add(veiculo32);
+
 
         }
 

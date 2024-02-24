@@ -17,13 +17,14 @@ namespace Automobile
             btn_criar.Enabled = false;
         }
 
-
+        //apenas a view que mostra o local de preenchimento 
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
             switch (cb_tipo.SelectedIndex)
             {
                 case 0:
+
                     lblNmrPortas.Visible = true;
                     comboBoxNmrPortas.Visible = true;
                     lblTipoCaixa.Visible = true;
@@ -40,15 +41,9 @@ namespace Automobile
                     lb_preco.Visible = true;
                     tb_preco.Visible = true;
 
-                    //int numPortas = int.Parse(comboBoxNmrPortas.SelectedIndex.ToString());
-                    //string tipoCaixa = comboBoxTipoCaixa.SelectedIndex.ToString();
-                    //if (EmpresaController.CriarCarro(_matricula, _modelo, _preco, "Disponivel", numPortas, tipoCaixa))
-                    //{
-                    //    LimparCampos();
-                    //}
-
                     break;
                 case 1:
+
                     lblCilindrada.Visible = true;
                     comboBoxCilindrada.Visible = true;
                     lblNmrPortas.Visible = false;
@@ -65,16 +60,10 @@ namespace Automobile
                     lb_preco.Visible = true;
                     tb_preco.Visible = true;
 
-                    string[] aux = comboBoxCilindrada.SelectedItem.ToString().Split('c'); // [150 , cc]
-                    int cilindrada = int.Parse(aux[0]);
-                    if (EmpresaController.CriarMota(_matricula, _modelo, _preco, "Disponivel", cilindrada))
-                    {
-                        LimparCampos();
-                    }
-
                     break;
 
                 case 2:
+
                     lblNmrEixos.Visible = true;
                     comboBoxNmrEixos.Visible = true;
                     lblNmrMaxPassageiros.Visible = true;
@@ -91,14 +80,10 @@ namespace Automobile
                     lb_preco.Visible = true;
                     tb_preco.Visible = true;
 
-                    int pesoMaximo = int.Parse(textBoxPesoMaxSuportado.Text.Trim());
-                    if (EmpresaController.CriarCamiao(_matricula, _modelo, _preco, "Disponivel", pesoMaximo))
-                    {
-                        LimparCampos();
-                    }
                     break;
 
                 case 3:
+
                     lblPesoMaxSuportado.Visible = true;
                     textBoxPesoMaxSuportado.Visible = true;
                     lblNmrEixos.Visible = false;
@@ -115,17 +100,12 @@ namespace Automobile
                     lb_preco.Visible = true;
                     tb_preco.Visible = true;
 
-                    int numeroEixos = int.Parse(comboBoxNmrEixos.SelectedItem.ToString());
-                    int numeroPassageiros = int.Parse(textBoxNmrMaxPassageiros.Text.Trim());
-                    if (EmpresaController.CriarCamioneta(_matricula, _modelo, _preco, "Disponivel", numeroEixos, numeroPassageiros))
-                    {
-                        LimparCampos();
-                    }
 
                     break;
             }
         }
 
+        //Caso preenchido e ao click cria de facto o objeto
         private void btn_criar_Click(object sender, EventArgs e)
         {
             switch (cb_tipo.SelectedIndex)
@@ -137,6 +117,7 @@ namespace Automobile
 
                     if (EmpresaController.CriarCarro(_matricula, _modelo, _preco, "Disponivel", numPortas, tipoCaixa))
                     {
+                        //Estamos limpando especificamente
                         tb_id_matricula.Clear();
                         tb_modelo_marca.Clear();
                         tb_preco.Clear();
@@ -213,17 +194,6 @@ namespace Automobile
             }
         }
 
-        private void LimparCampos()
-        {
-            tb_id_matricula.Clear();
-            tb_modelo_marca.Clear();
-            tb_preco.Clear();
-            comboBoxNmrPortas.SelectedItem = null;
-            comboBoxTipoCaixa.SelectedItem = null;
-            comboBoxCilindrada.SelectedItem = null;
-            textBoxPesoMaxSuportado.Clear();
-            comboBoxNmrEixos.SelectedItem = null;
-            textBoxNmrMaxPassageiros.Clear();
-        }
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Automobile
@@ -61,28 +62,29 @@ namespace Automobile
             {
                 case 0:
 
-                    AdicionarColunas(dgv_veiculos, "Carro", new string[] { "Matrícula", "Modelo", "Nº Portas", "Tipo de Caixa", "Preço / dia" });
+                    AdicionarColunas(dgv_veiculos, "Carro", new string[] { "Matrícula", "Modelo", "Nº Portas", "Tipo de Caixa", "Preço / hora" });
                     TipoVeiculo = "Carro";
                     break;
 
                 case 1:
 
-                    AdicionarColunas(dgv_veiculos, "Mota", new string[] { "Matrícula", "Modelo", "Cilindrada", "Preço / dia" });
+                    AdicionarColunas(dgv_veiculos, "Mota", new string[] { "Matrícula", "Modelo", "Cilindrada", "Preço / hora" });
                     TipoVeiculo = "Mota";
                     break;
 
                 case 2:
 
-                    AdicionarColunas(dgv_veiculos, "Camioneta", new string[] { "Matrícula", "Modelo", "Nº de Eixos", "Nº Máx. Passageiros", "Preço / dia" });
+                    AdicionarColunas(dgv_veiculos, "Camioneta", new string[] { "Matrícula", "Modelo", "Nº de Eixos", "Nº Máx. Passageiros", "Preço / hora" });
                     TipoVeiculo = "Camioneta";
                     break;
 
                 case 3:
 
-                    AdicionarColunas(dgv_veiculos, "Camiao", new string[] { "Matrícula", "Modelo", "Peso Máx. Suportado", "Preço / dia" });
+                    AdicionarColunas(dgv_veiculos, "Camiao", new string[] { "Matrícula", "Modelo", "Peso Máx. Suportado", "Preço / hora" });
                     TipoVeiculo = "Camiao";
                     break;
             }
+
 
         }
 
@@ -101,55 +103,119 @@ namespace Automobile
 
                 switch (cb_status.SelectedIndex)
                 {
-                    case 0: //Disponivel
+                    case 0:
 
-
-                        foreach (var veiculo in listaRequerida)
-                        {
-                            if (EmpresaController.Controlador.GetStatus(veiculo) == "Disponivel")
-                            {
-
-                                dgv_veiculos.Rows.Add(
-                                EmpresaController.Controlador.GetMatricula(veiculo),
-                                EmpresaController.Controlador.GetModelo(veiculo),
-                                EmpresaController.Controlador.GetNumPortas(veiculo),
-                                EmpresaController.Controlador.GetTipoDeCaixa(veiculo),
-                                EmpresaController.Controlador.GetPrecoPorDia(veiculo),
-                                EmpresaController.Controlador.GetStatus(veiculo)
-                                );
-                            }
-
-                        }
-
-
-
+                        PreencheListaDeVeiculosDoStatus(listaRequerida, TipoVeiculo, "Disponivel");
                         break;
 
                     case 1:
 
-                        AdicionarColunas(dgv_veiculos, "Motas", new string[] { "Matrícula", "Modelo", "Cilindrada", "Preço / dia" });
-
+                        PreencheListaDeVeiculosDoStatus(listaRequerida, TipoVeiculo, "Alugado");
                         break;
 
                     case 2:
 
-                        AdicionarColunas(dgv_veiculos, "Camionetas", new string[] { "Matrícula", "Modelo", "Nº de Eixos", "Nº Máx. Passageiros", "Preço / dia" });
-
+                        PreencheListaDeVeiculosDoStatus(listaRequerida, TipoVeiculo, "Reservado");
                         break;
 
                     case 3:
 
-                        AdicionarColunas(dgv_veiculos, "Camiões", new string[] { "Matrícula", "Modelo", "Peso Máx. Suportado", "Preço / dia" });
-
+                        PreencheListaDeVeiculosDoStatus(listaRequerida, TipoVeiculo, "Em manutenção");
                         break;
 
                 }
+
+
             }
 
         }
 
         private void dgv_veiculos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+        }
+
+        private void PreencheListaDeVeiculosDoStatus(List<object> listaRequerida, string TipoVeiculo, string status)
+        {
+            switch (TipoVeiculo)
+            {
+                case "Carro":
+
+                    foreach (var carro in listaRequerida)
+                    {
+                        if (EmpresaController.Controlador.GetStatus(carro) == status)
+                        {
+                            dgv_veiculos.Rows.Add(
+                                EmpresaController.Controlador.GetMatricula(carro),
+                                EmpresaController.Controlador.GetModelo(carro),
+                                EmpresaController.Controlador.GetNumPortas(carro),
+                                EmpresaController.Controlador.GetTipoDeCaixa(carro),
+                                EmpresaController.Controlador.GetPrecoPorDia(carro) + " €",
+                                EmpresaController.Controlador.GetStatus(carro)
+                                );
+                        }
+
+
+                    }
+                    break;
+
+                case "Mota":
+
+                    foreach (var mota in listaRequerida)
+                    {
+                        if (EmpresaController.Controlador.GetStatus(mota) == status)
+                        {
+                            dgv_veiculos.Rows.Add(
+                                EmpresaController.Controlador.GetMatricula(mota),
+                                EmpresaController.Controlador.GetModelo(mota),
+                                EmpresaController.Controlador.GetCilindrada(mota),
+                                EmpresaController.Controlador.GetPrecoPorDia(mota) + " €",
+                                EmpresaController.Controlador.GetStatus(mota)
+                                );
+                        }
+
+
+                    }
+                    break;
+
+                case "Camioneta":
+
+                    foreach (var camioneta in listaRequerida)
+                    {
+                        if (EmpresaController.Controlador.GetStatus(camioneta) == status)
+                        {
+                            dgv_veiculos.Rows.Add(
+                                EmpresaController.Controlador.GetMatricula(camioneta),
+                                EmpresaController.Controlador.GetModelo(camioneta),
+                                EmpresaController.Controlador.GetNumEixos(camioneta),
+                                EmpresaController.Controlador.GetNumMaxPassageiros(camioneta),
+                                EmpresaController.Controlador.GetPrecoPorDia(camioneta) + " €",
+                                EmpresaController.Controlador.GetStatus(camioneta)
+                                );
+                        }
+
+
+                    }
+                    break;
+
+                case "Camiao":
+
+                    foreach (var camiao in listaRequerida)
+                    {
+                        if (EmpresaController.Controlador.GetStatus(camiao) == status)
+                        {
+                            dgv_veiculos.Rows.Add(
+                                EmpresaController.Controlador.GetMatricula(camiao),
+                                EmpresaController.Controlador.GetModelo(camiao),
+                                EmpresaController.Controlador.GetPesoMaxSuportado(camiao),
+                                EmpresaController.Controlador.GetPrecoPorDia(camiao) + " €",
+                                EmpresaController.Controlador.GetStatus(camiao)
+                                );
+                        }
+
+
+                    }
+                    break;
+            }
 
         }
     }
