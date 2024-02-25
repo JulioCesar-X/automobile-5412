@@ -157,9 +157,9 @@
             // dataGridViewVeiculosAlugados
             // 
             this.dataGridViewVeiculosAlugados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewVeiculosAlugados.Location = new System.Drawing.Point(218, 245);
+            this.dataGridViewVeiculosAlugados.Location = new System.Drawing.Point(169, 245);
             this.dataGridViewVeiculosAlugados.Name = "dataGridViewVeiculosAlugados";
-            this.dataGridViewVeiculosAlugados.Size = new System.Drawing.Size(345, 105);
+            this.dataGridViewVeiculosAlugados.Size = new System.Drawing.Size(460, 105);
             this.dataGridViewVeiculosAlugados.TabIndex = 9;
             this.dataGridViewVeiculosAlugados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewVeiculosAlugados_CellContentClick);
             // 

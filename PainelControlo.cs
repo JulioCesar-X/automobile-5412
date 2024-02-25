@@ -144,7 +144,7 @@ namespace Automobile
 
         private void btnVehicleMaintenance_Click(object sender, EventArgs e)
         {
-            lb_title.Text = "Time Simulation & Billing";
+            lb_title.Text = "Time Simulation and Billing";
             this.PnlFormLoader.Controls.Clear();
             formTimeSimulation FormTimeSimulation = new formTimeSimulation() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             FormTimeSimulation.FormBorderStyle = FormBorderStyle.None;

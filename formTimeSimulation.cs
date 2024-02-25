@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Automobile
 {
@@ -30,9 +31,14 @@ namespace Automobile
             dataInicio = dateTimePickerInicio.Value;
             dataFim = dateTimePickerFim.Value;
 
-            dataGridViewVeiculosAlugados.Columns.Add("Marca", "Marca");
+
+
             dataGridViewVeiculosAlugados.Columns.Add("Matricula", "Matrícula");
+            dataGridViewVeiculosAlugados.Columns.Add("Marca", "Marca");
+            dataGridViewVeiculosAlugados.Columns.Add("Preço Dia", "Preço Dia");
             dataGridViewVeiculosAlugados.Columns.Add("Estado", "Estado");
+
+            adicionarListaVeiculosAlugados();
         }
 
         private void formTimeSimulation_Load(object sender, EventArgs e)
@@ -70,5 +76,24 @@ namespace Automobile
         {
 
         }
+
+        private void adicionarListaVeiculosAlugados()
+        {
+            foreach (var carro in EmpresaController.Controlador.Veiculos)
+            {
+                if (EmpresaController.Controlador.GetStatus(carro) == "Reservado")
+                {
+                    dataGridViewVeiculosAlugados.Rows.Add(
+                        EmpresaController.Controlador.GetMatricula(carro),
+                        EmpresaController.Controlador.GetModelo(carro),
+                        EmpresaController.Controlador.GetPrecoPorDia(carro) + " €",
+                        EmpresaController.Controlador.GetStatus(carro)
+                        );
+                }
+
+
+            }
+        }
+
     }
 }
