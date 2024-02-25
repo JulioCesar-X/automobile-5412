@@ -175,6 +175,22 @@
     <Content Include="Resources\AutoMobileLogo.jpg" />
     <None Include="Resources\pictureBox3.Image.png" />
     <None Include="Resources\pngwing.com %2813%29.png" />
+    <None Include="Resources\pngwing.com %2811%29.png" />
+    <None Include="Resources\pngwing.com %2810%29.png" />
+    <None Include="Resources\pngwing.com %2812%29.png" />
+    <None Include="Resources\pngwing.com %2819%29.png" />
+    <None Include="Resources\pngwing.com %2820%29.png" />
+    <None Include="Resources\pngwing.com %2818%29.png" />
+    <None Include="Resources\pngwing.com %2814%29.png" />
+    <None Include="Resources\pngwing.com %2816%29.png" />
+    <None Include="Resources\pngwing.com %2815%29.png" />
+    <None Include="Resources\pngwing.com %288%29.png" />
+    <None Include="Resources\pngwing.com %282%29.png" />
+    <None Include="Resources\pngwing.com %285%29.png" />
+    <None Include="Resources\pngwing.com %284%29.png" />
+    <None Include="Resources\pb_icon_reservations.png" />
+    <None Include="Resources\pngwing.com %281%29.png" />
+    <None Include="Resources\pngwing.com %283%29.png" />
     <Content Include="Resources\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

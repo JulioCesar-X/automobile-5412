@@ -30,10 +30,10 @@ namespace Automobile
                 this.BackColor = System.Drawing.Color.Black;
                 panel_system_control.BackColor = System.Drawing.Color.Black;
 
-                btnChangeAccount.BackColor = System.Drawing.Color.Black;
-                btnManageFiles.BackColor = System.Drawing.Color.Black;
-                btnManageReservations.BackColor = System.Drawing.Color.Black;
-                btnVehicleMaintenance.BackColor = System.Drawing.Color.Black;
+                btn_change_account.BackColor = System.Drawing.Color.Black;
+                btn_manage_files.BackColor = System.Drawing.Color.Black;
+                btn_manage_reservations.BackColor = System.Drawing.Color.Black;
+                btn_vehicle_aintenance.BackColor = System.Drawing.Color.Black;
                 btn_change_veichle_status.BackColor = System.Drawing.Color.Black;
                 btn_manage_users.BackColor = System.Drawing.Color.Black;
                 btn_veichles_available.BackColor = System.Drawing.Color.Black;
@@ -42,40 +42,40 @@ namespace Automobile
 
                 PnlFormLoader.BackColor = System.Drawing.Color.DarkGray;
 
-                btnChangeAccount.ForeColor = System.Drawing.Color.SlateGray;
-                btnManageFiles.ForeColor = System.Drawing.Color.SlateGray;
-                btnManageReservations.ForeColor = System.Drawing.Color.SlateGray;
-                btnVehicleMaintenance.ForeColor = System.Drawing.Color.SlateGray;
+                btn_change_account.ForeColor = System.Drawing.Color.SlateGray;
+                btn_manage_files.ForeColor = System.Drawing.Color.SlateGray;
+                btn_manage_reservations.ForeColor = System.Drawing.Color.SlateGray;
+                btn_vehicle_aintenance.ForeColor = System.Drawing.Color.SlateGray;
                 btn_change_veichle_status.ForeColor = System.Drawing.Color.SlateGray;
                 btn_manage_users.ForeColor = System.Drawing.Color.SlateGray;
                 btn_veichles_available.ForeColor = System.Drawing.Color.SlateGray;
                 btn_veichle.ForeColor = System.Drawing.Color.SlateGray;
                 btn_exit.ForeColor = System.Drawing.Color.SlateGray;
 
-                lblDateTime.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"); // Formato da data e hora
-                Controls.Add(lblDateTime);
+                lb_date_time.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"); // Formato da data e hora
+                Controls.Add(lb_date_time);
 
                 // Inicie um timer para atualizar a label da data e hora a cada segundo
                 Timer timerAdmin = new Timer();
                 timerAdmin.Interval = 1000; // Intervalo de atualização em milissegundos (1 segundo)
                 timerAdmin.Tick += (sender, e) =>
                 {
-                    lblDateTime.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                    lb_date_time.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
                 };
                 timerAdmin.Start();
 
             }
 
-           
-            lblDateTime.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"); // Formato da data e hora
-            Controls.Add(lblDateTime);
+
+            lb_date_time.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"); // Formato da data e hora
+            Controls.Add(lb_date_time);
 
             // Inicie um timer para atualizar a label da data e hora a cada segundo
             Timer timer = new Timer();
             timer.Interval = 1000; // Intervalo de atualização em milissegundos (1 segundo)
             timer.Tick += (sender, e) =>
             {
-                lblDateTime.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                lb_date_time.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
             };
             timer.Start();
 
@@ -83,6 +83,8 @@ namespace Automobile
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+
+
             this.Close();
         }
 
@@ -126,7 +128,7 @@ namespace Automobile
             {
                 lb_title.Text = "Change Vehicle Status";
             }
-            
+
         }
 
         //Button Vehicles Available for Rent
@@ -177,7 +179,10 @@ namespace Automobile
 
         private void button7_Click(object sender, EventArgs e)
         {
+
+
             Application.Exit();
+
         }
 
         private void btn_manage_users_Click(object sender, EventArgs e)

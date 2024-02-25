@@ -224,7 +224,7 @@
             this.lblNmrMaxPassageiros.AutoSize = true;
             this.lblNmrMaxPassageiros.BackColor = System.Drawing.Color.Transparent;
             this.lblNmrMaxPassageiros.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNmrMaxPassageiros.Location = new System.Drawing.Point(346, 348);
+            this.lblNmrMaxPassageiros.Location = new System.Drawing.Point(224, 346);
             this.lblNmrMaxPassageiros.Name = "lblNmrMaxPassageiros";
             this.lblNmrMaxPassageiros.Size = new System.Drawing.Size(265, 25);
             this.lblNmrMaxPassageiros.TabIndex = 29;
@@ -247,10 +247,10 @@
             // 
             // textBoxNmrMaxPassageiros
             // 
-            this.textBoxNmrMaxPassageiros.Location = new System.Drawing.Point(611, 348);
+            this.textBoxNmrMaxPassageiros.Location = new System.Drawing.Point(513, 348);
             this.textBoxNmrMaxPassageiros.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxNmrMaxPassageiros.Name = "textBoxNmrMaxPassageiros";
-            this.textBoxNmrMaxPassageiros.Size = new System.Drawing.Size(67, 26);
+            this.textBoxNmrMaxPassageiros.Size = new System.Drawing.Size(165, 26);
             this.textBoxNmrMaxPassageiros.TabIndex = 31;
             this.textBoxNmrMaxPassageiros.Visible = false;
             this.textBoxNmrMaxPassageiros.TextChanged += new System.EventHandler(this.textBoxNmrMaxPassageiros_TextChanged);
@@ -259,7 +259,7 @@
             // 
             this.lblPesoMaxSuportado.AutoSize = true;
             this.lblPesoMaxSuportado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPesoMaxSuportado.Location = new System.Drawing.Point(346, 302);
+            this.lblPesoMaxSuportado.Location = new System.Drawing.Point(224, 302);
             this.lblPesoMaxSuportado.Name = "lblPesoMaxSuportado";
             this.lblPesoMaxSuportado.Size = new System.Drawing.Size(282, 25);
             this.lblPesoMaxSuportado.TabIndex = 32;
@@ -268,10 +268,10 @@
             // 
             // textBoxPesoMaxSuportado
             // 
-            this.textBoxPesoMaxSuportado.Location = new System.Drawing.Point(642, 292);
+            this.textBoxPesoMaxSuportado.Location = new System.Drawing.Point(513, 304);
             this.textBoxPesoMaxSuportado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxPesoMaxSuportado.Name = "textBoxPesoMaxSuportado";
-            this.textBoxPesoMaxSuportado.Size = new System.Drawing.Size(36, 26);
+            this.textBoxPesoMaxSuportado.Size = new System.Drawing.Size(166, 26);
             this.textBoxPesoMaxSuportado.TabIndex = 33;
             this.textBoxPesoMaxSuportado.Visible = false;
             this.textBoxPesoMaxSuportado.TextChanged += new System.EventHandler(this.textBoxPesoMaxSuportado_TextChanged);
