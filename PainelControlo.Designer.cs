@@ -310,7 +310,7 @@
             this.btn_manage_users.Enabled = false;
             this.btn_manage_users.FlatAppearance.BorderSize = 0;
             this.btn_manage_users.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_manage_users.Font = new System.Drawing.Font("Bauhaus 93", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_manage_users.Font = new System.Drawing.Font("Bauhaus 93", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_manage_users.ForeColor = System.Drawing.Color.White;
             this.btn_manage_users.Location = new System.Drawing.Point(29, 663);
             this.btn_manage_users.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -327,7 +327,7 @@
             this.btn_veichle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_veichle.FlatAppearance.BorderColor = System.Drawing.Color.GhostWhite;
             this.btn_veichle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_veichle.Font = new System.Drawing.Font("Bauhaus 93", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_veichle.Font = new System.Drawing.Font("Bauhaus 93", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_veichle.ForeColor = System.Drawing.Color.Transparent;
             this.btn_veichle.Location = new System.Drawing.Point(29, 253);
             this.btn_veichle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -345,7 +345,7 @@
             this.btn_change_veichle_status.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_change_veichle_status.FlatAppearance.BorderColor = System.Drawing.Color.GhostWhite;
             this.btn_change_veichle_status.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_change_veichle_status.Font = new System.Drawing.Font("Bauhaus 93", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_change_veichle_status.Font = new System.Drawing.Font("Bauhaus 93", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_change_veichle_status.ForeColor = System.Drawing.Color.White;
             this.btn_change_veichle_status.Location = new System.Drawing.Point(29, 317);
             this.btn_change_veichle_status.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -363,7 +363,7 @@
             this.btn_veichles_available.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_veichles_available.FlatAppearance.BorderColor = System.Drawing.Color.GhostWhite;
             this.btn_veichles_available.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_veichles_available.Font = new System.Drawing.Font("Bauhaus 93", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_veichles_available.Font = new System.Drawing.Font("Bauhaus 93", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_veichles_available.ForeColor = System.Drawing.Color.White;
             this.btn_veichles_available.Location = new System.Drawing.Point(29, 379);
             this.btn_veichles_available.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -381,7 +381,7 @@
             this.btn_vehicle_aintenance.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_vehicle_aintenance.FlatAppearance.BorderColor = System.Drawing.Color.GhostWhite;
             this.btn_vehicle_aintenance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_vehicle_aintenance.Font = new System.Drawing.Font("Bauhaus 93", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_vehicle_aintenance.Font = new System.Drawing.Font("Bauhaus 93", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_vehicle_aintenance.ForeColor = System.Drawing.Color.White;
             this.btn_vehicle_aintenance.Location = new System.Drawing.Point(29, 452);
             this.btn_vehicle_aintenance.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -399,7 +399,7 @@
             this.btn_manage_reservations.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_manage_reservations.FlatAppearance.BorderColor = System.Drawing.Color.GhostWhite;
             this.btn_manage_reservations.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_manage_reservations.Font = new System.Drawing.Font("Bauhaus 93", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_manage_reservations.Font = new System.Drawing.Font("Bauhaus 93", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_manage_reservations.ForeColor = System.Drawing.Color.White;
             this.btn_manage_reservations.Location = new System.Drawing.Point(29, 522);
             this.btn_manage_reservations.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -417,7 +417,7 @@
             this.btn_manage_files.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_manage_files.FlatAppearance.BorderColor = System.Drawing.Color.GhostWhite;
             this.btn_manage_files.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_manage_files.Font = new System.Drawing.Font("Bauhaus 93", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_manage_files.Font = new System.Drawing.Font("Bauhaus 93", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_manage_files.ForeColor = System.Drawing.Color.White;
             this.btn_manage_files.Location = new System.Drawing.Point(29, 591);
             this.btn_manage_files.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);

@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Automobile
@@ -74,5 +68,54 @@ namespace Automobile
                 textBox_file_location_import.Text = openFileDialog.FileName;
             }
         }
+
+        private void btn_import_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void btn_export_Click(object sender, EventArgs e)
+        {
+            // Verifica se o usuário selecionou uma pasta para salvar os arquivos CSV
+            string caminho = textBox_file_location.Text;
+
+            if (!string.IsNullOrWhiteSpace(caminho))
+            {
+                string caminhoVeiculos = caminho + "\\veiculos\\";
+                try
+                {
+                    // Cria a pasta se ela não existir
+                    if (!Directory.Exists(caminho))
+                    {
+                        Directory.CreateDirectory(caminho);
+                        Directory.CreateDirectory(caminhoVeiculos);
+
+                    }
+
+                    Directory.CreateDirectory(caminhoVeiculos);
+
+                    EmpresaController.Controlador.SalvarDadosNoCsv(caminhoVeiculos, "Veiculos");
+                    EmpresaController.Controlador.SalvarDadosNoCsv(caminho, "Users");
+                    //EmpresaController.Controlador.SalvarDadosNoCsv(caminho, "Reservas");
+
+                    MessageBox.Show("Dados salvos com sucesso em arquivos CSV.");
+
+                }
+                catch (ArgumentException ex)
+                {
+                    MessageBox.Show("Ocorreu um erro ao salvar os arquivos CSV: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecione uma pasta para salvar os arquivos CSV.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
     }
+
+
 }
+
+

@@ -24,13 +24,16 @@ namespace Automobile
                     PreencheListaDisponiveis("Carro");
                     foreach (var veiculo in veiculosDisponiveis)
                     {
+                        Carro carro = veiculo as Carro;
+
                         dgv_veiculos_disponiveis.Rows.Add(
-                            EmpresaController.Controlador.GetMatricula(veiculo),
-                            EmpresaController.Controlador.GetModelo(veiculo),
-                            EmpresaController.Controlador.GetNumPortas(veiculo),
-                            EmpresaController.Controlador.GetTipoDeCaixa(veiculo),
-                            EmpresaController.Controlador.GetPrecoPorDia(veiculo)
-                        );
+                                   carro.VeiculoMatricula,
+                                   carro.VeiculoModelo,
+                                   carro.TipoCaixa,
+                                   carro.VeiculoPreco + " €",
+                                   carro.VeiculoStatus
+
+                                   );
                     }
                     break;
 
@@ -41,12 +44,15 @@ namespace Automobile
 
                     foreach (var veiculo in veiculosDisponiveis)
                     {
+                        Mota mota = veiculo as Mota;
+
                         dgv_veiculos_disponiveis.Rows.Add(
-                            EmpresaController.Controlador.GetMatricula(veiculo),
-                            EmpresaController.Controlador.GetModelo(veiculo),
-                            EmpresaController.Controlador.GetCilindrada(veiculo),
-                            EmpresaController.Controlador.GetPrecoPorDia(veiculo)
-                        );
+                                    mota.VeiculoMatricula,
+                                    mota.VeiculoModelo,
+                                    mota.Cilindrada + " cc",
+                                    mota.VeiculoPreco + " €",
+                                    mota.VeiculoStatus
+                                    );
                     }
                     break;
 
@@ -57,13 +63,16 @@ namespace Automobile
 
                     foreach (var veiculo in veiculosDisponiveis)
                     {
+                        Camioneta camioneta = veiculo as Camioneta;
+
                         dgv_veiculos_disponiveis.Rows.Add(
-                            EmpresaController.Controlador.GetMatricula(veiculo),
-                            EmpresaController.Controlador.GetModelo(veiculo),
-                            EmpresaController.Controlador.GetNumEixos(veiculo),
-                            EmpresaController.Controlador.GetNumMaxPassageiros(veiculo),
-                            EmpresaController.Controlador.GetPrecoPorDia(veiculo)
-                        );
+                                    camioneta.VeiculoMatricula,
+                                    camioneta.VeiculoModelo,
+                                    camioneta.NumeroEixos,
+                                    camioneta.NumeroPassageiros,
+                                    camioneta.VeiculoPreco + " €",
+                                    camioneta.VeiculoStatus
+                                    );
                     }
                     break;
 
@@ -74,12 +83,15 @@ namespace Automobile
 
                     foreach (var veiculo in veiculosDisponiveis)
                     {
+                        Camiao camiao = veiculo as Camiao;
+
                         dgv_veiculos_disponiveis.Rows.Add(
-                            EmpresaController.Controlador.GetMatricula(veiculo),
-                            EmpresaController.Controlador.GetModelo(veiculo),
-                            EmpresaController.Controlador.GetPesoMaxSuportado(veiculo),
-                            EmpresaController.Controlador.GetPrecoPorDia(veiculo)
-                        );
+                                   camiao.VeiculoMatricula,
+                                   camiao.VeiculoModelo,
+                                   camiao.PesoMaximo,
+                                   camiao.VeiculoPreco + " €",
+                                   camiao.VeiculoStatus
+                                   );
                     }
                     break;
             }
@@ -169,11 +181,13 @@ namespace Automobile
 
             if (flag)
             {
-                var minhaLista = EmpresaController.Controlador.ListaVeciulosDoTipo(tipo);
+                var minhaLista = EmpresaController.Controlador.GetListaVeciulosDoTipo(tipo);
 
-                foreach (var veiculo in minhaLista)
+                foreach (var objeto in minhaLista)
                 {
-                    if (EmpresaController.Controlador.GetStatus(veiculo) == "Disponivel")
+                    Veiculo veiculo = objeto as Veiculo;
+
+                    if (veiculo.VeiculoStatus == "Disponivel")
                     {
                         veiculosDisponiveis.Add(veiculo);
                     }

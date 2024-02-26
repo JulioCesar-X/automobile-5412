@@ -229,7 +229,7 @@
             this.pb_carros.BackColor = System.Drawing.Color.Transparent;
             this.pb_carros.BackgroundImage = global::Automobile.Properties.Resources.pngwing_com__10_;
             this.pb_carros.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pb_carros.Location = new System.Drawing.Point(3, 417);
+            this.pb_carros.Location = new System.Drawing.Point(-10, 417);
             this.pb_carros.Name = "pb_carros";
             this.pb_carros.Size = new System.Drawing.Size(451, 161);
             this.pb_carros.TabIndex = 4;
@@ -267,7 +267,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Snow;
-            this.label1.Location = new System.Drawing.Point(109, 571);
+            this.label1.Location = new System.Drawing.Point(108, 581);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(248, 33);

@@ -99,7 +99,7 @@ namespace Automobile
                 //se existir veiculos do tipo selecionado deve limpar as linhas e mostrar as novas
                 dgv_veiculos.Rows.Clear();
 
-                var listaRequerida = EmpresaController.Controlador.ListaVeciulosDoTipo(TipoVeiculo);
+                var listaRequerida = EmpresaController.Controlador.GetListaVeciulosDoTipo(TipoVeiculo);
 
                 switch (cb_status.SelectedIndex)
                 {
@@ -140,57 +140,70 @@ namespace Automobile
             {
                 case "Carro":
 
-                    foreach (var carro in listaRequerida)
+                    foreach (var objeto in listaRequerida)
                     {
-                        if (EmpresaController.Controlador.GetStatus(carro) == status)
+                        //Conversão explicita
+                        if (objeto is Carro)
                         {
-                            dgv_veiculos.Rows.Add(
-                                EmpresaController.Controlador.GetMatricula(carro),
-                                EmpresaController.Controlador.GetModelo(carro),
-                                EmpresaController.Controlador.GetNumPortas(carro),
-                                EmpresaController.Controlador.GetTipoDeCaixa(carro),
-                                EmpresaController.Controlador.GetPrecoPorDia(carro) + " €",
-                                EmpresaController.Controlador.GetStatus(carro)
-                                );
-                        }
+                            Carro carro = objeto as Carro;
 
+                            if (carro.VeiculoStatus == status)
+                            {
+                                dgv_veiculos.Rows.Add(
+                                    carro.VeiculoMatricula,
+                                    carro.VeiculoModelo,
+                                    carro.TipoCaixa,
+                                    carro.VeiculoPreco + " €",
+                                    carro.VeiculoStatus
+
+                                    );
+                            }
+                        }
 
                     }
                     break;
 
                 case "Mota":
 
-                    foreach (var mota in listaRequerida)
+                    foreach (var objeto in listaRequerida)
                     {
-                        if (EmpresaController.Controlador.GetStatus(mota) == status)
+                        if (objeto is Mota)
                         {
-                            dgv_veiculos.Rows.Add(
-                                EmpresaController.Controlador.GetMatricula(mota),
-                                EmpresaController.Controlador.GetModelo(mota),
-                                EmpresaController.Controlador.GetCilindrada(mota),
-                                EmpresaController.Controlador.GetPrecoPorDia(mota) + " €",
-                                EmpresaController.Controlador.GetStatus(mota)
-                                );
+                            Mota mota = (Mota)objeto;
+
+                            if (mota.VeiculoStatus == status)
+                            {
+                                dgv_veiculos.Rows.Add(
+                                    mota.VeiculoMatricula,
+                                    mota.VeiculoModelo,
+                                    mota.Cilindrada + " cc",
+                                    mota.VeiculoPreco + " €",
+                                    mota.VeiculoStatus
+                                    );
+                            }
                         }
-
-
                     }
                     break;
 
                 case "Camioneta":
 
-                    foreach (var camioneta in listaRequerida)
+                    foreach (var objeto in listaRequerida)
                     {
-                        if (EmpresaController.Controlador.GetStatus(camioneta) == status)
+                        if (objeto is Camioneta)
                         {
-                            dgv_veiculos.Rows.Add(
-                                EmpresaController.Controlador.GetMatricula(camioneta),
-                                EmpresaController.Controlador.GetModelo(camioneta),
-                                EmpresaController.Controlador.GetNumEixos(camioneta),
-                                EmpresaController.Controlador.GetNumMaxPassageiros(camioneta),
-                                EmpresaController.Controlador.GetPrecoPorDia(camioneta) + " €",
-                                EmpresaController.Controlador.GetStatus(camioneta)
-                                );
+                            Camioneta camioneta = objeto as Camioneta;
+
+                            if (camioneta.VeiculoStatus == status)
+                            {
+                                dgv_veiculos.Rows.Add(
+                                    camioneta.VeiculoMatricula,
+                                    camioneta.VeiculoModelo,
+                                    camioneta.NumeroEixos,
+                                    camioneta.NumeroPassageiros,
+                                    camioneta.VeiculoPreco + " €",
+                                    camioneta.VeiculoStatus
+                                    );
+                            }
                         }
 
 
@@ -199,17 +212,22 @@ namespace Automobile
 
                 case "Camiao":
 
-                    foreach (var camiao in listaRequerida)
+                    foreach (var objeto in listaRequerida)
                     {
-                        if (EmpresaController.Controlador.GetStatus(camiao) == status)
+                        if (objeto is Camiao)
                         {
-                            dgv_veiculos.Rows.Add(
-                                EmpresaController.Controlador.GetMatricula(camiao),
-                                EmpresaController.Controlador.GetModelo(camiao),
-                                EmpresaController.Controlador.GetPesoMaxSuportado(camiao),
-                                EmpresaController.Controlador.GetPrecoPorDia(camiao) + " €",
-                                EmpresaController.Controlador.GetStatus(camiao)
-                                );
+                            Camiao camiao = (Camiao)objeto;
+
+                            if (camiao.VeiculoStatus == status)
+                            {
+                                dgv_veiculos.Rows.Add(
+                                    camiao.VeiculoMatricula,
+                                    camiao.VeiculoModelo,
+                                    camiao.PesoMaximo,
+                                    camiao.VeiculoPreco + " €",
+                                    camiao.VeiculoStatus
+                                    );
+                            }
                         }
 
 

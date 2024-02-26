@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Reflection;
 
 namespace Automobile
 {
@@ -164,60 +164,23 @@ namespace Automobile
         }
 
 
-        public void AdicionarVeiculo(object veiculo)
+        public void AdicionarVeiculo(object objeto)
         {
 
+            Veiculo veiculo = (Veiculo)objeto;
+            string matriculaRequerida = veiculo.VeiculoMatricula;
 
-            //do veiculo que quero adicionar
-            string matriculaRequerida = GetMatricula(veiculo);
 
-            // Verifica se há um veículo na minha lista com a mesma Matricula usando a reflexão
-            if (Veiculos.Any(v => GetMatricula(v) == matriculaRequerida))
+            //faz o casting antes de testar a matricula
+            if (Veiculos.Any(v => ((Veiculo)v).VeiculoMatricula == matriculaRequerida))
             //[ carro , mota, camiao]
             {
                 throw new VeiculoDuplicadoException(matriculaRequerida);
             }               //ArgumentException()
 
-            Veiculos.Add(veiculo);
+            Veiculos.Add(objeto);
         }
 
-        public string GetMatricula(object veiculo)
-        {
-            PropertyInfo propriedadeMatricula = veiculo.GetType().GetProperty("VeiculoMatricula");
-
-            return propriedadeMatricula.GetValue(veiculo).ToString();
-        }
-        public string GetModelo(object veiculo)
-        {
-            PropertyInfo propriedadeModelo = veiculo.GetType().GetProperty("VeiculoModelo");
-
-            return propriedadeModelo.GetValue(veiculo).ToString();
-        }
-
-        public string GetNumPortas(object veiculo)
-        {
-            PropertyInfo propriedadeNumPortas = veiculo.GetType().GetProperty("NumeroPortas");
-
-            return propriedadeNumPortas.GetValue(veiculo).ToString();
-        }
-        public string GetTipoDeCaixa(object veiculo)
-        {
-            PropertyInfo propriedadeTipoDeCaixa = veiculo.GetType().GetProperty("TipoCaixa");
-
-            return propriedadeTipoDeCaixa.GetValue(veiculo).ToString();
-        }
-        public string GetPrecoPorDia(object veiculo)
-        {
-            PropertyInfo propriedadePrecoPorDia = veiculo.GetType().GetProperty("VeiculoPreco");
-
-            return propriedadePrecoPorDia.GetValue(veiculo).ToString();
-        }
-        public string GetStatus(object veiculo)
-        {
-            PropertyInfo propriedadeStatus = veiculo.GetType().GetProperty("VeiculoStatus");
-
-            return propriedadeStatus.GetValue(veiculo).ToString();
-        }
 
         public bool ValidarListaVeiculosDoTipo(string tipoRequerido)
         {
@@ -251,52 +214,231 @@ namespace Automobile
             Reservas.Add(novareserva);
         }
 
-        public List<object> ListaVeciulosDoTipo(string tipoRequerido)
+        public List<object> GetListaVeciulosDoTipo(string tipoRequerido)
         {
-            var listaFiltrada = new List<object>();
-
-            foreach (var veiculo in Veiculos) //veiculo é do tipo object
+            switch (tipoRequerido)
             {
-                if (veiculo.GetType().Name == tipoRequerido)
-                {
-                    listaFiltrada.Add(veiculo);
-                }
+                case "Carro":
+                    return Veiculos.FindAll(v => v is Carro);
+
+                case "Mota":
+                    return Veiculos.FindAll(v => v is Mota);
+
+                case "Camioneta":
+                    return Veiculos.FindAll(v => v is Camioneta);
+
+                case "Camiao":
+                    return Veiculos.FindAll(v => v is Camiao);
+
+                default:
+                    return null;
             }
 
-            return listaFiltrada;
-
         }
 
-        internal object GetCilindrada(object veiculo)
-        {
-            PropertyInfo propriedadeCilindrada = veiculo.GetType().GetProperty("Cilindrada");
 
-            return propriedadeCilindrada.GetValue(veiculo).ToString();
+
+
+
+
+        public void SalvarDadosNoCsv(string folderPath, string nomeLista)
+        {
+            switch (nomeLista)
+            {
+                case "Veiculos":
+
+                    string[] tipos = new string[] { "Carro", "Mota", "Camioneta", "Camiao" };
+
+                    foreach (var tipo in tipos)
+                    {
+                        //Para cada nomeLista de objeto especificado vamos verificar  e criar o csv
+                        ValidarListaVeiculosDoTipo(tipo);
+
+                        List<object> lista = GetListaVeciulosDoTipo(tipo);
+
+                        if (lista.Count > 0)
+                        {
+                            EscreveNoCsvDadosDaLista(folderPath, lista, tipo);
+                        }
+
+                    }
+                    break;
+
+                case "Users":
+
+                    if (Users.Count == 0)
+                    {
+                        throw new ArgumentException($"Não há itens na \"{nomeLista}\" para salvar.");
+                    }
+
+                    EscreveNoCsvDadosDaLista(folderPath, Users, nomeLista);
+
+                    break;
+
+                case "Reservas":
+
+                    if (Reservas.Count == 0)
+                    {
+                        throw new ArgumentException($"Não há itens na \"{nomeLista}\" para salvar.");
+                    }
+
+                    EscreveNoCsvDadosDaLista(folderPath, Reservas, nomeLista);
+
+                    break;
+
+            }
+
+
+        }
+        //private string GetLinhaCSV<T>(T objeto)
+        //{
+        //    if (typeof(T) == typeof(object))
+        //    {
+        //        switch (objeto.GetType().Name)
+        //        {
+        //            case "Carro":
+
+        //                Carro carro = objeto as Carro;
+        //                return $"{carro.VeiculoMatricula},{carro.VeiculoModelo}";
+
+
+
+        //            case "Mota":
+
+        //                return "motas.csv";
+
+        //            case "Camioneta":
+
+        //                return "camionetas.csv";
+
+        //            case "Camiao":
+
+        //                return "camioes.csv";
+
+        //        }
+
+
+        //        // Se o objeto for do tipo Veiculo, você pode escolher quais propriedades deseja incluir na linha CSV
+
+        //    }
+        //    else if (typeof(T) == typeof(User))
+        //    {
+        //        // Se o objeto for do tipo User, você pode escolher quais propriedades deseja incluir na linha CSV
+        //        User user = objeto as User;
+        //        return $"{user.UserId},{user.UserName},{user.Password}";
+        //    }
+        //    else if (typeof(T) == typeof(Reserva))
+        //    {
+        //        // Se o objeto for do tipo Reserva, você pode escolher quais propriedades deseja incluir na linha CSV
+        //        Reserva reserva = objeto as Reserva;
+        //        return $"{reserva.ReservaId},{reserva.DataInicio},{reserva.DataFim}";
+        //    }
+        //    else
+        //    {
+        //        // Caso o tipo do objeto não corresponda a nenhum dos tipos esperados, retorne uma string vazia
+        //        return "";
+        //    }
+        //}
+
+        //Usando o tipo genérico é uma estrutura flexivel - permite que classes,metodos,interfaces trabalhem  com tipos especificos em tempo de compilação em vez de tipos fixos.
+        //O tempo de compilação é quando o código é traduzido e analisado pelo compilador antes da execução, enquanto o tempo de execução é quando o código é realmente executado e produz resultados.
+        private void EscreveNoCsvDadosDaLista<T>(string folderPath, List<T> lista, string nomeLista)
+        {
+
+            StreamWriter Escritor = null;
+            try
+            {
+                Escritor = new StreamWriter(Path.Combine(folderPath, GetCsvPeloNome(nomeLista)));
+
+                foreach (var item in lista)
+                {
+                    Escritor.WriteLine(item.ToString());
+                }
+            }
+            catch (IOException ex)
+            {
+                throw new IOException("Erro de E/S ao salvar dados: " + ex.Message);
+            }
+            finally
+            {
+                if (Escritor != null)
+                {
+                    Escritor.Close();
+                }
+            }
         }
 
-        internal object GetNumMaxPassageiros(object veiculo)
+        private string GetCsvPeloNome(string nomeLista)
         {
-            PropertyInfo propriedadeNumeroPassageiros = veiculo.GetType().GetProperty("NumeroPassageiros");
+            switch (nomeLista)
+            {
+                case "Carro":
 
-            return propriedadeNumeroPassageiros.GetValue(veiculo).ToString();
+                    return "carros.csv";
+
+                case "Mota":
+
+                    return "motas.csv";
+
+                case "Camioneta":
+
+                    return "camionetas.csv";
+
+                case "Camiao":
+
+                    return "camioes.csv";
+
+                case "Users":
+
+                    return "users.csv";
+
+                case "Reservas":
+
+                    return "reservas.csv";
+
+                default:
+                    throw new ArgumentException("Lista desconhecida.");
+            }
         }
 
-        internal object GetNumEixos(object veiculo)
+
+        public void CarregarDadosDoCsv(string folderPath, string nomeLista)
         {
-            PropertyInfo propriedadeNumeroEixos = veiculo.GetType().GetProperty("NumeroEixos");
+            // Simulando uma exceção caso o arquivo CSV não exista
+            if (!File.Exists(Path.Combine(folderPath, GetCsvPeloNome(nomeLista))))
+            {
+                throw new FileNotFoundException("Arquivo CSV não encontrado.");
+            }
 
-            return propriedadeNumeroEixos.GetValue(veiculo).ToString();
-        }
+            StreamReader leitor = null;
+            try
+            {
+                leitor = new StreamReader(Path.Combine(folderPath, GetCsvPeloNome(nomeLista)));
 
-        internal object GetPesoMaxSuportado(object veiculo)
-        {
-            PropertyInfo propriedadePesoMaximo = veiculo.GetType().GetProperty("PesoMaximo");
-
-            return propriedadePesoMaximo.GetValue(veiculo).ToString();
+                string linha;
+                while ((linha = leitor.ReadLine()) != null)
+                {
+                    // Processar cada linha do arquivo CSV
+                    // Por exemplo, você pode converter a linha de volta para o objeto e adicioná-lo à nomeLista.
+                }
+            }
+            catch (IOException ex)
+            {
+                throw new IOException("Erro de E/S ao carregar dados: " + ex.Message);
+            }
+            finally
+            {
+                if (leitor != null)
+                {
+                    leitor.Close();
+                }
+            }
         }
     }
 
-
-
-
 }
+
+
+
+
+

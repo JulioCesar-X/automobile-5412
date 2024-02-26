@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Automobile
 {
@@ -77,18 +69,23 @@ namespace Automobile
 
         }
 
+        //Aqui estamos apanhando apenas o tipo carro na simulação,se queremos mostrar todos reservados ou alugados na simulação de tempo,
+        //temos de criar um button filtro novamente ou TabControl para repetimos o processo de mostrar os veiculos de todos os tipos diferentes
         private void adicionarListaVeiculosAlugados()
         {
-            foreach (var carro in EmpresaController.Controlador.Veiculos)
+            foreach (var objeto in EmpresaController.Controlador.Veiculos)
             {
-                if (EmpresaController.Controlador.GetStatus(carro) == "Reservado")
+                Carro carro = objeto as Carro;
+
+                if (carro.VeiculoStatus == "Reservado")
                 {
                     dataGridViewVeiculosAlugados.Rows.Add(
-                        EmpresaController.Controlador.GetMatricula(carro),
-                        EmpresaController.Controlador.GetModelo(carro),
-                        EmpresaController.Controlador.GetPrecoPorDia(carro) + " €",
-                        EmpresaController.Controlador.GetStatus(carro)
-                        );
+                                   carro.VeiculoMatricula,
+                                   carro.VeiculoModelo,
+                                   carro.TipoCaixa,
+                                   carro.VeiculoPreco + " €",
+                                   carro.VeiculoStatus
+                                   );
                 }
 
 

@@ -11,7 +11,7 @@ namespace Automobile
             get
             {
                 return _empresa;
-                //teste
+
             }
 
         }
@@ -156,8 +156,8 @@ namespace Automobile
         {
             try
             {
-                Reserva novareserva = new Reserva(veiculo, DataInicio, DataFim);
-                Controlador.AdicionarReserva(novareserva);
+                Reserva novaReserva = new Reserva(veiculo, DataInicio, DataFim);
+                Controlador.AdicionarReserva(novaReserva);
                 return true;
             }
             catch (ReservaException ex)
@@ -167,6 +167,24 @@ namespace Automobile
             }
 
         }
+
+        public static bool SalvarDadosNoCsv(string folderPath, string nome)
+        {
+            try
+            {
+                Controlador.SalvarDadosNoCsv(folderPath, nome);
+
+                return true;
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show($"Erro: {ex.Message}");
+                return false;
+            }
+        }
+
+
+
 
     }
 }
