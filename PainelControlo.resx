@@ -121,7 +121,7 @@
   <data name="pictureBox2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAEAAAABAACAYAAADyoyQXAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAA/7JJREFUeF7s3XuQntd92PcFSJCiKFKiRF1I06EIvOe8y2VI2Yatxgk8TBykrpsg
+        DAAACwwBP0AiyAAA/7JJREFUeF7s3XuQntd92PcFSJCiKFKiRF1I06EIvOe8y2VI2Yatxgk8TBykrpsg
         l4l32qQp2iTt/pNyUIZhFthztg/apimmaadFc0XidFokTdNNIoHYc14QgT2IOqzkyGulsk1FVkxdKIm6
         RZRkUiJF4tL3WTyQwMUjCiRx2cvnM/OddwliKIrYfS/P+Z3zTAAAAAAAAADAejF4aHTj/XvLbffse+zd
         oSlbJ/fWODlftsf50U+FVHa2DVOZbht//afCfJk5X0z1L8ZcZttCLimkeuB75fI3xn//UFvI9RfHLZwv
@@ -3032,4 +3032,7 @@
         AAAAwCo3MfH/A7eBblJUabGXAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>
