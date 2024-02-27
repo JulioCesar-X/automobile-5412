@@ -60,7 +60,7 @@ namespace Automobile
 
 
         //Button ADD Veichle
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             lb_title.Text = "Add Vehicle";
             this.PnlFormLoader.Controls.Clear();
@@ -71,7 +71,7 @@ namespace Automobile
         }
 
         //Button Change Vehicle Status
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             lb_title.Text = "List of Vehicles";
             this.PnlFormLoader.Controls.Clear();
@@ -88,7 +88,7 @@ namespace Automobile
         }
 
         //Button Vehicles Available for Rent
-        private void button3_Click(object sender, EventArgs e)
+        private void Button3_Click(object sender, EventArgs e)
         {
             lb_title.Text = "Vehicles Available for Rent";
             this.PnlFormLoader.Controls.Clear();
@@ -98,17 +98,17 @@ namespace Automobile
             FormVeiculosDisponiveisAlugar.Show();
         }
 
-        private void btnVehicleMaintenance_Click(object sender, EventArgs e)
+        private void BtnVehicleMaintenance_Click(object sender, EventArgs e)
         {
             lb_title.Text = "Time Simulation and Billing";
             this.PnlFormLoader.Controls.Clear();
-            formTimeSimulation FormTimeSimulation = new formTimeSimulation() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            FormTimeSimulation FormTimeSimulation = new FormTimeSimulation() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             FormTimeSimulation.FormBorderStyle = FormBorderStyle.None;
             this.PnlFormLoader.Controls.Add(FormTimeSimulation);
             FormTimeSimulation.Show();
         }
 
-        private void btnManageReservations_Click(object sender, EventArgs e)
+        private void BtnManageReservations_Click(object sender, EventArgs e)
         {
             lb_title.Text = "Manage Reservations";
             this.PnlFormLoader.Controls.Clear();
@@ -118,11 +118,11 @@ namespace Automobile
             FormManageReservations.Show();
         }
 
-        private void btnManageFiles_Click(object sender, EventArgs e)
+        private void BtnManageFiles_Click(object sender, EventArgs e)
         {
             lb_title.Text = "Manage Files";
             this.PnlFormLoader.Controls.Clear();
-            formManageFiles FormManageFiles = new formManageFiles() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            FormManageFiles FormManageFiles = new FormManageFiles() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             FormManageFiles.FormBorderStyle = FormBorderStyle.None;
             this.PnlFormLoader.Controls.Add(FormManageFiles);
             FormManageFiles.Show();
@@ -130,14 +130,14 @@ namespace Automobile
 
 
 
-        private void button7_Click(object sender, EventArgs e)
+        private void Button7_Click(object sender, EventArgs e)
         {
 
             Application.Exit();
 
         }
 
-        private void btn_manage_users_Click(object sender, EventArgs e)
+        private void Btn_manage_users_Click(object sender, EventArgs e)
         {
             lb_title.Text = "Manage Users";
             this.PnlFormLoader.Controls.Clear();
@@ -147,7 +147,7 @@ namespace Automobile
             FormManageUsers.Show();
         }
 
-        private void btnChangeAccount_Click(object sender, EventArgs e)
+        private void BtnChangeAccount_Click(object sender, EventArgs e)
         {
             FormLoginSystem formLoginSystem = new FormLoginSystem();
             this.Hide();
@@ -160,13 +160,13 @@ namespace Automobile
 
 
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void Timer1_Tick(object sender, EventArgs e)
         {
             lb_date_time.Text = DateTime.Now.ToString("HH:mm:ss");
             lb_date.Text = DateTime.Now.ToString("dddd - dd/MM/yyyy");
         }
 
-        private void btn_back_begin_Click(object sender, EventArgs e)
+        private void Btn_back_begin_Click(object sender, EventArgs e)
         {
             this.Controls.Clear();
 

@@ -3,14 +3,14 @@ using System.Windows.Forms;
 
 namespace Automobile
 {
-    public partial class formTimeSimulation : Form
+    public partial class FormTimeSimulation : Form
     {
         private DateTime dataAtual;
 
         private DateTime dataInicio;
         private DateTime dataFim;
 
-        public formTimeSimulation()
+        public FormTimeSimulation()
         {
             InitializeComponent();
 
@@ -30,10 +30,10 @@ namespace Automobile
             dataGridViewVeiculosAlugados.Columns.Add("Preço Dia", "Preço Dia");
             dataGridViewVeiculosAlugados.Columns.Add("Estado", "Estado");
 
-            adicionarListaVeiculosAlugados();
+            AdicionarListaVeiculosAlugados();
         }
 
-        private void formTimeSimulation_Load(object sender, EventArgs e)
+        private void FormTimeSimulation_Load(object sender, EventArgs e)
         {
 
         }
@@ -49,29 +49,29 @@ namespace Automobile
             lblData.Text = $" {dataAtual:d}";
         }
 
-        private void btnAvancarDia_Click_1(object sender, EventArgs e)
+        private void BtnAvancarDia_Click_1(object sender, EventArgs e)
         {
             AvancarUmDia();
         }
 
-        private void dateTimePickerInicio_ValueChanged(object sender, EventArgs e)
+        private void DateTimePickerInicio_ValueChanged(object sender, EventArgs e)
         {
             dataInicio = dateTimePickerInicio.Value;
         }
 
-        private void dateTimePickerFim_ValueChanged(object sender, EventArgs e)
+        private void DateTimePickerFim_ValueChanged(object sender, EventArgs e)
         {
             dataFim = dateTimePickerFim.Value;
         }
 
-        private void dataGridViewVeiculosAlugados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void DataGridViewVeiculosAlugados_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
         //Aqui estamos apanhando apenas o tipo carro na simulação,se queremos mostrar todos reservados ou alugados na simulação de tempo,
         //temos de criar um button filtro novamente ou TabControl para repetimos o processo de mostrar os veiculos de todos os tipos diferentes
-        private void adicionarListaVeiculosAlugados()
+        private void AdicionarListaVeiculosAlugados()
         {
             foreach (var objeto in EmpresaController.Controlador.Veiculos)
             {

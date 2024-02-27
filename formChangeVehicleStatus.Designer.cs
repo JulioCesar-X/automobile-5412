@@ -59,7 +59,7 @@
             this.cb_filtrar.Name = "cb_filtrar";
             this.cb_filtrar.Size = new System.Drawing.Size(136, 28);
             this.cb_filtrar.TabIndex = 2;
-            this.cb_filtrar.SelectedIndexChanged += new System.EventHandler(this.comboBoxFiltrar_SelectedIndexChanged);
+            this.cb_filtrar.SelectedIndexChanged += new System.EventHandler(this.ComboBoxFiltrar_SelectedIndexChanged);
             // 
             // lb_status
             // 
@@ -80,7 +80,7 @@
             this.dgv_veiculos.RowTemplate.Height = 28;
             this.dgv_veiculos.Size = new System.Drawing.Size(1191, 656);
             this.dgv_veiculos.TabIndex = 6;
-            this.dgv_veiculos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_veiculos_CellContentClick);
+            this.dgv_veiculos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_veiculos_CellContentClick);
             // 
             // cb_status
             // 
@@ -94,7 +94,7 @@
             this.cb_status.Name = "cb_status";
             this.cb_status.Size = new System.Drawing.Size(162, 28);
             this.cb_status.TabIndex = 7;
-            this.cb_status.SelectedIndexChanged += new System.EventHandler(this.cb_status_SelectedIndexChanged);
+            this.cb_status.SelectedIndexChanged += new System.EventHandler(this.Cb_status_SelectedIndexChanged);
             // 
             // formChangeVehicleStatus
             // 

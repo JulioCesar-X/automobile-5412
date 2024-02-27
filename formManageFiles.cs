@@ -4,14 +4,14 @@ using System.Windows.Forms;
 
 namespace Automobile
 {
-    public partial class formManageFiles : Form
+    public partial class FormManageFiles : Form
     {
-        public formManageFiles()
+        public FormManageFiles()
         {
             InitializeComponent();
         }
 
-        private void btn_open_file_explorer_Click(object sender, EventArgs e)
+        private void Btn_open_file_explorer_Click(object sender, EventArgs e)
         {
             using (FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog())
             {
@@ -40,7 +40,7 @@ namespace Automobile
             }
         }
 
-        private void btn_open_import_Click(object sender, EventArgs e)
+        private void Btn_open_import_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
@@ -69,13 +69,13 @@ namespace Automobile
             }
         }
 
-        private void btn_import_Click(object sender, EventArgs e)
+        private void Btn_import_Click(object sender, EventArgs e)
         {
 
         }
 
 
-        private void btn_export_Click(object sender, EventArgs e)
+        private void Btn_export_Click(object sender, EventArgs e)
         {
             // Verifica se o usuário selecionou uma pasta para salvar os arquivos CSV
             string caminho = textBox_file_location.Text;

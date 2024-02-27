@@ -212,7 +212,7 @@
             this.btn_change_account.Text = "C";
             this.btn_change_account.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_change_account.UseVisualStyleBackColor = false;
-            this.btn_change_account.Click += new System.EventHandler(this.btnChangeAccount_Click);
+            this.btn_change_account.Click += new System.EventHandler(this.BtnChangeAccount_Click);
             // 
             // lb_title
             // 
@@ -245,7 +245,7 @@
             this.btn_back_begin.Text = "R";
             this.btn_back_begin.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_back_begin.UseVisualStyleBackColor = false;
-            this.btn_back_begin.Click += new System.EventHandler(this.btn_back_begin_Click);
+            this.btn_back_begin.Click += new System.EventHandler(this.Btn_back_begin_Click);
             // 
             // btn_exit
             // 
@@ -264,7 +264,7 @@
             this.btn_exit.Text = "X";
             this.btn_exit.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_exit.UseVisualStyleBackColor = false;
-            this.btn_exit.Click += new System.EventHandler(this.button7_Click);
+            this.btn_exit.Click += new System.EventHandler(this.Button7_Click);
             // 
             // lb_date
             // 
@@ -319,7 +319,7 @@
             this.btn_manage_users.TabIndex = 8;
             this.btn_manage_users.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_manage_users.UseVisualStyleBackColor = false;
-            this.btn_manage_users.Click += new System.EventHandler(this.btn_manage_users_Click);
+            this.btn_manage_users.Click += new System.EventHandler(this.Btn_manage_users_Click);
             // 
             // btn_veichle
             // 
@@ -337,7 +337,7 @@
             this.btn_veichle.Text = "Add Veichle";
             this.btn_veichle.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_veichle.UseVisualStyleBackColor = false;
-            this.btn_veichle.Click += new System.EventHandler(this.button1_Click);
+            this.btn_veichle.Click += new System.EventHandler(this.Button1_Click);
             // 
             // btn_change_veichle_status
             // 
@@ -355,7 +355,7 @@
             this.btn_change_veichle_status.Text = "List of Vehicles";
             this.btn_change_veichle_status.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_change_veichle_status.UseVisualStyleBackColor = false;
-            this.btn_change_veichle_status.Click += new System.EventHandler(this.button2_Click);
+            this.btn_change_veichle_status.Click += new System.EventHandler(this.Button2_Click);
             // 
             // btn_veichles_available
             // 
@@ -373,7 +373,7 @@
             this.btn_veichles_available.Text = "Rent a vehicle";
             this.btn_veichles_available.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_veichles_available.UseVisualStyleBackColor = false;
-            this.btn_veichles_available.Click += new System.EventHandler(this.button3_Click);
+            this.btn_veichles_available.Click += new System.EventHandler(this.Button3_Click);
             // 
             // btn_vehicle_aintenance
             // 
@@ -391,7 +391,7 @@
             this.btn_vehicle_aintenance.Text = "Time Simulation and Billing";
             this.btn_vehicle_aintenance.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_vehicle_aintenance.UseVisualStyleBackColor = false;
-            this.btn_vehicle_aintenance.Click += new System.EventHandler(this.btnVehicleMaintenance_Click);
+            this.btn_vehicle_aintenance.Click += new System.EventHandler(this.BtnVehicleMaintenance_Click);
             // 
             // btn_manage_reservations
             // 
@@ -409,7 +409,7 @@
             this.btn_manage_reservations.Text = "Manage Reservations";
             this.btn_manage_reservations.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_manage_reservations.UseVisualStyleBackColor = false;
-            this.btn_manage_reservations.Click += new System.EventHandler(this.btnManageReservations_Click);
+            this.btn_manage_reservations.Click += new System.EventHandler(this.BtnManageReservations_Click);
             // 
             // btn_manage_files
             // 
@@ -427,7 +427,7 @@
             this.btn_manage_files.Text = "Manage Files";
             this.btn_manage_files.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_manage_files.UseVisualStyleBackColor = false;
-            this.btn_manage_files.Click += new System.EventHandler(this.btnManageFiles_Click);
+            this.btn_manage_files.Click += new System.EventHandler(this.BtnManageFiles_Click);
             // 
             // lb_goodjob
             // 
@@ -489,7 +489,7 @@
             // 
             // timer1
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // FormPainelControlo
             // 

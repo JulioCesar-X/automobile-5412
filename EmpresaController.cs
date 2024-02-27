@@ -152,11 +152,11 @@ namespace Automobile
 
         }
 
-        public static bool CriarReserva(DateTime DataInicio, DateTime DataFim, object veiculo)
+        public static bool CriarReserva(int id, DateTime DataInicio, DateTime DataFim, object veiculo)
         {
             try
             {
-                Reserva novaReserva = new Reserva(veiculo, DataInicio, DataFim);
+                Reserva novaReserva = new Reserva(id, veiculo, DataInicio, DataFim);
                 Controlador.AdicionarReserva(novaReserva);
                 return true;
             }

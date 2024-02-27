@@ -1,6 +1,6 @@
 ﻿namespace Automobile
 {
-    partial class formTimeSimulation
+    partial class FormTimeSimulation
     {
         /// <summary>
         /// Required designer variable.
@@ -77,7 +77,7 @@
             this.btnAvancarDia.TabIndex = 2;
             this.btnAvancarDia.Text = "Next";
             this.btnAvancarDia.UseVisualStyleBackColor = true;
-            this.btnAvancarDia.Click += new System.EventHandler(this.btnAvancarDia_Click_1);
+            this.btnAvancarDia.Click += new System.EventHandler(this.BtnAvancarDia_Click_1);
             // 
             // panel1
             // 
@@ -124,7 +124,7 @@
             this.dateTimePickerInicio.Name = "dateTimePickerInicio";
             this.dateTimePickerInicio.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerInicio.TabIndex = 5;
-            this.dateTimePickerInicio.ValueChanged += new System.EventHandler(this.dateTimePickerInicio_ValueChanged);
+            this.dateTimePickerInicio.ValueChanged += new System.EventHandler(this.DateTimePickerInicio_ValueChanged);
             // 
             // dateTimePickerFim
             // 
@@ -132,7 +132,7 @@
             this.dateTimePickerFim.Name = "dateTimePickerFim";
             this.dateTimePickerFim.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerFim.TabIndex = 6;
-            this.dateTimePickerFim.ValueChanged += new System.EventHandler(this.dateTimePickerFim_ValueChanged);
+            this.dateTimePickerFim.ValueChanged += new System.EventHandler(this.DateTimePickerFim_ValueChanged);
             // 
             // label4
             // 
@@ -161,7 +161,7 @@
             this.dataGridViewVeiculosAlugados.Name = "dataGridViewVeiculosAlugados";
             this.dataGridViewVeiculosAlugados.Size = new System.Drawing.Size(460, 105);
             this.dataGridViewVeiculosAlugados.TabIndex = 9;
-            this.dataGridViewVeiculosAlugados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewVeiculosAlugados_CellContentClick);
+            this.dataGridViewVeiculosAlugados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewVeiculosAlugados_CellContentClick);
             // 
             // label6
             // 
@@ -215,7 +215,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formTimeSimulation";
             this.Text = "formTimeSimulation";
-            this.Load += new System.EventHandler(this.formTimeSimulation_Load);
+            this.Load += new System.EventHandler(this.FormTimeSimulation_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

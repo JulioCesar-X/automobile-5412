@@ -1,6 +1,6 @@
 ﻿namespace Automobile
 {
-    partial class formManageFiles
+    partial class FormManageFiles
     {
         /// <summary>
         /// Required designer variable.
@@ -54,7 +54,7 @@
             this.btn_open_file_explorer.TabIndex = 0;
             this.btn_open_file_explorer.Text = "Open";
             this.btn_open_file_explorer.UseVisualStyleBackColor = true;
-            this.btn_open_file_explorer.Click += new System.EventHandler(this.btn_open_file_explorer_Click);
+            this.btn_open_file_explorer.Click += new System.EventHandler(this.Btn_open_file_explorer_Click);
             // 
             // label1
             // 
@@ -84,7 +84,7 @@
             this.btn_export.TabIndex = 4;
             this.btn_export.Text = "Export";
             this.btn_export.UseVisualStyleBackColor = true;
-            this.btn_export.Click += new System.EventHandler(this.btn_export_Click);
+            this.btn_export.Click += new System.EventHandler(this.Btn_export_Click);
             // 
             // panel2
             // 
@@ -116,7 +116,7 @@
             this.btn_import.TabIndex = 9;
             this.btn_import.Text = "Import";
             this.btn_import.UseVisualStyleBackColor = true;
-            this.btn_import.Click += new System.EventHandler(this.btn_import_Click);
+            this.btn_import.Click += new System.EventHandler(this.Btn_import_Click);
             // 
             // textBox_file_location_import
             // 
@@ -146,7 +146,7 @@
             this.btn_open_import.TabIndex = 6;
             this.btn_open_import.Text = "Open";
             this.btn_open_import.UseVisualStyleBackColor = true;
-            this.btn_open_import.Click += new System.EventHandler(this.btn_open_import_Click);
+            this.btn_open_import.Click += new System.EventHandler(this.Btn_open_import_Click);
             // 
             // panel1
             // 
@@ -169,7 +169,7 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Export Information";
             // 
-            // formManageFiles
+            // FormManageFiles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -187,8 +187,8 @@
             this.Controls.Add(this.btn_open_file_explorer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "formManageFiles";
-            this.Text = "formManageFiles";
+            this.Name = "FormManageFiles";
+            this.Text = "FormManageFiles";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);

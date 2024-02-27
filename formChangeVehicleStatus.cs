@@ -14,7 +14,7 @@ namespace Automobile
 
         }
 
-        private void AdicionarColunas(DataGridView dgv_veiculos_, string tipoVeiculo, string[] colunas)
+        private void AdicionarColunas(DataGridView dgv_veiculos_, string[] colunas)
         {
             //limpamos a dgv anterior
             dgv_veiculos_.Columns.Clear();
@@ -52,7 +52,7 @@ namespace Automobile
 
         }
 
-        private void comboBoxFiltrar_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBoxFiltrar_SelectedIndexChanged(object sender, EventArgs e)
         {
 
             dgv_veiculos.Columns.Clear();
@@ -62,25 +62,25 @@ namespace Automobile
             {
                 case 0:
 
-                    AdicionarColunas(dgv_veiculos, "Carro", new string[] { "Matrícula", "Modelo", "Nº Portas", "Tipo de Caixa", "Preço / hora" });
+                    AdicionarColunas(dgv_veiculos, new string[] { "Matrícula", "Modelo", "Nº Portas", "Tipo de Caixa", "Preço / hora" });
                     TipoVeiculo = "Carro";
                     break;
 
                 case 1:
 
-                    AdicionarColunas(dgv_veiculos, "Mota", new string[] { "Matrícula", "Modelo", "Cilindrada", "Preço / hora" });
+                    AdicionarColunas(dgv_veiculos, new string[] { "Matrícula", "Modelo", "Cilindrada", "Preço / hora" });
                     TipoVeiculo = "Mota";
                     break;
 
                 case 2:
 
-                    AdicionarColunas(dgv_veiculos, "Camioneta", new string[] { "Matrícula", "Modelo", "Nº de Eixos", "Nº Máx. Passageiros", "Preço / hora" });
+                    AdicionarColunas(dgv_veiculos, new string[] { "Matrícula", "Modelo", "Nº de Eixos", "Nº Máx. Passageiros", "Preço / hora" });
                     TipoVeiculo = "Camioneta";
                     break;
 
                 case 3:
 
-                    AdicionarColunas(dgv_veiculos, "Camiao", new string[] { "Matrícula", "Modelo", "Peso Máx. Suportado", "Preço / hora" });
+                    AdicionarColunas(dgv_veiculos, new string[] { "Matrícula", "Modelo", "Peso Máx. Suportado", "Preço / hora" });
                     TipoVeiculo = "Camiao";
                     break;
             }
@@ -88,7 +88,7 @@ namespace Automobile
 
         }
 
-        private void cb_status_SelectedIndexChanged(object sender, EventArgs e)
+        private void Cb_status_SelectedIndexChanged(object sender, EventArgs e)
         {
 
 
@@ -130,7 +130,7 @@ namespace Automobile
 
         }
 
-        private void dgv_veiculos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void Dgv_veiculos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
         }
 
@@ -152,6 +152,7 @@ namespace Automobile
                                 dgv_veiculos.Rows.Add(
                                     carro.VeiculoMatricula,
                                     carro.VeiculoModelo,
+                                    carro.NumeroPortas,
                                     carro.TipoCaixa,
                                     carro.VeiculoPreco + " €",
                                     carro.VeiculoStatus
