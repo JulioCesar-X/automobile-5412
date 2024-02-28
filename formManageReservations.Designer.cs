@@ -47,6 +47,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dgv_veiculos_disponiveis = new System.Windows.Forms.DataGridView();
+            this.lb_preco_total = new System.Windows.Forms.Label();
+            this.btn_criar_reserva = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_veiculos_disponiveis)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,7 +80,7 @@
             // 
             this.lb_matricula_selecionada.AutoSize = true;
             this.lb_matricula_selecionada.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_matricula_selecionada.Location = new System.Drawing.Point(265, 121);
+            this.lb_matricula_selecionada.Location = new System.Drawing.Point(373, 572);
             this.lb_matricula_selecionada.Name = "lb_matricula_selecionada";
             this.lb_matricula_selecionada.Size = new System.Drawing.Size(250, 25);
             this.lb_matricula_selecionada.TabIndex = 25;
@@ -86,7 +88,7 @@
             // 
             // tb_matricula
             // 
-            this.tb_matricula.Location = new System.Drawing.Point(521, 120);
+            this.tb_matricula.Location = new System.Drawing.Point(398, 599);
             this.tb_matricula.Name = "tb_matricula";
             this.tb_matricula.Size = new System.Drawing.Size(205, 26);
             this.tb_matricula.TabIndex = 26;
@@ -94,7 +96,7 @@
             // bt_carcular_valor_a_pagar
             // 
             this.bt_carcular_valor_a_pagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_carcular_valor_a_pagar.Location = new System.Drawing.Point(732, 116);
+            this.bt_carcular_valor_a_pagar.Location = new System.Drawing.Point(609, 597);
             this.bt_carcular_valor_a_pagar.Name = "bt_carcular_valor_a_pagar";
             this.bt_carcular_valor_a_pagar.Size = new System.Drawing.Size(87, 33);
             this.bt_carcular_valor_a_pagar.TabIndex = 27;
@@ -120,7 +122,7 @@
             // 
             // bt_ok_fim
             // 
-            this.bt_ok_fim.Location = new System.Drawing.Point(237, 640);
+            this.bt_ok_fim.Location = new System.Drawing.Point(237, 626);
             this.bt_ok_fim.Name = "bt_ok_fim";
             this.bt_ok_fim.Size = new System.Drawing.Size(61, 37);
             this.bt_ok_fim.TabIndex = 30;
@@ -132,7 +134,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(18, 559);
+            this.label1.Location = new System.Drawing.Point(18, 545);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 25);
             this.label1.TabIndex = 31;
@@ -142,7 +144,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(20, 617);
+            this.label2.Location = new System.Drawing.Point(20, 603);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 25);
             this.label2.TabIndex = 32;
@@ -152,7 +154,7 @@
             // 
             this.lb_tempo_total_reserva.AutoSize = true;
             this.lb_tempo_total_reserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_tempo_total_reserva.Location = new System.Drawing.Point(336, 559);
+            this.lb_tempo_total_reserva.Location = new System.Drawing.Point(18, 666);
             this.lb_tempo_total_reserva.Name = "lb_tempo_total_reserva";
             this.lb_tempo_total_reserva.Size = new System.Drawing.Size(270, 25);
             this.lb_tempo_total_reserva.TabIndex = 33;
@@ -160,7 +162,7 @@
             // 
             // bt_ok_inicio
             // 
-            this.bt_ok_inicio.Location = new System.Drawing.Point(238, 586);
+            this.bt_ok_inicio.Location = new System.Drawing.Point(238, 572);
             this.bt_ok_inicio.Name = "bt_ok_inicio";
             this.bt_ok_inicio.Size = new System.Drawing.Size(61, 37);
             this.bt_ok_inicio.TabIndex = 34;
@@ -170,7 +172,7 @@
             // 
             // bt_confirm
             // 
-            this.bt_confirm.Location = new System.Drawing.Point(556, 585);
+            this.bt_confirm.Location = new System.Drawing.Point(238, 692);
             this.bt_confirm.Name = "bt_confirm";
             this.bt_confirm.Size = new System.Drawing.Size(73, 38);
             this.bt_confirm.TabIndex = 35;
@@ -180,21 +182,21 @@
             // 
             // tb_inicio
             // 
-            this.tb_inicio.Location = new System.Drawing.Point(14, 588);
+            this.tb_inicio.Location = new System.Drawing.Point(14, 574);
             this.tb_inicio.Name = "tb_inicio";
             this.tb_inicio.Size = new System.Drawing.Size(210, 26);
             this.tb_inicio.TabIndex = 36;
             // 
             // tb_fim
             // 
-            this.tb_fim.Location = new System.Drawing.Point(14, 645);
+            this.tb_fim.Location = new System.Drawing.Point(14, 631);
             this.tb_fim.Name = "tb_fim";
             this.tb_fim.Size = new System.Drawing.Size(210, 26);
             this.tb_fim.TabIndex = 37;
             // 
             // tb_valorfinaltempo
             // 
-            this.tb_valorfinaltempo.Location = new System.Drawing.Point(340, 591);
+            this.tb_valorfinaltempo.Location = new System.Drawing.Point(22, 698);
             this.tb_valorfinaltempo.Name = "tb_valorfinaltempo";
             this.tb_valorfinaltempo.Size = new System.Drawing.Size(205, 26);
             this.tb_valorfinaltempo.TabIndex = 38;
@@ -227,7 +229,26 @@
             this.dgv_veiculos_disponiveis.RowTemplate.Height = 28;
             this.dgv_veiculos_disponiveis.Size = new System.Drawing.Size(858, 382);
             this.dgv_veiculos_disponiveis.TabIndex = 40;
-           
+            // 
+            // lb_preco_total
+            // 
+            this.lb_preco_total.AutoSize = true;
+            this.lb_preco_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_preco_total.Location = new System.Drawing.Point(773, 572);
+            this.lb_preco_total.Name = "lb_preco_total";
+            this.lb_preco_total.Size = new System.Drawing.Size(202, 37);
+            this.lb_preco_total.TabIndex = 41;
+            this.lb_preco_total.Text = "Preço Total:";
+            // 
+            // btn_criar_reserva
+            // 
+            this.btn_criar_reserva.Location = new System.Drawing.Point(534, 666);
+            this.btn_criar_reserva.Name = "btn_criar_reserva";
+            this.btn_criar_reserva.Size = new System.Drawing.Size(211, 68);
+            this.btn_criar_reserva.TabIndex = 42;
+            this.btn_criar_reserva.Text = "Reservar";
+            this.btn_criar_reserva.UseVisualStyleBackColor = true;
+            this.btn_criar_reserva.Click += new System.EventHandler(this.btn_criar_reserva_Click);
             // 
             // formManageReservations
             // 
@@ -235,6 +256,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1200, 754);
+            this.Controls.Add(this.btn_criar_reserva);
+            this.Controls.Add(this.lb_preco_total);
             this.Controls.Add(this.dgv_veiculos_disponiveis);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -286,5 +309,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgv_veiculos_disponiveis;
+        private System.Windows.Forms.Label lb_preco_total;
+        private System.Windows.Forms.Button btn_criar_reserva;
     }
 }

@@ -99,10 +99,10 @@ namespace Automobile
 
         private void formManageReservations_Load(object sender, EventArgs e)
         {
-            montarHorarios();
+            MontarHorarios();
         }
 
-        private void montarHorarios()
+        private void MontarHorarios()
         {
             var horario = new TimeSpan(0, 0, 0);
             var incremento = new TimeSpan(0, 30, 0);
@@ -214,8 +214,21 @@ namespace Automobile
 
         }
 
+        private void btn_criar_reserva_Click(object sender, EventArgs e)
+        {
 
 
+            //TODO: Validações para enviar a msg box caso n encontrou o veiculo especificado
 
+            //TODO: criar Gerador id reserva automatico que deve começar apartir do ultimo valor ja registrado na lista de reservas
+            int id = 0;
+
+
+            //TODO:Criar uma função que pegue um veiculo quando enviada a matricula
+            //Veiculo veiculoSelecionado = (Veiculo)Empresa.Controller.getVeiculo(tb_matricula);
+            //EmpresaController.CriarReserva(id++, DateTime.Parse(tb_inicio.Text), DateTime.Parse(tb_fim.Text), veiculoSelecionado);
+
+
+        }
     }
 }

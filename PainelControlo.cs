@@ -31,9 +31,6 @@ namespace Automobile
                 this.BackColor = System.Drawing.Color.Black;
                 panel_system_control.BackColor = System.Drawing.Color.Black;
 
-
-
-
                 PnlFormLoader.BackColor = System.Drawing.Color.DarkGray;
 
                 btn_change_account.ForeColor = System.Drawing.Color.SlateGray;
@@ -51,9 +48,6 @@ namespace Automobile
 
                 pb_users_manage.BackgroundImage = Properties.Resources.pngwing_com__23_;
             }
-
-
-
 
         }
 
@@ -102,10 +96,10 @@ namespace Automobile
         {
             lb_title.Text = "Time Simulation and Billing";
             this.PnlFormLoader.Controls.Clear();
-            FormTimeSimulation FormTimeSimulation = new FormTimeSimulation() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            FormTimeSimulation.FormBorderStyle = FormBorderStyle.None;
-            this.PnlFormLoader.Controls.Add(FormTimeSimulation);
-            FormTimeSimulation.Show();
+            FormTimeSimulation formTimeSimulation = new FormTimeSimulation() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            formTimeSimulation.FormBorderStyle = FormBorderStyle.None;
+            this.PnlFormLoader.Controls.Add(formTimeSimulation);
+            formTimeSimulation.Show();
         }
 
         private void BtnManageReservations_Click(object sender, EventArgs e)
@@ -173,6 +167,7 @@ namespace Automobile
 
 
             InitializeComponent();
+
             if (EmpresaController.userLogado == "#")
             {
 
@@ -190,9 +185,6 @@ namespace Automobile
 
                 this.BackColor = System.Drawing.Color.Black;
                 panel_system_control.BackColor = System.Drawing.Color.Black;
-
-
-
 
                 PnlFormLoader.BackColor = System.Drawing.Color.DarkGray;
 

@@ -276,16 +276,16 @@ namespace Automobile
 
                     break;
 
-                    //case "Reservas":
+                case "Reservas":
 
-                    //    if (Reservas.Count == 0)
-                    //    {
-                    //        throw new ArgumentException($"Não há itens na \"{nomeLista}\" para salvar.");
-                    //    }
+                    if (Reservas.Count == 0)
+                    {
+                        throw new ArgumentException($"Não há itens na \"{nomeLista}\" para salvar.");
+                    }
 
-                    //    EscreveNoCsvDadosDaLista(folderPath, Reservas, nomeLista);
+                    EscreveNoCsvDadosDaLista(folderPath, Reservas, nomeLista);
 
-                    //    break;
+                    break;
 
             }
 
@@ -343,7 +343,7 @@ namespace Automobile
             {
                 // Se o objeto for do tipo Reserva, você pode escolher quais propriedades deseja incluir na linha CSV
                 Reserva reserva = objeto as Reserva;
-                return $"{reserva.Id};{reserva};{reserva.DataInicio};{reserva.DataFim}";
+                return $"{reserva.Id};{reserva.DataInicio};{reserva.DataFim};{reserva.Veiculo.VeiculoModelo};{reserva.Veiculo.VeiculoPreco};{reserva.Veiculo.VeiculoMatricula};";
             }
             else
             {
@@ -360,6 +360,7 @@ namespace Automobile
             StreamWriter Escritor = null;
             try
             {
+                //false sobrescrever, true escrever ao final do arquivo
                 Escritor = new StreamWriter(Path.Combine(folderPath, GetCaminhoPeloNomeDaLista(nomeLista)), false, Encoding.UTF8);
 
                 foreach (var item in lista)

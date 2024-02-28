@@ -5,7 +5,10 @@ namespace Automobile
 {
     internal class EmpresaController
     {
-        private static EmpresaModel _empresa = new EmpresaModel();
+        private static readonly EmpresaModel _empresa = new EmpresaModel();
+
+        public static string userLogado;
+
         public static EmpresaModel Controlador
         {
             get
@@ -16,7 +19,6 @@ namespace Automobile
 
         }
 
-        public static string userLogado;
 
 
         public static bool CriarCamiao(string veiculoMatricula, string veiculoModelo, decimal veiculoPreco, string veiculoStatus, int pesoMaximo)
@@ -152,7 +154,7 @@ namespace Automobile
 
         }
 
-        public static bool CriarReserva(int id, DateTime DataInicio, DateTime DataFim, object veiculo)
+        public static bool CriarReserva(int id, DateTime DataInicio, DateTime DataFim, Veiculo veiculo)
         {
             try
             {
