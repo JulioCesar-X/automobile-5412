@@ -192,6 +192,10 @@
     <None Include="Resources\pngwing.com %281%29.png" />
     <None Include="Resources\pngwing.com %283%29.png" />
     <None Include="Resources\pngwing.com %2823%29.png" />
+    <None Include="Resources\botao-vermelho.png" />
+    <None Include="Resources\btn-amarelo.png" />
+    <None Include="Resources\botao-verde.png" />
+    <None Include="Resources\botao-amarelo1.png" />
     <Content Include="Resources\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

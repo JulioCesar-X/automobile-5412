@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPainelControlo));
             this.panel_system_control = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel_user = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pb_users_manage = new System.Windows.Forms.PictureBox();
@@ -57,8 +59,6 @@
             this.lb_user_logado = new System.Windows.Forms.Label();
             this.pb_user_image = new System.Windows.Forms.PictureBox();
             this.pb_car_relogio = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel_system_control.SuspendLayout();
             this.panel_user.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -82,6 +82,19 @@
             this.panel_system_control.Name = "panel_system_control";
             this.panel_system_control.Size = new System.Drawing.Size(1558, 952);
             this.panel_system_control.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.panel3.Location = new System.Drawing.Point(0, 348);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(4, 154);
+            this.panel3.TabIndex = 1;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // panel_user
             // 
@@ -124,9 +137,9 @@
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(219, 262);
+            this.pictureBox2.Location = new System.Drawing.Point(219, 256);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(73, 58);
+            this.pictureBox2.Size = new System.Drawing.Size(63, 63);
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
             // 
@@ -134,9 +147,9 @@
             // 
             this.pb_users_manage.BackColor = System.Drawing.Color.Transparent;
             this.pb_users_manage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pb_users_manage.Location = new System.Drawing.Point(227, 663);
+            this.pb_users_manage.Location = new System.Drawing.Point(221, 674);
             this.pb_users_manage.Name = "pb_users_manage";
-            this.pb_users_manage.Size = new System.Drawing.Size(65, 63);
+            this.pb_users_manage.Size = new System.Drawing.Size(63, 63);
             this.pb_users_manage.TabIndex = 11;
             this.pb_users_manage.TabStop = false;
             // 
@@ -145,9 +158,9 @@
             this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox7.BackgroundImage = global::Automobile.Properties.Resources.pngwing_com__3_;
             this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox7.Location = new System.Drawing.Point(226, 600);
+            this.pictureBox7.Location = new System.Drawing.Point(219, 594);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(65, 57);
+            this.pictureBox7.Size = new System.Drawing.Size(63, 63);
             this.pictureBox7.TabIndex = 11;
             this.pictureBox7.TabStop = false;
             // 
@@ -156,9 +169,9 @@
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox6.BackgroundImage = global::Automobile.Properties.Resources.pngwing_com__1_;
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox6.Location = new System.Drawing.Point(226, 533);
+            this.pictureBox6.Location = new System.Drawing.Point(219, 525);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(61, 61);
+            this.pictureBox6.Size = new System.Drawing.Size(63, 63);
             this.pictureBox6.TabIndex = 11;
             this.pictureBox6.TabStop = false;
             // 
@@ -167,9 +180,9 @@
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox5.BackgroundImage = global::Automobile.Properties.Resources.pb_icon_reservations;
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox5.Location = new System.Drawing.Point(226, 460);
+            this.pictureBox5.Location = new System.Drawing.Point(219, 455);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(61, 67);
+            this.pictureBox5.Size = new System.Drawing.Size(63, 63);
             this.pictureBox5.TabIndex = 11;
             this.pictureBox5.TabStop = false;
             // 
@@ -178,9 +191,9 @@
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.BackgroundImage = global::Automobile.Properties.Resources.pngwing_com__4_;
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox4.Location = new System.Drawing.Point(226, 396);
+            this.pictureBox4.Location = new System.Drawing.Point(219, 389);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(63, 58);
+            this.pictureBox4.Size = new System.Drawing.Size(63, 63);
             this.pictureBox4.TabIndex = 11;
             this.pictureBox4.TabStop = false;
             // 
@@ -189,27 +202,26 @@
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.BackgroundImage = global::Automobile.Properties.Resources.pngwing_com__5_;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox3.Location = new System.Drawing.Point(225, 326);
+            this.pictureBox3.Location = new System.Drawing.Point(219, 325);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(62, 64);
+            this.pictureBox3.Size = new System.Drawing.Size(63, 63);
             this.pictureBox3.TabIndex = 11;
             this.pictureBox3.TabStop = false;
             // 
             // btn_change_account
             // 
             this.btn_change_account.BackColor = System.Drawing.Color.Transparent;
-            this.btn_change_account.BackgroundImage = global::Automobile.Properties.Resources.pngwing_com__20_;
-            this.btn_change_account.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_change_account.BackgroundImage = global::Automobile.Properties.Resources.botao_amarelo;
+            this.btn_change_account.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_change_account.FlatAppearance.BorderSize = 0;
             this.btn_change_account.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_change_account.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_change_account.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btn_change_account.Location = new System.Drawing.Point(833, 880);
+            this.btn_change_account.Location = new System.Drawing.Point(824, 880);
             this.btn_change_account.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_change_account.Name = "btn_change_account";
-            this.btn_change_account.Size = new System.Drawing.Size(82, 58);
+            this.btn_change_account.Size = new System.Drawing.Size(118, 79);
             this.btn_change_account.TabIndex = 9;
-            this.btn_change_account.Text = "C";
             this.btn_change_account.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_change_account.UseVisualStyleBackColor = false;
             this.btn_change_account.Click += new System.EventHandler(this.BtnChangeAccount_Click);
@@ -231,18 +243,17 @@
             // btn_back_begin
             // 
             this.btn_back_begin.BackColor = System.Drawing.Color.Transparent;
-            this.btn_back_begin.BackgroundImage = global::Automobile.Properties.Resources.pngwing_com__19_;
-            this.btn_back_begin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_back_begin.BackgroundImage = global::Automobile.Properties.Resources.botao_verde;
+            this.btn_back_begin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_back_begin.FlatAppearance.BorderSize = 0;
             this.btn_back_begin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_back_begin.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_back_begin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btn_back_begin.Location = new System.Drawing.Point(709, 880);
+            this.btn_back_begin.Location = new System.Drawing.Point(707, 880);
             this.btn_back_begin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_back_begin.Name = "btn_back_begin";
-            this.btn_back_begin.Size = new System.Drawing.Size(100, 58);
+            this.btn_back_begin.Size = new System.Drawing.Size(118, 79);
             this.btn_back_begin.TabIndex = 7;
-            this.btn_back_begin.Text = "R";
             this.btn_back_begin.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_back_begin.UseVisualStyleBackColor = false;
             this.btn_back_begin.Click += new System.EventHandler(this.Btn_back_begin_Click);
@@ -250,18 +261,17 @@
             // btn_exit
             // 
             this.btn_exit.BackColor = System.Drawing.Color.Transparent;
-            this.btn_exit.BackgroundImage = global::Automobile.Properties.Resources.pngwing_com__18_;
-            this.btn_exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_exit.BackgroundImage = global::Automobile.Properties.Resources.botao_vermelho;
+            this.btn_exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_exit.FlatAppearance.BorderSize = 0;
             this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_exit.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_exit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btn_exit.Location = new System.Drawing.Point(923, 880);
+            this.btn_exit.Location = new System.Drawing.Point(937, 880);
             this.btn_exit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_exit.Name = "btn_exit";
-            this.btn_exit.Size = new System.Drawing.Size(100, 58);
+            this.btn_exit.Size = new System.Drawing.Size(118, 79);
             this.btn_exit.TabIndex = 7;
-            this.btn_exit.Text = "X";
             this.btn_exit.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_exit.UseVisualStyleBackColor = false;
             this.btn_exit.Click += new System.EventHandler(this.Button7_Click);
@@ -312,10 +322,10 @@
             this.btn_manage_users.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_manage_users.Font = new System.Drawing.Font("Bauhaus 93", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_manage_users.ForeColor = System.Drawing.Color.White;
-            this.btn_manage_users.Location = new System.Drawing.Point(29, 663);
+            this.btn_manage_users.Location = new System.Drawing.Point(29, 674);
             this.btn_manage_users.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_manage_users.Name = "btn_manage_users";
-            this.btn_manage_users.Size = new System.Drawing.Size(183, 63);
+            this.btn_manage_users.Size = new System.Drawing.Size(183, 73);
             this.btn_manage_users.TabIndex = 8;
             this.btn_manage_users.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_manage_users.UseVisualStyleBackColor = false;
@@ -332,7 +342,7 @@
             this.btn_veichle.Location = new System.Drawing.Point(29, 253);
             this.btn_veichle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_veichle.Name = "btn_veichle";
-            this.btn_veichle.Size = new System.Drawing.Size(183, 67);
+            this.btn_veichle.Size = new System.Drawing.Size(183, 73);
             this.btn_veichle.TabIndex = 1;
             this.btn_veichle.Text = "Add Veichle";
             this.btn_veichle.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -368,7 +378,7 @@
             this.btn_veichles_available.Location = new System.Drawing.Point(29, 379);
             this.btn_veichles_available.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_veichles_available.Name = "btn_veichles_available";
-            this.btn_veichles_available.Size = new System.Drawing.Size(183, 80);
+            this.btn_veichles_available.Size = new System.Drawing.Size(183, 73);
             this.btn_veichles_available.TabIndex = 3;
             this.btn_veichles_available.Text = "Rent a vehicle";
             this.btn_veichles_available.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -386,7 +396,7 @@
             this.btn_vehicle_aintenance.Location = new System.Drawing.Point(29, 452);
             this.btn_vehicle_aintenance.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_vehicle_aintenance.Name = "btn_vehicle_aintenance";
-            this.btn_vehicle_aintenance.Size = new System.Drawing.Size(183, 75);
+            this.btn_vehicle_aintenance.Size = new System.Drawing.Size(183, 73);
             this.btn_vehicle_aintenance.TabIndex = 4;
             this.btn_vehicle_aintenance.Text = "Time Simulation and Billing";
             this.btn_vehicle_aintenance.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -404,7 +414,7 @@
             this.btn_manage_reservations.Location = new System.Drawing.Point(29, 522);
             this.btn_manage_reservations.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_manage_reservations.Name = "btn_manage_reservations";
-            this.btn_manage_reservations.Size = new System.Drawing.Size(183, 72);
+            this.btn_manage_reservations.Size = new System.Drawing.Size(183, 73);
             this.btn_manage_reservations.TabIndex = 5;
             this.btn_manage_reservations.Text = "Manage Reservations";
             this.btn_manage_reservations.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -422,7 +432,7 @@
             this.btn_manage_files.Location = new System.Drawing.Point(29, 591);
             this.btn_manage_files.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_manage_files.Name = "btn_manage_files";
-            this.btn_manage_files.Size = new System.Drawing.Size(183, 71);
+            this.btn_manage_files.Size = new System.Drawing.Size(183, 73);
             this.btn_manage_files.TabIndex = 6;
             this.btn_manage_files.Text = "Manage Files";
             this.btn_manage_files.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -477,19 +487,6 @@
             this.pb_car_relogio.Size = new System.Drawing.Size(255, 160);
             this.pb_car_relogio.TabIndex = 10;
             this.pb_car_relogio.TabStop = false;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.panel3.Location = new System.Drawing.Point(0, 348);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(4, 154);
-            this.panel3.TabIndex = 1;
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // FormPainelControlo
             // 
