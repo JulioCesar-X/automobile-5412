@@ -230,12 +230,12 @@
             // 
             this.lb_title.AutoSize = true;
             this.lb_title.BackColor = System.Drawing.Color.Transparent;
-            this.lb_title.Font = new System.Drawing.Font("Bauhaus 93", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_title.Font = new System.Drawing.Font("Bauhaus 93", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_title.ForeColor = System.Drawing.SystemColors.Window;
-            this.lb_title.Location = new System.Drawing.Point(338, 86);
+            this.lb_title.Location = new System.Drawing.Point(277, 67);
             this.lb_title.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_title.Name = "lb_title";
-            this.lb_title.Size = new System.Drawing.Size(358, 63);
+            this.lb_title.Size = new System.Drawing.Size(457, 82);
             this.lb_title.TabIndex = 3;
             this.lb_title.Text = "AUTOMOBILE";
             this.lb_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -280,25 +280,25 @@
             // 
             this.lb_date.AutoSize = true;
             this.lb_date.BackColor = System.Drawing.Color.Transparent;
-            this.lb_date.Font = new System.Drawing.Font("Bauhaus 93", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_date.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_date.ForeColor = System.Drawing.SystemColors.Control;
-            this.lb_date.Location = new System.Drawing.Point(1213, 140);
+            this.lb_date.Location = new System.Drawing.Point(1233, 137);
             this.lb_date.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_date.Name = "lb_date";
-            this.lb_date.Size = new System.Drawing.Size(204, 23);
+            this.lb_date.Size = new System.Drawing.Size(245, 26);
             this.lb_date.TabIndex = 4;
-            this.lb_date.Text = "domingo - 01/02/1990";
+            this.lb_date.Text = "01/02/1990 - domingo ";
             // 
             // lb_date_time
             // 
             this.lb_date_time.AutoSize = true;
             this.lb_date_time.BackColor = System.Drawing.Color.Black;
-            this.lb_date_time.Font = new System.Drawing.Font("Bauhaus 93", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_date_time.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_date_time.ForeColor = System.Drawing.SystemColors.Control;
-            this.lb_date_time.Location = new System.Drawing.Point(1325, 98);
+            this.lb_date_time.Location = new System.Drawing.Point(1310, 100);
             this.lb_date_time.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_date_time.Name = "lb_date_time";
-            this.lb_date_time.Size = new System.Drawing.Size(92, 23);
+            this.lb_date_time.Size = new System.Drawing.Size(104, 26);
             this.lb_date_time.TabIndex = 4;
             this.lb_date_time.Text = "00:00:00";
             // 
@@ -307,7 +307,7 @@
             this.PnlFormLoader.BackColor = System.Drawing.SystemColors.Window;
             this.PnlFormLoader.BackgroundImage = global::Automobile.Properties.Resources.pngwing_com__15_;
             this.PnlFormLoader.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.PnlFormLoader.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PnlFormLoader.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.PnlFormLoader.Location = new System.Drawing.Point(291, 168);
             this.PnlFormLoader.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PnlFormLoader.Name = "PnlFormLoader";
@@ -482,9 +482,9 @@
             this.pb_car_relogio.BackColor = System.Drawing.Color.Transparent;
             this.pb_car_relogio.BackgroundImage = global::Automobile.Properties.Resources.pngwing_com__14_;
             this.pb_car_relogio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pb_car_relogio.Location = new System.Drawing.Point(1246, -11);
+            this.pb_car_relogio.Location = new System.Drawing.Point(1265, 29);
             this.pb_car_relogio.Name = "pb_car_relogio";
-            this.pb_car_relogio.Size = new System.Drawing.Size(255, 160);
+            this.pb_car_relogio.Size = new System.Drawing.Size(193, 120);
             this.pb_car_relogio.TabIndex = 10;
             this.pb_car_relogio.TabStop = false;
             // 

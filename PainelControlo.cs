@@ -15,38 +15,8 @@ namespace Automobile
 
             if (EmpresaController.userLogado == "#")
             {
+                IsAdmin();
 
-                Image imagem = Properties.Resources.admin1;
-                pb_user_image.Image = imagem;
-
-                btn_manage_users.Text = "Manage Users";
-                btn_manage_users.Enabled = true;
-
-                btn_change_veichle_status.Text = "Change Vehicles Status";
-
-                lb_user_logado.Text = "# Admin";
-
-                lb_title.ForeColor = System.Drawing.Color.SlateGray;
-
-                this.BackColor = System.Drawing.Color.Black;
-                panel_system_control.BackColor = System.Drawing.Color.Black;
-
-                PnlFormLoader.BackColor = System.Drawing.Color.DarkGray;
-
-                btn_change_account.ForeColor = System.Drawing.Color.SlateGray;
-                btn_manage_files.ForeColor = System.Drawing.Color.SlateGray;
-                btn_manage_reservations.ForeColor = System.Drawing.Color.SlateGray;
-                btn_vehicle_aintenance.ForeColor = System.Drawing.Color.SlateGray;
-                btn_change_veichle_status.ForeColor = System.Drawing.Color.SlateGray;
-                btn_manage_users.ForeColor = System.Drawing.Color.SlateGray;
-                btn_veichles_available.ForeColor = System.Drawing.Color.SlateGray;
-                btn_veichle.ForeColor = System.Drawing.Color.SlateGray;
-                btn_exit.ForeColor = System.Drawing.Color.SlateGray;
-
-                btn_manage_users.FlatAppearance.BorderColor = Color.White;
-                btn_manage_users.FlatAppearance.BorderSize = 1;
-
-                pb_users_manage.BackgroundImage = Properties.Resources.pngwing_com__23_;
             }
 
         }
@@ -157,7 +127,7 @@ namespace Automobile
         private void Timer1_Tick(object sender, EventArgs e)
         {
             lb_date_time.Text = DateTime.Now.ToString("HH:mm:ss");
-            lb_date.Text = DateTime.Now.ToString("dddd - dd/MM/yyyy");
+            lb_date.Text = DateTime.Now.ToString("dd/MM/yyyy - dddd");
         }
 
         private void Btn_back_begin_Click(object sender, EventArgs e)
@@ -170,40 +140,45 @@ namespace Automobile
 
             if (EmpresaController.userLogado == "#")
             {
-
-                Image imagem = Properties.Resources.admin1;
-                pb_user_image.Image = imagem;
-
-                btn_manage_users.Text = "Manage Users";
-                btn_manage_users.Enabled = true;
-
-                btn_change_veichle_status.Text = "Change Vehicles Status";
-
-                lb_user_logado.Text = "# Admin";
-
-                lb_title.ForeColor = System.Drawing.Color.SlateGray;
-
-                this.BackColor = System.Drawing.Color.Black;
-                panel_system_control.BackColor = System.Drawing.Color.Black;
-
-                PnlFormLoader.BackColor = System.Drawing.Color.DarkGray;
-
-                btn_change_account.ForeColor = System.Drawing.Color.SlateGray;
-                btn_manage_files.ForeColor = System.Drawing.Color.SlateGray;
-                btn_manage_reservations.ForeColor = System.Drawing.Color.SlateGray;
-                btn_vehicle_aintenance.ForeColor = System.Drawing.Color.SlateGray;
-                btn_change_veichle_status.ForeColor = System.Drawing.Color.SlateGray;
-                btn_manage_users.ForeColor = System.Drawing.Color.SlateGray;
-                btn_veichles_available.ForeColor = System.Drawing.Color.SlateGray;
-                btn_veichle.ForeColor = System.Drawing.Color.SlateGray;
-                btn_exit.ForeColor = System.Drawing.Color.SlateGray;
-
-                btn_manage_users.FlatAppearance.BorderColor = Color.White;
-                btn_manage_users.FlatAppearance.BorderSize = 1;
-
-                pb_users_manage.BackgroundImage = Properties.Resources.pngwing_com__23_;
+                IsAdmin();
             }
 
+        }
+
+        private void IsAdmin()
+        {
+
+            Image imagem = Properties.Resources.admin1;
+            pb_user_image.Image = imagem;
+
+            btn_manage_users.Text = "Manage Users";
+            btn_manage_users.Enabled = true;
+
+            btn_change_veichle_status.Text = "Change Vehicles Status";
+
+            lb_user_logado.Text = "# Admin";
+
+            lb_title.ForeColor = System.Drawing.Color.SlateGray;
+
+            this.BackColor = System.Drawing.Color.Black;
+            panel_system_control.BackColor = System.Drawing.Color.Black;
+
+            PnlFormLoader.BackColor = System.Drawing.Color.DarkGray;
+
+
+            btn_manage_files.ForeColor = System.Drawing.Color.SlateGray;
+            btn_manage_reservations.ForeColor = System.Drawing.Color.SlateGray;
+            btn_vehicle_aintenance.ForeColor = System.Drawing.Color.SlateGray;
+            btn_change_veichle_status.ForeColor = System.Drawing.Color.SlateGray;
+            btn_manage_users.ForeColor = System.Drawing.Color.SlateGray;
+            btn_veichles_available.ForeColor = System.Drawing.Color.SlateGray;
+            btn_veichle.ForeColor = System.Drawing.Color.SlateGray;
+
+
+            btn_manage_users.FlatAppearance.BorderColor = Color.White;
+            btn_manage_users.FlatAppearance.BorderSize = 1;
+
+            pb_users_manage.BackgroundImage = Properties.Resources.pngwing_com__23_;
         }
     }
 }
