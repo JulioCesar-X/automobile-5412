@@ -71,6 +71,11 @@ namespace Automobile
                 Controlador.AdicionarVeiculo(novoCarro);
                 return true;
             }
+            catch(VeiculoDuplicadoException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
             catch (NumeroPortasInvalidoException ex)
             {
                 MessageBox.Show(ex.Message);
