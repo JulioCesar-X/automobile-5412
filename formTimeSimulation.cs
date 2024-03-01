@@ -23,14 +23,11 @@ namespace Automobile
             dataInicio = dateTimePickerInicio.Value;
             dataFim = dateTimePickerFim.Value;
 
-
-
             dataGridViewVeiculosAlugados.Columns.Add("Matricula", "Matrícula");
             dataGridViewVeiculosAlugados.Columns.Add("Marca", "Marca");
             dataGridViewVeiculosAlugados.Columns.Add("Preço Dia", "Preço Dia");
             dataGridViewVeiculosAlugados.Columns.Add("Estado", "Estado");
 
-            //AdicionarListaVeiculosAlugados();
         }
 
         private void FormTimeSimulation_Load(object sender, EventArgs e)
@@ -71,26 +68,53 @@ namespace Automobile
 
         //Aqui estamos apanhando apenas o tipo carro na simulação,se queremos mostrar todos reservados ou alugados na simulação de tempo,
         //temos de criar um button filtro novamente ou TabControl para repetimos o processo de mostrar os veiculos de todos os tipos diferentes
-        //private void AdicionarListaVeiculosAlugados()
-        //{
-        //    foreach (var objeto in EmpresaController.Controlador.Veiculos)
-        //    {
-        //        Carro carro = objeto as Carro;
+        private void AdicionarListaVeiculosAlugados(string tipoVeiculo)
+        {
 
-        //        if (carro.VeiculoStatus == "Reservado")
-        //        {
-        //            dataGridViewVeiculosAlugados.Rows.Add(
-        //                           carro.VeiculoMatricula,
-        //                           carro.VeiculoModelo,
-        //                           carro.TipoCaixa,
-        //                           carro.VeiculoPreco + " €",
-        //                           carro.VeiculoStatus
-        //                           );
-        //        }
+            foreach (var reserva in EmpresaController.Controlador.Reservados)
+            {
+                if(reserva.Veiculo.GetType().Name == tipoVeiculo)
+                {
+                    switch (comboBoxTipoVeiculo.SelectedItem)
+                    {
+                        case "Carro":
+                            Carro carro = reserva.Veiculo as Carro;
+                            dataGridViewVeiculosAlugados.Rows.Add(
+                                           carro.VeiculoMatricula,
+                                           carro.VeiculoModelo,
+                                           carro.TipoCaixa,
+                                           carro.VeiculoPreco + " €",
+                                           carro.VeiculoStatus
+                                           );
+                            break;
+                    }
+                                        
+                }
 
+            }
+                
+        }
 
-        //    }
-        //}
+        private void comboBoxTipoVeiculo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (comboBoxTipoVeiculo.SelectedIndex)
+            {
+                case 0:           
+                    AdicionarListaVeiculosAlugados("Carro");                    
+                    break;
 
+                case 1:
+                    AdicionarListaVeiculosAlugados("Mota");
+                    break;
+
+                case 2:
+                    AdicionarListaVeiculosAlugados("Camiao");
+                    break;
+
+                case 3:
+                    AdicionarListaVeiculosAlugados("Camioneta");
+                    break;
+            }
+        }
     }
 }

@@ -13,7 +13,8 @@ namespace Automobile
 
         public List<User> Users { get; set; }
 
-        public List<Reserva> Reservas { get; set; }
+        //public List<Alugado> Alugados { get; set; }
+        public List<Reserva> Reservados { get; set; }
 
 
 
@@ -24,7 +25,8 @@ namespace Automobile
         {
             Veiculos = new List<object>();
             Users = new List<User>();
-            Reservas = new List<Reserva>();
+            Reservados = new List<Reserva>();
+            //Alugados = new List<Alugado>();
 
             CriarListaDefaultUsers();
             CriarListaVeiculosDefault();
@@ -212,7 +214,7 @@ namespace Automobile
 
         public void AdicionarReserva(Reserva novaReserva)
         {
-            Reservas.Add(novaReserva);
+            Reservados.Add(novaReserva);
         }
 
         public List<object> GetListaVeciulosDoTipo(string tipoRequerido)
@@ -238,8 +240,63 @@ namespace Automobile
         }
 
 
+        public List<object> GetListaVeciulosReservados(string tipoRequerido)
+        {
+            var lista = new List<object>();  
 
+            if (Reservados.Any(r => ((Carro)r.Veiculo).GetType().Name == tipoRequerido))
+            {
+                foreach (var veiculo in Reservados) 
+                {
+                    if (veiculo.Veiculo.GetType().Name == tipoRequerido)
+                    {
+                        lista.Add(veiculo.Veiculo);
+                    }
+                }
+            }
+            else if (Reservados.Any(r => ((Mota)r.Veiculo).GetType().Name == tipoRequerido))
+            {
+                foreach (var veiculo in Reservados)
+                {
+                    if (veiculo.Veiculo.GetType().Name == tipoRequerido)
+                    {
+                        lista.Add(veiculo.Veiculo);
+                    }
+                }
+            }
+            else if (Reservados.Any(r => ((Camiao)r.Veiculo).GetType().Name == tipoRequerido))
+            {
+                foreach (var veiculo in Reservados)
+                {
+                    if (veiculo.Veiculo.GetType().Name == tipoRequerido)
+                    {
+                        lista.Add(veiculo.Veiculo);
+                    }
+                }
+            }
+            else if (Reservados.Any(r => ((Camioneta)r.Veiculo).GetType().Name == tipoRequerido))
+            {
+                foreach (var veiculo in Reservados)
+                {
+                    if (veiculo.Veiculo.GetType().Name == tipoRequerido)
+                    {
+                        lista.Add(veiculo.Veiculo);
+                    }
+                }
+            }
+            else
+            {
+                throw new ArgumentException("Tipo de veículo não encontrado!");
+            }
 
+            return lista;
+
+        }
+
+        public object GetVeiculo(string id)
+        {
+            return Veiculos.Find(v => ((Veiculo)v).VeiculoMatricula == id);
+        }
 
 
         public void SalvarDadosNoCsv(string folderPath, string nomeLista)
@@ -278,12 +335,12 @@ namespace Automobile
 
                 case "Reservas":
 
-                    if (Reservas.Count == 0)
+                    if (Reservados.Count == 0)
                     {
                         throw new ArgumentException($"Não há itens na \"{nomeLista}\" para salvar.");
                     }
 
-                    EscreveNoCsvDadosDaLista(folderPath, Reservas, nomeLista);
+                    EscreveNoCsvDadosDaLista(folderPath, Reservados, nomeLista);
 
                     break;
 

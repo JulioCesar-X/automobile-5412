@@ -190,7 +190,19 @@ namespace Automobile
             }
         }
 
-
+        public static bool GetListaVeciulosReservados(string tipo)
+        {
+            try
+            {
+                Controlador.GetListaVeciulosReservados(tipo);
+                return true;
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show($"Erro: {ex.Message}");
+                return false;
+            }
+        }
 
 
     }
