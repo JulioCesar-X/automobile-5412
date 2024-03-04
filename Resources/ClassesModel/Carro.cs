@@ -44,7 +44,7 @@
             }
         }
 
-        public Carro(string veiculoMatricula, string veiculoModelo, decimal veiculoPreco, string veiculoStatus, int numeroPortas, string tipoCaixa) : base(veiculoMatricula, veiculoModelo, veiculoPreco, veiculoStatus)
+        public Carro(string veiculoMatricula, string veiculoModelo, decimal veiculoPreco, Estado veiculoStatus, int numeroPortas, string tipoCaixa) : base(veiculoMatricula, veiculoModelo, veiculoPreco, veiculoStatus)
         {
             NumeroPortas = numeroPortas;
             TipoCaixa = tipoCaixa;

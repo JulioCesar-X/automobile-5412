@@ -48,7 +48,7 @@
 
         }
 
-        public Camioneta(string VeiculoMatricula, string veiculoModelo, decimal veiculoPreco, string veiculoStatus, int numeroEixos, int numeroPassageiros) : base(VeiculoMatricula, veiculoModelo, veiculoPreco, veiculoStatus)
+        public Camioneta(string VeiculoMatricula, string veiculoModelo, decimal veiculoPreco, Estado veiculoStatus, int numeroEixos, int numeroPassageiros) : base(VeiculoMatricula, veiculoModelo, veiculoPreco, veiculoStatus)
         {
             NumeroEixos = numeroEixos;
             NumeroPassageiros = numeroPassageiros;

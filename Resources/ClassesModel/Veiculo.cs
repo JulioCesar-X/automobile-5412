@@ -1,10 +1,11 @@
-﻿namespace Automobile
+﻿using System;
+
+namespace Automobile
 {
     public class Veiculo
     {
         private string _veiculoMatricula;
         private string _veiculoModelo;
-        private string _veiculoStatus;
         private decimal _veiculoPreco;
 
         public string VeiculoMatricula
@@ -36,23 +37,6 @@
             }
 
         }
-        public string VeiculoStatus
-        {
-
-            get
-            {
-
-                return _veiculoStatus;
-
-            }
-            set
-            {
-                _veiculoStatus = value;
-
-            }
-
-
-        }
         public decimal VeiculoPreco
         {
 
@@ -71,8 +55,9 @@
 
 
         }
+        public Estado VeiculoStatus { get; set; }
 
-        public Veiculo(string veiculoMatricula, string veiculoModelo, decimal veiculoPreco, string veiculoStatus)
+        public Veiculo(string veiculoMatricula, string veiculoModelo, decimal veiculoPreco, Estado veiculoStatus)
         {
             VeiculoMatricula = veiculoMatricula;
             VeiculoModelo = veiculoModelo;
@@ -81,10 +66,31 @@
 
         }
 
+
+        public void Reservar(DateTime dataInicio, DateTime dataFim)
+        {
+            VeiculoStatus = new Estado(Estado.Tipo.Reservado, dataInicio, dataFim);
+        }
+        public void Alugar(DateTime dataInicio, DateTime dataFim)
+        {
+            VeiculoStatus = new Estado(Estado.Tipo.Alugado, dataInicio, dataFim);
+        }
+        public void EmManutencao(DateTime dataInicio, DateTime dataFim)
+        {
+            VeiculoStatus = new Estado(Estado.Tipo.EmManutencao, dataInicio, dataFim);
+        }
+
+        public void RetornarDisponivel()
+        {
+            VeiculoStatus = new Estado();
+        }
+
+
+
         public override string ToString()
         {
 
-            return $"ID: {VeiculoMatricula}\t Modelo: {VeiculoModelo}\t Preço de Aluguer: {VeiculoPreco} €\t STATUS: {VeiculoStatus}\t";
+            return $"ID: {VeiculoMatricula}\t Modelo: {VeiculoModelo}\t Preço de Aluguer: {VeiculoPreco} €\t STATUS: {VeiculoStatus.Nome}\t";
         }
 
     }

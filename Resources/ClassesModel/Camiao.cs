@@ -27,7 +27,7 @@
         }
 
 
-        public Camiao(string veiculoMatricula, string veiculoModelo, decimal veiculoPreco, string veiculoStatus, int pesoMaximo) : base(veiculoMatricula, veiculoModelo, veiculoPreco, veiculoStatus)
+        public Camiao(string veiculoMatricula, string veiculoModelo, decimal veiculoPreco, Estado veiculoStatus, int pesoMaximo) : base(veiculoMatricula, veiculoModelo, veiculoPreco, veiculoStatus)
         {
 
             PesoMaximo = pesoMaximo;

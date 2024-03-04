@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EmpresaController.cs" />
+    <Compile Include="Resources\ClassesModel\Estado.cs" />
     <Compile Include="formAdicionarVeiculo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,14 +110,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\ClassesModel\Alugar.cs" />
     <Compile Include="Resources\ClassesModel\Camiao.cs" />
     <Compile Include="Resources\ClassesModel\Camioneta.cs" />
     <Compile Include="Resources\ClassesModel\Carro.cs" />
     <Compile Include="EmpresaModel.cs" />
     <Compile Include="Resources\ClassesModel\EmpresaException.cs" />
     <Compile Include="Resources\ClassesModel\Mota.cs" />
-    <Compile Include="Resources\ClassesModel\Reserva.cs" />
     <Compile Include="Resources\ClassesModel\User.cs" />
     <Compile Include="Resources\ClassesModel\Veiculo.cs" />
     <EmbeddedResource Include="formAdicionarVeiculo.resx">
