@@ -115,7 +115,7 @@ namespace Automobile
                     int numPortas = int.Parse(comboBoxNmrPortas.SelectedItem.ToString());
                     string tipoCaixa = comboBoxTipoCaixa.SelectedItem.ToString();
 
-                    if (EmpresaController.CriarCarro(_matricula, _modelo, _preco, "Disponivel", numPortas, tipoCaixa))
+                    if (EmpresaController.CriarCarro(_matricula, _modelo, _preco, numPortas, tipoCaixa))
                     {
                         //Estamos limpando especificamente
                         tb_id_matricula.Clear();
@@ -134,7 +134,7 @@ namespace Automobile
 
                     int cilindrada = int.Parse(aux[0]);
 
-                    if (EmpresaController.CriarMota(_matricula, _modelo, _preco, "Disponivel", cilindrada))
+                    if (EmpresaController.CriarMota(_matricula, _modelo, _preco, cilindrada))
                     {
                         tb_id_matricula.Clear();
                         tb_modelo_marca.Clear();

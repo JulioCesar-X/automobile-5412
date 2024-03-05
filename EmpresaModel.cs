@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text;
 
 namespace Automobile
 {
@@ -299,22 +301,73 @@ namespace Automobile
         /* Ainda estou refatorando*/
         public void SalvarDadosNoCsv(string folderPath, string nomeLista)
         {
+
+
             switch (nomeLista)
             {
-                case "Veiculos":
 
-                    string[] tipos = new string[] { "Carro", "Mota", "Camioneta", "Camiao" };
+                case "VeiculosDisponiveis":
 
-                    foreach (var tipo in tipos)
+
+                    foreach (var tipo in new string[] { "Carro", "Mota", "Camioneta", "Camiao" })
                     {
-                        //Para cada nomeLista de objeto especificado vamos verificar  e criar o csv
-                        ValidarListaVeiculosDoTipo(tipo);
+                        //Para cada tipo de objeto especificado vamos verificar  e criar o csv
+                        ValidarListaVeiculosDoTipo(tipo, "Disponivel");
 
-                        List<object> lista = GetListaVeciulosDoTipo(tipo);
-
-                        if (lista.Count > 0)
+                        if (VeiculosDisponiveis.Count > 0)
                         {
-                            EscreveNoCsvDadosDaLista(folderPath, lista, tipo);
+                            EscreveNoCsvDadosDaLista(folderPath, VeiculosDisponiveis, tipo, nomeLista);
+                        }
+
+                    }
+                    break;
+
+                case "VeiculosAlugados":
+
+
+
+                    foreach (var tipo in new string[] { "Carro", "Mota", "Camioneta", "Camiao" })
+                    {
+                        //Para cada tipo de objeto especificado vamos verificar  e criar o csv
+                        ValidarListaVeiculosDoTipo(tipo, "Alugado");
+
+                        if (VeiculosAlugados.Count > 0)
+                        {
+                            EscreveNoCsvDadosDaLista(folderPath, VeiculosAlugados, tipo, nomeLista);
+                        }
+
+                    }
+                    break;
+
+                case "VeiculosReservados":
+
+
+
+                    foreach (var tipo in new string[] { "Carro", "Mota", "Camioneta", "Camiao" })
+                    {
+                        //Para cada tipo de objeto especificado vamos verificar  e criar o csv
+                        ValidarListaVeiculosDoTipo(tipo, "Reservado");
+
+                        if (VeiculosReservados.Count > 0)
+                        {
+                            EscreveNoCsvDadosDaLista(folderPath, VeiculosReservados, tipo, nomeLista);
+                        }
+
+                    }
+                    break;
+
+                case "VeiculosEmManutencao":
+
+
+
+                    foreach (var tipo in new string[] { "Carro", "Mota", "Camioneta", "Camiao" })
+                    {
+                        //Para cada tipo de objeto especificado vamos verificar  e criar o csv
+                        ValidarListaVeiculosDoTipo(tipo, "Em Manuntenção");
+
+                        if (VeiculosEmManutencao.Count > 0)
+                        {
+                            EscreveNoCsvDadosDaLista(folderPath, VeiculosEmManutencao, tipo, nomeLista);
                         }
 
                     }
@@ -327,101 +380,84 @@ namespace Automobile
                         throw new ArgumentException($"Não há itens na \"{nomeLista}\" para salvar.");
                     }
 
-                    EscreveNoCsvDadosDaLista(folderPath, Users, nomeLista);
+                    EscreveNoCsvDadosDaLista(folderPath, Users, "Users", nomeLista);
 
                     break;
 
-                case "Reservas":
+                default:
 
-                    if (Reservados.Count == 0)
-                    {
-                        throw new ArgumentException($"Não há itens na \"{nomeLista}\" para salvar.");
-                    }
-
-                    EscreveNoCsvDadosDaLista(folderPath, Reservados, nomeLista);
-
-                    break;
+                    throw new ArgumentException("Lista não encontrada");
 
             }
 
 
-        }
-
-        //Estou trabalhando no processo de salvar em excel!
-
-        private string GetLinhaCSV<T>(T objeto)
-        {
-            if (typeof(T) == typeof(object))
-            {
-                switch (objeto.GetType().Name)
-                {
-                    case "Carro":
-
-                        Carro carro = objeto as Carro;
-
-                        return $"{carro.VeiculoMatricula};{carro.VeiculoModelo};{carro.NumeroPortas};{carro.TipoCaixa};{carro.VeiculoPreco} €;{carro.VeiculoStatus}";
-
-
-                    case "Mota":
-
-                        Mota mota = objeto as Mota;
-
-                        return $"{mota.VeiculoMatricula};{mota.VeiculoModelo};{mota.Cilindrada} cc;{mota.VeiculoPreco} €;{mota.VeiculoStatus}";
-
-                    case "Camioneta":
-
-                        Camioneta camioneta = objeto as Camioneta;
-
-                        return $"{camioneta.VeiculoMatricula};{camioneta.VeiculoModelo};{camioneta.NumeroEixos};{camioneta.NumeroPassageiros};{camioneta.VeiculoPreco} €;{camioneta.VeiculoStatus}";
-
-                    case "Camiao":
-
-                        Camiao camiao = objeto as Camiao;
-
-                        return $"{camiao.VeiculoMatricula};{camiao.VeiculoModelo};{camiao.PesoMaximo} kg;{camiao.VeiculoPreco} €;{camiao.VeiculoStatus}";
-
-                    default:
-
-                        return "";
-
-
-                }
-
-            }
-            else if (typeof(T) == typeof(User))
-            {
-                // Se o objeto for do tipo User, você pode escolher quais propriedades deseja incluir na linha CSV
-                User user = objeto as User;
-                return $"{user.Id};{user.Name};{user.UserName};{user.Password}";
-            }
-            else if (typeof(T) == typeof(Reserva))
-            {
-                // Se o objeto for do tipo Reserva, você pode escolher quais propriedades deseja incluir na linha CSV
-                Reserva reserva = objeto as Reserva;
-                return $"{reserva.Id};{reserva.DataInicio};{reserva.DataFim};{reserva.Veiculo.VeiculoModelo};{reserva.Veiculo.VeiculoPreco};{reserva.Veiculo.VeiculoMatricula};";
-            }
-            else
-            {
-                // Caso o tipo do objeto não corresponda a nenhum dos tipos esperados, retorne uma string vazia
-                return "";
-            }
         }
 
         //Usando o tipo genérico é uma estrutura flexivel - permite que classes,metodos,interfaces trabalhem  com tipos especificos em tempo de compilação em vez de tipos fixos.
         //O tempo de compilação é quando o código é traduzido e analisado pelo compilador antes da execução, enquanto o tempo de execução é quando o código é realmente executado e produz resultados.
-        private void EscreveNoCsvDadosDaLista<T>(string folderPath, List<T> lista, string nomeLista)
+        private void EscreveNoCsvDadosDaLista<T>(string folderPath, List<T> lista, string tipo, string nomeDaLista)
         {
 
             StreamWriter Escritor = null;
             try
             {
                 //false sobrescrever, true escrever ao final do arquivo
-                Escritor = new StreamWriter(Path.Combine(folderPath, GetCaminhoPeloNomeDaLista(nomeLista)), false, Encoding.UTF8);
+                Escritor = new StreamWriter(Path.Combine(folderPath, GetCaminhoRelativoPeloNomeDaLista(tipo, nomeDaLista)), false, Encoding.UTF8);
 
-                foreach (var item in lista)
+                switch (tipo)
                 {
-                    Escritor.WriteLine(GetLinhaCSV(item));
+                    case "Carro":
+
+                        foreach (var item in lista)
+                        {
+                            Carro carro = item as Carro;
+                            Escritor.WriteLine($"{carro.VeiculoMatricula};{carro.VeiculoModelo};{carro.NumeroPortas};{carro.TipoCaixa};{carro.VeiculoPreco} €;{carro.VeiculoStatus}");
+                        }
+                        break;
+
+                    case "Mota":
+
+                        foreach (var item in lista)
+                        {
+                            Mota mota = item as Mota;
+                            Escritor.WriteLine($"{mota.VeiculoMatricula};{mota.VeiculoModelo};{mota.Cilindrada} cc;{mota.VeiculoPreco} €;{mota.VeiculoStatus}");
+                        }
+                        break;
+
+                    case "Camioneta":
+
+                        foreach (var item in lista)
+                        {
+                            Camioneta camioneta = item as Camioneta;
+                            Escritor.WriteLine($"{camioneta.VeiculoMatricula};{camioneta.VeiculoModelo};{camioneta.NumeroEixos};{camioneta.NumeroPassageiros};{camioneta.VeiculoPreco} €;{camioneta.VeiculoStatus}");
+                        }
+                        break;
+
+                    case "Camiao":
+
+                        foreach (var item in lista)
+                        {
+                            Camiao camiao = item as Camiao;
+                            Escritor.WriteLine($"{camiao.VeiculoMatricula};{camiao.VeiculoModelo};{camiao.PesoMaximo} kg;{camiao.VeiculoPreco} €;{camiao.VeiculoStatus}");
+
+                        }
+                        break;
+
+                    case "Users":
+
+                        foreach (var item in lista)
+                        {
+                            User user = item as User;
+                            Escritor.WriteLine($"{user.Id};{user.Name};{user.UserName};{user.Password}");
+
+                        }
+                        break;
+
+                    default:
+                        throw new ArgumentException("tipo desconhecido.");
+
                 }
+
             }
             catch (IOException ex)
             {
@@ -436,33 +472,29 @@ namespace Automobile
             }
         }
 
-        private string GetCaminhoPeloNomeDaLista(string nomeLista)
+        private string GetCaminhoRelativoPeloNomeDaLista(string tipo, string nomeLista)
         {
-            switch (nomeLista)
+            switch (tipo)
             {
                 case "Carro":
 
-                    return "carros.csv";
+                    return $"{nomeLista}(carros).csv";
 
                 case "Mota":
 
-                    return "motas.csv";
+                    return $"{nomeLista}(motas).csv";
 
                 case "Camioneta":
 
-                    return "camionetas.csv";
+                    return $"{nomeLista}(camionetas).csv";
 
                 case "Camiao":
 
-                    return "camioes.csv";
+                    return $"{nomeLista}(camioes).csv";
 
                 case "Users":
 
                     return "users.csv";
-
-                case "Reservas":
-
-                    return "reservas.csv";
 
                 default:
                     throw new ArgumentException("Lista desconhecida.");
@@ -470,38 +502,38 @@ namespace Automobile
         }
 
 
-        public void CarregarDadosDoCsv(string folderPath, string nomeLista)
-        {
-            // Simulando uma exceção caso o arquivo CSV não exista
-            if (!File.Exists(Path.Combine(folderPath, GetCaminhoPeloNomeDaLista(nomeLista))))
-            {
-                throw new FileNotFoundException("Arquivo CSV não encontrado.");
-            }
+        //public void CarregarDadosDoCsv(string folderPath, string nomeLista)
+        //{
+        //    // Simulando uma exceção caso o arquivo CSV não exista
+        //    if (!File.Exists(Path.Combine(folderPath, GetCaminhoPeloNomeDaLista(nomeLista))))
+        //    {
+        //        throw new FileNotFoundException("Arquivo CSV não encontrado.");
+        //    }
 
-            StreamReader leitor = null;
-            try
-            {
-                leitor = new StreamReader(Path.Combine(folderPath, GetCaminhoPeloNomeDaLista(nomeLista)));
+        //    StreamReader leitor = null;
+        //    try
+        //    {
+        //        leitor = new StreamReader(Path.Combine(folderPath, GetCaminhoPeloNomeDaLista(nomeLista)));
 
-                string linha;
-                while ((linha = leitor.ReadLine()) != null)
-                {
-                    // Processar cada linha do arquivo CSV
-                    // Por exemplo, você pode converter a linha de volta para o objeto e adicioná-lo à nomeLista.
-                }
-            }
-            catch (IOException ex)
-            {
-                throw new IOException("Erro de E/S ao carregar dados: " + ex.Message);
-            }
-            finally
-            {
-                if (leitor != null)
-                {
-                    leitor.Close();
-                }
-            }
-        }  // ainda estou  refatorando
+        //        string linha;
+        //        while ((linha = leitor.ReadLine()) != null)
+        //        {
+        //            // Processar cada linha do arquivo CSV
+        //            // Por exemplo, você pode converter a linha de volta para o objeto e adicioná-lo à tipo.
+        //        }
+        //    }
+        //    catch (IOException ex)
+        //    {
+        //        throw new IOException("Erro de E/S ao carregar dados: " + ex.Message);
+        //    }
+        //    finally
+        //    {
+        //        if (leitor != null)
+        //        {
+        //            leitor.Close();
+        //        }
+        //    }
+        //}  // ainda estou  refatorando
     }
 
 }

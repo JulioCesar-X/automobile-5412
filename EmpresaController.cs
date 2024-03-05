@@ -108,11 +108,11 @@ namespace Automobile
             }
         }
 
-        public static bool ValidarListaVeiculosDoTipo(string tipo)
+        public static bool ValidarListaVeiculosDoTipo(string tipo, string status)
         {
             try
             {
-                Controlador.ValidarListaVeiculosDoTipo(tipo);
+                Controlador.ValidarListaVeiculosDoTipo(tipo, status);
 
                 return true;
 
@@ -194,7 +194,7 @@ namespace Automobile
         {
             try
             {
-                Controlador.GetListaVeciulosReservadosDoTipo(tipo);
+                Controlador.GetListaVeciulosVeiculosReservadosDoTipo(tipo);
                 return true;
             }
             catch (ArgumentException ex)

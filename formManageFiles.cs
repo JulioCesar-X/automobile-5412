@@ -95,9 +95,13 @@ namespace Automobile
 
                     Directory.CreateDirectory(caminhoVeiculos);
 
-                    EmpresaController.Controlador.SalvarDadosNoCsv(caminhoVeiculos, "Veiculos");
+                    foreach (var lista in new string[] { "VeiculosDisponiveis", "VeiculosAlugados", "VeiculosReservados", "VeiculosEmManutencao" })
+                    {
+                        EmpresaController.Controlador.SalvarDadosNoCsv(caminhoVeiculos, lista);
+                    }
+
                     EmpresaController.Controlador.SalvarDadosNoCsv(caminho, "Users");
-                    //EmpresaController.Controlador.SalvarDadosNoCsv(caminho, "Reservas");
+
 
                     MessageBox.Show("Dados salvos com sucesso em arquivos CSV.");
 

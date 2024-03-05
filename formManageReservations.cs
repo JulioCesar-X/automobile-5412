@@ -193,7 +193,7 @@ namespace Automobile
             //TODO: Validações para enviar a msg box caso n encontrou o veiculo especificado
 
             //TODO: criar Gerador id reserva automatico que deve começar apartir do ultimo valor ja registrado na lista de reservas
-            int id = 0;
+            //int id = 0;
 
 
             //TODO:Criar uma função que pegue um veiculo quando enviada a matricula

@@ -91,10 +91,7 @@ namespace Automobile
         private void Cb_status_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-
-            bool flag = EmpresaController.ValidarListaVeiculosDoTipo(TipoVeiculo);
-
-            if (flag)
+            if (EmpresaController.ValidarListaVeiculosDoTipo(TipoVeiculo, cb_status.SelectedItem.ToString()))
             {
                 //se existir veiculos do tipo selecionado deve limpar as linhas e mostrar as novas
                 dgv_veiculos.Rows.Clear();
@@ -132,6 +129,10 @@ namespace Automobile
 
 
             }
+            else
+            {
+                MessageBox.Show("Tipo de veiculo não encontrado com esse estado");
+            }
 
         }
 
@@ -160,7 +161,7 @@ namespace Automobile
                                     carro.NumeroPortas,
                                     carro.TipoCaixa,
                                     carro.VeiculoPreco + " €",
-                                    carro.VeiculoStatus
+                                    status
 
                                     );
                             }
@@ -184,7 +185,7 @@ namespace Automobile
                                     mota.VeiculoModelo,
                                     mota.Cilindrada + " cc",
                                     mota.VeiculoPreco + " €",
-                                    mota.VeiculoStatus
+                                    status
                                     );
                             }
                         }
@@ -207,7 +208,7 @@ namespace Automobile
                                     camioneta.NumeroEixos,
                                     camioneta.NumeroPassageiros,
                                     camioneta.VeiculoPreco + " €",
-                                    camioneta.VeiculoStatus
+                                    status
                                     );
                             }
                         }
@@ -231,7 +232,7 @@ namespace Automobile
                                     camiao.VeiculoModelo,
                                     camiao.PesoMaximo,
                                     camiao.VeiculoPreco + " €",
-                                    camiao.VeiculoStatus
+                                    status
                                     );
                             }
                         }

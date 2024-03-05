@@ -89,7 +89,7 @@
             "Disponivel",
             "Alugado",
             "Reservado",
-            "Em manutenção"});
+            "Em Manuntenção"});
             this.cb_status.Location = new System.Drawing.Point(440, 45);
             this.cb_status.Name = "cb_status";
             this.cb_status.Size = new System.Drawing.Size(162, 28);

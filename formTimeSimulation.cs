@@ -71,14 +71,14 @@ namespace Automobile
         private void AdicionarListaVeiculosAlugados(string tipoVeiculo)
         {
 
-            foreach (var reserva in EmpresaController.Controlador.Reservados)
+            foreach (var reserva in EmpresaController.Controlador.VeiculosReservados)
             {
-                if(reserva.Veiculo.GetType().Name == tipoVeiculo)
+                if (reserva.GetType().Name == tipoVeiculo)
                 {
                     switch (comboBoxTipoVeiculo.SelectedItem)
                     {
                         case "Carro":
-                            Carro carro = reserva.Veiculo as Carro;
+                            Carro carro = reserva as Carro;
                             dataGridViewVeiculosAlugados.Rows.Add(
                                            carro.VeiculoMatricula,
                                            carro.VeiculoModelo,
@@ -88,19 +88,19 @@ namespace Automobile
                                            );
                             break;
                     }
-                                        
+
                 }
 
             }
-                
+
         }
 
         private void comboBoxTipoVeiculo_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (comboBoxTipoVeiculo.SelectedIndex)
             {
-                case 0:           
-                    AdicionarListaVeiculosAlugados("Carro");                    
+                case 0:
+                    AdicionarListaVeiculosAlugados("Carro");
                     break;
 
                 case 1:
