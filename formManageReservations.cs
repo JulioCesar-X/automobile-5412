@@ -3,11 +3,11 @@ using System.Windows.Forms;
 
 namespace Automobile
 {
-    public partial class formManageReservations : Form
+    public partial class FormManageReservations : Form
     {
 
 
-        public formManageReservations()
+        public FormManageReservations()
         {
             InitializeComponent();
         }

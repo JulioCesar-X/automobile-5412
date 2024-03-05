@@ -15,7 +15,7 @@ namespace Automobile
             InitializeComponent();
 
             dataAtual = DateTime.Today;
-            AtualizarLabelData();
+           
 
             dateTimePickerInicio.MinDate = DateTime.Today;
             dateTimePickerFim.MinDate = DateTime.Today;
@@ -27,6 +27,7 @@ namespace Automobile
             dataGridViewVeiculosAlugados.Columns.Add("Marca", "Marca");
             dataGridViewVeiculosAlugados.Columns.Add("Preço Dia", "Preço Dia");
             dataGridViewVeiculosAlugados.Columns.Add("Estado", "Estado");
+            dataGridViewVeiculosAlugados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
         }
 
@@ -35,21 +36,11 @@ namespace Automobile
 
         }
 
-        private void AvancarUmDia()
-        {
-            dataAtual = dataAtual.AddDays(1);
-            AtualizarLabelData();
-        }
+        
 
-        private void AtualizarLabelData()
-        {
-            lblData.Text = $" {dataAtual:d}";
-        }
+        
 
-        private void BtnAvancarDia_Click_1(object sender, EventArgs e)
-        {
-            AvancarUmDia();
-        }
+        
 
         private void DateTimePickerInicio_ValueChanged(object sender, EventArgs e)
         {
@@ -70,11 +61,13 @@ namespace Automobile
         //temos de criar um button filtro novamente ou TabControl para repetimos o processo de mostrar os veiculos de todos os tipos diferentes
         private void AdicionarListaVeiculosAlugados(string tipoVeiculo)
         {
-
+            dataGridViewVeiculosAlugados.Rows.Clear();
             foreach (var reserva in EmpresaController.Controlador.VeiculosReservados)
             {
-                if (reserva.GetType().Name == tipoVeiculo)
-                {
+                if (reserva.GetType().Name == tipoVeiculo 
+                    && ((Veiculo)reserva).VeiculoStatus.DataInicio.Date >= dateTimePickerInicio.Value.Date
+                    && ((Veiculo)reserva).VeiculoStatus.DataFim <= dateTimePickerFim.Value.Date)
+                    {                    
                     switch (comboBoxTipoVeiculo.SelectedItem)
                     {
                         case "Carro":
@@ -82,9 +75,38 @@ namespace Automobile
                             dataGridViewVeiculosAlugados.Rows.Add(
                                            carro.VeiculoMatricula,
                                            carro.VeiculoModelo,
-                                           carro.TipoCaixa,
                                            carro.VeiculoPreco + " €",
-                                           carro.VeiculoStatus
+                                           carro.VeiculoStatus.Nome
+                                           );
+                            break;
+
+                        case "Mota":
+                            Mota mota = reserva as Mota;
+                            dataGridViewVeiculosAlugados.Rows.Add(
+                                           mota.VeiculoMatricula,
+                                           mota.VeiculoModelo,
+                                           mota.VeiculoPreco + " €",
+                                           mota.VeiculoStatus.Nome
+                                           );
+                            break;
+
+                        case "Camiao":
+                            Camiao camiao = reserva as Camiao;
+                            dataGridViewVeiculosAlugados.Rows.Add(
+                                           camiao.VeiculoMatricula,
+                                           camiao.VeiculoModelo,
+                                           camiao.VeiculoPreco + " €",
+                                           camiao.VeiculoStatus.Nome
+                                           );
+                            break;
+
+                        case "Camioneta":
+                            Camioneta camioneta = reserva as Camioneta;
+                            dataGridViewVeiculosAlugados.Rows.Add(
+                                           camioneta.VeiculoMatricula,
+                                           camioneta.VeiculoModelo,
+                                           camioneta.VeiculoPreco + " €",
+                                           camioneta.VeiculoStatus.Nome
                                            );
                             break;
                     }
@@ -115,6 +137,31 @@ namespace Automobile
                     AdicionarListaVeiculosAlugados("Camioneta");
                     break;
             }
+        }
+
+        private void btnCalculate_Click(object sender, EventArgs e)
+        {
+            decimal soma = 0;
+            foreach (var reserva in EmpresaController.Controlador.VeiculosReservados)
+            {
+                Veiculo veiculo = (Veiculo)reserva;
+
+                
+                if (veiculo.VeiculoPreco != null &&
+                    veiculo.VeiculoStatus.DataInicio.Date >= dateTimePickerInicio.Value.Date &&
+                    veiculo.VeiculoStatus.DataFim <= dateTimePickerFim.Value.Date)
+                {
+                    soma += veiculo.VeiculoPreco;
+                }
+            }
+
+            lblPreco.Text = "Total: " + soma.ToString() + " €";
+        }
+
+
+        private void lblPreco_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

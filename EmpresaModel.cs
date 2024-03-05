@@ -109,8 +109,8 @@ namespace Automobile
             Camiao veiculo15 = new Camiao("15", "BUGVERDE", 150.99m, new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), 44000);
             Camioneta veiculo16 = new Camioneta("16", "Venom", 500.99m, new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), 2, 5);
 
-            Carro veiculo17 = new Carro("17", "Corsa", 88.70m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), 5, "manual");
-            Mota veiculo18 = new Mota("18", "XTZ", 55.80m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), 300);
+            Carro veiculo17 = new Carro("17", "Corsa", 88.70m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(5)), 5, "manual");
+            Mota veiculo18 = new Mota("18", "XTZ", 55.80m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(5)), 300);
             Camiao veiculo19 = new Camiao("19", "BUGVERDE", 150.99m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), 44000);
             Camioneta veiculo20 = new Camioneta("20", "Venom", 500.99m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), 2, 5);
             Carro veiculo21 = new Carro("21", "Corsa", 88.70m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), 5, "manual");

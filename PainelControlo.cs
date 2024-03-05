@@ -76,7 +76,7 @@ namespace Automobile
         {
             lb_title.Text = "Manage Reservations";
             this.PnlFormLoader.Controls.Clear();
-            formManageReservations FormManageReservations = new formManageReservations() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            FormManageReservations FormManageReservations = new FormManageReservations() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             FormManageReservations.FormBorderStyle = FormBorderStyle.None;
             this.PnlFormLoader.Controls.Add(FormManageReservations);
             FormManageReservations.Show();

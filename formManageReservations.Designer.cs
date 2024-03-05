@@ -1,6 +1,6 @@
 ﻿namespace Automobile
 {
-    partial class formManageReservations
+    partial class FormManageReservations
     {
         /// <summary>
         /// Required designer variable.
