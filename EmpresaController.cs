@@ -21,11 +21,11 @@ namespace Automobile
 
 
 
-        public static bool CriarCamiao(string veiculoMatricula, string veiculoModelo, decimal veiculoPreco, string veiculoStatus, int pesoMaximo)
+        public static bool CriarCamiao(string veiculoMatricula, string veiculoModelo, decimal veiculoPreco, int pesoMaximo)
         {
             try
             {
-                Camiao caminhao = new Camiao(veiculoMatricula, veiculoModelo, veiculoPreco, veiculoStatus, pesoMaximo);
+                Camiao caminhao = new Camiao(veiculoMatricula, veiculoModelo, veiculoPreco, new Estado(), pesoMaximo);
                 Controlador.AdicionarVeiculo(caminhao);
 
                 return true;
@@ -41,11 +41,11 @@ namespace Automobile
                 return false;
             }
         }
-        public static bool CriarMota(string veiculoMatricula, string veiculoModelo, decimal veiculoPreco, string veiculoStatus, int cilindrada)
+        public static bool CriarMota(string veiculoMatricula, string veiculoModelo, decimal veiculoPreco, int cilindrada)
         {
             try
             {
-                Mota novaMota = new Mota(veiculoMatricula, veiculoModelo, veiculoPreco, veiculoStatus, cilindrada);
+                Mota novaMota = new Mota(veiculoMatricula, veiculoModelo, veiculoPreco, new Estado(), cilindrada);
                 Controlador.AdicionarVeiculo(novaMota);
 
 
@@ -63,15 +63,15 @@ namespace Automobile
             }
         }
 
-        public static bool CriarCarro(string veiculoMatricula, string veiculoModelo, decimal veiculoPreco, string veiculoStatus, int numeroPortas, string tipoCaixa)
+        public static bool CriarCarro(string veiculoMatricula, string veiculoModelo, decimal veiculoPreco, int numeroPortas, string tipoCaixa)
         {
             try
             {
-                Carro novoCarro = new Carro(veiculoMatricula, veiculoModelo, veiculoPreco, veiculoStatus, numeroPortas, tipoCaixa);
+                Carro novoCarro = new Carro(veiculoMatricula, veiculoModelo, veiculoPreco, new Estado(), numeroPortas, tipoCaixa);
                 Controlador.AdicionarVeiculo(novoCarro);
                 return true;
             }
-            catch(VeiculoDuplicadoException ex)
+            catch (VeiculoDuplicadoException ex)
             {
                 MessageBox.Show(ex.Message);
                 return false;
@@ -88,11 +88,11 @@ namespace Automobile
             }
         }
 
-        public static bool CriarCamioneta(string VeiculoMatricula, string veiculoModelo, decimal veiculoPreco, string veiculoStatus, int numeroEixos, int numeroPassageiros)
+        public static bool CriarCamioneta(string VeiculoMatricula, string veiculoModelo, decimal veiculoPreco, int numeroEixos, int numeroPassageiros)
         {
             try
             {
-                Camioneta novaCamioneta = new Camioneta(VeiculoMatricula, veiculoModelo, veiculoPreco, veiculoStatus, numeroEixos, numeroPassageiros);
+                Camioneta novaCamioneta = new Camioneta(VeiculoMatricula, veiculoModelo, veiculoPreco, new Estado(), numeroEixos, numeroPassageiros);
                 Controlador.AdicionarVeiculo(novaCamioneta);
                 return true;
             }
@@ -159,12 +159,12 @@ namespace Automobile
 
         }
 
-        public static bool CriarReserva(int id, DateTime DataInicio, DateTime DataFim, Veiculo veiculo)
+        public static bool CriarReserva(string id, DateTime DataInicio, DateTime DataFim)
         {
             try
             {
-                Reserva novaReserva = new Reserva(id, veiculo, DataInicio, DataFim);
-                Controlador.AdicionarReserva(novaReserva);
+
+                Controlador.AdicionarReserva(id, DataInicio, DataFim);
                 return true;
             }
             catch (ReservaException ex)
@@ -194,7 +194,7 @@ namespace Automobile
         {
             try
             {
-                Controlador.GetListaVeciulosReservados(tipo);
+                Controlador.GetListaVeciulosReservadosDoTipo(tipo);
                 return true;
             }
             catch (ArgumentException ex)

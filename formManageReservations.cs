@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace Automobile
 {
     public partial class formManageReservations : Form
     {
-        public List<object> veiculosDisponiveis = new List<object>();
+
 
         public formManageReservations()
         {
@@ -21,8 +19,8 @@ namespace Automobile
                 case 0:
 
                     AdicionarColunas(dgv_veiculos_disponiveis, "Carro", new string[] { "Matrícula", "Modelo", "Nº Portas", "Tipo de Caixa", "Preço / dia" });
-                    PreencheListaDisponiveis("Carro");
-                    foreach (var veiculo in veiculosDisponiveis)
+
+                    foreach (var veiculo in EmpresaController.Controlador.VeiculosDisponiveis)
                     {
                         Carro carro = veiculo as Carro;
 
@@ -40,9 +38,9 @@ namespace Automobile
                 case 1:
 
                     AdicionarColunas(dgv_veiculos_disponiveis, "Mota", new string[] { "Matrícula", "Modelo", "Cilindrada", "Preço / dia" });
-                    PreencheListaDisponiveis("Mota");
 
-                    foreach (var veiculo in veiculosDisponiveis)
+
+                    foreach (var veiculo in EmpresaController.Controlador.VeiculosDisponiveis)
                     {
                         Mota mota = veiculo as Mota;
 
@@ -59,9 +57,9 @@ namespace Automobile
                 case 2:
 
                     AdicionarColunas(dgv_veiculos_disponiveis, "Camioneta", new string[] { "Matrícula", "Modelo", "Nº de Eixos", "Nº Máx. Passageiros", "Preço / dia" });
-                    PreencheListaDisponiveis("Camioneta");
 
-                    foreach (var veiculo in veiculosDisponiveis)
+
+                    foreach (var veiculo in EmpresaController.Controlador.VeiculosDisponiveis)
                     {
                         Camioneta camioneta = veiculo as Camioneta;
 
@@ -79,9 +77,9 @@ namespace Automobile
                 case 3:
 
                     AdicionarColunas(dgv_veiculos_disponiveis, "Camiao", new string[] { "Matrícula", "Modelo", "Peso Máx. Suportado", "Preço / dia" });
-                    PreencheListaDisponiveis("Camiao");
 
-                    foreach (var veiculo in veiculosDisponiveis)
+
+                    foreach (var veiculo in EmpresaController.Controlador.VeiculosDisponiveis)
                     {
                         Camiao camiao = veiculo as Camiao;
 
@@ -170,33 +168,7 @@ namespace Automobile
 
         }
 
-        private void PreencheListaDisponiveis(string tipo)
-        {
-            if (veiculosDisponiveis.Count() != 0)
-            {
-                veiculosDisponiveis.Clear();
-            }
 
-            bool flag = EmpresaController.ValidarListaVeiculosDoTipo(tipo);
-
-            if (flag)
-            {
-                var minhaLista = EmpresaController.Controlador.GetListaVeciulosDoTipo(tipo);
-
-                foreach (var objeto in minhaLista)
-                {
-                    Veiculo veiculo = objeto as Veiculo;
-
-                    if (veiculo.VeiculoStatus == "Disponivel")
-                    {
-                        veiculosDisponiveis.Add(veiculo);
-                    }
-
-                }
-
-            }
-            //
-        }
         private void AdicionarColunas(DataGridView dgv_veiculos_, string tipoVeiculo, string[] colunas)
         {
             //limpamos a dgv anterior

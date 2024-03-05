@@ -99,27 +99,32 @@ namespace Automobile
                 //se existir veiculos do tipo selecionado deve limpar as linhas e mostrar as novas
                 dgv_veiculos.Rows.Clear();
 
-                var listaRequerida = EmpresaController.Controlador.GetListaVeciulosDoTipo(TipoVeiculo);
+                var listaRequerida = new List<object>();
+
 
                 switch (cb_status.SelectedIndex)
                 {
                     case 0:
 
+                        listaRequerida = EmpresaController.Controlador.VeiculosDisponiveis;
                         PreencheListaDeVeiculosDoStatus(listaRequerida, TipoVeiculo, "Disponivel");
                         break;
 
                     case 1:
 
+                        listaRequerida = EmpresaController.Controlador.VeiculosAlugados;
                         PreencheListaDeVeiculosDoStatus(listaRequerida, TipoVeiculo, "Alugado");
                         break;
 
                     case 2:
 
+                        listaRequerida = EmpresaController.Controlador.VeiculosReservados;
                         PreencheListaDeVeiculosDoStatus(listaRequerida, TipoVeiculo, "Reservado");
                         break;
 
                     case 3:
 
+                        listaRequerida = EmpresaController.Controlador.VeiculosEmManutencao;
                         PreencheListaDeVeiculosDoStatus(listaRequerida, TipoVeiculo, "Em manutenção");
                         break;
 
@@ -147,7 +152,7 @@ namespace Automobile
                         {
                             Carro carro = objeto as Carro;
 
-                            if (carro.VeiculoStatus == status)
+                            if (carro.VeiculoStatus.Nome.ToString() == status)
                             {
                                 dgv_veiculos.Rows.Add(
                                     carro.VeiculoMatricula,
@@ -172,7 +177,7 @@ namespace Automobile
                         {
                             Mota mota = (Mota)objeto;
 
-                            if (mota.VeiculoStatus == status)
+                            if (mota.VeiculoStatus.Nome.ToString() == status)
                             {
                                 dgv_veiculos.Rows.Add(
                                     mota.VeiculoMatricula,
@@ -194,7 +199,7 @@ namespace Automobile
                         {
                             Camioneta camioneta = objeto as Camioneta;
 
-                            if (camioneta.VeiculoStatus == status)
+                            if (camioneta.VeiculoStatus.Nome.ToString() == status)
                             {
                                 dgv_veiculos.Rows.Add(
                                     camioneta.VeiculoMatricula,
@@ -219,7 +224,7 @@ namespace Automobile
                         {
                             Camiao camiao = (Camiao)objeto;
 
-                            if (camiao.VeiculoStatus == status)
+                            if (camiao.VeiculoStatus.Nome.ToString() == status)
                             {
                                 dgv_veiculos.Rows.Add(
                                     camiao.VeiculoMatricula,
