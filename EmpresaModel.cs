@@ -98,7 +98,7 @@ namespace Automobile
             Carro veiculo5 = new Carro("BC-23-DE", "Volkswagen Golf", 45m, new Estado(), 5, "manual");
             Mota veiculo6 = new Mota("DE-45-FG", "Harley-Davidson Sportster", 55.80m, new Estado(), 300);
             Camiao veiculo7 = new Camiao("EF-56-GH", "Scania R500", 170m, new Estado(), 44000);
-            Camioneta veiculo8 = new Camioneta("FG-67-HI", "Chevrolet Tahoe", 500.99m, new Estado(), 2, 5);
+            Camioneta veiculo8 = new Camioneta("5678-DEF", "Chevrolet Tahoe", 500.99m, new Estado(), 2, 5);
 
             Carro veiculo9 = new Carro("GH-78-IJ", "Mustang shelby GT350", 135m, new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), 5, "manual");
             Mota veiculo10 = new Mota("HI-89-JK", "Yamaha MT-07", 55m, new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), 300);
@@ -122,7 +122,7 @@ namespace Automobile
             Mota veiculo26 = new Mota("CD-90-EF", "BMW S1000RR", 55.80m, new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), 300);
             Camiao veiculo27 = new Camiao("DE-01-FG", "Peterbilt 389", 150m, new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), 44000);
             Camioneta veiculo28 = new Camioneta("EF-12-GH", "Ford F-150", 500m, new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), 2, 5);
-            Carro veiculo29 = new Carro("FG-23-HI", "Audi A3", 88.70m, new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), 5, "manual");
+            Carro veiculo29 = new Carro("9012-GHI", "Audi A3", 88.70m, new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), 5, "manual");
             Mota veiculo30 = new Mota("HI-12-JK", "Triumph Bonneville", 55.50m, new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), 300);
             Camiao veiculo31 = new Camiao("3456-JKL", "Freightliner Cascadia", 150m, new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), 44000);
             Camioneta veiculo32 = new Camioneta("LM-678-MN", "Mitsubishi Outlander", 500m, new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), 2, 5);
@@ -199,7 +199,7 @@ namespace Automobile
                 case "Reservado":
                     ExisteVeiculoNesseStatus(tipoRequerido, VeiculosReservados);
                     break;
-                case "Em Manuntenção":
+                case "EmManutencao":
                     ExisteVeiculoNesseStatus(tipoRequerido, VeiculosEmManutencao);
                     break;
 
@@ -363,7 +363,7 @@ namespace Automobile
                     foreach (var tipo in new string[] { "Carro", "Mota", "Camioneta", "Camiao" })
                     {
                         //Para cada tipo de objeto especificado vamos verificar  e criar o csv
-                        ValidarListaVeiculosDoTipo(tipo, "Em Manuntenção");
+                        ValidarListaVeiculosDoTipo(tipo, "EmManutencao");
 
                         if (VeiculosEmManutencao.Count > 0)
                         {
