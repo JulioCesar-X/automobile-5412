@@ -62,6 +62,15 @@ namespace Automobile
         {
 
         }
+
+    }
+
+    public class PesoMaximoInvalido2Exception : EmpresaException 
+    {
+        public PesoMaximoInvalido2Exception(int PesoMaximo) : base($"O peso máximo suportado inválido: \"{PesoMaximo}\". Deve estar dentro do intervalo ( 1kg - 44000kg ).")
+        {
+
+        }
     }
 
 

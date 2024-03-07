@@ -12,9 +12,13 @@
             set
             {
 
-                if (value <= 0 || value > 44000)
+                if (int.TryParse(value.ToString(), out int result))
                 {
-                    throw new PesoMaximoInvalidoException(value);
+                    throw new PesoMaximoInvalidoException(result);
+                }
+                else if (result <= 0 || result > 44000)
+                {
+                    throw new PesoMaximoInvalidoException(result);
                 }
                 else
                 {
