@@ -127,7 +127,7 @@ namespace Automobile
 
         private void comboBoxTipoVeiculo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            pb_veiculos_alugados.Visible = false;
+            
 
             switch (comboBoxTipoVeiculo.SelectedIndex)
             {
@@ -188,6 +188,11 @@ namespace Automobile
                 comboBoxTipoVeiculo.Visible = true;
                 lb_filtro.Visible = true;
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

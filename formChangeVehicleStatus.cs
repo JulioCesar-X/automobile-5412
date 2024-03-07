@@ -11,7 +11,8 @@ namespace Automobile
         public formChangeVehicleStatus()
         {
             InitializeComponent();
-
+            lb_status.Visible = false;
+            cb_status.Visible = false;
         }
 
         private void AdicionarColunas(DataGridView dgv_veiculos_, string[] colunas)
@@ -55,6 +56,8 @@ namespace Automobile
         private void ComboBoxFiltrar_SelectedIndexChanged(object sender, EventArgs e)
         {
             pb_list_veiculos.Visible = true;
+            lb_status.Visible = true;
+            cb_status.Visible = true;
 
             dgv_veiculos.Columns.Clear();
 

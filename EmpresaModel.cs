@@ -231,24 +231,20 @@ namespace Automobile
 
 
 
-        public void AdicionarReserva(string matricula, DateTime inicio, DateTime fim)
+        public void ValidarReserva(string matricula, DateTime inicio, DateTime fim)
         {
-            Veiculo veiculo = (Veiculo)VeiculosDisponiveis.Find(v => ((Veiculo)v).VeiculoMatricula == matricula);
+            Veiculo veiculo = (Veiculo)VeiculosReservados.Find(v => ((Veiculo)v).VeiculoMatricula == matricula);
 
-            if (inicio < veiculo.VeiculoStatus.DataFim)
+            if (veiculo != null)
             {
-                throw new ArgumentException($" O veiculo da matricula {matricula} na data {inicio} já está reservado");
+                if (inicio < veiculo.VeiculoStatus.DataFim)
+                {
+                    throw new ArgumentException($" O veiculo da matricula {matricula} na data {inicio} já está reservado");
 
+                }
             }
-            else if (veiculo != null)
-            {
-                veiculo.Reservar(inicio, fim);
-                VeiculosReservados.Add(veiculo);
-            }
-            else
-            {
-                throw new ArgumentException($" O veiculo da matricula {matricula} não foi encontrado");
-            }
+                      
+
         }
 
 
@@ -500,6 +496,25 @@ namespace Automobile
                     throw new ArgumentException("Lista desconhecida.");
             }
         }
+
+
+        public void AdicionarVeiculoReservado(Veiculo objeto)
+        {
+
+            Veiculo veiculo = (Veiculo)objeto;
+
+            string matriculaRequerida = veiculo.VeiculoMatricula;
+
+            //faz o casting antes de testar a matricula
+            if (VeiculosReservados.Any(v => ((Veiculo)v).VeiculoMatricula == matriculaRequerida))
+            //[ carro , mota, camiao]
+            {
+                throw new VeiculoDuplicadoException(matriculaRequerida);
+            }               //ArgumentException()
+
+            VeiculosReservados.Add(objeto);
+        }
+
 
 
         //public void CarregarDadosDoCsv(string folderPath, string nomeLista)

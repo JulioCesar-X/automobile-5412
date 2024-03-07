@@ -61,9 +61,8 @@
             this.panel_system_control.Controls.Add(this.panel_user);
             this.panel_system_control.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_system_control.Location = new System.Drawing.Point(0, 0);
-            this.panel_system_control.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel_system_control.Name = "panel_system_control";
-            this.panel_system_control.Size = new System.Drawing.Size(1385, 762);
+            this.panel_system_control.Size = new System.Drawing.Size(1039, 619);
             this.panel_system_control.TabIndex = 0;
             // 
             // panel_user
@@ -89,9 +88,8 @@
             this.panel_user.Controls.Add(this.pb_user_image);
             this.panel_user.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_user.Location = new System.Drawing.Point(0, 0);
-            this.panel_user.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel_user.Name = "panel_user";
-            this.panel_user.Size = new System.Drawing.Size(1385, 772);
+            this.panel_user.Size = new System.Drawing.Size(1039, 627);
             this.panel_user.TabIndex = 0;
             // 
             // btn_change_account
@@ -102,10 +100,9 @@
             this.btn_change_account.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_change_account.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_change_account.ForeColor = System.Drawing.Color.White;
-            this.btn_change_account.Location = new System.Drawing.Point(477, 718);
-            this.btn_change_account.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_change_account.Location = new System.Drawing.Point(358, 583);
             this.btn_change_account.Name = "btn_change_account";
-            this.btn_change_account.Size = new System.Drawing.Size(155, 34);
+            this.btn_change_account.Size = new System.Drawing.Size(116, 28);
             this.btn_change_account.TabIndex = 9;
             this.btn_change_account.Text = "Switch Account";
             this.btn_change_account.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -118,8 +115,7 @@
             this.lb_title.BackColor = System.Drawing.Color.Transparent;
             this.lb_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_title.ForeColor = System.Drawing.SystemColors.Window;
-            this.lb_title.Location = new System.Drawing.Point(269, 54);
-            this.lb_title.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_title.Location = new System.Drawing.Point(202, 44);
             this.lb_title.Name = "lb_title";
             this.lb_title.Size = new System.Drawing.Size(434, 69);
             this.lb_title.TabIndex = 3;
@@ -134,10 +130,9 @@
             this.btn_back_begin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_back_begin.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_back_begin.ForeColor = System.Drawing.Color.White;
-            this.btn_back_begin.Location = new System.Drawing.Point(745, 718);
-            this.btn_back_begin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_back_begin.Location = new System.Drawing.Point(559, 583);
             this.btn_back_begin.Name = "btn_back_begin";
-            this.btn_back_begin.Size = new System.Drawing.Size(93, 34);
+            this.btn_back_begin.Size = new System.Drawing.Size(70, 28);
             this.btn_back_begin.TabIndex = 7;
             this.btn_back_begin.Text = "Refresh";
             this.btn_back_begin.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -152,10 +147,9 @@
             this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_exit.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_exit.ForeColor = System.Drawing.Color.White;
-            this.btn_exit.Location = new System.Drawing.Point(969, 718);
-            this.btn_exit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_exit.Location = new System.Drawing.Point(727, 583);
             this.btn_exit.Name = "btn_exit";
-            this.btn_exit.Size = new System.Drawing.Size(117, 34);
+            this.btn_exit.Size = new System.Drawing.Size(88, 28);
             this.btn_exit.TabIndex = 7;
             this.btn_exit.Text = "Power Off";
             this.btn_exit.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -168,8 +162,7 @@
             this.lb_date.BackColor = System.Drawing.Color.Transparent;
             this.lb_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_date.ForeColor = System.Drawing.SystemColors.Control;
-            this.lb_date.Location = new System.Drawing.Point(1139, 17);
-            this.lb_date.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_date.Location = new System.Drawing.Point(854, 14);
             this.lb_date.Name = "lb_date";
             this.lb_date.Size = new System.Drawing.Size(196, 24);
             this.lb_date.TabIndex = 4;
@@ -181,8 +174,7 @@
             this.lb_date_time.BackColor = System.Drawing.Color.Transparent;
             this.lb_date_time.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_date_time.ForeColor = System.Drawing.SystemColors.Control;
-            this.lb_date_time.Location = new System.Drawing.Point(1256, 52);
-            this.lb_date_time.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_date_time.Location = new System.Drawing.Point(942, 42);
             this.lb_date_time.Name = "lb_date_time";
             this.lb_date_time.Size = new System.Drawing.Size(80, 24);
             this.lb_date_time.TabIndex = 4;
@@ -194,10 +186,9 @@
             this.PnlFormLoader.BackgroundImage = global::Automobile.Properties.Resources.pngwing_com__10_;
             this.PnlFormLoader.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.PnlFormLoader.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.PnlFormLoader.Location = new System.Drawing.Point(260, 149);
-            this.PnlFormLoader.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PnlFormLoader.Location = new System.Drawing.Point(195, 121);
             this.PnlFormLoader.Name = "PnlFormLoader";
-            this.PnlFormLoader.Size = new System.Drawing.Size(1077, 550);
+            this.PnlFormLoader.Size = new System.Drawing.Size(809, 448);
             this.PnlFormLoader.TabIndex = 2;
             // 
             // btn_manage_users
@@ -208,10 +199,9 @@
             this.btn_manage_users.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_manage_users.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_manage_users.ForeColor = System.Drawing.Color.White;
-            this.btn_manage_users.Location = new System.Drawing.Point(47, 628);
-            this.btn_manage_users.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_manage_users.Location = new System.Drawing.Point(35, 510);
             this.btn_manage_users.Name = "btn_manage_users";
-            this.btn_manage_users.Size = new System.Drawing.Size(163, 58);
+            this.btn_manage_users.Size = new System.Drawing.Size(122, 47);
             this.btn_manage_users.TabIndex = 8;
             this.btn_manage_users.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_manage_users.UseVisualStyleBackColor = false;
@@ -225,10 +215,9 @@
             this.btn_veichle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_veichle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_veichle.ForeColor = System.Drawing.Color.White;
-            this.btn_veichle.Location = new System.Drawing.Point(47, 162);
-            this.btn_veichle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_veichle.Location = new System.Drawing.Point(35, 132);
             this.btn_veichle.Name = "btn_veichle";
-            this.btn_veichle.Size = new System.Drawing.Size(163, 58);
+            this.btn_veichle.Size = new System.Drawing.Size(122, 47);
             this.btn_veichle.TabIndex = 1;
             this.btn_veichle.Text = "Add Veichle";
             this.btn_veichle.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -243,10 +232,9 @@
             this.btn_change_veichle_status.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_change_veichle_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_change_veichle_status.ForeColor = System.Drawing.Color.White;
-            this.btn_change_veichle_status.Location = new System.Drawing.Point(47, 239);
-            this.btn_change_veichle_status.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_change_veichle_status.Location = new System.Drawing.Point(35, 194);
             this.btn_change_veichle_status.Name = "btn_change_veichle_status";
-            this.btn_change_veichle_status.Size = new System.Drawing.Size(163, 58);
+            this.btn_change_veichle_status.Size = new System.Drawing.Size(122, 47);
             this.btn_change_veichle_status.TabIndex = 2;
             this.btn_change_veichle_status.Text = "List of Vehicles";
             this.btn_change_veichle_status.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -261,10 +249,9 @@
             this.btn_veichles_available.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_veichles_available.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_veichles_available.ForeColor = System.Drawing.Color.White;
-            this.btn_veichles_available.Location = new System.Drawing.Point(47, 316);
-            this.btn_veichles_available.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_veichles_available.Location = new System.Drawing.Point(35, 257);
             this.btn_veichles_available.Name = "btn_veichles_available";
-            this.btn_veichles_available.Size = new System.Drawing.Size(163, 58);
+            this.btn_veichles_available.Size = new System.Drawing.Size(122, 47);
             this.btn_veichles_available.TabIndex = 3;
             this.btn_veichles_available.Text = "Rent a vehicle";
             this.btn_veichles_available.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -279,12 +266,11 @@
             this.btn_vehicle_aintenance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_vehicle_aintenance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_vehicle_aintenance.ForeColor = System.Drawing.Color.White;
-            this.btn_vehicle_aintenance.Location = new System.Drawing.Point(47, 394);
-            this.btn_vehicle_aintenance.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_vehicle_aintenance.Location = new System.Drawing.Point(35, 320);
             this.btn_vehicle_aintenance.Name = "btn_vehicle_aintenance";
-            this.btn_vehicle_aintenance.Size = new System.Drawing.Size(163, 58);
+            this.btn_vehicle_aintenance.Size = new System.Drawing.Size(122, 47);
             this.btn_vehicle_aintenance.TabIndex = 4;
-            this.btn_vehicle_aintenance.Text = "Time Simulation Billing";
+            this.btn_vehicle_aintenance.Text = "Calculate Reserves";
             this.btn_vehicle_aintenance.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_vehicle_aintenance.UseVisualStyleBackColor = false;
             this.btn_vehicle_aintenance.Click += new System.EventHandler(this.BtnVehicleMaintenance_Click);
@@ -298,10 +284,9 @@
             this.btn_manage_reservations.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_manage_reservations.ForeColor = System.Drawing.Color.White;
             this.btn_manage_reservations.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btn_manage_reservations.Location = new System.Drawing.Point(47, 473);
-            this.btn_manage_reservations.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_manage_reservations.Location = new System.Drawing.Point(35, 384);
             this.btn_manage_reservations.Name = "btn_manage_reservations";
-            this.btn_manage_reservations.Size = new System.Drawing.Size(163, 58);
+            this.btn_manage_reservations.Size = new System.Drawing.Size(122, 47);
             this.btn_manage_reservations.TabIndex = 5;
             this.btn_manage_reservations.Text = "Manage Reservations";
             this.btn_manage_reservations.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -316,10 +301,9 @@
             this.btn_manage_files.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_manage_files.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_manage_files.ForeColor = System.Drawing.Color.White;
-            this.btn_manage_files.Location = new System.Drawing.Point(47, 551);
-            this.btn_manage_files.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_manage_files.Location = new System.Drawing.Point(35, 448);
             this.btn_manage_files.Name = "btn_manage_files";
-            this.btn_manage_files.Size = new System.Drawing.Size(163, 58);
+            this.btn_manage_files.Size = new System.Drawing.Size(122, 47);
             this.btn_manage_files.TabIndex = 6;
             this.btn_manage_files.Text = "Manage Files";
             this.btn_manage_files.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -331,8 +315,7 @@
             this.lb_goodjob.AutoSize = true;
             this.lb_goodjob.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_goodjob.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(178)))));
-            this.lb_goodjob.Location = new System.Drawing.Point(71, 97);
-            this.lb_goodjob.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_goodjob.Location = new System.Drawing.Point(53, 79);
             this.lb_goodjob.Name = "lb_goodjob";
             this.lb_goodjob.Size = new System.Drawing.Size(111, 15);
             this.lb_goodjob.TabIndex = 2;
@@ -344,8 +327,7 @@
             this.lb_user_logado.AutoSize = true;
             this.lb_user_logado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_user_logado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(156)))), ((int)(((byte)(149)))));
-            this.lb_user_logado.Location = new System.Drawing.Point(77, 119);
-            this.lb_user_logado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_user_logado.Location = new System.Drawing.Point(58, 97);
             this.lb_user_logado.Name = "lb_user_logado";
             this.lb_user_logado.Size = new System.Drawing.Size(103, 20);
             this.lb_user_logado.TabIndex = 1;
@@ -356,10 +338,9 @@
             // 
             this.pb_user_image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pb_user_image.Image = global::Automobile.Properties.Resources.pngwing_com__13_;
-            this.pb_user_image.Location = new System.Drawing.Point(89, 23);
-            this.pb_user_image.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pb_user_image.Location = new System.Drawing.Point(67, 19);
             this.pb_user_image.Name = "pb_user_image";
-            this.pb_user_image.Size = new System.Drawing.Size(83, 70);
+            this.pb_user_image.Size = new System.Drawing.Size(62, 57);
             this.pb_user_image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pb_user_image.TabIndex = 0;
             this.pb_user_image.TabStop = false;
@@ -367,10 +348,9 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.panel3.Location = new System.Drawing.Point(0, 278);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Location = new System.Drawing.Point(0, 226);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(4, 123);
+            this.panel3.Size = new System.Drawing.Size(3, 100);
             this.panel3.TabIndex = 1;
             // 
             // timer1
@@ -379,14 +359,13 @@
             // 
             // FormPainelControlo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(1369, 762);
+            this.ClientSize = new System.Drawing.Size(1027, 619);
             this.Controls.Add(this.panel_system_control);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormPainelControlo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PainelControlo";

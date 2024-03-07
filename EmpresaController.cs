@@ -161,12 +161,14 @@ namespace Automobile
 
         }
 
-        public static bool CriarReserva(string id, DateTime DataInicio, DateTime DataFim)
+        public static bool ValidarReserva(string id, DateTime DataInicio, DateTime DataFim)
         {
             try
             {
-
-                Controlador.AdicionarReserva(id, DataInicio, DataFim);
+                
+                Controlador.ValidarReserva(id, DataInicio, DataFim);
+                //veiculo.Reservar(inicio, fim);
+                //VeiculosReservados.Add(veiculo);
                 return true;
             }
             catch (ReservaException ex)
