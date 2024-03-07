@@ -31,7 +31,7 @@ namespace Automobile
             timer1.Start();
             
 
-            if (EmpresaController.userLogado == "#")
+            if (EmpresaController.userLogado == "#admin")
             {
                 IsAdmin();
 

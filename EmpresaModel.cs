@@ -80,7 +80,7 @@ namespace Automobile
             User func2 = new User("#", "Rodrigo", "atec123");
             User func3 = new User("#", "Francisco", "atec123");
             User func4 = new User("#", "Julio", "atec123");
-            User func5 = new User("#", "", ""); //ADMIN
+            User func5 = new User("#", "admin", ""); //ADMIN
 
             Users.Add(func1);
             Users.Add(func2);

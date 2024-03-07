@@ -21,7 +21,7 @@ namespace Automobile
             // Preencha o DataGridView com os dados dos usuários da lista em EmpresaModel
             foreach (var user in EmpresaController.Controlador.Users)
             {
-                if (user.UserName != "#")
+                if (user.UserName != "#admin")
                 {
                     dataGridView1.Rows.Add(user.Id, user.Name, user.Password);
                 }
@@ -34,11 +34,15 @@ namespace Automobile
             // Limpa as linhas existentes no DataGridView
             dataGridView1.Rows.Clear();
 
-            // Preenche o DataGridView com os dados dos usuários da lista em EmpresaModel
             foreach (var user in EmpresaController.Controlador.Users)
             {
-                dataGridView1.Rows.Add(user.Id, user.Name, user.Password);
+                if (user.Name != "admin")
+                {
+                    dataGridView1.Rows.Add(user.Id, user.Name, user.Password);
+                }
             }
+
+            
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)
@@ -48,7 +52,7 @@ namespace Automobile
             EmpresaController.Controlador.Users.Add(new User("#", username, password));
 
             atualizarDataGridView();
-            //
+           
         }
 
         private void label5_Click(object sender, EventArgs e)
