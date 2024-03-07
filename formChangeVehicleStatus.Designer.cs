@@ -95,7 +95,7 @@
             "Alugado",
             "Reservado",
             "EmManutencao"});
-            this.cb_status.Location = new System.Drawing.Point(294, 21);
+            this.cb_status.Location = new System.Drawing.Point(291, 21);
             this.cb_status.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cb_status.Name = "cb_status";
             this.cb_status.Size = new System.Drawing.Size(109, 21);
@@ -113,6 +113,7 @@
             this.pb_list_veiculos.Size = new System.Drawing.Size(799, 426);
             this.pb_list_veiculos.TabIndex = 8;
             this.pb_list_veiculos.TabStop = false;
+            this.pb_list_veiculos.Click += new System.EventHandler(this.pb_list_veiculos_Click);
             // 
             // formChangeVehicleStatus
             // 

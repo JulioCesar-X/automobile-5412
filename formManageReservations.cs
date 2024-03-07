@@ -5,14 +5,13 @@ namespace Automobile
 {
     public partial class FormManageReservations : Form
     {
-
+        private string tipoVeiculoSelecionado;
 
         public FormManageReservations()
         {
             InitializeComponent();
             lb_preco_total.Visible = false;
             btn_criar_reserva.Visible = false;
-
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -141,7 +140,8 @@ namespace Automobile
         {
             if (validarForm())
             {
-                tb_fim.Text = date_time_dias.Value.ToString().Substring(0, 10) + " " + list_box_horario.Text;
+                tb_fim.Text = date_time_dias.Value.ToString("dd-MM-yyyy") + " " + list_box_horario.Text;
+
             }
         }
 
@@ -160,7 +160,12 @@ namespace Automobile
             }
             else
             {
-                tb_valorfinaltempo.Text = (dataHoraFim - dataHoraInicio).ToString();
+                // Calcular a diferença entre as datas
+                TimeSpan duracao = dataHoraFim - dataHoraInicio;
+
+                // Exibir a duração total em um formato personalizado
+                string duracaoFormatada = $"{(int)duracao.TotalDays} dias, {duracao.Hours}h e {duracao.Minutes} minutos";
+                tb_valorfinaltempo.Text = duracaoFormatada;
             }
         }
 
@@ -169,7 +174,7 @@ namespace Automobile
             if (validarForm())
             {
                 //primeiro botao ok
-                tb_inicio.Text = date_time_dias.Value.ToString().Substring(0, 10) + " " + list_box_horario.Text;
+                tb_inicio.Text = date_time_dias.Value.ToString("dd-MM-yyyy") + " " + list_box_horario.Text;
             }
         }
 
