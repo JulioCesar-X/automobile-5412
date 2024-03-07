@@ -1,9 +1,11 @@
-﻿namespace Automobile
+﻿using System;
+
+namespace Automobile
 {
     public class Camiao : Veiculo
     {
-        private int _pesoMaximo;
-        public int PesoMaximo
+        private string _pesoMaximo;
+        public string PesoMaximo
         {
             get
             {
@@ -12,13 +14,12 @@
             set
             {
 
-                if (int.TryParse(value.ToString(), out int result))
+                if (!int.TryParse(value.ToString(), out int pesoMax) )
                 {
-                    throw new PesoMaximoInvalidoException(result);
-                }
-                else if (result <= 0 || result > 44000)
-                {
-                    throw new PesoMaximoInvalidoException(result);
+                    if (pesoMax <= 0 || pesoMax > 44000)
+                    {
+                        throw new PesoMaximoInvalidoException(pesoMax);
+                    }
                 }
                 else
                 {
@@ -31,7 +32,7 @@
         }
 
 
-        public Camiao(string veiculoMatricula, string veiculoModelo, decimal veiculoPreco, Estado veiculoStatus, int pesoMaximo) : base(veiculoMatricula, veiculoModelo, veiculoPreco, veiculoStatus)
+        public Camiao(string veiculoMatricula, string veiculoModelo, decimal veiculoPreco, Estado veiculoStatus, string pesoMaximo) : base(veiculoMatricula, veiculoModelo, veiculoPreco, veiculoStatus)
         {
 
             PesoMaximo = pesoMaximo;

@@ -58,20 +58,19 @@ namespace Automobile
     //Para o camião
     public class PesoMaximoInvalidoException : EmpresaException
     {
-        public PesoMaximoInvalidoException(int PesoMaximo) : base($"O peso máximo suportado inválido: \"{PesoMaximo}\". Deve estar dentro do intervalo ( 1kg - 44000kg ).")
+        public PesoMaximoInvalidoException(int PesoMaximo) : base($"O peso máximo suportado inválido: \"{PesoMaximo}\". Deve estar dentro do intervalo ( 1kg - 44000kg).")
         {
 
         }
 
     }
 
-    public class PesoMaximoInvalido2Exception : EmpresaException 
+    public class TipoInvalidoException : EmpresaException
     {
-        public PesoMaximoInvalido2Exception(int PesoMaximo) : base($"O peso máximo suportado inválido: \"{PesoMaximo}\". Deve estar dentro do intervalo ( 1kg - 44000kg ).")
-        {
+        public TipoInvalidoException(string pesoMax):base($"O peso máximo não pode ser \"{pesoMax}\" ") { }
 
-        }
-    }
+    } 
+
 
 
 
