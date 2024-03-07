@@ -54,6 +54,7 @@ namespace Automobile
 
         private void ComboBoxFiltrar_SelectedIndexChanged(object sender, EventArgs e)
         {
+            pb_list_veiculos.Visible = true;
 
             dgv_veiculos.Columns.Clear();
 
@@ -90,6 +91,7 @@ namespace Automobile
 
         private void Cb_status_SelectedIndexChanged(object sender, EventArgs e)
         {
+            pb_list_veiculos.Visible = false;
 
             if (EmpresaController.ValidarListaVeiculosDoTipo(TipoVeiculo, cb_status.SelectedItem.ToString()))
             {

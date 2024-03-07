@@ -15,7 +15,7 @@ namespace Automobile
             InitializeComponent();
 
             dataAtual = DateTime.Today;
-           
+
 
             dateTimePickerInicio.MinDate = DateTime.Today;
             dateTimePickerFim.MinDate = DateTime.Today;
@@ -29,6 +29,12 @@ namespace Automobile
             dataGridViewVeiculosAlugados.Columns.Add("Estado", "Estado");
             dataGridViewVeiculosAlugados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
+            lblPreco.Visible = false;
+            comboBoxTipoVeiculo.Visible = false;
+            lb_filtro.Visible = false;
+            btnCalculate.Visible = false;
+            chb_ver_veiculos.Visible = false;
+
         }
 
         private void FormTimeSimulation_Load(object sender, EventArgs e)
@@ -36,11 +42,11 @@ namespace Automobile
 
         }
 
-        
 
-        
 
-        
+
+
+
 
         private void DateTimePickerInicio_ValueChanged(object sender, EventArgs e)
         {
@@ -50,6 +56,8 @@ namespace Automobile
         private void DateTimePickerFim_ValueChanged(object sender, EventArgs e)
         {
             dataFim = dateTimePickerFim.Value;
+            btnCalculate.Visible = true;
+
         }
 
         private void DataGridViewVeiculosAlugados_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -64,10 +72,10 @@ namespace Automobile
             dataGridViewVeiculosAlugados.Rows.Clear();
             foreach (var reserva in EmpresaController.Controlador.VeiculosReservados)
             {
-                if (reserva.GetType().Name == tipoVeiculo 
+                if (reserva.GetType().Name == tipoVeiculo
                     && ((Veiculo)reserva).VeiculoStatus.DataInicio.Date >= dateTimePickerInicio.Value.Date
                     && ((Veiculo)reserva).VeiculoStatus.DataFim <= dateTimePickerFim.Value.Date)
-                    {                    
+                {
                     switch (comboBoxTipoVeiculo.SelectedItem)
                     {
                         case "Carro":
@@ -119,34 +127,41 @@ namespace Automobile
 
         private void comboBoxTipoVeiculo_SelectedIndexChanged(object sender, EventArgs e)
         {
+            pb_veiculos_alugados.Visible = false;
+
             switch (comboBoxTipoVeiculo.SelectedIndex)
             {
                 case 0:
                     AdicionarListaVeiculosAlugados("Carro");
+                    lb_veiculos_alugados.Text = "Carros Alugados";
                     break;
 
                 case 1:
                     AdicionarListaVeiculosAlugados("Mota");
+                    lb_veiculos_alugados.Text = "Motas Alugadas";
                     break;
 
                 case 2:
                     AdicionarListaVeiculosAlugados("Camiao");
+                    lb_veiculos_alugados.Text = "Camiões Alugados";
                     break;
 
                 case 3:
                     AdicionarListaVeiculosAlugados("Camioneta");
+                    lb_veiculos_alugados.Text = "Camionetas Alugadas";
                     break;
             }
         }
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
+
             decimal soma = 0;
             foreach (var reserva in EmpresaController.Controlador.VeiculosReservados)
             {
                 Veiculo veiculo = (Veiculo)reserva;
 
-                
+
                 if (veiculo.VeiculoPreco != null &&
                     veiculo.VeiculoStatus.DataInicio.Date >= dateTimePickerInicio.Value.Date &&
                     veiculo.VeiculoStatus.DataFim <= dateTimePickerFim.Value.Date)
@@ -156,12 +171,23 @@ namespace Automobile
             }
 
             lblPreco.Text = "Total: " + soma.ToString() + " €";
+            lblPreco.Visible = true;
+            chb_ver_veiculos.Visible = true;
         }
 
 
         private void lblPreco_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void chb_ver_veiculos_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chb_ver_veiculos.Checked)
+            {
+                comboBoxTipoVeiculo.Visible = true;
+                lb_filtro.Visible = true;
+            }
         }
     }
 }

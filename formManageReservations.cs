@@ -10,10 +10,15 @@ namespace Automobile
         public FormManageReservations()
         {
             InitializeComponent();
+            lb_preco_total.Visible = false;
+            btn_criar_reserva.Visible = false;
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            pb_veiculos_disponiveis.Visible = false;
+
             switch (cb_filtro.SelectedIndex)
             {
                 case 0:
@@ -22,16 +27,20 @@ namespace Automobile
 
                     foreach (var veiculo in EmpresaController.Controlador.VeiculosDisponiveis)
                     {
+
                         Carro carro = veiculo as Carro;
+                        if (carro != null)
+                        {
+                            dgv_veiculos_disponiveis.Rows.Add(
+                                       carro.VeiculoMatricula,
+                                       carro.VeiculoModelo,
+                                       carro.NumeroPortas,
+                                       carro.TipoCaixa,
+                                       carro.VeiculoPreco + " €",
+                                       carro.VeiculoStatus.Nome
 
-                        dgv_veiculos_disponiveis.Rows.Add(
-                                   carro.VeiculoMatricula,
-                                   carro.VeiculoModelo,
-                                   carro.TipoCaixa,
-                                   carro.VeiculoPreco + " €",
-                                   carro.VeiculoStatus
-
-                                   );
+                                       );
+                        }
                     }
                     break;
 
@@ -43,14 +52,16 @@ namespace Automobile
                     foreach (var veiculo in EmpresaController.Controlador.VeiculosDisponiveis)
                     {
                         Mota mota = veiculo as Mota;
-
-                        dgv_veiculos_disponiveis.Rows.Add(
-                                    mota.VeiculoMatricula,
-                                    mota.VeiculoModelo,
-                                    mota.Cilindrada + " cc",
-                                    mota.VeiculoPreco + " €",
-                                    mota.VeiculoStatus
-                                    );
+                        if (mota != null)
+                        {
+                            dgv_veiculos_disponiveis.Rows.Add(
+                                        mota.VeiculoMatricula,
+                                        mota.VeiculoModelo,
+                                        mota.Cilindrada + " cc",
+                                        mota.VeiculoPreco + " €",
+                                        mota.VeiculoStatus.Nome
+                                        );
+                        }
                     }
                     break;
 
@@ -62,15 +73,17 @@ namespace Automobile
                     foreach (var veiculo in EmpresaController.Controlador.VeiculosDisponiveis)
                     {
                         Camioneta camioneta = veiculo as Camioneta;
-
-                        dgv_veiculos_disponiveis.Rows.Add(
-                                    camioneta.VeiculoMatricula,
-                                    camioneta.VeiculoModelo,
-                                    camioneta.NumeroEixos,
-                                    camioneta.NumeroPassageiros,
-                                    camioneta.VeiculoPreco + " €",
-                                    camioneta.VeiculoStatus
-                                    );
+                        if (camioneta != null)
+                        {
+                            dgv_veiculos_disponiveis.Rows.Add(
+                                        camioneta.VeiculoMatricula,
+                                        camioneta.VeiculoModelo,
+                                        camioneta.NumeroEixos,
+                                        camioneta.NumeroPassageiros,
+                                        camioneta.VeiculoPreco + " €",
+                                        camioneta.VeiculoStatus.Nome
+                                        );
+                        }
                     }
                     break;
 
@@ -82,14 +95,16 @@ namespace Automobile
                     foreach (var veiculo in EmpresaController.Controlador.VeiculosDisponiveis)
                     {
                         Camiao camiao = veiculo as Camiao;
-
-                        dgv_veiculos_disponiveis.Rows.Add(
-                                   camiao.VeiculoMatricula,
-                                   camiao.VeiculoModelo,
-                                   camiao.PesoMaximo,
-                                   camiao.VeiculoPreco + " €",
-                                   camiao.VeiculoStatus
-                                   );
+                        if (camiao != null)
+                        {
+                            dgv_veiculos_disponiveis.Rows.Add(
+                                       camiao.VeiculoMatricula,
+                                       camiao.VeiculoModelo,
+                                       camiao.PesoMaximo,
+                                       camiao.VeiculoPreco + " €",
+                                       camiao.VeiculoStatus.Nome
+                                       );
+                        }
                     }
                     break;
             }
@@ -201,6 +216,25 @@ namespace Automobile
             //EmpresaController.CriarReserva(id++, DateTime.Parse(tb_inicio.Text), DateTime.Parse(tb_fim.Text), veiculoSelecionado);
 
 
+        }
+
+        private void date_time_dias_ValueChanged(object sender, EventArgs e)
+        {
+            cb_filtro.SelectedItem = null;
+            pb_veiculos_disponiveis.Visible = true;
+            lb_preco_total.Visible = false;
+            btn_criar_reserva.Visible = false;
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bt_carcular_valor_a_pagar_Click(object sender, EventArgs e)
+        {
+            lb_preco_total.Visible = true;
+            btn_criar_reserva.Visible = true;
         }
     }
 }

@@ -33,14 +33,16 @@
             this.lb_status = new System.Windows.Forms.Label();
             this.dgv_veiculos = new System.Windows.Forms.DataGridView();
             this.cb_status = new System.Windows.Forms.ComboBox();
+            this.pb_list_veiculos = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_veiculos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_list_veiculos)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_filtrar
             // 
             this.lb_filtrar.AutoSize = true;
             this.lb_filtrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_filtrar.Location = new System.Drawing.Point(28, 38);
+            this.lb_filtrar.Location = new System.Drawing.Point(29, 26);
             this.lb_filtrar.Name = "lb_filtrar";
             this.lb_filtrar.Size = new System.Drawing.Size(103, 32);
             this.lb_filtrar.TabIndex = 1;
@@ -54,7 +56,7 @@
             "Mota",
             "Camioneta",
             "Camiao"});
-            this.cb_filtrar.Location = new System.Drawing.Point(135, 45);
+            this.cb_filtrar.Location = new System.Drawing.Point(136, 33);
             this.cb_filtrar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cb_filtrar.Name = "cb_filtrar";
             this.cb_filtrar.Size = new System.Drawing.Size(136, 28);
@@ -65,7 +67,7 @@
             // 
             this.lb_status.AutoSize = true;
             this.lb_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_status.Location = new System.Drawing.Point(322, 38);
+            this.lb_status.Location = new System.Drawing.Point(323, 26);
             this.lb_status.Name = "lb_status";
             this.lb_status.Size = new System.Drawing.Size(110, 32);
             this.lb_status.TabIndex = 1;
@@ -90,11 +92,22 @@
             "Alugado",
             "Reservado",
             "Em Manuntenção"});
-            this.cb_status.Location = new System.Drawing.Point(440, 45);
+            this.cb_status.Location = new System.Drawing.Point(441, 33);
             this.cb_status.Name = "cb_status";
             this.cb_status.Size = new System.Drawing.Size(162, 28);
             this.cb_status.TabIndex = 7;
             this.cb_status.SelectedIndexChanged += new System.EventHandler(this.Cb_status_SelectedIndexChanged);
+            // 
+            // pb_list_veiculos
+            // 
+            this.pb_list_veiculos.BackColor = System.Drawing.Color.Transparent;
+            this.pb_list_veiculos.BackgroundImage = global::Automobile.Properties.Resources.pngwing_com__33_;
+            this.pb_list_veiculos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pb_list_veiculos.Location = new System.Drawing.Point(1, 81);
+            this.pb_list_veiculos.Name = "pb_list_veiculos";
+            this.pb_list_veiculos.Size = new System.Drawing.Size(1191, 656);
+            this.pb_list_veiculos.TabIndex = 8;
+            this.pb_list_veiculos.TabStop = false;
             // 
             // formChangeVehicleStatus
             // 
@@ -102,6 +115,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1192, 737);
+            this.Controls.Add(this.pb_list_veiculos);
             this.Controls.Add(this.cb_status);
             this.Controls.Add(this.dgv_veiculos);
             this.Controls.Add(this.cb_filtrar);
@@ -112,6 +126,7 @@
             this.Name = "formChangeVehicleStatus";
             this.Text = "formChangeVehicleStatus";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_veiculos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_list_veiculos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,5 +138,6 @@
         private System.Windows.Forms.Label lb_status;
         private System.Windows.Forms.DataGridView dgv_veiculos;
         private System.Windows.Forms.ComboBox cb_status;
+        private System.Windows.Forms.PictureBox pb_list_veiculos;
     }
 }

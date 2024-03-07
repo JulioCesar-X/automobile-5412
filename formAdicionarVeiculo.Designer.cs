@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label3 = new System.Windows.Forms.Label();
+            this.lb_matricula = new System.Windows.Forms.Label();
             this.lb_modelo = new System.Windows.Forms.Label();
             this.tb_modelo_marca = new System.Windows.Forms.TextBox();
             this.tb_id_matricula = new System.Windows.Forms.TextBox();
@@ -44,24 +44,26 @@
             this.lblNmrEixos = new System.Windows.Forms.Label();
             this.lblNmrMaxPassageiros = new System.Windows.Forms.Label();
             this.comboBoxNmrEixos = new System.Windows.Forms.ComboBox();
-            this.textBoxNmrMaxPassageiros = new System.Windows.Forms.TextBox();
             this.lblPesoMaxSuportado = new System.Windows.Forms.Label();
             this.textBoxPesoMaxSuportado = new System.Windows.Forms.TextBox();
             this.lb_preco = new System.Windows.Forms.Label();
             this.tb_preco = new System.Windows.Forms.TextBox();
             this.btn_criar = new System.Windows.Forms.Button();
+            this.textBoxNmrMaxPassageiros = new System.Windows.Forms.TextBox();
+            this.pb_add_veiculos = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_add_veiculos)).BeginInit();
             this.SuspendLayout();
             // 
-            // label3
+            // lb_matricula
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(346, 245);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 25);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Matrícula:";
+            this.lb_matricula.AutoSize = true;
+            this.lb_matricula.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_matricula.Location = new System.Drawing.Point(346, 245);
+            this.lb_matricula.Name = "lb_matricula";
+            this.lb_matricula.Size = new System.Drawing.Size(116, 25);
+            this.lb_matricula.TabIndex = 18;
+            this.lb_matricula.Text = "Matrícula:";
             // 
             // lb_modelo
             // 
@@ -175,7 +177,7 @@
             this.comboBoxTipoCaixa.Items.AddRange(new object[] {
             "Manual",
             "Automática"});
-            this.comboBoxTipoCaixa.Location = new System.Drawing.Point(524, 346);
+            this.comboBoxTipoCaixa.Location = new System.Drawing.Point(524, 338);
             this.comboBoxTipoCaixa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBoxTipoCaixa.Name = "comboBoxTipoCaixa";
             this.comboBoxTipoCaixa.Size = new System.Drawing.Size(155, 28);
@@ -224,7 +226,7 @@
             this.lblNmrMaxPassageiros.AutoSize = true;
             this.lblNmrMaxPassageiros.BackColor = System.Drawing.Color.Transparent;
             this.lblNmrMaxPassageiros.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNmrMaxPassageiros.Location = new System.Drawing.Point(224, 346);
+            this.lblNmrMaxPassageiros.Location = new System.Drawing.Point(241, 346);
             this.lblNmrMaxPassageiros.Name = "lblNmrMaxPassageiros";
             this.lblNmrMaxPassageiros.Size = new System.Drawing.Size(265, 25);
             this.lblNmrMaxPassageiros.TabIndex = 29;
@@ -245,21 +247,11 @@
             this.comboBoxNmrEixos.TabIndex = 30;
             this.comboBoxNmrEixos.Visible = false;
             // 
-            // textBoxNmrMaxPassageiros
-            // 
-            this.textBoxNmrMaxPassageiros.Location = new System.Drawing.Point(513, 348);
-            this.textBoxNmrMaxPassageiros.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBoxNmrMaxPassageiros.Name = "textBoxNmrMaxPassageiros";
-            this.textBoxNmrMaxPassageiros.Size = new System.Drawing.Size(165, 26);
-            this.textBoxNmrMaxPassageiros.TabIndex = 31;
-            this.textBoxNmrMaxPassageiros.Visible = false;
-            this.textBoxNmrMaxPassageiros.TextChanged += new System.EventHandler(this.textBoxNmrMaxPassageiros_TextChanged);
-            // 
             // lblPesoMaxSuportado
             // 
             this.lblPesoMaxSuportado.AutoSize = true;
             this.lblPesoMaxSuportado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPesoMaxSuportado.Location = new System.Drawing.Point(224, 302);
+            this.lblPesoMaxSuportado.Location = new System.Drawing.Point(206, 303);
             this.lblPesoMaxSuportado.Name = "lblPesoMaxSuportado";
             this.lblPesoMaxSuportado.Size = new System.Drawing.Size(282, 25);
             this.lblPesoMaxSuportado.TabIndex = 32;
@@ -268,20 +260,19 @@
             // 
             // textBoxPesoMaxSuportado
             // 
-            this.textBoxPesoMaxSuportado.Location = new System.Drawing.Point(513, 304);
+            this.textBoxPesoMaxSuportado.Location = new System.Drawing.Point(501, 303);
             this.textBoxPesoMaxSuportado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxPesoMaxSuportado.Name = "textBoxPesoMaxSuportado";
-            this.textBoxPesoMaxSuportado.Size = new System.Drawing.Size(166, 26);
+            this.textBoxPesoMaxSuportado.Size = new System.Drawing.Size(177, 26);
             this.textBoxPesoMaxSuportado.TabIndex = 33;
             this.textBoxPesoMaxSuportado.Visible = false;
-            this.textBoxPesoMaxSuportado.TextChanged += new System.EventHandler(this.textBoxPesoMaxSuportado_TextChanged);
             // 
             // lb_preco
             // 
             this.lb_preco.AutoSize = true;
             this.lb_preco.BackColor = System.Drawing.Color.Transparent;
             this.lb_preco.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_preco.Location = new System.Drawing.Point(346, 398);
+            this.lb_preco.Location = new System.Drawing.Point(346, 396);
             this.lb_preco.Name = "lb_preco";
             this.lb_preco.Size = new System.Drawing.Size(134, 25);
             this.lb_preco.TabIndex = 29;
@@ -308,12 +299,34 @@
             this.btn_criar.UseVisualStyleBackColor = true;
             this.btn_criar.Click += new System.EventHandler(this.btn_criar_Click);
             // 
+            // textBoxNmrMaxPassageiros
+            // 
+            this.textBoxNmrMaxPassageiros.AcceptsReturn = true;
+            this.textBoxNmrMaxPassageiros.Location = new System.Drawing.Point(514, 347);
+            this.textBoxNmrMaxPassageiros.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxNmrMaxPassageiros.Name = "textBoxNmrMaxPassageiros";
+            this.textBoxNmrMaxPassageiros.Size = new System.Drawing.Size(165, 26);
+            this.textBoxNmrMaxPassageiros.TabIndex = 31;
+            this.textBoxNmrMaxPassageiros.Visible = false;
+            // 
+            // pb_add_veiculos
+            // 
+            this.pb_add_veiculos.BackColor = System.Drawing.Color.Transparent;
+            this.pb_add_veiculos.BackgroundImage = global::Automobile.Properties.Resources.pngwing_com__24_;
+            this.pb_add_veiculos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pb_add_veiculos.Location = new System.Drawing.Point(148, 156);
+            this.pb_add_veiculos.Name = "pb_add_veiculos";
+            this.pb_add_veiculos.Size = new System.Drawing.Size(870, 506);
+            this.pb_add_veiculos.TabIndex = 35;
+            this.pb_add_veiculos.TabStop = false;
+            // 
             // formAdicionarVeiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1076, 674);
+            this.Controls.Add(this.pb_add_veiculos);
             this.Controls.Add(this.btn_criar);
             this.Controls.Add(this.tb_preco);
             this.Controls.Add(this.textBoxPesoMaxSuportado);
@@ -331,7 +344,7 @@
             this.Controls.Add(this.comboBoxNmrPortas);
             this.Controls.Add(this.lblNmrPortas);
             this.Controls.Add(this.tb_modelo_marca);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lb_matricula);
             this.Controls.Add(this.lb_modelo);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -340,13 +353,14 @@
             this.Text = "formAdicionarVeiculo";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_add_veiculos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lb_matricula;
         private System.Windows.Forms.Label lb_modelo;
         private System.Windows.Forms.TextBox tb_id_matricula;
         private System.Windows.Forms.TextBox tb_modelo_marca;
@@ -362,11 +376,12 @@
         private System.Windows.Forms.Label lblNmrEixos;
         private System.Windows.Forms.Label lblNmrMaxPassageiros;
         private System.Windows.Forms.ComboBox comboBoxNmrEixos;
-        private System.Windows.Forms.TextBox textBoxNmrMaxPassageiros;
         private System.Windows.Forms.Label lblPesoMaxSuportado;
         private System.Windows.Forms.TextBox textBoxPesoMaxSuportado;
         private System.Windows.Forms.Label lb_preco;
         private System.Windows.Forms.TextBox tb_preco;
         private System.Windows.Forms.Button btn_criar;
+        private System.Windows.Forms.TextBox textBoxNmrMaxPassageiros;
+        private System.Windows.Forms.PictureBox pb_add_veiculos;
     }
 }

@@ -14,16 +14,28 @@ namespace Automobile
         {
             InitializeComponent();
 
+            btn_criar.Visible = false;
             btn_criar.Enabled = false;
+            lb_modelo.Visible = false;
+            lb_matricula.Visible = false;
+            tb_id_matricula.Visible = false;
+            tb_modelo_marca.Visible = false;
+
         }
 
         //apenas a view que mostra o local de preenchimento 
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+            pb_add_veiculos.Visible = false;
 
             switch (cb_tipo.SelectedIndex)
             {
                 case 0:
+
+                    lb_modelo.Visible = true;
+                    lb_matricula.Visible = true;
+                    tb_id_matricula.Visible = true;
+                    tb_modelo_marca.Visible = true;
 
                     lblNmrPortas.Visible = true;
                     comboBoxNmrPortas.Visible = true;
@@ -38,11 +50,17 @@ namespace Automobile
                     lblPesoMaxSuportado.Visible = false;
                     textBoxPesoMaxSuportado.Visible = false;
                     btn_criar.Enabled = true;
+                    btn_criar.Visible = true;
                     lb_preco.Visible = true;
                     tb_preco.Visible = true;
 
                     break;
                 case 1:
+
+                    lb_modelo.Visible = true;
+                    lb_matricula.Visible = true;
+                    tb_id_matricula.Visible = true;
+                    tb_modelo_marca.Visible = true;
 
                     lblCilindrada.Visible = true;
                     comboBoxCilindrada.Visible = true;
@@ -57,12 +75,18 @@ namespace Automobile
                     lblPesoMaxSuportado.Visible = false;
                     textBoxPesoMaxSuportado.Visible = false;
                     btn_criar.Enabled = true;
+                    btn_criar.Visible = true;
                     lb_preco.Visible = true;
                     tb_preco.Visible = true;
 
                     break;
 
                 case 2:
+
+                    lb_modelo.Visible = true;
+                    lb_matricula.Visible = true;
+                    tb_id_matricula.Visible = true;
+                    tb_modelo_marca.Visible = true;
 
                     lblNmrEixos.Visible = true;
                     comboBoxNmrEixos.Visible = true;
@@ -77,12 +101,18 @@ namespace Automobile
                     lblPesoMaxSuportado.Visible = false;
                     textBoxPesoMaxSuportado.Visible = false;
                     btn_criar.Enabled = true;
+                    btn_criar.Visible = true;
                     lb_preco.Visible = true;
                     tb_preco.Visible = true;
 
                     break;
 
                 case 3:
+
+                    lb_modelo.Visible = true;
+                    lb_matricula.Visible = true;
+                    tb_id_matricula.Visible = true;
+                    tb_modelo_marca.Visible = true;
 
                     lblPesoMaxSuportado.Visible = true;
                     textBoxPesoMaxSuportado.Visible = true;
@@ -97,6 +127,7 @@ namespace Automobile
                     lblTipoCaixa.Visible = false;
                     comboBoxTipoCaixa.Visible = false;
                     btn_criar.Enabled = true;
+                    btn_criar.Visible = true;
                     lb_preco.Visible = true;
                     tb_preco.Visible = true;
 
@@ -124,6 +155,7 @@ namespace Automobile
                         comboBoxNmrPortas.SelectedItem = null;
                         comboBoxTipoCaixa.SelectedItem = null;
 
+
                     }
 
                     break;
@@ -140,15 +172,39 @@ namespace Automobile
                         tb_modelo_marca.Clear();
                         tb_preco.Clear();
                         comboBoxCilindrada.SelectedItem = null;
+
                     }
 
 
                     break;
                 case 2:
 
+                    int numEixos = int.Parse(comboBoxNmrEixos.SelectedItem.ToString());
+                    int numPassageiros = int.Parse(textBoxNmrMaxPassageiros.Text);
+
+                    if (EmpresaController.CriarCamioneta(_matricula, _modelo, _preco, numEixos, numPassageiros))
+                    {
+                        tb_id_matricula.Clear();
+                        tb_modelo_marca.Clear();
+                        tb_preco.Clear();
+                        textBoxNmrMaxPassageiros.Clear();
+                        comboBoxNmrEixos.SelectedItem = null;
+
+                    }
                     break;
                 case 3:
 
+                    int pesoMax = int.Parse(textBoxPesoMaxSuportado.Text);
+
+                    if (EmpresaController.CriarCamiao(_matricula, _modelo, _preco, pesoMax))
+                    {
+                        tb_id_matricula.Clear();
+                        tb_modelo_marca.Clear();
+                        tb_preco.Clear();
+                        textBoxPesoMaxSuportado.Clear();
+
+
+                    }
                     break;
             }
         }
@@ -163,15 +219,6 @@ namespace Automobile
             _matricula = tb_id_matricula.Text.Trim();
         }
 
-        private void textBoxPesoMaxSuportado_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxNmrMaxPassageiros_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void tb_preco_TextChanged(object sender, EventArgs e)
         {

@@ -27,7 +27,7 @@ namespace Automobile
             {
                 Camiao caminhao = new Camiao(veiculoMatricula, veiculoModelo, veiculoPreco, new Estado(), pesoMaximo);
                 Controlador.AdicionarVeiculo(caminhao);
-
+                MessageBox.Show($"O veiculo \"{caminhao.VeiculoModelo}\" com matricula \"{caminhao.VeiculoMatricula}\" foi criado com sucesso!");
                 return true;
             }
             catch (PesoMaximoInvalidoException ex)
@@ -47,7 +47,7 @@ namespace Automobile
             {
                 Mota novaMota = new Mota(veiculoMatricula, veiculoModelo, veiculoPreco, new Estado(), cilindrada);
                 Controlador.AdicionarVeiculo(novaMota);
-
+                MessageBox.Show($"O veiculo \"{novaMota.VeiculoModelo}\" com matricula \"{novaMota.VeiculoMatricula}\" foi criado com sucesso!");
 
                 return true;
             }
@@ -69,6 +69,7 @@ namespace Automobile
             {
                 Carro novoCarro = new Carro(veiculoMatricula, veiculoModelo, veiculoPreco, new Estado(), numeroPortas, tipoCaixa);
                 Controlador.AdicionarVeiculo(novoCarro);
+                MessageBox.Show($"O veiculo \"{novoCarro.VeiculoModelo}\" com matricula \"{novoCarro.VeiculoMatricula}\" foi criado com sucesso!");
                 return true;
             }
             catch (VeiculoDuplicadoException ex)
@@ -94,6 +95,7 @@ namespace Automobile
             {
                 Camioneta novaCamioneta = new Camioneta(VeiculoMatricula, veiculoModelo, veiculoPreco, new Estado(), numeroEixos, numeroPassageiros);
                 Controlador.AdicionarVeiculo(novaCamioneta);
+                MessageBox.Show($"O veiculo \"{novaCamioneta.VeiculoModelo}\" com matricula \"{novaCamioneta.VeiculoMatricula}\" foi criado com sucesso!");
                 return true;
             }
             catch (NumeroEixosInvalidoException ex)
