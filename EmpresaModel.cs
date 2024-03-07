@@ -16,6 +16,7 @@ namespace Automobile
         public List<object> VeiculosReservados { get; } = new List<object>();
         public List<object> VeiculosAlugados { get; } = new List<object>();
         public List<object> VeiculosEmManutencao { get; } = new List<object>();
+        
 
 
 

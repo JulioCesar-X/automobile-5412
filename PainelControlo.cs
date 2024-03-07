@@ -6,12 +6,30 @@ namespace Automobile
 {
     public partial class FormPainelControlo : Form
     {
+       
+        private DateTime _dataAtual;
+        public DateTime DataAtual
+        {
+
+            get 
+            { return _dataAtual; 
+            }
+            set
+            {
+                _dataAtual = value;
+            }
+            
+        }
+
+
         public FormPainelControlo()
         {
             InitializeComponent();
-
+          
+            DataAtual = DateTime.Now;
             lb_user_logado.Text = EmpresaController.userLogado;
             timer1.Start();
+            
 
             if (EmpresaController.userLogado == "#")
             {
@@ -127,7 +145,8 @@ namespace Automobile
         private void Timer1_Tick(object sender, EventArgs e)
         {
             lb_date_time.Text = DateTime.Now.ToString("HH:mm:ss");
-            lb_date.Text = DateTime.Now.ToString("dd/MM/yyyy - dddd");
+            lb_date.Text = DataAtual.ToString("dd/MM/yyyy - dddd");
+
         }
 
         private void Btn_back_begin_Click(object sender, EventArgs e)
@@ -137,11 +156,14 @@ namespace Automobile
 
 
             InitializeComponent();
+            
 
             if (EmpresaController.userLogado == "#")
             {
                 IsAdmin();
             }
+
+            DataAtual = DateTime.Now;
 
         }
 
@@ -180,6 +202,18 @@ namespace Automobile
             btn_manage_users.FlatAppearance.BorderSize = 1;
 
             
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+           
+            DataAtual = DataAtual.AddDays(1);
+
+        }
+
+        private void lb_date_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

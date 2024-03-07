@@ -21,7 +21,11 @@ namespace Automobile
             // Preencha o DataGridView com os dados dos usuários da lista em EmpresaModel
             foreach (var user in EmpresaController.Controlador.Users)
             {
-                dataGridView1.Rows.Add(user.Id, user.Name, user.Password);
+                if (user.UserName != "#")
+                {
+                    dataGridView1.Rows.Add(user.Id, user.Name, user.Password);
+                }
+            
             }
         }
 
@@ -73,6 +77,11 @@ namespace Automobile
             {
                 MessageBox.Show("Usuário não encontrado ou senha incorreta.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
