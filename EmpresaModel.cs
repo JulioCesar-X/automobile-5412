@@ -91,41 +91,41 @@ namespace Automobile
 
         private void CriarListaVeiculosDefault()
         {
-            Carro veiculo1 = new Carro("01", "Corsa", 88.70m, new Estado(), 5, "manual");
-            Mota veiculo2 = new Mota("02", "XTZ", 55.80m, new Estado(), 300);
-            Camiao veiculo3 = new Camiao("03", "BUGVERDE", 150.99m, new Estado(), 44000);
-            Camioneta veiculo4 = new Camioneta("04", "Venom", 500.99m, new Estado(), 2, 5);
-            Carro veiculo5 = new Carro("05", "Corsa", 88.70m, new Estado(), 5, "manual");
-            Mota veiculo6 = new Mota("06", "XTZ", 55.80m, new Estado(), 300);
-            Camiao veiculo7 = new Camiao("07", "BUGVERDE", 150.99m, new Estado(), 44000);
-            Camioneta veiculo8 = new Camioneta("08", "Venom", 500.99m, new Estado(), 2, 5);
+            Carro veiculo1 = new Carro("AA-01-BC", "Toyota Corolla", 90m, new Estado(), 5, "manual");
+            Mota veiculo2 = new Mota("AB-02-CD", "Honda CBR600RR", 45m, new Estado(), 300);
+            Camiao veiculo3 = new Camiao("AC-03-DE", "Volvo FH16", 175m, new Estado(), 44000);
+            Camioneta veiculo4 = new Camioneta("AD-04-EF", "Ford Explorer", 515m, new Estado(), 2, 5);
+            Carro veiculo5 = new Carro("BC-23-DE", "Volkswagen Golf", 45m, new Estado(), 5, "manual");
+            Mota veiculo6 = new Mota("DE-45-FG", "Harley-Davidson Sportster", 55.80m, new Estado(), 300);
+            Camiao veiculo7 = new Camiao("EF-56-GH", "Scania R500", 170m, new Estado(), 44000);
+            Camioneta veiculo8 = new Camioneta("FG-67-HI", "Chevrolet Tahoe", 500.99m, new Estado(), 2, 5);
 
-            Carro veiculo9 = new Carro("09", "Corsa", 88.70m, new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), 5, "manual");
-            Mota veiculo10 = new Mota("10", "XTZ", 55.80m, new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), 300);
-            Camiao veiculo11 = new Camiao("11", "BUGVERDE", 150.99m, new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), 44000);
-            Camioneta veiculo12 = new Camioneta("12", "Venom", 500.99m, new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), 2, 5);
-            Carro veiculo13 = new Carro("13", "Corsa", 88.70m, new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), 5, "manual");
-            Mota veiculo14 = new Mota("14", "XTZ", 55.80m, new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), 300);
-            Camiao veiculo15 = new Camiao("15", "BUGVERDE", 150.99m, new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), 44000);
-            Camioneta veiculo16 = new Camioneta("16", "Venom", 500.99m, new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), 2, 5);
+            Carro veiculo9 = new Carro("GH-78-IJ", "Mustang shelby GT350", 135m, new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), 5, "manual");
+            Mota veiculo10 = new Mota("HI-89-JK", "Yamaha MT-07", 55m, new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), 300);
+            Camiao veiculo11 = new Camiao("3456-JKL", "Mercedes-Benz Actros", 210m, new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), 44000);
+            Camioneta veiculo12 = new Camioneta("JK-01-LM", "Jeep Grand Cherokee", 500m, new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), 2, 5);
+            Carro veiculo13 = new Carro("KL-12-MN", "Fiat 500", 90m, new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), 5, "manual");
+            Mota veiculo14 = new Mota("LM-23-NO", "Kawasaki Ninja 650", 55m, new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), 300);
+            Camiao veiculo15 = new Camiao("LM-23-NO", "Kawasaki Ninja 650", 100m, new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), 44000);
+            Camioneta veiculo16 = new Camioneta("NO-45-PQ", "Toyota Land Cruiser", 500m, new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), 2, 5);
 
-            Carro veiculo17 = new Carro("17", "Corsa", 88.70m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(5)), 5, "manual");
-            Mota veiculo18 = new Mota("18", "XTZ", 55.80m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(5)), 300);
-            Camiao veiculo19 = new Camiao("19", "BUGVERDE", 150.99m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), 44000);
-            Camioneta veiculo20 = new Camioneta("20", "Venom", 500.99m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), 2, 5);
-            Carro veiculo21 = new Carro("21", "Corsa", 88.70m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), 5, "manual");
-            Mota veiculo22 = new Mota("22", "XTZ", 55.80m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), 300);
-            Camiao veiculo23 = new Camiao("23", "BUGVERDE", 150.99m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), 44000);
-            Camioneta veiculo24 = new Camioneta("24", "Venom", 500.99m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), 2, 5);
+            Carro veiculo17 = new Carro("OP-56-QR", "Renault Megane", 88.70m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(5)), 5, "manual");
+            Mota veiculo18 = new Mota("PQ-67-RS", "Suzuki V-Strom 650", 55.80m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(5)), 300);
+            Camiao veiculo19 = new Camiao("QR-78-ST", "Iveco Stralis", 150.99m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), 44000);
+            Camioneta veiculo20 = new Camioneta("RS-89-TU", "Nissan Pathfinder", 500.99m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), 2, 5);
+            Carro veiculo21 = new Carro("ST-90-UV", "Hyundai Elantra", 88.70m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), 5, "manual");
+            Mota veiculo22 = new Mota("TU-01-VW", "Ducati Monster 821", 55m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), 300);
+            Camiao veiculo23 = new Camiao("UV-12-WX", "Kenworth W990", 150m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), 44000);
+            Camioneta veiculo24 = new Camioneta("VW-23-XY", "Subaru Outback", 500.99m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), 2, 5);
 
-            Carro veiculo25 = new Carro("25", "Corsa", 88.70m, new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), 5, "manual");
-            Mota veiculo26 = new Mota("26", "XTZ", 55.80m, new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), 300);
-            Camiao veiculo27 = new Camiao("27", "BUGVERDE", 150.99m, new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), 44000);
-            Camioneta veiculo28 = new Camioneta("28", "Venom", 500.99m, new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), 2, 5);
-            Carro veiculo29 = new Carro("29", "Corsa", 88.70m, new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), 5, "manual");
-            Mota veiculo30 = new Mota("30", "XTZ", 55.80m, new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), 300);
-            Camiao veiculo31 = new Camiao("31", "BUGVERDE", 150.99m, new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), 44000);
-            Camioneta veiculo32 = new Camioneta("32", "Venom", 500.99m, new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), 2, 5);
+            Carro veiculo25 = new Carro("XYZ 123", "Chevrolet Camaro", 88.70m, new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), 5, "manual");
+            Mota veiculo26 = new Mota("CD-90-EF", "BMW S1000RR", 55.80m, new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), 300);
+            Camiao veiculo27 = new Camiao("DE-01-FG", "Peterbilt 389", 150m, new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), 44000);
+            Camioneta veiculo28 = new Camioneta("EF-12-GH", "Ford F-150", 500m, new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), 2, 5);
+            Carro veiculo29 = new Carro("FG-23-HI", "Audi A3", 88.70m, new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), 5, "manual");
+            Mota veiculo30 = new Mota("HI-12-JK", "Triumph Bonneville", 55.50m, new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), 300);
+            Camiao veiculo31 = new Camiao("3456-JKL", "Freightliner Cascadia", 150m, new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), 44000);
+            Camioneta veiculo32 = new Camioneta("LM-678-MN", "Mitsubishi Outlander", 500m, new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), 2, 5);
 
             VeiculosDisponiveis.Add(veiculo1);
             VeiculosDisponiveis.Add(veiculo2);
