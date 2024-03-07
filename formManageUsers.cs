@@ -44,7 +44,10 @@ namespace Automobile
             EmpresaController.Controlador.Users.Add(new User("#", username, password));
 
             atualizarDataGridView();
-            //
+
+            textBoxUsername.Clear();
+            textBoxPassword.Clear();
+
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -68,6 +71,9 @@ namespace Automobile
                 EmpresaController.Controlador.Users.Remove(usuarioParaRemover);
                 // Atualize o DataGridView para refletir a lista atualizada de usuários
                 atualizarDataGridView();
+
+                textBoxUsernameRemove.Clear();
+                textBoxPasswordRemove.Clear();
             }
             else
             {
