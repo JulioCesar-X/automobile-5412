@@ -158,27 +158,28 @@ namespace Automobile
 
             lb_user_logado.Text = "# Admin";
 
-            lb_title.ForeColor = System.Drawing.Color.SlateGray;
+            lb_title.ForeColor = System.Drawing.Color.White;
 
             this.BackColor = System.Drawing.Color.Black;
             panel_system_control.BackColor = System.Drawing.Color.Black;
 
-            PnlFormLoader.BackColor = System.Drawing.Color.DarkGray;
+            //PnlFormLoader.BackColor = System.Drawing.Color.DarkGray;
 
+            btn_manage_users.BackColor = System.Drawing.Color.Gray;
 
-            btn_manage_files.ForeColor = System.Drawing.Color.SlateGray;
-            btn_manage_reservations.ForeColor = System.Drawing.Color.SlateGray;
-            btn_vehicle_aintenance.ForeColor = System.Drawing.Color.SlateGray;
-            btn_change_veichle_status.ForeColor = System.Drawing.Color.SlateGray;
-            btn_manage_users.ForeColor = System.Drawing.Color.SlateGray;
-            btn_veichles_available.ForeColor = System.Drawing.Color.SlateGray;
-            btn_veichle.ForeColor = System.Drawing.Color.SlateGray;
+            btn_manage_files.ForeColor = System.Drawing.Color.White;
+            btn_manage_reservations.ForeColor = System.Drawing.Color.White;
+            btn_vehicle_aintenance.ForeColor = System.Drawing.Color.White;
+            btn_change_veichle_status.ForeColor = System.Drawing.Color.White;
+            btn_manage_users.ForeColor = System.Drawing.Color.White;
+            btn_veichles_available.ForeColor = System.Drawing.Color.White;
+            btn_veichle.ForeColor = System.Drawing.Color.White;
 
 
             btn_manage_users.FlatAppearance.BorderColor = Color.White;
             btn_manage_users.FlatAppearance.BorderSize = 1;
 
-            pb_users_manage.BackgroundImage = Properties.Resources.pngwing_com__23_;
+            
         }
     }
 }

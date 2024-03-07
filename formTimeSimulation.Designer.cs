@@ -49,41 +49,38 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.DarkGray;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.panel2.Controls.Add(this.label3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1200, 66);
+            this.panel2.Size = new System.Drawing.Size(800, 43);
             this.panel2.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(490, 18);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(327, 12);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(241, 33);
+            this.label3.Size = new System.Drawing.Size(159, 24);
             this.label3.TabIndex = 0;
             this.label3.Text = "Calculate Billing";
             // 
             // dateTimePickerInicio
             // 
-            this.dateTimePickerInicio.Location = new System.Drawing.Point(134, 80);
-            this.dateTimePickerInicio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dateTimePickerInicio.Location = new System.Drawing.Point(89, 52);
             this.dateTimePickerInicio.Name = "dateTimePickerInicio";
-            this.dateTimePickerInicio.Size = new System.Drawing.Size(298, 26);
+            this.dateTimePickerInicio.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerInicio.TabIndex = 5;
             this.dateTimePickerInicio.ValueChanged += new System.EventHandler(this.DateTimePickerInicio_ValueChanged);
             // 
             // dateTimePickerFim
             // 
-            this.dateTimePickerFim.Location = new System.Drawing.Point(565, 81);
-            this.dateTimePickerFim.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dateTimePickerFim.Location = new System.Drawing.Point(377, 53);
             this.dateTimePickerFim.Name = "dateTimePickerFim";
-            this.dateTimePickerFim.Size = new System.Drawing.Size(298, 26);
+            this.dateTimePickerFim.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerFim.TabIndex = 6;
             this.dateTimePickerFim.ValueChanged += new System.EventHandler(this.DateTimePickerFim_ValueChanged);
             // 
@@ -91,10 +88,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(60, 80);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(40, 52);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 25);
+            this.label4.Size = new System.Drawing.Size(48, 16);
             this.label4.TabIndex = 7;
             this.label4.Text = "Início:";
             // 
@@ -102,21 +98,19 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(491, 81);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(327, 53);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 25);
+            this.label5.Size = new System.Drawing.Size(36, 16);
             this.label5.TabIndex = 8;
             this.label5.Text = "Fim:";
             // 
             // dataGridViewVeiculosAlugados
             // 
             this.dataGridViewVeiculosAlugados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewVeiculosAlugados.Location = new System.Drawing.Point(65, 291);
-            this.dataGridViewVeiculosAlugados.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dataGridViewVeiculosAlugados.Location = new System.Drawing.Point(43, 189);
             this.dataGridViewVeiculosAlugados.Name = "dataGridViewVeiculosAlugados";
             this.dataGridViewVeiculosAlugados.RowHeadersWidth = 51;
-            this.dataGridViewVeiculosAlugados.Size = new System.Drawing.Size(1063, 360);
+            this.dataGridViewVeiculosAlugados.Size = new System.Drawing.Size(709, 234);
             this.dataGridViewVeiculosAlugados.TabIndex = 9;
             this.dataGridViewVeiculosAlugados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewVeiculosAlugados_CellContentClick);
             // 
@@ -124,20 +118,18 @@
             // 
             this.lb_veiculos_alugados.AutoSize = true;
             this.lb_veiculos_alugados.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_veiculos_alugados.Location = new System.Drawing.Point(444, 243);
-            this.lb_veiculos_alugados.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_veiculos_alugados.Location = new System.Drawing.Point(296, 158);
             this.lb_veiculos_alugados.Name = "lb_veiculos_alugados";
-            this.lb_veiculos_alugados.Size = new System.Drawing.Size(204, 33);
+            this.lb_veiculos_alugados.Size = new System.Drawing.Size(137, 24);
             this.lb_veiculos_alugados.TabIndex = 10;
             this.lb_veiculos_alugados.Text = "??? Alugados";
             // 
             // btnCalculate
             // 
             this.btnCalculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalculate.Location = new System.Drawing.Point(934, 81);
-            this.btnCalculate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCalculate.Location = new System.Drawing.Point(623, 53);
             this.btnCalculate.Name = "btnCalculate";
-            this.btnCalculate.Size = new System.Drawing.Size(128, 42);
+            this.btnCalculate.Size = new System.Drawing.Size(85, 27);
             this.btnCalculate.TabIndex = 11;
             this.btnCalculate.Text = "Calculate";
             this.btnCalculate.UseVisualStyleBackColor = true;
@@ -147,10 +139,9 @@
             // 
             this.lblPreco.AutoSize = true;
             this.lblPreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPreco.Location = new System.Drawing.Point(58, 159);
-            this.lblPreco.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPreco.Location = new System.Drawing.Point(39, 103);
             this.lblPreco.Name = "lblPreco";
-            this.lblPreco.Size = new System.Drawing.Size(104, 37);
+            this.lblPreco.Size = new System.Drawing.Size(72, 25);
             this.lblPreco.TabIndex = 12;
             this.lblPreco.Text = "Total:";
             this.lblPreco.Click += new System.EventHandler(this.lblPreco_Click);
@@ -163,10 +154,10 @@
             "Mota",
             "Camiao",
             "Camioneta"});
-            this.comboBoxTipoVeiculo.Location = new System.Drawing.Point(992, 172);
-            this.comboBoxTipoVeiculo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBoxTipoVeiculo.Location = new System.Drawing.Point(661, 112);
+            this.comboBoxTipoVeiculo.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.comboBoxTipoVeiculo.Name = "comboBoxTipoVeiculo";
-            this.comboBoxTipoVeiculo.Size = new System.Drawing.Size(136, 28);
+            this.comboBoxTipoVeiculo.Size = new System.Drawing.Size(92, 21);
             this.comboBoxTipoVeiculo.TabIndex = 13;
             this.comboBoxTipoVeiculo.SelectedIndexChanged += new System.EventHandler(this.comboBoxTipoVeiculo_SelectedIndexChanged);
             // 
@@ -174,9 +165,10 @@
             // 
             this.lb_filtro.AutoSize = true;
             this.lb_filtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_filtro.Location = new System.Drawing.Point(910, 171);
+            this.lb_filtro.Location = new System.Drawing.Point(607, 111);
+            this.lb_filtro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_filtro.Name = "lb_filtro";
-            this.lb_filtro.Size = new System.Drawing.Size(67, 25);
+            this.lb_filtro.Size = new System.Drawing.Size(50, 17);
             this.lb_filtro.TabIndex = 14;
             this.lb_filtro.Text = "Filtro:";
             // 
@@ -185,9 +177,10 @@
             this.pb_veiculos_alugados.BackColor = System.Drawing.Color.Transparent;
             this.pb_veiculos_alugados.BackgroundImage = global::Automobile.Properties.Resources.pngwing_com__36_;
             this.pb_veiculos_alugados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pb_veiculos_alugados.Location = new System.Drawing.Point(51, 224);
+            this.pb_veiculos_alugados.Location = new System.Drawing.Point(34, 146);
+            this.pb_veiculos_alugados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pb_veiculos_alugados.Name = "pb_veiculos_alugados";
-            this.pb_veiculos_alugados.Size = new System.Drawing.Size(1077, 427);
+            this.pb_veiculos_alugados.Size = new System.Drawing.Size(718, 278);
             this.pb_veiculos_alugados.TabIndex = 15;
             this.pb_veiculos_alugados.TabStop = false;
             // 
@@ -195,9 +188,10 @@
             // 
             this.chb_ver_veiculos.AutoSize = true;
             this.chb_ver_veiculos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chb_ver_veiculos.Location = new System.Drawing.Point(702, 171);
+            this.chb_ver_veiculos.Location = new System.Drawing.Point(468, 111);
+            this.chb_ver_veiculos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chb_ver_veiculos.Name = "chb_ver_veiculos";
-            this.chb_ver_veiculos.Size = new System.Drawing.Size(161, 29);
+            this.chb_ver_veiculos.Size = new System.Drawing.Size(118, 21);
             this.chb_ver_veiculos.TabIndex = 16;
             this.chb_ver_veiculos.Text = "Ver Veiculos";
             this.chb_ver_veiculos.UseVisualStyleBackColor = true;
@@ -205,10 +199,10 @@
             // 
             // FormTimeSimulation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.chb_ver_veiculos);
             this.Controls.Add(this.pb_veiculos_alugados);
             this.Controls.Add(this.lb_filtro);
@@ -223,7 +217,6 @@
             this.Controls.Add(this.dateTimePickerInicio);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormTimeSimulation";
             this.Text = "formTimeSimulation";
             this.Load += new System.EventHandler(this.FormTimeSimulation_Load);

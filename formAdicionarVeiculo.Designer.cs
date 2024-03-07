@@ -59,9 +59,10 @@
             // 
             this.lb_matricula.AutoSize = true;
             this.lb_matricula.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_matricula.Location = new System.Drawing.Point(346, 245);
+            this.lb_matricula.Location = new System.Drawing.Point(231, 159);
+            this.lb_matricula.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_matricula.Name = "lb_matricula";
-            this.lb_matricula.Size = new System.Drawing.Size(116, 25);
+            this.lb_matricula.Size = new System.Drawing.Size(79, 17);
             this.lb_matricula.TabIndex = 18;
             this.lb_matricula.Text = "Matrícula:";
             // 
@@ -69,27 +70,28 @@
             // 
             this.lb_modelo.AutoSize = true;
             this.lb_modelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_modelo.Location = new System.Drawing.Point(346, 192);
+            this.lb_modelo.Location = new System.Drawing.Point(231, 125);
+            this.lb_modelo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_modelo.Name = "lb_modelo";
-            this.lb_modelo.Size = new System.Drawing.Size(96, 25);
+            this.lb_modelo.Size = new System.Drawing.Size(65, 17);
             this.lb_modelo.TabIndex = 17;
             this.lb_modelo.Text = "Modelo:";
             // 
             // tb_modelo_marca
             // 
-            this.tb_modelo_marca.Location = new System.Drawing.Point(444, 190);
-            this.tb_modelo_marca.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tb_modelo_marca.Location = new System.Drawing.Point(296, 123);
+            this.tb_modelo_marca.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tb_modelo_marca.Name = "tb_modelo_marca";
-            this.tb_modelo_marca.Size = new System.Drawing.Size(235, 26);
+            this.tb_modelo_marca.Size = new System.Drawing.Size(158, 20);
             this.tb_modelo_marca.TabIndex = 19;
             this.tb_modelo_marca.TextChanged += new System.EventHandler(this.tb_modelo_marca_TextChanged);
             // 
             // tb_id_matricula
             // 
-            this.tb_id_matricula.Location = new System.Drawing.Point(474, 242);
-            this.tb_id_matricula.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tb_id_matricula.Location = new System.Drawing.Point(316, 157);
+            this.tb_id_matricula.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tb_id_matricula.Name = "tb_id_matricula";
-            this.tb_id_matricula.Size = new System.Drawing.Size(205, 26);
+            this.tb_id_matricula.Size = new System.Drawing.Size(138, 20);
             this.tb_id_matricula.TabIndex = 25;
             this.tb_id_matricula.TextChanged += new System.EventHandler(this.tb_id_matricula_TextChanged);
             // 
@@ -97,10 +99,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(397, 40);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(265, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 33);
+            this.label1.Size = new System.Drawing.Size(58, 24);
             this.label1.TabIndex = 14;
             this.label1.Text = "Tipo:";
             // 
@@ -113,23 +115,21 @@
             "Mota",
             "Camioneta",
             "Camião"});
-            this.cb_tipo.Location = new System.Drawing.Point(487, 45);
-            this.cb_tipo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cb_tipo.Location = new System.Drawing.Point(325, 25);
             this.cb_tipo.Name = "cb_tipo";
-            this.cb_tipo.Size = new System.Drawing.Size(180, 28);
+            this.cb_tipo.Size = new System.Drawing.Size(121, 21);
             this.cb_tipo.TabIndex = 15;
             this.cb_tipo.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.cb_tipo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1076, 148);
+            this.panel1.Size = new System.Drawing.Size(717, 68);
             this.panel1.TabIndex = 16;
             // 
             // lblNmrPortas
@@ -137,9 +137,10 @@
             this.lblNmrPortas.AutoSize = true;
             this.lblNmrPortas.BackColor = System.Drawing.Color.Transparent;
             this.lblNmrPortas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNmrPortas.Location = new System.Drawing.Point(346, 298);
+            this.lblNmrPortas.Location = new System.Drawing.Point(231, 194);
+            this.lblNmrPortas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNmrPortas.Name = "lblNmrPortas";
-            this.lblNmrPortas.Size = new System.Drawing.Size(119, 25);
+            this.lblNmrPortas.Size = new System.Drawing.Size(82, 17);
             this.lblNmrPortas.TabIndex = 21;
             this.lblNmrPortas.Text = "Nº Portas:";
             this.lblNmrPortas.Visible = false;
@@ -151,10 +152,10 @@
             this.comboBoxNmrPortas.Items.AddRange(new object[] {
             "3",
             "5"});
-            this.comboBoxNmrPortas.Location = new System.Drawing.Point(474, 292);
-            this.comboBoxNmrPortas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBoxNmrPortas.Location = new System.Drawing.Point(316, 190);
+            this.comboBoxNmrPortas.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.comboBoxNmrPortas.Name = "comboBoxNmrPortas";
-            this.comboBoxNmrPortas.Size = new System.Drawing.Size(205, 28);
+            this.comboBoxNmrPortas.Size = new System.Drawing.Size(138, 21);
             this.comboBoxNmrPortas.TabIndex = 22;
             this.comboBoxNmrPortas.Visible = false;
             // 
@@ -163,9 +164,10 @@
             this.lblTipoCaixa.AutoSize = true;
             this.lblTipoCaixa.BackColor = System.Drawing.Color.Transparent;
             this.lblTipoCaixa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoCaixa.Location = new System.Drawing.Point(346, 351);
+            this.lblTipoCaixa.Location = new System.Drawing.Point(231, 228);
+            this.lblTipoCaixa.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTipoCaixa.Name = "lblTipoCaixa";
-            this.lblTipoCaixa.Size = new System.Drawing.Size(165, 25);
+            this.lblTipoCaixa.Size = new System.Drawing.Size(112, 17);
             this.lblTipoCaixa.TabIndex = 23;
             this.lblTipoCaixa.Text = "Tipo de Caixa:";
             this.lblTipoCaixa.Visible = false;
@@ -177,10 +179,10 @@
             this.comboBoxTipoCaixa.Items.AddRange(new object[] {
             "Manual",
             "Automática"});
-            this.comboBoxTipoCaixa.Location = new System.Drawing.Point(524, 338);
-            this.comboBoxTipoCaixa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBoxTipoCaixa.Location = new System.Drawing.Point(349, 220);
+            this.comboBoxTipoCaixa.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.comboBoxTipoCaixa.Name = "comboBoxTipoCaixa";
-            this.comboBoxTipoCaixa.Size = new System.Drawing.Size(155, 28);
+            this.comboBoxTipoCaixa.Size = new System.Drawing.Size(105, 21);
             this.comboBoxTipoCaixa.TabIndex = 24;
             this.comboBoxTipoCaixa.Visible = false;
             // 
@@ -188,9 +190,10 @@
             // 
             this.lblCilindrada.AutoSize = true;
             this.lblCilindrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCilindrada.Location = new System.Drawing.Point(346, 298);
+            this.lblCilindrada.Location = new System.Drawing.Point(231, 194);
+            this.lblCilindrada.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCilindrada.Name = "lblCilindrada";
-            this.lblCilindrada.Size = new System.Drawing.Size(126, 25);
+            this.lblCilindrada.Size = new System.Drawing.Size(86, 17);
             this.lblCilindrada.TabIndex = 26;
             this.lblCilindrada.Text = "Cilindrada:";
             this.lblCilindrada.Visible = false;
@@ -203,10 +206,10 @@
             "50cc",
             "125cc",
             "300cc"});
-            this.comboBoxCilindrada.Location = new System.Drawing.Point(479, 298);
-            this.comboBoxCilindrada.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBoxCilindrada.Location = new System.Drawing.Point(319, 194);
+            this.comboBoxCilindrada.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.comboBoxCilindrada.Name = "comboBoxCilindrada";
-            this.comboBoxCilindrada.Size = new System.Drawing.Size(200, 28);
+            this.comboBoxCilindrada.Size = new System.Drawing.Size(135, 21);
             this.comboBoxCilindrada.TabIndex = 27;
             this.comboBoxCilindrada.Visible = false;
             // 
@@ -214,9 +217,10 @@
             // 
             this.lblNmrEixos.AutoSize = true;
             this.lblNmrEixos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNmrEixos.Location = new System.Drawing.Point(346, 302);
+            this.lblNmrEixos.Location = new System.Drawing.Point(231, 196);
+            this.lblNmrEixos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNmrEixos.Name = "lblNmrEixos";
-            this.lblNmrEixos.Size = new System.Drawing.Size(142, 25);
+            this.lblNmrEixos.Size = new System.Drawing.Size(96, 17);
             this.lblNmrEixos.TabIndex = 28;
             this.lblNmrEixos.Text = "Nº de Eixos:";
             this.lblNmrEixos.Visible = false;
@@ -226,9 +230,10 @@
             this.lblNmrMaxPassageiros.AutoSize = true;
             this.lblNmrMaxPassageiros.BackColor = System.Drawing.Color.Transparent;
             this.lblNmrMaxPassageiros.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNmrMaxPassageiros.Location = new System.Drawing.Point(241, 346);
+            this.lblNmrMaxPassageiros.Location = new System.Drawing.Point(161, 225);
+            this.lblNmrMaxPassageiros.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNmrMaxPassageiros.Name = "lblNmrMaxPassageiros";
-            this.lblNmrMaxPassageiros.Size = new System.Drawing.Size(265, 25);
+            this.lblNmrMaxPassageiros.Size = new System.Drawing.Size(180, 17);
             this.lblNmrMaxPassageiros.TabIndex = 29;
             this.lblNmrMaxPassageiros.Text = "Nº Max de Passageiros:";
             this.lblNmrMaxPassageiros.Visible = false;
@@ -240,10 +245,10 @@
             this.comboBoxNmrEixos.Items.AddRange(new object[] {
             "2",
             "3"});
-            this.comboBoxNmrEixos.Location = new System.Drawing.Point(501, 302);
-            this.comboBoxNmrEixos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBoxNmrEixos.Location = new System.Drawing.Point(334, 196);
+            this.comboBoxNmrEixos.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.comboBoxNmrEixos.Name = "comboBoxNmrEixos";
-            this.comboBoxNmrEixos.Size = new System.Drawing.Size(177, 28);
+            this.comboBoxNmrEixos.Size = new System.Drawing.Size(119, 21);
             this.comboBoxNmrEixos.TabIndex = 30;
             this.comboBoxNmrEixos.Visible = false;
             // 
@@ -251,19 +256,20 @@
             // 
             this.lblPesoMaxSuportado.AutoSize = true;
             this.lblPesoMaxSuportado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPesoMaxSuportado.Location = new System.Drawing.Point(206, 303);
+            this.lblPesoMaxSuportado.Location = new System.Drawing.Point(137, 197);
+            this.lblPesoMaxSuportado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPesoMaxSuportado.Name = "lblPesoMaxSuportado";
-            this.lblPesoMaxSuportado.Size = new System.Drawing.Size(282, 25);
+            this.lblPesoMaxSuportado.Size = new System.Drawing.Size(193, 17);
             this.lblPesoMaxSuportado.TabIndex = 32;
             this.lblPesoMaxSuportado.Text = "Peso Max Suportado(Kg):";
             this.lblPesoMaxSuportado.Visible = false;
             // 
             // textBoxPesoMaxSuportado
             // 
-            this.textBoxPesoMaxSuportado.Location = new System.Drawing.Point(501, 303);
-            this.textBoxPesoMaxSuportado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxPesoMaxSuportado.Location = new System.Drawing.Point(334, 197);
+            this.textBoxPesoMaxSuportado.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textBoxPesoMaxSuportado.Name = "textBoxPesoMaxSuportado";
-            this.textBoxPesoMaxSuportado.Size = new System.Drawing.Size(177, 26);
+            this.textBoxPesoMaxSuportado.Size = new System.Drawing.Size(119, 20);
             this.textBoxPesoMaxSuportado.TabIndex = 33;
             this.textBoxPesoMaxSuportado.Visible = false;
             // 
@@ -272,28 +278,30 @@
             this.lb_preco.AutoSize = true;
             this.lb_preco.BackColor = System.Drawing.Color.Transparent;
             this.lb_preco.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_preco.Location = new System.Drawing.Point(346, 396);
+            this.lb_preco.Location = new System.Drawing.Point(231, 257);
+            this.lb_preco.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_preco.Name = "lb_preco";
-            this.lb_preco.Size = new System.Drawing.Size(134, 25);
+            this.lb_preco.Size = new System.Drawing.Size(93, 17);
             this.lb_preco.TabIndex = 29;
             this.lb_preco.Text = "Preço/hora:";
             this.lb_preco.Visible = false;
             // 
             // tb_preco
             // 
-            this.tb_preco.Location = new System.Drawing.Point(487, 397);
-            this.tb_preco.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tb_preco.Location = new System.Drawing.Point(325, 258);
+            this.tb_preco.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tb_preco.Name = "tb_preco";
-            this.tb_preco.Size = new System.Drawing.Size(192, 26);
+            this.tb_preco.Size = new System.Drawing.Size(129, 20);
             this.tb_preco.TabIndex = 33;
             this.tb_preco.Visible = false;
             this.tb_preco.TextChanged += new System.EventHandler(this.tb_preco_TextChanged);
             // 
             // btn_criar
             // 
-            this.btn_criar.Location = new System.Drawing.Point(444, 478);
+            this.btn_criar.Location = new System.Drawing.Point(296, 311);
+            this.btn_criar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_criar.Name = "btn_criar";
-            this.btn_criar.Size = new System.Drawing.Size(140, 52);
+            this.btn_criar.Size = new System.Drawing.Size(93, 34);
             this.btn_criar.TabIndex = 34;
             this.btn_criar.Text = "Criar";
             this.btn_criar.UseVisualStyleBackColor = true;
@@ -302,10 +310,10 @@
             // textBoxNmrMaxPassageiros
             // 
             this.textBoxNmrMaxPassageiros.AcceptsReturn = true;
-            this.textBoxNmrMaxPassageiros.Location = new System.Drawing.Point(514, 347);
-            this.textBoxNmrMaxPassageiros.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxNmrMaxPassageiros.Location = new System.Drawing.Point(343, 226);
+            this.textBoxNmrMaxPassageiros.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textBoxNmrMaxPassageiros.Name = "textBoxNmrMaxPassageiros";
-            this.textBoxNmrMaxPassageiros.Size = new System.Drawing.Size(165, 26);
+            this.textBoxNmrMaxPassageiros.Size = new System.Drawing.Size(111, 20);
             this.textBoxNmrMaxPassageiros.TabIndex = 31;
             this.textBoxNmrMaxPassageiros.Visible = false;
             // 
@@ -314,18 +322,19 @@
             this.pb_add_veiculos.BackColor = System.Drawing.Color.Transparent;
             this.pb_add_veiculos.BackgroundImage = global::Automobile.Properties.Resources.pngwing_com__24_;
             this.pb_add_veiculos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pb_add_veiculos.Location = new System.Drawing.Point(148, 156);
+            this.pb_add_veiculos.Location = new System.Drawing.Point(99, 101);
+            this.pb_add_veiculos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pb_add_veiculos.Name = "pb_add_veiculos";
-            this.pb_add_veiculos.Size = new System.Drawing.Size(870, 506);
+            this.pb_add_veiculos.Size = new System.Drawing.Size(580, 329);
             this.pb_add_veiculos.TabIndex = 35;
             this.pb_add_veiculos.TabStop = false;
             // 
             // formAdicionarVeiculo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(1076, 674);
+            this.ClientSize = new System.Drawing.Size(717, 438);
             this.Controls.Add(this.pb_add_veiculos);
             this.Controls.Add(this.btn_criar);
             this.Controls.Add(this.tb_preco);
@@ -348,7 +357,6 @@
             this.Controls.Add(this.lb_modelo);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "formAdicionarVeiculo";
             this.Text = "formAdicionarVeiculo";
             this.panel1.ResumeLayout(false);

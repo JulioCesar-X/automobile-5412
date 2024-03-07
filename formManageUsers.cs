@@ -44,6 +44,7 @@ namespace Automobile
             EmpresaController.Controlador.Users.Add(new User("#", username, password));
 
             atualizarDataGridView();
+            //
         }
 
         private void label5_Click(object sender, EventArgs e)
