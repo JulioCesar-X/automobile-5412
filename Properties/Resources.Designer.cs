@@ -119,7 +119,19 @@ namespace Automobile.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
+
+        internal static System.Drawing.Bitmap manageusers
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("manageusers", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 
 namespace Automobile
 {
@@ -48,7 +49,7 @@ namespace Automobile
     {
         public VeiculoDuplicadoException(string veiculoMatricula) : base($"Um veículo com a Matricula \"{veiculoMatricula}\" já existe na lista de veículos.")
         {
-
+            
         }
     }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Automobile.Properties;
 
 namespace Automobile
 {
@@ -31,6 +32,11 @@ namespace Automobile
             lb_user_logado.Text = EmpresaController.userLogado;
             timer1.Start();
 
+
+            if (EmpresaController.userLogado != "#admin")
+            {
+                btn_manage_users.Image = null;
+            }
 
             if (EmpresaController.userLogado == "#admin")
             {
@@ -63,9 +69,9 @@ namespace Automobile
             this.PnlFormLoader.Controls.Add(FormChangeVehicleStatus);
             FormChangeVehicleStatus.Show();
 
-            if (EmpresaController.userLogado == "#")
+            if (EmpresaController.userLogado == "#admin")
             {
-                lb_title.Text = "Change Vehicle Status";
+                lb_title.Text = "Vehicle Status";
             }
 
         }
@@ -174,10 +180,10 @@ namespace Automobile
             Image imagem = Properties.Resources.admin1;
             pb_user_image.Image = imagem;
 
-            btn_manage_users.Text = "Manage Users";
+            btn_manage_users.Text = "   Manage Users";
             btn_manage_users.Enabled = true;
 
-            btn_change_veichle_status.Text = "Change Vehicles Status";
+            btn_change_veichle_status.Text = "   Vehicles Status";
 
             lb_user_logado.Text = "# Admin";
 
@@ -198,9 +204,10 @@ namespace Automobile
             btn_veichles_available.ForeColor = System.Drawing.Color.White;
             btn_veichle.ForeColor = System.Drawing.Color.White;
 
+           
 
-            btn_manage_users.FlatAppearance.BorderColor = Color.White;
-            btn_manage_users.FlatAppearance.BorderSize = 1;
+
+
 
 
         }
@@ -213,6 +220,11 @@ namespace Automobile
         }
 
         private void lb_date_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
