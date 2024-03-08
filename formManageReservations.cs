@@ -5,13 +5,17 @@ namespace Automobile
 {
     public partial class FormManageReservations : Form
     {
-
+        private string tipoVeiculoSelecionado;
 
         public FormManageReservations()
         {
             InitializeComponent();
             lb_preco_total.Visible = false;
+<<<<<<< HEAD
+            btn_criar_reserva.Visible = false;
+=======
             btn_criar_reserva.Visible = false;       
+>>>>>>> 38f7503a662c7d21b1300ccf37437393264f0384
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -111,23 +115,86 @@ namespace Automobile
         {
             
         }
+<<<<<<< HEAD
+
+        private void MontarHorarios()
+        {
+            var horario = new TimeSpan(0, 0, 0);
+            var incremento = new TimeSpan(0, 30, 0);
+
+            for (int i = 0; i < 48; i++)
+            {
+                list_box_horario.Items.Add(horario.ToString().Substring(0, 5));
+                horario += incremento;
+            }
+        }
+
+        private bool validarForm()
+        {
+            if (list_box_horario.Text == "")
+            {
+                MessageBox.Show("Selecione a data de Inicio!");
+                return false;
+            }
+            return true;
+        }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            if (validarForm())
+            {
+                tb_fim.Text = date_time_dias.Value.ToString("dd-MM-yyyy") + " " + list_box_horario.Text;
+
+            }
+        }
+
+=======
                 
+>>>>>>> 38f7503a662c7d21b1300ccf37437393264f0384
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             DateTime horaInicio = dateTimePickerInicio.Value;
             DateTime horaFim = dateTimePickerFim.Value;
 
+<<<<<<< HEAD
+            if (!DateTime.TryParse(tb_inicio.Text, out dataHoraInicio))
+            {
+                MessageBox.Show("Data/Horário de início inválido!");
+            }
+            else if (!DateTime.TryParse(tb_fim.Text, out dataHoraFim))
+            {
+                MessageBox.Show("Data/Horário de fim inválido!");
+            }
+            else
+            {
+                // Calcular a diferença entre as datas
+                TimeSpan duracao = dataHoraFim - dataHoraInicio;
+
+                // Exibir a duração total em um formato personalizado
+                string duracaoFormatada = $"{(int)duracao.TotalDays} dias, {duracao.Hours}h e {duracao.Minutes} minutos";
+                tb_valorfinaltempo.Text = duracaoFormatada;
+            }
+=======
             TimeSpan intervalo = horaFim - horaInicio;
 
             string intervaloDeTempo = FormatarIntervaloTempo(intervalo);
 
             tb_valorfinaltempo.Text = intervaloDeTempo.ToString();
+>>>>>>> 38f7503a662c7d21b1300ccf37437393264f0384
         }
 
         private string FormatarIntervaloTempo(TimeSpan intervalo)
         {
+<<<<<<< HEAD
+            if (validarForm())
+            {
+                //primeiro botao ok
+                tb_inicio.Text = date_time_dias.Value.ToString("dd-MM-yyyy") + " " + list_box_horario.Text;
+            }
+=======
             // Formata o intervalo de tempo no formato 'hh:mm'
             return $"{(int)intervalo.TotalHours:D2}:{intervalo.Minutes:D2}";
+>>>>>>> 38f7503a662c7d21b1300ccf37437393264f0384
         }
 
 

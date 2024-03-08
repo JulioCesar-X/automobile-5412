@@ -79,7 +79,7 @@
             this.btn_forgetpass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_forgetpass.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_forgetpass.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btn_forgetpass.Location = new System.Drawing.Point(297, 323);
+            this.btn_forgetpass.Location = new System.Drawing.Point(294, 328);
             this.btn_forgetpass.Name = "btn_forgetpass";
             this.btn_forgetpass.Size = new System.Drawing.Size(148, 30);
             this.btn_forgetpass.TabIndex = 9;
@@ -93,7 +93,7 @@
             this.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_login.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_login.ForeColor = System.Drawing.Color.White;
-            this.btn_login.Location = new System.Drawing.Point(18, 320);
+            this.btn_login.Location = new System.Drawing.Point(18, 323);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(148, 35);
             this.btn_login.TabIndex = 8;
@@ -118,7 +118,7 @@
             this.tb_password.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.tb_password.Location = new System.Drawing.Point(55, 12);
             this.tb_password.Name = "tb_password";
-            this.tb_password.Size = new System.Drawing.Size(370, 24);
+            this.tb_password.Size = new System.Drawing.Size(260, 24);
             this.tb_password.TabIndex = 3;
             this.tb_password.Text = "Password";
             this.tb_password.UseSystemPasswordChar = true;
@@ -151,7 +151,7 @@
             this.tb_username.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.tb_username.Location = new System.Drawing.Point(55, 12);
             this.tb_username.Name = "tb_username";
-            this.tb_username.Size = new System.Drawing.Size(370, 27);
+            this.tb_username.Size = new System.Drawing.Size(260, 27);
             this.tb_username.TabIndex = 2;
             this.tb_username.Text = "Username@auto";
             this.tb_username.TextChanged += new System.EventHandler(this.tb_username_TextChanged);
@@ -172,7 +172,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label4.Location = new System.Drawing.Point(13, 158);
+            this.label4.Location = new System.Drawing.Point(12, 164);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(294, 31);
             this.label4.TabIndex = 5;
