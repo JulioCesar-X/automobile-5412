@@ -25,7 +25,7 @@ namespace Automobile
                 {
                     dataGridView1.Rows.Add(user.Id, user.Name, user.Password);
                 }
-            
+
             }
         }
 
@@ -42,7 +42,7 @@ namespace Automobile
                 }
             }
 
-            
+
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)
@@ -52,14 +52,12 @@ namespace Automobile
             EmpresaController.Controlador.Users.Add(new User("#", username, password));
 
             atualizarDataGridView();
-<<<<<<< HEAD
-           
-=======
+
 
             textBoxUsername.Clear();
             textBoxPassword.Clear();
 
->>>>>>> c70f0be4639dffd7383b22665c69036decfc6a94
+
         }
 
         private void label5_Click(object sender, EventArgs e)

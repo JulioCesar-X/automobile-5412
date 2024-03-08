@@ -6,30 +6,31 @@ namespace Automobile
 {
     public partial class FormPainelControlo : Form
     {
-       
+
         private DateTime _dataAtual;
         public DateTime DataAtual
         {
 
-            get 
-            { return _dataAtual; 
+            get
+            {
+                return _dataAtual;
             }
             set
             {
                 _dataAtual = value;
             }
-            
+
         }
 
 
         public FormPainelControlo()
         {
             InitializeComponent();
-          
+
             DataAtual = DateTime.Now;
             lb_user_logado.Text = EmpresaController.userLogado;
             timer1.Start();
-            
+
 
             if (EmpresaController.userLogado == "#admin")
             {
@@ -156,9 +157,9 @@ namespace Automobile
 
 
             InitializeComponent();
-            
 
-            if (EmpresaController.userLogado == "#")
+
+            if (EmpresaController.userLogado == "#admin")
             {
                 IsAdmin();
             }
@@ -201,12 +202,12 @@ namespace Automobile
             btn_manage_users.FlatAppearance.BorderColor = Color.White;
             btn_manage_users.FlatAppearance.BorderSize = 1;
 
-            
+
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-           
+
             DataAtual = DataAtual.AddDays(1);
 
         }
