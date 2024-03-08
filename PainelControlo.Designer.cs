@@ -273,7 +273,7 @@
             this.btn_vehicle_aintenance.Name = "btn_vehicle_aintenance";
             this.btn_vehicle_aintenance.Size = new System.Drawing.Size(122, 47);
             this.btn_vehicle_aintenance.TabIndex = 4;
-            this.btn_vehicle_aintenance.Text = "Time Simulation Billing";
+            this.btn_vehicle_aintenance.Text = "Calculate Reserves";
             this.btn_vehicle_aintenance.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_vehicle_aintenance.UseVisualStyleBackColor = false;
             this.btn_vehicle_aintenance.Click += new System.EventHandler(this.BtnVehicleMaintenance_Click);

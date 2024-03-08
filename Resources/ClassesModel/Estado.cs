@@ -17,7 +17,7 @@ namespace Automobile
         public Tipo Nome { get; set; }
 
         private DateTime _dataInicio;
-        private DateTime? _dataFim;
+        private DateTime _dataFim;
         public DateTime DataInicio
         {
             get
@@ -33,7 +33,7 @@ namespace Automobile
                 _dataInicio = value;
             }
         }
-        public DateTime? DataFim
+        public DateTime DataFim
         {
             get
             {
@@ -51,7 +51,7 @@ namespace Automobile
         {
             Nome = Tipo.Disponivel; // Definir o estado padrão como Disponível
             DataInicio = DateTime.Now; // Definir a data de fim como o momento atual
-            DataFim = null;
+            DataFim = DateTime.MaxValue;
         }
         public Estado(Tipo nome, DateTime inicio, DateTime fim)
         {

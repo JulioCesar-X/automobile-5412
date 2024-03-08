@@ -40,11 +40,9 @@
             this.lblPreco = new System.Windows.Forms.Label();
             this.comboBoxTipoVeiculo = new System.Windows.Forms.ComboBox();
             this.lb_filtro = new System.Windows.Forms.Label();
-            this.pb_veiculos_alugados = new System.Windows.Forms.PictureBox();
             this.chb_ver_veiculos = new System.Windows.Forms.CheckBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVeiculosAlugados)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_veiculos_alugados)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -54,7 +52,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 43);
+            this.panel2.Size = new System.Drawing.Size(781, 43);
             this.panel2.TabIndex = 4;
             // 
             // label3
@@ -62,11 +60,12 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(327, 12);
+            this.label3.Location = new System.Drawing.Point(278, 7);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(159, 24);
+            this.label3.Size = new System.Drawing.Size(239, 29);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Calculate Billing";
+            this.label3.Text = "Calculate Reserves";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // dateTimePickerInicio
             // 
@@ -90,7 +89,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(40, 52);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 16);
+            this.label4.Size = new System.Drawing.Size(60, 20);
             this.label4.TabIndex = 7;
             this.label4.Text = "Início:";
             // 
@@ -100,7 +99,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(327, 53);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 16);
+            this.label5.Size = new System.Drawing.Size(46, 20);
             this.label5.TabIndex = 8;
             this.label5.Text = "Fim:";
             // 
@@ -120,7 +119,7 @@
             this.lb_veiculos_alugados.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_veiculos_alugados.Location = new System.Drawing.Point(296, 158);
             this.lb_veiculos_alugados.Name = "lb_veiculos_alugados";
-            this.lb_veiculos_alugados.Size = new System.Drawing.Size(137, 24);
+            this.lb_veiculos_alugados.Size = new System.Drawing.Size(168, 29);
             this.lb_veiculos_alugados.TabIndex = 10;
             this.lb_veiculos_alugados.Text = "??? Alugados";
             // 
@@ -141,7 +140,7 @@
             this.lblPreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPreco.Location = new System.Drawing.Point(39, 103);
             this.lblPreco.Name = "lblPreco";
-            this.lblPreco.Size = new System.Drawing.Size(72, 25);
+            this.lblPreco.Size = new System.Drawing.Size(89, 31);
             this.lblPreco.TabIndex = 12;
             this.lblPreco.Text = "Total:";
             this.lblPreco.Click += new System.EventHandler(this.lblPreco_Click);
@@ -168,30 +167,18 @@
             this.lb_filtro.Location = new System.Drawing.Point(607, 111);
             this.lb_filtro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_filtro.Name = "lb_filtro";
-            this.lb_filtro.Size = new System.Drawing.Size(50, 17);
+            this.lb_filtro.Size = new System.Drawing.Size(59, 20);
             this.lb_filtro.TabIndex = 14;
             this.lb_filtro.Text = "Filtro:";
-            // 
-            // pb_veiculos_alugados
-            // 
-            this.pb_veiculos_alugados.BackColor = System.Drawing.Color.Transparent;
-            this.pb_veiculos_alugados.BackgroundImage = global::Automobile.Properties.Resources.pngwing_com__36_;
-            this.pb_veiculos_alugados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pb_veiculos_alugados.Location = new System.Drawing.Point(34, 146);
-            this.pb_veiculos_alugados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pb_veiculos_alugados.Name = "pb_veiculos_alugados";
-            this.pb_veiculos_alugados.Size = new System.Drawing.Size(718, 278);
-            this.pb_veiculos_alugados.TabIndex = 15;
-            this.pb_veiculos_alugados.TabStop = false;
             // 
             // chb_ver_veiculos
             // 
             this.chb_ver_veiculos.AutoSize = true;
             this.chb_ver_veiculos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chb_ver_veiculos.Location = new System.Drawing.Point(468, 111);
-            this.chb_ver_veiculos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chb_ver_veiculos.Margin = new System.Windows.Forms.Padding(2);
             this.chb_ver_veiculos.Name = "chb_ver_veiculos";
-            this.chb_ver_veiculos.Size = new System.Drawing.Size(118, 21);
+            this.chb_ver_veiculos.Size = new System.Drawing.Size(138, 24);
             this.chb_ver_veiculos.TabIndex = 16;
             this.chb_ver_veiculos.Text = "Ver Veiculos";
             this.chb_ver_veiculos.UseVisualStyleBackColor = true;
@@ -202,9 +189,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(781, 443);
             this.Controls.Add(this.chb_ver_veiculos);
-            this.Controls.Add(this.pb_veiculos_alugados);
             this.Controls.Add(this.lb_filtro);
             this.Controls.Add(this.comboBoxTipoVeiculo);
             this.Controls.Add(this.lblPreco);
@@ -223,7 +209,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVeiculosAlugados)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_veiculos_alugados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,7 +227,6 @@
         private System.Windows.Forms.Label lblPreco;
         private System.Windows.Forms.ComboBox comboBoxTipoVeiculo;
         private System.Windows.Forms.Label lb_filtro;
-        private System.Windows.Forms.PictureBox pb_veiculos_alugados;
         private System.Windows.Forms.CheckBox chb_ver_veiculos;
     }
 }

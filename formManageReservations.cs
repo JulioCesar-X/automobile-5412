@@ -5,30 +5,33 @@ namespace Automobile
 {
     public partial class FormManageReservations : Form
     {
-
+        //private string tipoVeiculoSelecionado;
 
         public FormManageReservations()
         {
             InitializeComponent();
-            lb_preco_total.Visible = false;
-            btn_criar_reserva.Visible = false;
+            LimparCampos();
 
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            pb_veiculos_disponiveis.Visible = false;
-
             switch (cb_filtro.SelectedIndex)
             {
                 case 0:
 
-                    AdicionarColunas(dgv_veiculos_disponiveis, "Carro", new string[] { "Matrícula", "Modelo", "Nº Portas", "Tipo de Caixa", "Preço / dia" });
+                    lb_veiculos_disponiveis.Text = "Carros Disponiveis";
+
+                    AdicionarColunas(dgv_veiculos_disponiveis, "Carro", new string[] { "Matrícula", "Modelo", "Nº Portas", "Tipo de Caixa", "Preço /h" });
 
                     foreach (var veiculo in EmpresaController.Controlador.VeiculosDisponiveis)
                     {
 
+
+
                         Carro carro = veiculo as Carro;
+
+
                         if (carro != null)
                         {
                             dgv_veiculos_disponiveis.Rows.Add(
@@ -36,8 +39,7 @@ namespace Automobile
                                        carro.VeiculoModelo,
                                        carro.NumeroPortas,
                                        carro.TipoCaixa,
-                                       carro.VeiculoPreco + " €",
-                                       carro.VeiculoStatus.Nome
+                                       carro.VeiculoPreco + " €"
 
                                        );
                         }
@@ -46,8 +48,9 @@ namespace Automobile
 
                 case 1:
 
-                    AdicionarColunas(dgv_veiculos_disponiveis, "Mota", new string[] { "Matrícula", "Modelo", "Cilindrada", "Preço / dia" });
+                    lb_veiculos_disponiveis.Text = "Motas Disponiveis";
 
+                    AdicionarColunas(dgv_veiculos_disponiveis, "Mota", new string[] { "Matrícula", "Modelo", "Cilindrada", "Preço /h" });
 
                     foreach (var veiculo in EmpresaController.Controlador.VeiculosDisponiveis)
                     {
@@ -58,8 +61,7 @@ namespace Automobile
                                         mota.VeiculoMatricula,
                                         mota.VeiculoModelo,
                                         mota.Cilindrada + " cc",
-                                        mota.VeiculoPreco + " €",
-                                        mota.VeiculoStatus.Nome
+                                        mota.VeiculoPreco + " €"
                                         );
                         }
                     }
@@ -67,7 +69,9 @@ namespace Automobile
 
                 case 2:
 
-                    AdicionarColunas(dgv_veiculos_disponiveis, "Camioneta", new string[] { "Matrícula", "Modelo", "Nº de Eixos", "Nº Máx. Passageiros", "Preço / dia" });
+                    lb_veiculos_disponiveis.Text = "Camionetas Disponiveis";
+
+                    AdicionarColunas(dgv_veiculos_disponiveis, "Camioneta", new string[] { "Matrícula", "Modelo", "Nº de Eixos", "Nº Máx. Passageiros", "Preço /h" });
 
 
                     foreach (var veiculo in EmpresaController.Controlador.VeiculosDisponiveis)
@@ -80,8 +84,7 @@ namespace Automobile
                                         camioneta.VeiculoModelo,
                                         camioneta.NumeroEixos,
                                         camioneta.NumeroPassageiros,
-                                        camioneta.VeiculoPreco + " €",
-                                        camioneta.VeiculoStatus.Nome
+                                        camioneta.VeiculoPreco + " €"
                                         );
                         }
                     }
@@ -89,7 +92,9 @@ namespace Automobile
 
                 case 3:
 
-                    AdicionarColunas(dgv_veiculos_disponiveis, "Camiao", new string[] { "Matrícula", "Modelo", "Peso Máx. Suportado", "Preço / dia" });
+                    lb_veiculos_disponiveis.Text = "Camiões Disponiveis";
+
+                    AdicionarColunas(dgv_veiculos_disponiveis, "Camiao", new string[] { "Matrícula", "Modelo", "Peso Máx. Suportado", "Preço /h" });
 
 
                     foreach (var veiculo in EmpresaController.Controlador.VeiculosDisponiveis)
@@ -101,8 +106,7 @@ namespace Automobile
                                        camiao.VeiculoMatricula,
                                        camiao.VeiculoModelo,
                                        camiao.PesoMaximo,
-                                       camiao.VeiculoPreco + " €",
-                                       camiao.VeiculoStatus.Nome
+                                       camiao.VeiculoPreco + " €"
                                        );
                         }
                     }
@@ -110,78 +114,22 @@ namespace Automobile
             }
         }
 
-        private void formManageReservations_Load(object sender, EventArgs e)
+
+
+
+
+        private string FormatarIntervaloTempo(TimeSpan intervalo)
         {
-            MontarHorarios();
-        }
 
-        private void MontarHorarios()
-        {
-            var horario = new TimeSpan(0, 0, 0);
-            var incremento = new TimeSpan(0, 30, 0);
-
-            for (int i = 0; i < 48; i++)
-            {
-                list_box_horario.Items.Add(horario.ToString().Substring(0, 5));
-                horario += incremento;
-            }
-        }
-
-        private bool validarForm()
-        {
-            if (list_box_horario.Text == "")
-            {
-                MessageBox.Show("Selecione a data de Inicio!");
-                return false;
-            }
-            return true;
-        }
-
-        private void btnOk_Click(object sender, EventArgs e)
-        {
-            if (validarForm())
-            {
-                tb_fim.Text = date_time_dias.Value.ToString().Substring(0, 10) + " " + list_box_horario.Text;
-            }
-        }
-
-        private void btnConfirm_Click(object sender, EventArgs e)
-        {
-            var dataHoraInicio = new DateTime();
-            var dataHoraFim = new DateTime();
-
-            if (!DateTime.TryParse(tb_inicio.Text, out dataHoraInicio))
-            {
-                MessageBox.Show("Data/Horário de início inválido!");
-            }
-            else if (!DateTime.TryParse(tb_fim.Text, out dataHoraFim))
-            {
-                MessageBox.Show("Data/Horário de fim inválido!");
-            }
-            else
-            {
-                tb_valorfinaltempo.Text = (dataHoraFim - dataHoraInicio).ToString();
-            }
-        }
-
-        private void btnOkInicio_Click(object sender, EventArgs e)
-        {
-            if (validarForm())
-            {
-                //primeiro botao ok
-                tb_inicio.Text = date_time_dias.Value.ToString().Substring(0, 10) + " " + list_box_horario.Text;
-            }
-        }
-
-        private void textBoxIntervaloEscolhido_TextChanged(object sender, EventArgs e)
-        {
+            // Formata o intervalo de tempo no formato 'hh:mm'
+            return $"{(int)intervalo.TotalHours:D2}:{intervalo.Minutes:D2}";
 
         }
 
-        private void dgv_veiculosdisponiveis(object sender, EventArgs e)
-        {
 
-        }
+
+
+
 
 
         private void AdicionarColunas(DataGridView dgv_veiculos_, string tipoVeiculo, string[] colunas)
@@ -203,17 +151,46 @@ namespace Automobile
 
         private void btn_criar_reserva_Click(object sender, EventArgs e)
         {
+            pb_reservations.Visible = true;
 
+            // Verifica se um veículo está selecionado na DataGridView
+            if (tb_matricula.Text != null)
+            {
 
-            //TODO: Validações para enviar a msg box caso n encontrou o veiculo especificado
+                // Procura o veículo na lista de veículos disponíveis
+                object veiculoSelecionado = EmpresaController.Controlador.GetVeiculo(tb_matricula.Text, EmpresaController.Controlador.VeiculosDisponiveis);
 
-            //TODO: criar Gerador id reserva automatico que deve começar apartir do ultimo valor ja registrado na lista de reservas
-            //int id = 0;
+                if (veiculoSelecionado != null)
+                {
+                    Veiculo veiculo = veiculoSelecionado as Veiculo;
 
+                    // Adiciona a reserva para o veículo
+                    veiculo.VeiculoStatus.DataInicio = dateTimePickerInicio.Value;
+                    veiculo.VeiculoStatus.DataFim = dateTimePickerFim.Value;
+                    EmpresaController.Controlador.ValidarReserva(tb_matricula.Text, veiculo.VeiculoStatus.DataInicio, veiculo.VeiculoStatus.DataFim);
 
-            //TODO:Criar uma função que pegue um veiculo quando enviada a matricula
-            //Veiculo veiculoSelecionado = (Veiculo)Empresa.Controller.getVeiculo(tb_matricula);
-            //EmpresaController.CriarReserva(id++, DateTime.Parse(tb_inicio.Text), DateTime.Parse(tb_fim.Text), veiculoSelecionado);
+                    veiculo.Reservar(dateTimePickerInicio.Value, dateTimePickerFim.Value);
+                    EmpresaController.Controlador.AdicionarVeiculoReservado(veiculo);
+                    EmpresaController.Controlador.VeiculosDisponiveis.Remove(veiculo);
+
+                    // Atualiza a DataGridView
+                    comboBox1_SelectedIndexChanged(null, null);
+
+                    // Mostra uma mensagem de sucesso
+                    MessageBox.Show("Reserva criada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("O veículo selecionado não foi encontrado na lista de veículos disponíveis.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecione um veículo na lista de veículos disponíveis.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            LimparCampos();
 
 
         }
@@ -221,7 +198,6 @@ namespace Automobile
         private void date_time_dias_ValueChanged(object sender, EventArgs e)
         {
             cb_filtro.SelectedItem = null;
-            pb_veiculos_disponiveis.Visible = true;
             lb_preco_total.Visible = false;
             btn_criar_reserva.Visible = false;
         }
@@ -231,10 +207,86 @@ namespace Automobile
 
         }
 
-        private void bt_carcular_valor_a_pagar_Click(object sender, EventArgs e)
+        private void bt_calcular_valor_a_pagar_Click(object sender, EventArgs e)
         {
             lb_preco_total.Visible = true;
             btn_criar_reserva.Visible = true;
+
+            tb_matricula.Text = dgv_veiculos_disponiveis.CurrentRow.Cells["Matrícula"].Value.ToString();
+
+            string precoHoraString = dgv_veiculos_disponiveis.CurrentRow.Cells["Preço /h"].Value.ToString();
+            double precoHora = double.Parse(precoHoraString.Replace(" €", ""));
+
+            DateTime horaInicio = dateTimePickerInicio.Value;
+            DateTime horaFim = dateTimePickerFim.Value;
+            TimeSpan intervalo = horaFim - horaInicio;
+
+            double intervaloHoras = intervalo.TotalHours;
+
+            double valorAluguer = intervaloHoras * precoHora;
+
+            lblPrecoFinal.Text = $"{valorAluguer.ToString("0.00")} €";
+            lblMatriculaEscolhida.Text = $"{tb_matricula.Text}";
+
+            lblMatriculaEscolhida.Visible = true;
+            lblPrecoFinal.Visible = true;
         }
+
+        private void dateTimePickerInicio_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tb_matricula_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < dgv_veiculos_disponiveis.Rows.Count)
+            {
+                DataGridViewRow row = dgv_veiculos_disponiveis.Rows[e.RowIndex];
+                string matricula = row.Cells["Matrícula"].Value.ToString();
+                tb_matricula.Text = matricula;
+            }
+        }
+
+        private void bt_confirm_Click(object sender, EventArgs e)
+        {
+
+
+            TimeSpan intervalo = dateTimePickerFim.Value - dateTimePickerInicio.Value;
+            int minutos = (int)intervalo.TotalMinutes;
+
+            if (minutos > 0)
+            {
+                string intervaloDeTempo = FormatarIntervaloTempo(intervalo);
+                tb_valorfinaltempo.Text = intervaloDeTempo.ToString();
+                pb_reservations.Visible = false;
+
+            }
+            else
+            {
+                MessageBox.Show("Tempo de reserva 00:00 inválido!");
+            }
+
+        }
+        private void LimparCampos()
+        {
+            tb_valorfinaltempo.Clear();
+            tb_matricula.Clear();
+            lblPrecoFinal.Text = string.Empty;
+            lblMatriculaEscolhida.Text = string.Empty;
+
+            lb_preco_total.Visible = false;
+            lb_matricula_r.Visible = false;
+            btn_criar_reserva.Visible = false;
+            btn_criar_reserva.Visible = false;
+            pb_reservations.Visible = true;
+
+        }
+
+
     }
 }

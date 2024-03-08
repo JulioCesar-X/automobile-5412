@@ -84,7 +84,11 @@
             this.label1.Location = new System.Drawing.Point(347, 15);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
+<<<<<<< HEAD
             this.label1.Size = new System.Drawing.Size(91, 31);
+=======
+            this.label1.Size = new System.Drawing.Size(109, 38);
+>>>>>>> c70f0be4639dffd7383b22665c69036decfc6a94
             this.label1.TabIndex = 0;
             this.label1.Text = "Users";
             // 
@@ -103,10 +107,17 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.label5.Location = new System.Drawing.Point(509, 13);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(191, 31);
+=======
+            this.label5.Location = new System.Drawing.Point(505, 13);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(229, 38);
+>>>>>>> c70f0be4639dffd7383b22665c69036decfc6a94
             this.label5.TabIndex = 9;
             this.label5.Text = "Remove User";
             // 
@@ -117,7 +128,11 @@
             this.label2.Location = new System.Drawing.Point(95, 13);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
+<<<<<<< HEAD
             this.label2.Size = new System.Drawing.Size(135, 31);
+=======
+            this.label2.Size = new System.Drawing.Size(162, 38);
+>>>>>>> c70f0be4639dffd7383b22665c69036decfc6a94
             this.label2.TabIndex = 0;
             this.label2.Text = "Add User";
             // 
@@ -178,7 +193,11 @@
             this.panel3.Controls.Add(this.textBoxUsername);
             this.panel3.Controls.Add(this.textBoxPassword);
             this.panel3.Controls.Add(this.label4);
+<<<<<<< HEAD
             this.panel3.Location = new System.Drawing.Point(52, 300);
+=======
+            this.panel3.Location = new System.Drawing.Point(74, 300);
+>>>>>>> c70f0be4639dffd7383b22665c69036decfc6a94
             this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(204, 141);
@@ -192,7 +211,11 @@
             this.panel4.Controls.Add(this.textBoxUsernameRemove);
             this.panel4.Controls.Add(this.textBoxPasswordRemove);
             this.panel4.Controls.Add(this.label7);
+<<<<<<< HEAD
             this.panel4.Location = new System.Drawing.Point(500, 300);
+=======
+            this.panel4.Location = new System.Drawing.Point(520, 300);
+>>>>>>> c70f0be4639dffd7383b22665c69036decfc6a94
             this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(204, 141);

@@ -299,7 +299,7 @@
             // btn_criar
             // 
             this.btn_criar.Location = new System.Drawing.Point(296, 311);
-            this.btn_criar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_criar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_criar.Name = "btn_criar";
             this.btn_criar.Size = new System.Drawing.Size(93, 34);
             this.btn_criar.TabIndex = 34;
@@ -322,10 +322,10 @@
             this.pb_add_veiculos.BackColor = System.Drawing.Color.Transparent;
             this.pb_add_veiculos.BackgroundImage = global::Automobile.Properties.Resources.pngwing_com__24_;
             this.pb_add_veiculos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pb_add_veiculos.Location = new System.Drawing.Point(99, 101);
-            this.pb_add_veiculos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pb_add_veiculos.Location = new System.Drawing.Point(124, 123);
+            this.pb_add_veiculos.Margin = new System.Windows.Forms.Padding(2);
             this.pb_add_veiculos.Name = "pb_add_veiculos";
-            this.pb_add_veiculos.Size = new System.Drawing.Size(580, 329);
+            this.pb_add_veiculos.Size = new System.Drawing.Size(476, 244);
             this.pb_add_veiculos.TabIndex = 35;
             this.pb_add_veiculos.TabStop = false;
             // 
