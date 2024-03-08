@@ -64,7 +64,7 @@ namespace Automobile
 
         private void BtnVehicleMaintenance_Click(object sender, EventArgs e)
         {
-            lb_title.Text = "Time Simulation and Billing";
+            lb_title.Text = "Calculate Reserves";
             this.PnlFormLoader.Controls.Clear();
             FormTimeSimulation formTimeSimulation = new FormTimeSimulation() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             formTimeSimulation.FormBorderStyle = FormBorderStyle.None;
