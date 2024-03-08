@@ -50,6 +50,7 @@
             this.pb_user_image = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btn_next_day = new System.Windows.Forms.Button();
             this.panel_system_control.SuspendLayout();
             this.panel_user.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_user_image)).BeginInit();
@@ -69,6 +70,7 @@
             // 
             this.panel_user.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.panel_user.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel_user.Controls.Add(this.btn_next_day);
             this.panel_user.Controls.Add(this.btn_change_account);
             this.panel_user.Controls.Add(this.lb_title);
             this.panel_user.Controls.Add(this.btn_back_begin);
@@ -117,7 +119,7 @@
             this.lb_title.ForeColor = System.Drawing.SystemColors.Window;
             this.lb_title.Location = new System.Drawing.Point(202, 44);
             this.lb_title.Name = "lb_title";
-            this.lb_title.Size = new System.Drawing.Size(434, 69);
+            this.lb_title.Size = new System.Drawing.Size(348, 55);
             this.lb_title.TabIndex = 3;
             this.lb_title.Text = "AUTOMOBILE";
             this.lb_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -164,9 +166,10 @@
             this.lb_date.ForeColor = System.Drawing.SystemColors.Control;
             this.lb_date.Location = new System.Drawing.Point(854, 14);
             this.lb_date.Name = "lb_date";
-            this.lb_date.Size = new System.Drawing.Size(196, 24);
+            this.lb_date.Size = new System.Drawing.Size(155, 18);
             this.lb_date.TabIndex = 4;
             this.lb_date.Text = "01/02/1990 - domingo ";
+            this.lb_date.Click += new System.EventHandler(this.lb_date_Click);
             // 
             // lb_date_time
             // 
@@ -176,7 +179,7 @@
             this.lb_date_time.ForeColor = System.Drawing.SystemColors.Control;
             this.lb_date_time.Location = new System.Drawing.Point(942, 42);
             this.lb_date_time.Name = "lb_date_time";
-            this.lb_date_time.Size = new System.Drawing.Size(80, 24);
+            this.lb_date_time.Size = new System.Drawing.Size(64, 18);
             this.lb_date_time.TabIndex = 4;
             this.lb_date_time.Text = "00:00:00";
             // 
@@ -317,7 +320,7 @@
             this.lb_goodjob.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(178)))));
             this.lb_goodjob.Location = new System.Drawing.Point(53, 79);
             this.lb_goodjob.Name = "lb_goodjob";
-            this.lb_goodjob.Size = new System.Drawing.Size(111, 15);
+            this.lb_goodjob.Size = new System.Drawing.Size(86, 12);
             this.lb_goodjob.TabIndex = 2;
             this.lb_goodjob.Text = "Have a good job";
             this.lb_goodjob.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -329,7 +332,7 @@
             this.lb_user_logado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(156)))), ((int)(((byte)(149)))));
             this.lb_user_logado.Location = new System.Drawing.Point(58, 97);
             this.lb_user_logado.Name = "lb_user_logado";
-            this.lb_user_logado.Size = new System.Drawing.Size(103, 20);
+            this.lb_user_logado.Size = new System.Drawing.Size(85, 16);
             this.lb_user_logado.TabIndex = 1;
             this.lb_user_logado.Text = "User Name";
             this.lb_user_logado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -356,6 +359,23 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
+            // 
+            // btn_next_day
+            // 
+            this.btn_next_day.BackColor = System.Drawing.Color.Green;
+            this.btn_next_day.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_next_day.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_next_day.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_next_day.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_next_day.ForeColor = System.Drawing.Color.White;
+            this.btn_next_day.Location = new System.Drawing.Point(945, 63);
+            this.btn_next_day.Name = "btn_next_day";
+            this.btn_next_day.Size = new System.Drawing.Size(61, 28);
+            this.btn_next_day.TabIndex = 10;
+            this.btn_next_day.Text = "Next";
+            this.btn_next_day.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_next_day.UseVisualStyleBackColor = false;
+            this.btn_next_day.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // FormPainelControlo
             // 
@@ -400,5 +420,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lb_date;
         private System.Windows.Forms.Button btn_back_begin;
+        private System.Windows.Forms.Button btn_next_day;
     }
 }

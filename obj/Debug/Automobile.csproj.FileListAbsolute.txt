@@ -88,6 +88,26 @@ C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\autom
 C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\obj\Debug\Automobile.pdb
 C:\AUTOMOBILE\automobile-5412\obj\Debug\Automobile.formTimeSimulation.resources
 C:\Users\julio\Downloads\Automobile\obj\Debug\Automobile.formTimeSimulation.resources
+<<<<<<< HEAD
+C:\Users\T0118706\Desktop\branchgoncalo\automobile-5412\bin\Debug\Automobile.exe.config
+C:\Users\T0118706\Desktop\branchgoncalo\automobile-5412\bin\Debug\Automobile.exe
+C:\Users\T0118706\Desktop\branchgoncalo\automobile-5412\bin\Debug\Automobile.pdb
+C:\Users\T0118706\Desktop\branchgoncalo\automobile-5412\obj\Debug\Automobile.csproj.AssemblyReference.cache
+C:\Users\T0118706\Desktop\branchgoncalo\automobile-5412\obj\Debug\Automobile.formAdicionarVeiculo.resources
+C:\Users\T0118706\Desktop\branchgoncalo\automobile-5412\obj\Debug\Automobile.formChangeVehicleStatus.resources
+C:\Users\T0118706\Desktop\branchgoncalo\automobile-5412\obj\Debug\Automobile.FormLoginSystem.resources
+C:\Users\T0118706\Desktop\branchgoncalo\automobile-5412\obj\Debug\Automobile.FormManageFiles.resources
+C:\Users\T0118706\Desktop\branchgoncalo\automobile-5412\obj\Debug\Automobile.FormManageReservations.resources
+C:\Users\T0118706\Desktop\branchgoncalo\automobile-5412\obj\Debug\Automobile.formManageUsers.resources
+C:\Users\T0118706\Desktop\branchgoncalo\automobile-5412\obj\Debug\Automobile.FormTimeSimulation.resources
+C:\Users\T0118706\Desktop\branchgoncalo\automobile-5412\obj\Debug\Automobile.formVeiculosDisponiveisAlugar.resources
+C:\Users\T0118706\Desktop\branchgoncalo\automobile-5412\obj\Debug\Automobile.FormPainelControlo.resources
+C:\Users\T0118706\Desktop\branchgoncalo\automobile-5412\obj\Debug\Automobile.Properties.Resources.resources
+C:\Users\T0118706\Desktop\branchgoncalo\automobile-5412\obj\Debug\Automobile.csproj.GenerateResource.cache
+C:\Users\T0118706\Desktop\branchgoncalo\automobile-5412\obj\Debug\Automobile.csproj.CoreCompileInputs.cache
+C:\Users\T0118706\Desktop\branchgoncalo\automobile-5412\obj\Debug\Automobile.exe
+C:\Users\T0118706\Desktop\branchgoncalo\automobile-5412\obj\Debug\Automobile.pdb
+=======
 C:\Users\T0126209\Desktop\Branch Francisco\automobile-5412\bin\Debug\Automobile.exe.config
 C:\Users\T0126209\Desktop\Branch Francisco\automobile-5412\bin\Debug\Automobile.exe
 C:\Users\T0126209\Desktop\Branch Francisco\automobile-5412\bin\Debug\Automobile.pdb
@@ -107,3 +127,4 @@ C:\Users\T0126209\Desktop\Branch Francisco\automobile-5412\obj\Debug\Automobile.
 C:\Users\T0126209\Desktop\Branch Francisco\automobile-5412\obj\Debug\Automobile.csproj.CoreCompileInputs.cache
 C:\Users\T0126209\Desktop\Branch Francisco\automobile-5412\obj\Debug\Automobile.exe
 C:\Users\T0126209\Desktop\Branch Francisco\automobile-5412\obj\Debug\Automobile.pdb
+>>>>>>> c70f0be4639dffd7383b22665c69036decfc6a94

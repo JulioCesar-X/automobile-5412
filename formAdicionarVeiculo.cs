@@ -194,7 +194,7 @@ namespace Automobile
                     break;
                 case 3:
 
-                    int pesoMax = int.Parse(textBoxPesoMaxSuportado.Text);
+                    string pesoMax = textBoxPesoMaxSuportado.Text;
 
                     if (EmpresaController.CriarCamiao(_matricula, _modelo, _preco, pesoMax))
                     {

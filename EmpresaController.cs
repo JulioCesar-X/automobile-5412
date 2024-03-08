@@ -21,13 +21,13 @@ namespace Automobile
 
 
 
-        public static bool CriarCamiao(string veiculoMatricula, string veiculoModelo, decimal veiculoPreco, int pesoMaximo)
+        public static bool CriarCamiao(string veiculoMatricula, string veiculoModelo, decimal veiculoPreco, string pesoMaximo)
         {
             try
             {
-                Camiao caminhao = new Camiao(veiculoMatricula, veiculoModelo, veiculoPreco, new Estado(), pesoMaximo);
-                Controlador.AdicionarVeiculo(caminhao);
-                MessageBox.Show($"O veiculo \"{caminhao.VeiculoModelo}\" com matricula \"{caminhao.VeiculoMatricula}\" foi criado com sucesso!");
+                Camiao camiao = new Camiao(veiculoMatricula, veiculoModelo, veiculoPreco, new Estado(), pesoMaximo);
+                Controlador.AdicionarVeiculo(camiao);
+                MessageBox.Show($"O veiculo \"{camiao.VeiculoModelo}\" com matricula \"{camiao.VeiculoMatricula}\" foi criado com sucesso!");
                 return true;
             }
             catch (PesoMaximoInvalidoException ex)
@@ -35,7 +35,7 @@ namespace Automobile
                 MessageBox.Show(ex.Message);
                 return false;
             }
-            catch (Exception ex)
+            catch (TipoInvalidoException ex)
             {
                 MessageBox.Show(ex.Message);
                 return false;
