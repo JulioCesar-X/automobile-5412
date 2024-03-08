@@ -44,12 +44,10 @@ namespace Automobile
         private void ComboBoxFiltrar_SelectedIndexChanged(object sender, EventArgs e)
         {
             pb_list_veiculos.Visible = true;
-<<<<<<< HEAD
-=======
+
             lb_status.Visible = true;
             cb_status.Visible = true;
 
->>>>>>> 38f7503a662c7d21b1300ccf37437393264f0384
             dgv_veiculos.Columns.Clear();
 
             switch (cb_filtrar.SelectedIndex)
