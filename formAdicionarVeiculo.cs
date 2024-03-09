@@ -1,15 +1,16 @@
 ﻿using System;
+using System.Drawing;
 using System.Globalization;
 using System.Windows.Forms;
 
 namespace Automobile
 {
-    public partial class formAdicionarVeiculo : Form
+    public partial class FormAdicionarVeiculo : Form
     {
         private string _modelo;
         private string _matricula;
         private string _preco;
-        
+
 
         private bool CamposVeiculosPreenchidos
         {
@@ -69,7 +70,9 @@ namespace Automobile
             }
         }
 
-        public formAdicionarVeiculo()
+
+
+        public FormAdicionarVeiculo()
         {
             InitializeComponent();
 
@@ -82,30 +85,136 @@ namespace Automobile
 
         }
 
+        private void CriarBordaVermelha(Control objetoCriado)
+        {
+            Graphics elemento = objetoCriado.CreateGraphics(); ;
 
+            int borda = 5;
+            int margemX = 0;
+            int margemY = 0;
+
+            Pen pen = new Pen(Color.LightCoral, borda);
+            Rectangle r = new Rectangle(margemX, margemY, objetoCriado.Width - borda, objetoCriado.Height - borda);
+            elemento.DrawRectangle(pen, r);
+
+        }
+
+        private void PintarBordaVermelho()
+        {
+
+            //campos comuns 
+            if (string.IsNullOrEmpty(_matricula))
+            {
+
+                CriarBordaVermelha(tb_id_matricula);
+
+            }
+
+            if (string.IsNullOrEmpty(_modelo))
+            {
+
+                CriarBordaVermelha(tb_modelo_marca);
+            }
+
+            if (!decimal.TryParse(_preco, out decimal preco) && preco <= 0)
+            {
+                MessageBox.Show("Insira um preco válido!");
+                tb_preco.Text = null;
+                CriarBordaVermelha(tb_preco);
+            }
+
+
+
+
+
+
+            //campos especificos
+            if (cb_tipo.SelectedIndex == 0)
+            {
+                if (comboBoxNmrPortas.SelectedItem == null)
+                {
+
+                    CriarBordaVermelha(comboBoxNmrPortas);
+                }
+
+                if (comboBoxTipoCaixa.SelectedItem == null)
+                {
+
+                    CriarBordaVermelha(comboBoxTipoCaixa);
+                }
+            }
+            else if (cb_tipo.SelectedIndex == 1)
+            {
+                if (comboBoxCilindrada.SelectedItem == null)
+                {
+
+                    CriarBordaVermelha(comboBoxCilindrada);
+                }
+            }
+            else if (cb_tipo.SelectedIndex == 2)
+            {
+                if (comboBoxNmrEixos.SelectedItem == null)
+                {
+
+                    CriarBordaVermelha(comboBoxNmrEixos);
+                }
+
+                if (string.IsNullOrEmpty(textBoxNmrMaxPassageiros.Text))
+                {
+
+                    CriarBordaVermelha(textBoxNmrMaxPassageiros);
+                }
+            }
+            else if (cb_tipo.SelectedIndex == 3)
+            {
+                if (string.IsNullOrEmpty(textBoxPesoMaxSuportado.Text))
+                {
+
+                    CriarBordaVermelha(textBoxPesoMaxSuportado);
+                }
+            }
+
+
+        }
 
         private bool ChecarCampos()
         {
+            bool flagCamposPreenchidos = true;
 
             switch (cb_tipo.SelectedIndex)
             {
                 case 0:
-                    return CamposCarroPreenchidos;
+                    flagCamposPreenchidos = CamposCarroPreenchidos;
+                    break;
+
 
                 case 1:
-                    return CamposMotaPreenchidos;
+                    flagCamposPreenchidos = CamposMotaPreenchidos;
+                    break;
 
                 case 2:
-                    return CamposCamionetaPreenchidos;
+                    flagCamposPreenchidos = CamposCamionetaPreenchidos;
+                    break;
 
                 case 3:
-                    return CamposCamiaoPreenchidos;
+                    flagCamposPreenchidos = CamposCamiaoPreenchidos;
+                    break;
 
                 default:
-                    return false;
+                    flagCamposPreenchidos = false;
+                    break;
             }
 
+            // Se for falso ele entra no if
+            if (!flagCamposPreenchidos)
+            {
+                PintarBordaVermelho();
+            }
+
+            return flagCamposPreenchidos;
+
         }
+
 
         //apenas a view que mostra o local de preenchimento 
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -219,6 +328,25 @@ namespace Automobile
 
         }
 
+        private void LimparCampos()
+        {
+            tb_id_matricula.Clear();
+            tb_modelo_marca.Clear();
+            tb_preco.Clear();
+
+            comboBoxNmrPortas.SelectedItem = null;
+            comboBoxTipoCaixa.SelectedItem = null;
+            comboBoxCilindrada.SelectedItem = null;
+            textBoxNmrMaxPassageiros.Clear();
+            comboBoxNmrEixos.SelectedItem = null;
+            textBoxPesoMaxSuportado.Clear();
+
+            cb_tipo.SelectedItem = null;
+
+            pb_add_veiculos.Visible = true;
+
+        }
+
         //Caso preenchido e ao click cria de facto o objeto
         private void btn_criar_Click(object sender, EventArgs e)
         {
@@ -233,13 +361,7 @@ namespace Automobile
 
                         if (EmpresaController.CriarCarro(_matricula, _modelo, decimal.Parse(_preco), numPortas, tipoCaixa))
                         {
-                            //Estamos limpando especificamente
-                            tb_id_matricula.Clear();
-                            tb_modelo_marca.Clear();
-                            tb_preco.Clear();
-                            comboBoxNmrPortas.SelectedItem = null;
-                            comboBoxTipoCaixa.SelectedItem = null;
-
+                            LimparCampos();
                         }
 
                         break;
@@ -252,11 +374,7 @@ namespace Automobile
 
                         if (EmpresaController.CriarMota(_matricula, _modelo, decimal.Parse(_preco), cilindrada))
                         {
-                            tb_id_matricula.Clear();
-                            tb_modelo_marca.Clear();
-                            tb_preco.Clear();
-                            comboBoxCilindrada.SelectedItem = null;
-
+                            LimparCampos();
                         }
 
 
@@ -268,12 +386,7 @@ namespace Automobile
 
                         if (EmpresaController.CriarCamioneta(_matricula, _modelo, decimal.Parse(_preco), numEixos, numPassageiros))
                         {
-                            tb_id_matricula.Clear();
-                            tb_modelo_marca.Clear();
-                            tb_preco.Clear();
-                            textBoxNmrMaxPassageiros.Clear();
-                            comboBoxNmrEixos.SelectedItem = null;
-
+                            LimparCampos();
                         }
                         break;
                     case 3:
@@ -282,11 +395,7 @@ namespace Automobile
 
                         if (EmpresaController.CriarCamiao(_matricula, _modelo, decimal.Parse(_preco), pesoMax))
                         {
-                            tb_id_matricula.Clear();
-                            tb_modelo_marca.Clear();
-                            tb_preco.Clear();
-                            textBoxPesoMaxSuportado.Clear();
-
+                            LimparCampos();
                         }
                         break;
                 }
@@ -294,7 +403,8 @@ namespace Automobile
             }
             else
             {
-                MessageBox.Show("Campos não preenchidos");
+
+                MessageBox.Show("Campos não preenchidos!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -319,3 +429,4 @@ namespace Automobile
 
     }
 }
+

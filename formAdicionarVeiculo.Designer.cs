@@ -1,6 +1,6 @@
 ﻿namespace Automobile
 {
-    partial class formAdicionarVeiculo
+    partial class FormAdicionarVeiculo
     {
         /// <summary>
         /// Required designer variable.
@@ -329,7 +329,7 @@
             this.pb_add_veiculos.TabIndex = 35;
             this.pb_add_veiculos.TabStop = false;
             // 
-            // formAdicionarVeiculo
+            // FormAdicionarVeiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -357,8 +357,8 @@
             this.Controls.Add(this.lb_modelo);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "formAdicionarVeiculo";
-            this.Text = "formAdicionarVeiculo";
+            this.Name = "FormAdicionarVeiculo";
+            this.Text = "FormAdicionarVeiculo";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_add_veiculos)).EndInit();
