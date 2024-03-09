@@ -64,7 +64,7 @@ namespace Automobile
         {
             lb_title.Text = "List of Vehicles";
             this.PnlFormLoader.Controls.Clear();
-            formChangeVehicleStatus FormChangeVehicleStatus = new formChangeVehicleStatus() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            FormListaVeiculos FormChangeVehicleStatus = new FormListaVeiculos() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             FormChangeVehicleStatus.FormBorderStyle = FormBorderStyle.None;
             this.PnlFormLoader.Controls.Add(FormChangeVehicleStatus);
             FormChangeVehicleStatus.Show();

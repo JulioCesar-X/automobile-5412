@@ -1,6 +1,6 @@
 ﻿namespace Automobile
 {
-    partial class formChangeVehicleStatus
+    partial class FormListaVeiculos
     {
         /// <summary>
         /// Required designer variable.
@@ -42,10 +42,9 @@
             // 
             this.lb_filtrar.AutoSize = true;
             this.lb_filtrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_filtrar.Location = new System.Drawing.Point(19, 17);
-            this.lb_filtrar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_filtrar.Location = new System.Drawing.Point(28, 26);
             this.lb_filtrar.Name = "lb_filtrar";
-            this.lb_filtrar.Size = new System.Drawing.Size(69, 24);
+            this.lb_filtrar.Size = new System.Drawing.Size(103, 32);
             this.lb_filtrar.TabIndex = 1;
             this.lb_filtrar.Text = "Filtrar:";
             // 
@@ -57,10 +56,10 @@
             "Mota",
             "Camioneta",
             "Camiao"});
-            this.cb_filtrar.Location = new System.Drawing.Point(91, 21);
-            this.cb_filtrar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.cb_filtrar.Location = new System.Drawing.Point(136, 32);
+            this.cb_filtrar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cb_filtrar.Name = "cb_filtrar";
-            this.cb_filtrar.Size = new System.Drawing.Size(92, 21);
+            this.cb_filtrar.Size = new System.Drawing.Size(136, 28);
             this.cb_filtrar.TabIndex = 2;
             this.cb_filtrar.SelectedIndexChanged += new System.EventHandler(this.ComboBoxFiltrar_SelectedIndexChanged);
             // 
@@ -68,22 +67,20 @@
             // 
             this.lb_status.AutoSize = true;
             this.lb_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_status.Location = new System.Drawing.Point(215, 17);
-            this.lb_status.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_status.Location = new System.Drawing.Point(322, 26);
             this.lb_status.Name = "lb_status";
-            this.lb_status.Size = new System.Drawing.Size(72, 24);
+            this.lb_status.Size = new System.Drawing.Size(110, 32);
             this.lb_status.TabIndex = 1;
             this.lb_status.Text = "Status:";
             // 
             // dgv_veiculos
             // 
             this.dgv_veiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_veiculos.Location = new System.Drawing.Point(-1, 54);
-            this.dgv_veiculos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgv_veiculos.Location = new System.Drawing.Point(-2, 83);
             this.dgv_veiculos.Name = "dgv_veiculos";
             this.dgv_veiculos.RowHeadersWidth = 62;
             this.dgv_veiculos.RowTemplate.Height = 28;
-            this.dgv_veiculos.Size = new System.Drawing.Size(799, 426);
+            this.dgv_veiculos.Size = new System.Drawing.Size(1198, 655);
             this.dgv_veiculos.TabIndex = 6;
             this.dgv_veiculos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_veiculos_CellContentClick);
             // 
@@ -95,10 +92,9 @@
             "Alugado",
             "Reservado",
             "EmManutencao"});
-            this.cb_status.Location = new System.Drawing.Point(291, 21);
-            this.cb_status.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_status.Location = new System.Drawing.Point(436, 32);
             this.cb_status.Name = "cb_status";
-            this.cb_status.Size = new System.Drawing.Size(109, 21);
+            this.cb_status.Size = new System.Drawing.Size(162, 28);
             this.cb_status.TabIndex = 7;
             this.cb_status.SelectedIndexChanged += new System.EventHandler(this.Cb_status_SelectedIndexChanged);
             // 
@@ -107,20 +103,19 @@
             this.pb_list_veiculos.BackColor = System.Drawing.Color.Transparent;
             this.pb_list_veiculos.BackgroundImage = global::Automobile.Properties.Resources.pngwing_com__33_;
             this.pb_list_veiculos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pb_list_veiculos.Location = new System.Drawing.Point(-1, 54);
-            this.pb_list_veiculos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pb_list_veiculos.Location = new System.Drawing.Point(-2, 83);
             this.pb_list_veiculos.Name = "pb_list_veiculos";
-            this.pb_list_veiculos.Size = new System.Drawing.Size(799, 426);
+            this.pb_list_veiculos.Size = new System.Drawing.Size(1198, 655);
             this.pb_list_veiculos.TabIndex = 8;
             this.pb_list_veiculos.TabStop = false;
             this.pb_list_veiculos.Click += new System.EventHandler(this.pb_list_veiculos_Click);
             // 
-            // formChangeVehicleStatus
+            // FormListaVeiculos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(795, 479);
+            this.ClientSize = new System.Drawing.Size(1192, 737);
             this.Controls.Add(this.pb_list_veiculos);
             this.Controls.Add(this.cb_status);
             this.Controls.Add(this.dgv_veiculos);
@@ -128,8 +123,9 @@
             this.Controls.Add(this.lb_status);
             this.Controls.Add(this.lb_filtrar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "formChangeVehicleStatus";
-            this.Text = "formChangeVehicleStatus";
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Name = "FormListaVeiculos";
+            this.Text = "FormListaVeiculos";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_veiculos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_list_veiculos)).EndInit();
             this.ResumeLayout(false);

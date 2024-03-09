@@ -428,3 +428,4 @@ obj/Debug/Automobile.pdb
 obj/Debug/Automobile.exe
 bin/Debug/Automobile.pdb
 bin/Debug/Automobile.exe
+*.cache
