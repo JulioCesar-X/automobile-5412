@@ -11,8 +11,10 @@ namespace Automobile
         public formChangeVehicleStatus()
         {
             InitializeComponent();
+
             lb_status.Visible = false;
             cb_status.Visible = false;
+
         }
 
 
@@ -32,7 +34,7 @@ namespace Automobile
 
             if (EmpresaController.userLogado != "#")
             {
-                cb_status.ReadOnly = true;
+                cb_status.ReadOnly = false;
             }
 
             dgv_veiculos_.Columns.Add(cb_status);
@@ -43,10 +45,13 @@ namespace Automobile
 
         private void ComboBoxFiltrar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            pb_list_veiculos.Visible = true;
+
+
 
             lb_status.Visible = true;
             cb_status.Visible = true;
+            cb_status.SelectedItem = null;
+            pb_list_veiculos.Visible = true;
 
             dgv_veiculos.Columns.Clear();
 
@@ -76,40 +81,46 @@ namespace Automobile
 
         private void Cb_status_SelectedIndexChanged(object sender, EventArgs e)
         {
-            pb_list_veiculos.Visible = false;
 
-            if (EmpresaController.ValidarListaVeiculosDoTipo(TipoVeiculo, cb_status.SelectedItem.ToString()))
+            if (cb_status.SelectedItem != null)
             {
-                dgv_veiculos.Rows.Clear();
-                var listaRequerida = new List<object>();
+                pb_list_veiculos.Visible = false;
 
-                switch (cb_status.SelectedIndex)
+                if (EmpresaController.ValidarListaVeiculosDoTipo(TipoVeiculo, cb_status.SelectedItem.ToString()))
                 {
-                    case 0:
-                        listaRequerida = EmpresaController.Controlador.VeiculosDisponiveis;
-                        PreencheListaDeVeiculosDoStatus(listaRequerida, TipoVeiculo, "Disponivel");
-                        break;
+                    dgv_veiculos.Rows.Clear();
+                    var listaRequerida = new List<object>();
 
-                    case 1:
-                        listaRequerida = EmpresaController.Controlador.VeiculosAlugados;
-                        PreencheListaDeVeiculosDoStatus(listaRequerida, TipoVeiculo, "Alugado");
-                        break;
+                    switch (cb_status.SelectedIndex)
+                    {
+                        case 0:
+                            listaRequerida = EmpresaController.Controlador.VeiculosDisponiveis;
+                            PreencheListaDeVeiculosDoStatus(listaRequerida, TipoVeiculo, "Disponivel");
+                            break;
 
-                    case 2:
-                        listaRequerida = EmpresaController.Controlador.VeiculosReservados;
-                        PreencheListaDeVeiculosDoStatus(listaRequerida, TipoVeiculo, "Reservado");
-                        break;
+                        case 1:
+                            listaRequerida = EmpresaController.Controlador.VeiculosAlugados;
+                            PreencheListaDeVeiculosDoStatus(listaRequerida, TipoVeiculo, "Alugado");
+                            break;
 
-                    case 3:
-                        listaRequerida = EmpresaController.Controlador.VeiculosEmManutencao;
-                        PreencheListaDeVeiculosDoStatus(listaRequerida, TipoVeiculo, "EmManutencao");
-                        break;
+                        case 2:
+                            listaRequerida = EmpresaController.Controlador.VeiculosReservados;
+                            PreencheListaDeVeiculosDoStatus(listaRequerida, TipoVeiculo, "Reservado");
+                            break;
+
+                        case 3:
+                            listaRequerida = EmpresaController.Controlador.VeiculosEmManutencao;
+                            PreencheListaDeVeiculosDoStatus(listaRequerida, TipoVeiculo, "EmManutencao");
+                            break;
+                    }
+
                 }
+
             }
-            else
-            {
-                MessageBox.Show("Tipo de veiculo não encontrado com esse estado");
-            }
+
+
+
+
         }
 
 

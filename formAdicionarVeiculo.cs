@@ -8,18 +8,102 @@ namespace Automobile
     {
         private string _modelo;
         private string _matricula;
-        private decimal _preco;
+        private string _preco;
+        
+
+        private bool CamposVeiculosPreenchidos
+        {
+            get
+            {
+                // Especificar a cultura inglesa (onde o ponto é o separador decimal)
+                CultureInfo culture = CultureInfo.InvariantCulture;
+
+                return (
+                          !string.IsNullOrEmpty(_modelo) &&
+                          !string.IsNullOrEmpty(_matricula) &&
+                          decimal.TryParse(_preco, NumberStyles.Number, culture, out decimal preco) &&
+                          preco > 0
+                      );
+            }
+        }
+        private bool CamposCarroPreenchidos
+        {
+            get
+            {
+                return (
+                         CamposVeiculosPreenchidos &&
+                         comboBoxNmrPortas.SelectedItem != null &&
+                         comboBoxTipoCaixa.SelectedItem != null
+                     );
+            }
+        }
+        private bool CamposMotaPreenchidos
+        {
+            get
+            {
+                return (
+                         CamposVeiculosPreenchidos &&
+                         comboBoxCilindrada.SelectedItem != null
+                     );
+            }
+        }
+        private bool CamposCamionetaPreenchidos
+        {
+            get
+            {
+                return (
+                         CamposVeiculosPreenchidos &&
+                         comboBoxNmrEixos.SelectedItem != null &&
+                         !string.IsNullOrEmpty(textBoxNmrMaxPassageiros.Text)
+                     );
+            }
+        }
+        private bool CamposCamiaoPreenchidos
+        {
+            get
+            {
+                return (
+                         CamposVeiculosPreenchidos &&
+                         !string.IsNullOrEmpty(textBoxPesoMaxSuportado.Text)
+                     );
+            }
+        }
 
         public formAdicionarVeiculo()
         {
             InitializeComponent();
 
-            btn_criar.Visible = false;
-            btn_criar.Enabled = false;
             lb_modelo.Visible = false;
             lb_matricula.Visible = false;
             tb_id_matricula.Visible = false;
             tb_modelo_marca.Visible = false;
+
+
+
+        }
+
+
+
+        private bool ChecarCampos()
+        {
+
+            switch (cb_tipo.SelectedIndex)
+            {
+                case 0:
+                    return CamposCarroPreenchidos;
+
+                case 1:
+                    return CamposMotaPreenchidos;
+
+                case 2:
+                    return CamposCamionetaPreenchidos;
+
+                case 3:
+                    return CamposCamiaoPreenchidos;
+
+                default:
+                    return false;
+            }
 
         }
 
@@ -49,8 +133,8 @@ namespace Automobile
                     textBoxNmrMaxPassageiros.Visible = false;
                     lblPesoMaxSuportado.Visible = false;
                     textBoxPesoMaxSuportado.Visible = false;
-                    btn_criar.Enabled = true;
-                    btn_criar.Visible = true;
+
+
                     lb_preco.Visible = true;
                     tb_preco.Visible = true;
 
@@ -74,8 +158,8 @@ namespace Automobile
                     textBoxNmrMaxPassageiros.Visible = false;
                     lblPesoMaxSuportado.Visible = false;
                     textBoxPesoMaxSuportado.Visible = false;
-                    btn_criar.Enabled = true;
-                    btn_criar.Visible = true;
+
+
                     lb_preco.Visible = true;
                     tb_preco.Visible = true;
 
@@ -100,8 +184,8 @@ namespace Automobile
                     comboBoxTipoCaixa.Visible = false;
                     lblPesoMaxSuportado.Visible = false;
                     textBoxPesoMaxSuportado.Visible = false;
-                    btn_criar.Enabled = true;
-                    btn_criar.Visible = true;
+
+
                     lb_preco.Visible = true;
                     tb_preco.Visible = true;
 
@@ -126,87 +210,93 @@ namespace Automobile
                     comboBoxNmrPortas.Visible = false;
                     lblTipoCaixa.Visible = false;
                     comboBoxTipoCaixa.Visible = false;
-                    btn_criar.Enabled = true;
-                    btn_criar.Visible = true;
                     lb_preco.Visible = true;
                     tb_preco.Visible = true;
 
-
                     break;
             }
+
+
         }
 
         //Caso preenchido e ao click cria de facto o objeto
         private void btn_criar_Click(object sender, EventArgs e)
         {
-            switch (cb_tipo.SelectedIndex)
+            if (ChecarCampos())
             {
-                case 0:
+                switch (cb_tipo.SelectedIndex)
+                {
+                    case 0:
 
-                    int numPortas = int.Parse(comboBoxNmrPortas.SelectedItem.ToString());
-                    string tipoCaixa = comboBoxTipoCaixa.SelectedItem.ToString();
+                        int numPortas = int.Parse(comboBoxNmrPortas.SelectedItem.ToString());
+                        string tipoCaixa = comboBoxTipoCaixa.SelectedItem.ToString();
 
-                    if (EmpresaController.CriarCarro(_matricula, _modelo, _preco, numPortas, tipoCaixa))
-                    {
-                        //Estamos limpando especificamente
-                        tb_id_matricula.Clear();
-                        tb_modelo_marca.Clear();
-                        tb_preco.Clear();
-                        comboBoxNmrPortas.SelectedItem = null;
-                        comboBoxTipoCaixa.SelectedItem = null;
+                        if (EmpresaController.CriarCarro(_matricula, _modelo, decimal.Parse(_preco), numPortas, tipoCaixa))
+                        {
+                            //Estamos limpando especificamente
+                            tb_id_matricula.Clear();
+                            tb_modelo_marca.Clear();
+                            tb_preco.Clear();
+                            comboBoxNmrPortas.SelectedItem = null;
+                            comboBoxTipoCaixa.SelectedItem = null;
 
+                        }
 
-                    }
+                        break;
 
-                    break;
+                    case 1:
 
-                case 1:
+                        string[] aux = comboBoxCilindrada.SelectedItem.ToString().Split('c'); // [150 , cc]
 
-                    string[] aux = comboBoxCilindrada.SelectedItem.ToString().Split('c'); // [150 , cc]
+                        int cilindrada = int.Parse(aux[0]);
 
-                    int cilindrada = int.Parse(aux[0]);
+                        if (EmpresaController.CriarMota(_matricula, _modelo, decimal.Parse(_preco), cilindrada))
+                        {
+                            tb_id_matricula.Clear();
+                            tb_modelo_marca.Clear();
+                            tb_preco.Clear();
+                            comboBoxCilindrada.SelectedItem = null;
 
-                    if (EmpresaController.CriarMota(_matricula, _modelo, _preco, cilindrada))
-                    {
-                        tb_id_matricula.Clear();
-                        tb_modelo_marca.Clear();
-                        tb_preco.Clear();
-                        comboBoxCilindrada.SelectedItem = null;
-
-                    }
-
-
-                    break;
-                case 2:
-
-                    int numEixos = int.Parse(comboBoxNmrEixos.SelectedItem.ToString());
-                    int numPassageiros = int.Parse(textBoxNmrMaxPassageiros.Text);
-
-                    if (EmpresaController.CriarCamioneta(_matricula, _modelo, _preco, numEixos, numPassageiros))
-                    {
-                        tb_id_matricula.Clear();
-                        tb_modelo_marca.Clear();
-                        tb_preco.Clear();
-                        textBoxNmrMaxPassageiros.Clear();
-                        comboBoxNmrEixos.SelectedItem = null;
-
-                    }
-                    break;
-                case 3:
-
-                    string pesoMax = textBoxPesoMaxSuportado.Text;
-
-                    if (EmpresaController.CriarCamiao(_matricula, _modelo, _preco, pesoMax))
-                    {
-                        tb_id_matricula.Clear();
-                        tb_modelo_marca.Clear();
-                        tb_preco.Clear();
-                        textBoxPesoMaxSuportado.Clear();
+                        }
 
 
-                    }
-                    break;
+                        break;
+                    case 2:
+
+                        int numEixos = int.Parse(comboBoxNmrEixos.SelectedItem.ToString());
+                        int numPassageiros = int.Parse(textBoxNmrMaxPassageiros.Text);
+
+                        if (EmpresaController.CriarCamioneta(_matricula, _modelo, decimal.Parse(_preco), numEixos, numPassageiros))
+                        {
+                            tb_id_matricula.Clear();
+                            tb_modelo_marca.Clear();
+                            tb_preco.Clear();
+                            textBoxNmrMaxPassageiros.Clear();
+                            comboBoxNmrEixos.SelectedItem = null;
+
+                        }
+                        break;
+                    case 3:
+
+                        string pesoMax = textBoxPesoMaxSuportado.Text;
+
+                        if (EmpresaController.CriarCamiao(_matricula, _modelo, decimal.Parse(_preco), pesoMax))
+                        {
+                            tb_id_matricula.Clear();
+                            tb_modelo_marca.Clear();
+                            tb_preco.Clear();
+                            textBoxPesoMaxSuportado.Clear();
+
+                        }
+                        break;
+                }
+
             }
+            else
+            {
+                MessageBox.Show("Campos não preenchidos");
+            }
+
         }
 
         private void tb_modelo_marca_TextChanged(object sender, EventArgs e)
@@ -222,23 +312,8 @@ namespace Automobile
 
         private void tb_preco_TextChanged(object sender, EventArgs e)
         {
-            string precoText = tb_preco.Text.Trim();
+            _preco = tb_preco.Text;
 
-            // Especificar a cultura inglesa (onde o ponto é o separador decimal)
-            CultureInfo culture = CultureInfo.InvariantCulture;
-
-            if (!decimal.TryParse(precoText, NumberStyles.Number, culture, out decimal _precoConvertido))
-            {
-                // Verifica se o texto inserido é vazio, caso seja, não mostra o MessageBox
-                if (!string.IsNullOrEmpty(precoText))
-                {
-                    MessageBox.Show("Por favor, insira um valor de preço válido.");
-                }
-            }
-            else
-            {
-                _preco = _precoConvertido;
-            }
         }
 
 
