@@ -53,7 +53,7 @@ namespace Automobile
         {
             lb_title.Text = "Add Vehicle";
             this.PnlFormLoader.Controls.Clear();
-            formAdicionarVeiculo FormAdicionarVeiculo = new formAdicionarVeiculo() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            FormAdicionarVeiculo FormAdicionarVeiculo = new FormAdicionarVeiculo() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             FormAdicionarVeiculo.FormBorderStyle = FormBorderStyle.None;
             this.PnlFormLoader.Controls.Add(FormAdicionarVeiculo);
             FormAdicionarVeiculo.Show();
