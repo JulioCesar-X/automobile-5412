@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Automobile
+﻿namespace Automobile
 {
     public class Camiao : Veiculo
     {
@@ -14,12 +12,11 @@ namespace Automobile
             set
             {
 
-                if (!int.TryParse(value.ToString(), out int pesoMax) )
+                if (!int.TryParse(value, out int pesoMax) || pesoMax <= 0 || pesoMax > 44000)
                 {
-                    if (pesoMax <= 0 || pesoMax > 44000)
-                    {
-                        throw new PesoMaximoInvalidoException(pesoMax);
-                    }
+
+                    throw new PesoMaximoInvalidoException(pesoMax);
+
                 }
                 else
                 {
@@ -30,7 +27,6 @@ namespace Automobile
 
 
         }
-
 
         public Camiao(string veiculoMatricula, string veiculoModelo, decimal veiculoPreco, Estado veiculoStatus, string pesoMaximo) : base(veiculoMatricula, veiculoModelo, veiculoPreco, veiculoStatus)
         {

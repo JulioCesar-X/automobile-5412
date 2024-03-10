@@ -105,22 +105,20 @@ namespace Automobile
             //campos comuns 
             if (string.IsNullOrEmpty(_matricula))
             {
-
                 CriarBordaVermelha(tb_id_matricula);
 
             }
 
             if (string.IsNullOrEmpty(_modelo))
             {
-
                 CriarBordaVermelha(tb_modelo_marca);
             }
 
-            if (!decimal.TryParse(_preco, out decimal preco) && preco <= 0)
+            if (!decimal.TryParse(_preco, out decimal preco) || preco <= 0)
             {
-                MessageBox.Show("Insira um preco válido!");
                 tb_preco.Text = null;
                 CriarBordaVermelha(tb_preco);
+                MessageBox.Show("Insira um preco válido!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 
@@ -133,13 +131,11 @@ namespace Automobile
             {
                 if (comboBoxNmrPortas.SelectedItem == null)
                 {
-
                     CriarBordaVermelha(comboBoxNmrPortas);
                 }
 
                 if (comboBoxTipoCaixa.SelectedItem == null)
                 {
-
                     CriarBordaVermelha(comboBoxTipoCaixa);
                 }
             }
@@ -147,7 +143,6 @@ namespace Automobile
             {
                 if (comboBoxCilindrada.SelectedItem == null)
                 {
-
                     CriarBordaVermelha(comboBoxCilindrada);
                 }
             }
@@ -155,13 +150,11 @@ namespace Automobile
             {
                 if (comboBoxNmrEixos.SelectedItem == null)
                 {
-
                     CriarBordaVermelha(comboBoxNmrEixos);
                 }
 
                 if (string.IsNullOrEmpty(textBoxNmrMaxPassageiros.Text))
                 {
-
                     CriarBordaVermelha(textBoxNmrMaxPassageiros);
                 }
             }
@@ -169,7 +162,6 @@ namespace Automobile
             {
                 if (string.IsNullOrEmpty(textBoxPesoMaxSuportado.Text))
                 {
-
                     CriarBordaVermelha(textBoxPesoMaxSuportado);
                 }
             }
@@ -186,7 +178,6 @@ namespace Automobile
                 case 0:
                     flagCamposPreenchidos = CamposCarroPreenchidos;
                     break;
-
 
                 case 1:
                     flagCamposPreenchidos = CamposMotaPreenchidos;
@@ -324,8 +315,6 @@ namespace Automobile
 
                     break;
             }
-
-
         }
 
         private void LimparCampos()
@@ -382,13 +371,14 @@ namespace Automobile
                     case 2:
 
                         int numEixos = int.Parse(comboBoxNmrEixos.SelectedItem.ToString());
-                        int numPassageiros = int.Parse(textBoxNmrMaxPassageiros.Text);
+                        string numPassageiros = textBoxNmrMaxPassageiros.Text;
 
                         if (EmpresaController.CriarCamioneta(_matricula, _modelo, decimal.Parse(_preco), numEixos, numPassageiros))
                         {
                             LimparCampos();
                         }
                         break;
+
                     case 3:
 
                         string pesoMax = textBoxPesoMaxSuportado.Text;

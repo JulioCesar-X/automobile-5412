@@ -54,17 +54,17 @@
   <ItemGroup>
     <Compile Include="EmpresaController.cs" />
     <Compile Include="Resources\ClassesModel\Estado.cs" />
-    <Compile Include="formAdicionarVeiculo.cs">
+    <Compile Include="FormAdicionarVeiculo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formAdicionarVeiculo.Designer.cs">
-      <DependentUpon>formAdicionarVeiculo.cs</DependentUpon>
+    <Compile Include="FormAdicionarVeiculo.Designer.cs">
+      <DependentUpon>FormAdicionarVeiculo.cs</DependentUpon>
     </Compile>
-    <Compile Include="formChangeVehicleStatus.cs">
+    <Compile Include="FormListaVeiculos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formChangeVehicleStatus.Designer.cs">
-      <DependentUpon>formChangeVehicleStatus.cs</DependentUpon>
+    <Compile Include="FormListaVeiculos.Designer.cs">
+      <DependentUpon>FormListaVeiculos.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLoginSystem.cs">
       <SubType>Form</SubType>
@@ -118,11 +118,11 @@
     <Compile Include="Resources\ClassesModel\Mota.cs" />
     <Compile Include="Resources\ClassesModel\User.cs" />
     <Compile Include="Resources\ClassesModel\Veiculo.cs" />
-    <EmbeddedResource Include="formAdicionarVeiculo.resx">
-      <DependentUpon>formAdicionarVeiculo.cs</DependentUpon>
+    <EmbeddedResource Include="FormAdicionarVeiculo.resx">
+      <DependentUpon>FormAdicionarVeiculo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formChangeVehicleStatus.resx">
-      <DependentUpon>formChangeVehicleStatus.cs</DependentUpon>
+    <EmbeddedResource Include="FormListaVeiculos.resx">
+      <DependentUpon>FormListaVeiculos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLoginSystem.resx">
       <DependentUpon>FormLoginSystem.cs</DependentUpon>

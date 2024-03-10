@@ -3,7 +3,7 @@
     public class Camioneta : Veiculo
     {
         private int _numeroEixos;
-        private int _numeroPassageiros;
+        private string _numeroPassageiros;
 
 
         public int NumeroEixos
@@ -27,7 +27,7 @@
             }
 
         }
-        public int NumeroPassageiros
+        public string NumeroPassageiros
         {
             get
             {
@@ -35,20 +35,22 @@
             }
             set
             {
-                if (value <= 0)
+                if (!int.TryParse(value, out int NumeroPassageiros) || NumeroPassageiros <= 0)
                 {
-                    throw new NumeroMaximoPassageirosInvalidoException(value);
+
+                    throw new NumeroMaximoPassageirosInvalidoException(NumeroPassageiros);
+
                 }
                 else
                 {
-
                     _numeroPassageiros = value;
                 }
+
             }
 
         }
 
-        public Camioneta(string VeiculoMatricula, string veiculoModelo, decimal veiculoPreco, Estado veiculoStatus, int numeroEixos, int numeroPassageiros) : base(VeiculoMatricula, veiculoModelo, veiculoPreco, veiculoStatus)
+        public Camioneta(string VeiculoMatricula, string veiculoModelo, decimal veiculoPreco, Estado veiculoStatus, int numeroEixos, string numeroPassageiros) : base(VeiculoMatricula, veiculoModelo, veiculoPreco, veiculoStatus)
         {
             NumeroEixos = numeroEixos;
             NumeroPassageiros = numeroPassageiros;
