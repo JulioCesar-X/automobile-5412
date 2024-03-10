@@ -9,6 +9,21 @@ namespace Automobile
 
         public static string userLogado;
 
+        private static DateTime _dataAtual;
+        public static DateTime DataAtual
+        {
+
+            get
+            {
+                return _dataAtual;
+            }
+            set
+            {
+                _dataAtual = value;
+            }
+
+        }
+
         public static EmpresaModel Controlador
         {
             get

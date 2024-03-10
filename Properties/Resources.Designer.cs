@@ -83,101 +83,9 @@ namespace Automobile.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap botao_amarelo {
-            get {
-                object obj = ResourceManager.GetObject("botao-amarelo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap botao_verde {
-            get {
-                object obj = ResourceManager.GetObject("botao-verde", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap botao_vermelho {
-            get {
-                object obj = ResourceManager.GetObject("botao-vermelho", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap btn_amarelo {
-            get {
-                object obj = ResourceManager.GetObject("btn-amarelo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-
-
-        internal static System.Drawing.Bitmap manageusers
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("manageusers", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-
-
-
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pb_icon_reservations {
-            get {
-                object obj = ResourceManager.GetObject("pb_icon_reservations", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pngwing_com__1_ {
-            get {
-                object obj = ResourceManager.GetObject("pngwing.com (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap pngwing_com__10_ {
             get {
                 object obj = ResourceManager.GetObject("pngwing.com (10)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pngwing_com__11_ {
-            get {
-                object obj = ResourceManager.GetObject("pngwing.com (11)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pngwing_com__12_ {
-            get {
-                object obj = ResourceManager.GetObject("pngwing.com (12)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -195,86 +103,6 @@ namespace Automobile.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pngwing_com__14_ {
-            get {
-                object obj = ResourceManager.GetObject("pngwing.com (14)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pngwing_com__15_ {
-            get {
-                object obj = ResourceManager.GetObject("pngwing.com (15)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pngwing_com__16_ {
-            get {
-                object obj = ResourceManager.GetObject("pngwing.com (16)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pngwing_com__18_ {
-            get {
-                object obj = ResourceManager.GetObject("pngwing.com (18)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pngwing_com__19_ {
-            get {
-                object obj = ResourceManager.GetObject("pngwing.com (19)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pngwing_com__2_ {
-            get {
-                object obj = ResourceManager.GetObject("pngwing.com (2)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pngwing_com__20_ {
-            get {
-                object obj = ResourceManager.GetObject("pngwing.com (20)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pngwing_com__23_ {
-            get {
-                object obj = ResourceManager.GetObject("pngwing.com (23)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap pngwing_com__24_ {
             get {
                 object obj = ResourceManager.GetObject("pngwing.com (24)", resourceCulture);
@@ -285,29 +113,9 @@ namespace Automobile.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pngwing_com__3_ {
-            get {
-                object obj = ResourceManager.GetObject("pngwing.com (3)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap pngwing_com__33_ {
             get {
                 object obj = ResourceManager.GetObject("pngwing.com (33)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pngwing_com__34_ {
-            get {
-                object obj = ResourceManager.GetObject("pngwing.com (34)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -335,9 +143,9 @@ namespace Automobile.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pngwing_com__4_ {
+        internal static System.Drawing.Bitmap pngwing_com__38_ {
             get {
-                object obj = ResourceManager.GetObject("pngwing.com (4)", resourceCulture);
+                object obj = ResourceManager.GetObject("pngwing.com (38)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -345,9 +153,9 @@ namespace Automobile.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pngwing_com__5_ {
+        internal static System.Drawing.Bitmap pngwing_com__40_ {
             get {
-                object obj = ResourceManager.GetObject("pngwing.com (5)", resourceCulture);
+                object obj = ResourceManager.GetObject("pngwing.com (40)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -355,9 +163,9 @@ namespace Automobile.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pngwing_com__8_ {
+        internal static System.Drawing.Bitmap pngwing1 {
             get {
-                object obj = ResourceManager.GetObject("pngwing.com (8)", resourceCulture);
+                object obj = ResourceManager.GetObject("pngwing1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

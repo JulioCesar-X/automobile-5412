@@ -26,10 +26,6 @@ namespace Automobile
             }
             set
             {
-                if (value < DateTime.Today)
-                {
-                    throw new ArgumentException("A data de início não pode ser no passado.");
-                }
                 _dataInicio = value;
             }
         }
@@ -49,15 +45,15 @@ namespace Automobile
         //construtor default para quando criar o veiculo
         public Estado()
         {
-            Nome = Tipo.Disponivel; // Definir o estado padrão como Disponível
-            DataInicio = DateTime.Now; // Definir a data de fim como o momento atual
-            DataFim = DateTime.MaxValue;
+            Nome = Tipo.Disponivel;
+            DataInicio = DateTime.Today.Date;
+            DataFim = DateTime.MaxValue.Date;
         }
         public Estado(Tipo nome, DateTime inicio, DateTime fim)
         {
             Nome = nome;
-            DataInicio = inicio;
-            DataFim = fim;
+            DataInicio = inicio.Date;
+            DataFim = fim.Date;
         }
 
 

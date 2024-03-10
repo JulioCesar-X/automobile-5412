@@ -82,7 +82,7 @@
             this.dgv_veiculos.RowTemplate.Height = 28;
             this.dgv_veiculos.Size = new System.Drawing.Size(1198, 655);
             this.dgv_veiculos.TabIndex = 6;
-            this.dgv_veiculos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_veiculos_CellContentClick);
+            this.dgv_veiculos.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.Dgv_veiculos_EditingControlShowing);
             // 
             // cb_status
             // 
@@ -101,14 +101,13 @@
             // pb_list_veiculos
             // 
             this.pb_list_veiculos.BackColor = System.Drawing.Color.Transparent;
-            this.pb_list_veiculos.BackgroundImage = global::Automobile.Properties.Resources.pngwing_com__33_;
+            this.pb_list_veiculos.BackgroundImage = global::Automobile.Properties.Resources.pngwing_com__40_;
             this.pb_list_veiculos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pb_list_veiculos.Location = new System.Drawing.Point(-2, 83);
             this.pb_list_veiculos.Name = "pb_list_veiculos";
             this.pb_list_veiculos.Size = new System.Drawing.Size(1198, 655);
             this.pb_list_veiculos.TabIndex = 8;
             this.pb_list_veiculos.TabStop = false;
-            this.pb_list_veiculos.Click += new System.EventHandler(this.pb_list_veiculos_Click);
             // 
             // FormListaVeiculos
             // 

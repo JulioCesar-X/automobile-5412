@@ -6,7 +6,6 @@ namespace Automobile
 {
     public partial class FormListaVeiculos : Form
     {
-        public static string TipoVeiculo { get; set; }
 
         private DateTime inicio;
         private DateTime fim;
@@ -15,6 +14,7 @@ namespace Automobile
         private Veiculo veiculoSelecionado;
 
         private DataGridViewComboBoxColumn cb_status2;
+        public static string TipoVeiculo { get; set; }
 
         public FormListaVeiculos()
         {
@@ -23,183 +23,13 @@ namespace Automobile
             lb_status.Visible = false;
             cb_status.Visible = false;
 
+            dgv_veiculos.EditingControlShowing += Dgv_veiculos_EditingControlShowing;
+            cb_status.SelectedIndexChanged += Cb_status_SelectedIndexChanged;
+
         }
-
-        private void Cb_status2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Verificar se o DataGridView tem célula selecionada
-            if (dgv_veiculos.CurrentCell != null)
-            {
-                // Obter a linha e a coluna da célula atualmente selecionada
-                int rowIndex = dgv_veiculos.CurrentCell.RowIndex;
-                int columnIndex = dgv_veiculos.CurrentCell.ColumnIndex;
-
-                // Verificar se a célula é uma célula de ComboBox na coluna "Estado"
-                if (dgv_veiculos.Columns[columnIndex].Name == "Estado")
-                {
-
-                    string novoEstado = dgv_veiculos.Rows[rowIndex].Cells[columnIndex].Value.ToString();
-                    string id = dgv_veiculos.Rows[rowIndex].Cells[0].Value.ToString();
-
-                    GetVeiculoDaLista(id);
-
-                    if (Estado.Tipo.Disponivel.ToString() == novoEstado)
-                    {
-                        veiculoSelecionado.RetornarDisponivel();
-
-                    }
-                    else if (Estado.Tipo.Alugado.ToString() == novoEstado)
-                    {
-                        MessageBox.Show("insira data inicio e fim");
-
-                        veiculoSelecionado.Alugar(inicio, fim);
-
-                    }
-                    else if (Estado.Tipo.Reservado.ToString() == novoEstado)
-                    {
-                        MessageBox.Show("insira data inicio e fim");
-
-                        veiculoSelecionado.Reservar(inicio, fim);
-                    }
-                    else
-                    {
-                        MessageBox.Show("insira data inicio e fim");
-
-                        veiculoSelecionado.EmManutencao(inicio, fim);
-                    }
-
-                    RemoveVeiculoDaLista();
-                    AdicionarVeiculoNaLista();
-
-                }
-            }
-        }
-
-        private void RemoveVeiculoDaLista()
-        {
-            switch (cb_status.SelectedIndex)
-            {
-                case 0:
-
-                    EmpresaController.Controlador.VeiculosDisponiveis.Remove(veiculoSelecionado);
-                    break;
-
-                case 1:
-
-                    EmpresaController.Controlador.VeiculosAlugados.Remove(veiculoSelecionado);
-                    break;
-
-                case 2:
-
-                    EmpresaController.Controlador.VeiculosReservados.Remove(veiculoSelecionado);
-                    break;
-
-                case 3:
-
-                    EmpresaController.Controlador.VeiculosEmManutencao.Remove(veiculoSelecionado);
-                    break;
-
-                default:
-                    break;
-            }
-        }
-
-        private void GetVeiculoDaLista(string id)
-        {
-            switch (cb_status.SelectedIndex)
-            {
-                case 0:
-
-                    listaSelecionada = EmpresaController.Controlador.VeiculosDisponiveis;
-                    veiculoSelecionado = (Veiculo)(EmpresaController.Controlador.GetVeiculo(id, listaSelecionada));
-                    break;
-
-                case 1:
-
-                    listaSelecionada = EmpresaController.Controlador.VeiculosAlugados;
-                    veiculoSelecionado = (Veiculo)(EmpresaController.Controlador.GetVeiculo(id, listaSelecionada));
-                    break;
-
-                case 2:
-
-                    listaSelecionada = EmpresaController.Controlador.VeiculosReservados;
-                    veiculoSelecionado = (Veiculo)(EmpresaController.Controlador.GetVeiculo(id, listaSelecionada));
-                    break;
-
-                case 3:
-
-                    listaSelecionada = EmpresaController.Controlador.VeiculosEmManutencao;
-                    veiculoSelecionado = (Veiculo)(EmpresaController.Controlador.GetVeiculo(id, listaSelecionada));
-                    break;
-
-                default:
-                    break;
-            }
-        }
-
-        // Método para adicionar o veículo à lista correspondente ao novo estado selecionado
-        private void AdicionarVeiculoNaLista()
-        {
-            switch (cb_status.SelectedIndex)
-            {
-                case 0:
-
-                    EmpresaController.Controlador.VeiculosDisponiveis.Add(veiculoSelecionado);
-                    break;
-
-                case 1:
-
-                    EmpresaController.Controlador.VeiculosAlugados.Add(veiculoSelecionado);
-                    break;
-
-                case 2:
-
-                    EmpresaController.Controlador.VeiculosReservados.Add(veiculoSelecionado);
-                    break;
-
-                case 3:
-
-                    EmpresaController.Controlador.VeiculosEmManutencao.Add(veiculoSelecionado);
-                    break;
-
-                default:
-                    break;
-            }
-        }
-
-
-
-        private void AdicionarColunas(DataGridView dgv_veiculos_, string[] colunas)
-        {
-            dgv_veiculos_.Columns.Clear();
-
-            foreach (var coluna in colunas)
-            {
-                dgv_veiculos_.Columns.Add(coluna, coluna);
-            }
-
-            cb_status2 = new DataGridViewComboBoxColumn();
-            cb_status2.HeaderText = "Estado";
-            cb_status2.Name = "Estado";
-            cb_status2.Items.AddRange("Disponivel", "Alugado", "Reservado", "EmManutencao");
-
-            if (EmpresaController.userLogado != "#admin")
-            {
-                cb_status2.ReadOnly = false;
-
-
-            }
-
-            dgv_veiculos_.Columns.Add(cb_status2);
-
-            dgv_veiculos_.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-        }
-
 
         private void ComboBoxFiltrar_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-
 
             lb_status.Visible = true;
             cb_status.Visible = true;
@@ -231,7 +61,6 @@ namespace Automobile
                     break;
             }
         }
-
         private void Cb_status_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -276,12 +105,145 @@ namespace Automobile
 
         }
 
-
-
-        private void Dgv_veiculos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void GetVeiculoDaLista(string id)
         {
-        }
+            switch (cb_status.SelectedIndex)
+            {
+                case 0:
 
+                    listaSelecionada = EmpresaController.Controlador.VeiculosDisponiveis;
+                    veiculoSelecionado = (Veiculo)(EmpresaController.Controlador.GetVeiculo(id, listaSelecionada));
+                    break;
+
+                case 1:
+
+                    listaSelecionada = EmpresaController.Controlador.VeiculosAlugados;
+                    veiculoSelecionado = (Veiculo)(EmpresaController.Controlador.GetVeiculo(id, listaSelecionada));
+                    break;
+
+                case 2:
+
+                    listaSelecionada = EmpresaController.Controlador.VeiculosReservados;
+                    veiculoSelecionado = (Veiculo)(EmpresaController.Controlador.GetVeiculo(id, listaSelecionada));
+                    break;
+
+                case 3:
+
+                    listaSelecionada = EmpresaController.Controlador.VeiculosEmManutencao;
+                    veiculoSelecionado = (Veiculo)(EmpresaController.Controlador.GetVeiculo(id, listaSelecionada));
+                    break;
+
+                default:
+                    break;
+            }
+        }
+        private void MudarEstadoVeiculo(string novoEstado)
+        {
+            if (Estado.Tipo.Disponivel.ToString() == novoEstado)
+            {
+                veiculoSelecionado.RetornarDisponivel();
+
+            }
+            else if (Estado.Tipo.Alugado.ToString() == novoEstado)
+            {
+                SelecaoData formSelecaoData = new SelecaoData();
+                formSelecaoData.StartPosition = FormStartPosition.CenterScreen;
+                DialogResult caixa = formSelecaoData.ShowDialog();
+                if (caixa == DialogResult.OK)
+                {
+                    inicio = formSelecaoData.InicioSelecionado.Date;
+                    fim = formSelecaoData.FimSelecionado.Date;
+
+                }
+
+                veiculoSelecionado.Alugar(inicio, fim);
+
+            }
+            else if (Estado.Tipo.Reservado.ToString() == novoEstado)
+            {
+                SelecaoData formSelecaoData = new SelecaoData();
+                formSelecaoData.StartPosition = FormStartPosition.CenterScreen;
+                DialogResult caixa = formSelecaoData.ShowDialog();
+                if (caixa == DialogResult.OK)
+                {
+                    inicio = formSelecaoData.InicioSelecionado.Date;
+                    fim = formSelecaoData.FimSelecionado.Date;
+
+                }
+
+                veiculoSelecionado.Reservar(inicio, fim);
+            }
+            else
+            {
+                SelecaoData formSelecaoData = new SelecaoData();
+                formSelecaoData.StartPosition = FormStartPosition.CenterScreen;
+                DialogResult caixa = formSelecaoData.ShowDialog();
+                if (caixa == DialogResult.OK)
+                {
+                    inicio = formSelecaoData.InicioSelecionado.Date;
+                    fim = formSelecaoData.FimSelecionado.Date;
+
+                }
+
+                veiculoSelecionado.EmManutencao(inicio, fim);
+            }
+        }
+        private void RemoveVeiculoDaLista()
+        {
+            switch (cb_status.SelectedIndex)
+            {
+                case 0:
+
+                    EmpresaController.Controlador.VeiculosDisponiveis.Remove(veiculoSelecionado);
+                    break;
+
+                case 1:
+
+                    EmpresaController.Controlador.VeiculosAlugados.Remove(veiculoSelecionado);
+                    break;
+
+                case 2:
+
+                    EmpresaController.Controlador.VeiculosReservados.Remove(veiculoSelecionado);
+                    break;
+
+                case 3:
+
+                    EmpresaController.Controlador.VeiculosEmManutencao.Remove(veiculoSelecionado);
+                    break;
+
+                default:
+                    break;
+            }
+        }
+        private void AdicionarVeiculoNaLista(string novoEstado)
+        {
+            switch (novoEstado)
+            {
+                case "Disponivel":
+
+                    EmpresaController.Controlador.VeiculosDisponiveis.Add(veiculoSelecionado);
+                    break;
+
+                case "Alugado":
+
+                    EmpresaController.Controlador.VeiculosAlugados.Add(veiculoSelecionado);
+                    break;
+
+                case "Reservado":
+
+                    EmpresaController.Controlador.VeiculosReservados.Add(veiculoSelecionado);
+                    break;
+
+                case "EmManutencao":
+
+                    EmpresaController.Controlador.VeiculosEmManutencao.Add(veiculoSelecionado);
+                    break;
+
+                default:
+                    break;
+            }
+        }
         private void PreencheListaDeVeiculosDoStatus(List<object> listaRequerida, string TipoVeiculo, string status)
         {
             switch (TipoVeiculo)
@@ -386,10 +348,68 @@ namespace Automobile
             }
 
         }
-
-        private void pb_list_veiculos_Click(object sender, EventArgs e)
+        private void AdicionarColunas(DataGridView dgv_veiculos_, string[] colunas)
         {
+            dgv_veiculos_.Columns.Clear();
 
+            foreach (var coluna in colunas)
+            {
+                dgv_veiculos_.Columns.Add(coluna, coluna);
+            }
+
+            cb_status2 = new DataGridViewComboBoxColumn();
+            cb_status2.HeaderText = "Estado";
+            cb_status2.Name = "Estado";
+            cb_status2.Items.AddRange("Disponivel", "Alugado", "Reservado", "EmManutencao");
+
+            if (EmpresaController.userLogado != "#admin")
+            {
+                cb_status2.ReadOnly = false;
+            }
+
+            dgv_veiculos_.Columns.Add(cb_status2);
+            dgv_veiculos_.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            dgv_veiculos_.EditingControlShowing += Dgv_veiculos_EditingControlShowing;
         }
+
+        private void Dgv_veiculos_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            var dgv = (DataGridView)sender;
+            var editingComboBox = e.Control as ComboBox;
+
+            if (editingComboBox != null && dgv.CurrentCell is DataGridViewComboBoxCell comboBoxCell)
+            {
+                if (comboBoxCell.ColumnIndex == dgv.Columns["Estado"].Index)
+                {
+                    // Desabilita o evento SelectedIndexChanged
+                    editingComboBox.SelectedIndexChanged -= ComboBox_SelectedIndexChanged;
+
+                    // Habilita o evento SelectedIndexChanged apenas quando um item é selecionado
+                    editingComboBox.SelectedIndexChanged += ComboBox_SelectedIndexChanged;
+                }
+            }
+        }
+
+        private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var comboBox = (ComboBox)sender;
+            var dgv = (DataGridView)cb_status2.DataGridView; // Acessa o DataGridView diretamente
+            var novoEstado = comboBox.SelectedItem.ToString();
+            var id = dgv.CurrentRow.Cells[0].Value.ToString();
+
+            // Desabilita novamente o evento SelectedIndexChanged
+            comboBox.SelectedIndexChanged -= ComboBox_SelectedIndexChanged;
+
+            // Realiza as alterações necessárias
+            GetVeiculoDaLista(id);
+            MudarEstadoVeiculo(novoEstado);
+            RemoveVeiculoDaLista();
+            AdicionarVeiculoNaLista(novoEstado);
+            // Atualiza o estado selecionado no cb_status
+            cb_status.SelectedItem = novoEstado;
+        }
+
+
     }
 }
