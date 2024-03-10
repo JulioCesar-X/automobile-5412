@@ -118,6 +118,12 @@
     <Compile Include="Resources\ClassesModel\Mota.cs" />
     <Compile Include="Resources\ClassesModel\User.cs" />
     <Compile Include="Resources\ClassesModel\Veiculo.cs" />
+    <Compile Include="SelecaoData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelecaoData.Designer.cs">
+      <DependentUpon>SelecaoData.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormAdicionarVeiculo.resx">
       <DependentUpon>FormAdicionarVeiculo.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,6 +161,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SelecaoData.resx">
+      <DependentUpon>SelecaoData.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\DataSources\EmpresaController.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -173,35 +182,17 @@
   <ItemGroup>
     <None Include="Resources\admin1.jpg" />
     <Content Include="Resources\AutoMobileLogo.jpg" />
-    <None Include="Resources\pictureBox3.Image.png" />
     <None Include="Resources\pngwing.com %2813%29.png" />
-    <None Include="Resources\pngwing.com %2811%29.png" />
     <None Include="Resources\pngwing.com %2810%29.png" />
-    <None Include="Resources\pngwing.com %2812%29.png" />
-    <None Include="Resources\pngwing.com %2819%29.png" />
-    <None Include="Resources\pngwing.com %2820%29.png" />
-    <None Include="Resources\pngwing.com %2818%29.png" />
-    <None Include="Resources\pngwing.com %2814%29.png" />
-    <None Include="Resources\pngwing.com %2816%29.png" />
-    <None Include="Resources\pngwing.com %2815%29.png" />
-    <None Include="Resources\pngwing.com %288%29.png" />
-    <None Include="Resources\pngwing.com %282%29.png" />
-    <None Include="Resources\pngwing.com %285%29.png" />
     <None Include="Resources\pngwing.com %284%29.png" />
-    <None Include="Resources\pb_icon_reservations.png" />
-    <None Include="Resources\pngwing.com %281%29.png" />
-    <None Include="Resources\pngwing.com %283%29.png" />
-    <None Include="Resources\pngwing.com %2823%29.png" />
-    <None Include="Resources\botao-vermelho.png" />
-    <None Include="Resources\btn-amarelo.png" />
-    <None Include="Resources\botao-verde.png" />
-    <None Include="Resources\botao-amarelo1.png" />
     <None Include="Resources\pngwing.com %2824%29.png" />
-    <None Include="Resources\pngwing.com %2834%29.png" />
     <None Include="Resources\pngwing.com %2833%29.png" />
     <None Include="Resources\pngwing.com %2837%29.png" />
     <None Include="Resources\pngwing.com %2836%29.png" />
     <Content Include="Resources\manageusers.png" />
+    <None Include="Resources\pngwing.com %2814%291.png" />
+    <None Include="Resources\pngwing.com %2838%29.png" />
+    <None Include="Resources\pngwing.com %2840%29.png" />
     <Content Include="Resources\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

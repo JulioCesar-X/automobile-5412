@@ -147,3 +147,4 @@ C:\Users\julio\Desktop\projeto\automobile-5412\bin\Debug\Automobile.exe.config
 C:\Users\julio\Desktop\projeto\automobile-5412\bin\Debug\Automobile.exe
 C:\Users\julio\Desktop\projeto\automobile-5412\bin\Debug\Automobile.pdb
 C:\Users\julio\Desktop\projeto\automobile-5412\obj\Debug\Automobile.FormListaVeiculos.resources
+C:\Users\julio\Desktop\projeto\automobile-5412\obj\Debug\Automobile.SelecaoData.resources

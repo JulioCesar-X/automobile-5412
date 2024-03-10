@@ -46,8 +46,8 @@
             this.lblPrecoFinal = new System.Windows.Forms.Label();
             this.lb_matricula_r = new System.Windows.Forms.Label();
             this.lblMatriculaEscolhida = new System.Windows.Forms.Label();
-            this.pb_reservations = new System.Windows.Forms.PictureBox();
             this.lb_veiculos_disponiveis = new System.Windows.Forms.Label();
+            this.pb_reservations = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_veiculos_disponiveis)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_reservations)).BeginInit();
             this.SuspendLayout();
@@ -249,17 +249,6 @@
             this.lblMatriculaEscolhida.Text = "label4";
             this.lblMatriculaEscolhida.Visible = false;
             // 
-            // pb_reservations
-            // 
-            this.pb_reservations.BackColor = System.Drawing.Color.Transparent;
-            this.pb_reservations.BackgroundImage = global::Automobile.Properties.Resources.pngwing_com__36_;
-            this.pb_reservations.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pb_reservations.Location = new System.Drawing.Point(300, 48);
-            this.pb_reservations.Name = "pb_reservations";
-            this.pb_reservations.Size = new System.Drawing.Size(866, 590);
-            this.pb_reservations.TabIndex = 51;
-            this.pb_reservations.TabStop = false;
-            // 
             // lb_veiculos_disponiveis
             // 
             this.lb_veiculos_disponiveis.AutoSize = true;
@@ -270,6 +259,17 @@
             this.lb_veiculos_disponiveis.Size = new System.Drawing.Size(22, 32);
             this.lb_veiculos_disponiveis.TabIndex = 52;
             this.lb_veiculos_disponiveis.Text = " ";
+            // 
+            // pb_reservations
+            // 
+            this.pb_reservations.BackColor = System.Drawing.Color.Transparent;
+            this.pb_reservations.BackgroundImage = global::Automobile.Properties.Resources.pngwing_com__36_;
+            this.pb_reservations.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pb_reservations.Location = new System.Drawing.Point(300, 84);
+            this.pb_reservations.Name = "pb_reservations";
+            this.pb_reservations.Size = new System.Drawing.Size(866, 554);
+            this.pb_reservations.TabIndex = 51;
+            this.pb_reservations.TabStop = false;
             // 
             // FormManageReservations
             // 

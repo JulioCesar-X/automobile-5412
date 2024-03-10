@@ -1,34 +1,18 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Automobile.Properties;
 
 namespace Automobile
 {
     public partial class FormPainelControlo : Form
     {
 
-        private DateTime _dataAtual;
-        public DateTime DataAtual
-        {
-
-            get
-            {
-                return _dataAtual;
-            }
-            set
-            {
-                _dataAtual = value;
-            }
-
-        }
-
-
         public FormPainelControlo()
         {
             InitializeComponent();
 
-            DataAtual = DateTime.Now;
+            EmpresaController.DataAtual = DateTime.Today.Date;
+
             lb_user_logado.Text = EmpresaController.userLogado;
             timer1.Start();
 
@@ -37,8 +21,7 @@ namespace Automobile
             {
                 btn_manage_users.Image = null;
             }
-
-            if (EmpresaController.userLogado == "#admin")
+            else
             {
                 IsAdmin();
 
@@ -152,7 +135,7 @@ namespace Automobile
         private void Timer1_Tick(object sender, EventArgs e)
         {
             lb_date_time.Text = DateTime.Now.ToString("HH:mm:ss");
-            lb_date.Text = DataAtual.ToString("dd/MM/yyyy - dddd");
+            lb_date.Text = EmpresaController.DataAtual.ToString("dd/MM/yyyy - dddd");
 
         }
 
@@ -170,7 +153,7 @@ namespace Automobile
                 IsAdmin();
             }
 
-            DataAtual = DateTime.Now;
+            EmpresaController.DataAtual = DateTime.Today.Date;
 
         }
 
@@ -204,7 +187,7 @@ namespace Automobile
             btn_veichles_available.ForeColor = System.Drawing.Color.White;
             btn_veichle.ForeColor = System.Drawing.Color.White;
 
-           
+
 
 
 
@@ -215,7 +198,7 @@ namespace Automobile
         private void button1_Click_1(object sender, EventArgs e)
         {
 
-            DataAtual = DataAtual.AddDays(1);
+            EmpresaController.DataAtual = EmpresaController.DataAtual.AddDays(1);
 
         }
 
