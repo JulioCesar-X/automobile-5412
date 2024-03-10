@@ -32,12 +32,12 @@ namespace Automobile
             }
             catch (PesoMaximoInvalidoException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            catch (TipoInvalidoException ex)
+            catch (TipoInvalidoException ex2)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex2.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
@@ -53,14 +53,10 @@ namespace Automobile
             }
             catch (CilindradaInvalidaException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                return false;
-            }
+
         }
 
         public static bool CriarCarro(string veiculoMatricula, string veiculoModelo, decimal veiculoPreco, int numeroPortas, string tipoCaixa)
@@ -74,22 +70,22 @@ namespace Automobile
             }
             catch (VeiculoDuplicadoException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            catch (NumeroPortasInvalidoException ex)
+            catch (NumeroPortasInvalidoException ex2)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex2.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            catch (TipoCaixaInvalidoException ex)
+            catch (TipoCaixaInvalidoException ex3)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex3.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
 
-        public static bool CriarCamioneta(string VeiculoMatricula, string veiculoModelo, decimal veiculoPreco, int numeroEixos, int numeroPassageiros)
+        public static bool CriarCamioneta(string VeiculoMatricula, string veiculoModelo, decimal veiculoPreco, int numeroEixos, string numeroPassageiros)
         {
             try
             {
@@ -98,14 +94,15 @@ namespace Automobile
                 MessageBox.Show($"O veiculo \"{novaCamioneta.VeiculoModelo}\" com matricula \"{novaCamioneta.VeiculoMatricula}\" foi criado com sucesso!");
                 return true;
             }
-            catch (NumeroEixosInvalidoException ex)
-            {
-                MessageBox.Show(ex.Message);
-                return false;
-            }
             catch (NumeroMaximoPassageirosInvalidoException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            catch (NumeroEixosInvalidoException ex2)
+            {
+                MessageBox.Show(ex2.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
@@ -122,7 +119,7 @@ namespace Automobile
             catch (ArgumentException ex)
             {
 
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
@@ -139,7 +136,7 @@ namespace Automobile
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -149,13 +146,13 @@ namespace Automobile
         {
             try
             {
-                Controlador.ValidarLogin(username, password);
 
+                Controlador.ValidarLogin(username, password);
                 return true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -165,7 +162,7 @@ namespace Automobile
         {
             try
             {
-                
+
                 Controlador.ValidarReserva(id, DataInicio, DataFim);
                 //veiculo.Reservar(inicio, fim);
                 //VeiculosReservados.Add(veiculo);
@@ -173,7 +170,7 @@ namespace Automobile
             }
             catch (ReservaException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
