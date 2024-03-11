@@ -14,7 +14,7 @@ namespace Automobile
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (cb_filtro.SelectedIndex)
             {
@@ -149,7 +149,7 @@ namespace Automobile
 
         }
 
-        private void btn_criar_reserva_Click(object sender, EventArgs e)
+        private void Btn_criar_reserva_Click(object sender, EventArgs e)
         {
             pb_reservations.Visible = true;
 
@@ -174,7 +174,7 @@ namespace Automobile
                     EmpresaController.Controlador.VeiculosDisponiveis.Remove(veiculo);
 
                     // Atualiza a DataGridView
-                    comboBox1_SelectedIndexChanged(null, null);
+                    ComboBox1_SelectedIndexChanged(null, null);
 
                     // Mostra uma mensagem de sucesso
                     MessageBox.Show("Reserva criada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -207,7 +207,7 @@ namespace Automobile
 
         }
 
-        private void bt_calcular_valor_a_pagar_Click(object sender, EventArgs e)
+        private void Bt_calcular_valor_a_pagar_Click(object sender, EventArgs e)
         {
             lb_preco_total.Visible = true;
             btn_criar_reserva.Visible = true;
@@ -242,7 +242,7 @@ namespace Automobile
 
         }
 
-        private void cellClick(object sender, DataGridViewCellEventArgs e)
+        private void CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.RowIndex < dgv_veiculos_disponiveis.Rows.Count)
             {
@@ -252,7 +252,7 @@ namespace Automobile
             }
         }
 
-        private void bt_confirm_Click(object sender, EventArgs e)
+        private void Bt_confirm_Click(object sender, EventArgs e)
         {
 
 

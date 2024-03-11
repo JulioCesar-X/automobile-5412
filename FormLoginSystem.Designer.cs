@@ -99,7 +99,7 @@
             this.btn_login.TabIndex = 8;
             this.btn_login.Text = "LOGIN";
             this.btn_login.UseVisualStyleBackColor = false;
-            this.btn_login.Click += new System.EventHandler(this.btnEnterLogin_Click_1);
+            this.btn_login.Click += new System.EventHandler(this.BtnEnterLogin_Click_1);
             // 
             // panel4
             // 
@@ -192,7 +192,7 @@
             this.btn_x.TabIndex = 4;
             this.btn_x.Text = "X";
             this.btn_x.UseVisualStyleBackColor = false;
-            this.btn_x.Click += new System.EventHandler(this.btnClose_Click);
+            this.btn_x.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // panel1
             // 

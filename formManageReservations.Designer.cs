@@ -75,7 +75,7 @@
             this.cb_filtro.Name = "cb_filtro";
             this.cb_filtro.Size = new System.Drawing.Size(136, 28);
             this.cb_filtro.TabIndex = 20;
-            this.cb_filtro.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cb_filtro.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
             // lb_matricula_selecionada
             // 
@@ -106,7 +106,7 @@
             this.bt_calcular_valor_a_pagar.TabIndex = 27;
             this.bt_calcular_valor_a_pagar.Text = "Enviar";
             this.bt_calcular_valor_a_pagar.UseVisualStyleBackColor = true;
-            this.bt_calcular_valor_a_pagar.Click += new System.EventHandler(this.bt_calcular_valor_a_pagar_Click);
+            this.bt_calcular_valor_a_pagar.Click += new System.EventHandler(this.Bt_calcular_valor_a_pagar_Click);
             // 
             // lb_tempo_total_reserva
             // 
@@ -127,7 +127,7 @@
             this.bt_confirm.TabIndex = 35;
             this.bt_confirm.Text = "Confirm";
             this.bt_confirm.UseVisualStyleBackColor = true;
-            this.bt_confirm.Click += new System.EventHandler(this.bt_confirm_Click);
+            this.bt_confirm.Click += new System.EventHandler(this.Bt_confirm_Click);
             // 
             // tb_valorfinaltempo
             // 
@@ -147,7 +147,7 @@
             this.dgv_veiculos_disponiveis.RowTemplate.Height = 28;
             this.dgv_veiculos_disponiveis.Size = new System.Drawing.Size(834, 385);
             this.dgv_veiculos_disponiveis.TabIndex = 40;
-            this.dgv_veiculos_disponiveis.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cellClick);
+            this.dgv_veiculos_disponiveis.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CellClick);
             // 
             // lb_preco_total
             // 
@@ -167,14 +167,14 @@
             this.btn_criar_reserva.FlatAppearance.BorderSize = 5;
             this.btn_criar_reserva.Font = new System.Drawing.Font("Bauhaus 93", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_criar_reserva.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_criar_reserva.Location = new System.Drawing.Point(68, 513);
+            this.btn_criar_reserva.Location = new System.Drawing.Point(70, 513);
             this.btn_criar_reserva.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_criar_reserva.Name = "btn_criar_reserva";
             this.btn_criar_reserva.Size = new System.Drawing.Size(162, 77);
             this.btn_criar_reserva.TabIndex = 42;
             this.btn_criar_reserva.Text = "Reservar";
             this.btn_criar_reserva.UseVisualStyleBackColor = false;
-            this.btn_criar_reserva.Click += new System.EventHandler(this.btn_criar_reserva_Click);
+            this.btn_criar_reserva.Click += new System.EventHandler(this.Btn_criar_reserva_Click);
             // 
             // label1
             // 
@@ -265,9 +265,9 @@
             this.pb_reservations.BackColor = System.Drawing.Color.Transparent;
             this.pb_reservations.BackgroundImage = global::Automobile.Properties.Resources.pngwing_com__36_;
             this.pb_reservations.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pb_reservations.Location = new System.Drawing.Point(300, 84);
+            this.pb_reservations.Location = new System.Drawing.Point(300, 43);
             this.pb_reservations.Name = "pb_reservations";
-            this.pb_reservations.Size = new System.Drawing.Size(866, 554);
+            this.pb_reservations.Size = new System.Drawing.Size(866, 595);
             this.pb_reservations.TabIndex = 51;
             this.pb_reservations.TabStop = false;
             // 
