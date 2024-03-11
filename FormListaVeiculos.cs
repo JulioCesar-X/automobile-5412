@@ -97,11 +97,23 @@ namespace Automobile
                     }
 
                 }
+                else
+                {
+                    LimparCampos();
+                }
 
             }
 
 
 
+
+        }
+
+        private void LimparCampos()
+        {
+            dgv_veiculos.Rows.Clear();
+            cb_status.SelectedItem = null;
+            pb_list_veiculos.Visible = true;
 
         }
 
@@ -266,7 +278,6 @@ namespace Automobile
                                     carro.TipoCaixa,
                                     carro.VeiculoPreco + " €",
                                     status
-
 
                                     );
                             }

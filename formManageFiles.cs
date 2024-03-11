@@ -97,10 +97,10 @@ namespace Automobile
 
                     foreach (var lista in new string[] { "VeiculosDisponiveis", "VeiculosAlugados", "VeiculosReservados", "VeiculosEmManutencao" })
                     {
-                        EmpresaController.Controlador.SalvarDadosNoCsv(caminhoVeiculos, lista);
+                        //EmpresaController.Controlador.SalvarDadosNoCsv(caminhoVeiculos, lista);
                     }
 
-                    EmpresaController.Controlador.SalvarDadosNoCsv(caminho, "Users");
+                    //EmpresaController.Controlador.SalvarDadosNoCsv(caminho, "Users");
 
 
                     MessageBox.Show("Dados salvos com sucesso em arquivos CSV.");

@@ -189,22 +189,22 @@ namespace Automobile
         }
 
 
-        public void ValidarListaVeiculosDoTipo(string tipoRequerido, string status)
+        public void ValidarListaVeiculosDoTipo(string tipoRequerido, string status, DateTime dataAtual)
         {
 
             switch (status)
             {
                 case "Disponivel":
-                    ExisteVeiculoNesseStatus(tipoRequerido, VeiculosDisponiveis);
+                    ExisteVeiculoNesseStatus(tipoRequerido, VeiculosDisponiveis, dataAtual);
                     break;
                 case "Alugado":
-                    ExisteVeiculoNesseStatus(tipoRequerido, VeiculosAlugados);
+                    ExisteVeiculoNesseStatus(tipoRequerido, VeiculosAlugados, dataAtual);
                     break;
                 case "Reservado":
-                    ExisteVeiculoNesseStatus(tipoRequerido, VeiculosReservados);
+                    ExisteVeiculoNesseStatus(tipoRequerido, VeiculosReservados, dataAtual);
                     break;
                 case "EmManutencao":
-                    ExisteVeiculoNesseStatus(tipoRequerido, VeiculosEmManutencao);
+                    ExisteVeiculoNesseStatus(tipoRequerido, VeiculosEmManutencao, dataAtual);
                     break;
 
                 default:
@@ -216,7 +216,7 @@ namespace Automobile
 
         }
 
-        private bool ExisteVeiculoNesseStatus(string tipoRequerido, List<object> lista)
+        private bool ExisteVeiculoNesseStatus(string tipoRequerido, List<object> lista, DateTime dataAtual)
         {
             if (lista.Count == 0)
             {
@@ -225,11 +225,19 @@ namespace Automobile
             }
             else if (lista.Any(v => v.GetType().Name == tipoRequerido))
             {
-                return true;
+
+                if (lista.Any(v => ((Veiculo)v).VeiculoStatus.DataInicio >= dataAtual))
+                {
+                    return true;
+                }
+                else
+                {
+                    throw new ArgumentException($"Veiculos nessa data não estão presentes nessa lista");
+                }
             }
             else
             {
-                throw new ArgumentException($"Veiculo desse tipo não está presente nessa lista");
+                throw new ArgumentException($"Veiculos desse tipo não estão presentes nessa lista");
             }
         }
 
@@ -299,99 +307,99 @@ namespace Automobile
 
 
         /* Ainda estou refatorando*/
-        public void SalvarDadosNoCsv(string folderPath, string nomeLista)
-        {
+        //public void SalvarDadosNoCsv(string folderPath, string nomeLista)
+        //{
 
 
-            switch (nomeLista)
-            {
+        //    switch (nomeLista)
+        //    {
 
-                case "VeiculosDisponiveis":
-
-
-                    foreach (var tipo in new string[] { "Carro", "Mota", "Camioneta", "Camiao" })
-                    {
-                        //Para cada tipo de objeto especificado vamos verificar  e criar o csv
-                        ValidarListaVeiculosDoTipo(tipo, "Disponivel");
-
-                        if (VeiculosDisponiveis.Count > 0)
-                        {
-                            EscreveNoCsvDadosDaLista(folderPath, VeiculosDisponiveis, tipo, nomeLista);
-                        }
-
-                    }
-                    break;
-
-                case "VeiculosAlugados":
+        //        case "VeiculosDisponiveis":
 
 
+        //            foreach (var tipo in new string[] { "Carro", "Mota", "Camioneta", "Camiao" })
+        //            {
+        //                //Para cada tipo de objeto especificado vamos verificar  e criar o csv
+        //                ValidarListaVeiculosDoTipo(tipo, "Disponivel");
 
-                    foreach (var tipo in new string[] { "Carro", "Mota", "Camioneta", "Camiao" })
-                    {
-                        //Para cada tipo de objeto especificado vamos verificar  e criar o csv
-                        ValidarListaVeiculosDoTipo(tipo, "Alugado");
+        //                if (VeiculosDisponiveis.Count > 0)
+        //                {
+        //                    EscreveNoCsvDadosDaLista(folderPath, VeiculosDisponiveis, tipo, nomeLista);
+        //                }
 
-                        if (VeiculosAlugados.Count > 0)
-                        {
-                            EscreveNoCsvDadosDaLista(folderPath, VeiculosAlugados, tipo, nomeLista);
-                        }
+        //            }
+        //            break;
 
-                    }
-                    break;
-
-                case "VeiculosReservados":
+        //        case "VeiculosAlugados":
 
 
 
-                    foreach (var tipo in new string[] { "Carro", "Mota", "Camioneta", "Camiao" })
-                    {
-                        //Para cada tipo de objeto especificado vamos verificar  e criar o csv
-                        ValidarListaVeiculosDoTipo(tipo, "Reservado");
+        //            foreach (var tipo in new string[] { "Carro", "Mota", "Camioneta", "Camiao" })
+        //            {
+        //                //Para cada tipo de objeto especificado vamos verificar  e criar o csv
+        //                ValidarListaVeiculosDoTipo(tipo, "Alugado");
 
-                        if (VeiculosReservados.Count > 0)
-                        {
-                            EscreveNoCsvDadosDaLista(folderPath, VeiculosReservados, tipo, nomeLista);
-                        }
+        //                if (VeiculosAlugados.Count > 0)
+        //                {
+        //                    EscreveNoCsvDadosDaLista(folderPath, VeiculosAlugados, tipo, nomeLista);
+        //                }
 
-                    }
-                    break;
+        //            }
+        //            break;
 
-                case "VeiculosEmManutencao":
-
-
-
-                    foreach (var tipo in new string[] { "Carro", "Mota", "Camioneta", "Camiao" })
-                    {
-                        //Para cada tipo de objeto especificado vamos verificar  e criar o csv
-                        ValidarListaVeiculosDoTipo(tipo, "EmManutencao");
-
-                        if (VeiculosEmManutencao.Count > 0)
-                        {
-                            EscreveNoCsvDadosDaLista(folderPath, VeiculosEmManutencao, tipo, nomeLista);
-                        }
-
-                    }
-                    break;
-
-                case "Users":
-
-                    if (Users.Count == 0)
-                    {
-                        throw new ArgumentException($"Não há itens na \"{nomeLista}\" para salvar.");
-                    }
-
-                    EscreveNoCsvDadosDaLista(folderPath, Users, "Users", nomeLista);
-
-                    break;
-
-                default:
-
-                    throw new ArgumentException("Lista não encontrada");
-
-            }
+        //        case "VeiculosReservados":
 
 
-        }
+
+        //            foreach (var tipo in new string[] { "Carro", "Mota", "Camioneta", "Camiao" })
+        //            {
+        //                //Para cada tipo de objeto especificado vamos verificar  e criar o csv
+        //                ValidarListaVeiculosDoTipo(tipo, "Reservado");
+
+        //                if (VeiculosReservados.Count > 0)
+        //                {
+        //                    EscreveNoCsvDadosDaLista(folderPath, VeiculosReservados, tipo, nomeLista);
+        //                }
+
+        //            }
+        //            break;
+
+        //        case "VeiculosEmManutencao":
+
+
+
+        //            foreach (var tipo in new string[] { "Carro", "Mota", "Camioneta", "Camiao" })
+        //            {
+        //                //Para cada tipo de objeto especificado vamos verificar  e criar o csv
+        //                ValidarListaVeiculosDoTipo(tipo, "EmManutencao");
+
+        //                if (VeiculosEmManutencao.Count > 0)
+        //                {
+        //                    EscreveNoCsvDadosDaLista(folderPath, VeiculosEmManutencao, tipo, nomeLista);
+        //                }
+
+        //            }
+        //            break;
+
+        //        case "Users":
+
+        //            if (Users.Count == 0)
+        //            {
+        //                throw new ArgumentException($"Não há itens na \"{nomeLista}\" para salvar.");
+        //            }
+
+        //            EscreveNoCsvDadosDaLista(folderPath, Users, "Users", nomeLista);
+
+        //            break;
+
+        //        default:
+
+        //            throw new ArgumentException("Lista não encontrada");
+
+        //    }
+
+
+        //}
 
         //Usando o tipo genérico é uma estrutura flexivel - permite que classes,metodos,interfaces trabalhem  com tipos especificos em tempo de compilação em vez de tipos fixos.
         //O tempo de compilação é quando o código é traduzido e analisado pelo compilador antes da execução, enquanto o tempo de execução é quando o código é realmente executado e produz resultados.
@@ -518,6 +526,8 @@ namespace Automobile
 
             VeiculosReservados.Add(objeto);
         }
+
+
 
 
 

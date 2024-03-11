@@ -126,7 +126,7 @@ namespace Automobile
         {
             try
             {
-                Controlador.ValidarListaVeiculosDoTipo(tipo, status);
+                Controlador.ValidarListaVeiculosDoTipo(tipo, status, DataAtual.Date);
 
                 return true;
 
@@ -191,20 +191,20 @@ namespace Automobile
 
         }
 
-        public static bool SalvarDadosNoCsv(string folderPath, string nome)
-        {
-            try
-            {
-                Controlador.SalvarDadosNoCsv(folderPath, nome);
+        //public static bool SalvarDadosNoCsv(string folderPath, string nome)
+        //{
+        //    try
+        //    {
+        //        Controlador.SalvarDadosNoCsv(folderPath, nome);
 
-                return true;
-            }
-            catch (ArgumentException ex)
-            {
-                MessageBox.Show($"Erro: {ex.Message}");
-                return false;
-            }
-        }
+        //        return true;
+        //    }
+        //    catch (ArgumentException ex)
+        //    {
+        //        MessageBox.Show($"Erro: {ex.Message}");
+        //        return false;
+        //    }
+        //}
 
         public static bool GetListaVeciulosReservados(string tipo)
         {
@@ -219,6 +219,8 @@ namespace Automobile
                 return false;
             }
         }
+
+
 
 
     }
