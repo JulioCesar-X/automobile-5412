@@ -69,15 +69,15 @@ namespace Automobile
 
         public void Reservar(DateTime dataInicio, DateTime dataFim)
         {
-            VeiculoStatus = new Estado(Estado.Tipo.Reservado, dataInicio, dataFim);
+            VeiculoStatus = new Estado(Estado.Tipo.Reservado, dataInicio.Date, dataFim.Date);
         }
         public void Alugar(DateTime dataInicio, DateTime dataFim)
         {
-            VeiculoStatus = new Estado(Estado.Tipo.Alugado, dataInicio, dataFim);
+            VeiculoStatus = new Estado(Estado.Tipo.Alugado, dataInicio.Date, dataFim.Date);
         }
         public void EmManutencao(DateTime dataInicio, DateTime dataFim)
         {
-            VeiculoStatus = new Estado(Estado.Tipo.EmManutencao, dataInicio, dataFim);
+            VeiculoStatus = new Estado(Estado.Tipo.EmManutencao, dataInicio.Date, dataFim.Date);
         }
 
         public void RetornarDisponivel()

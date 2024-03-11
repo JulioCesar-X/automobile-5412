@@ -1,17 +1,20 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace Automobile
 {
     public partial class FormPainelControlo : Form
     {
 
+        private Veiculo veiculoEncontrado;
+        private object[] arrayListaSelecionadaCopia;
         public FormPainelControlo()
         {
             InitializeComponent();
 
-            EmpresaController.DataAtual = DateTime.Today.Date;
+            
 
             lb_user_logado.Text = EmpresaController.userLogado;
             timer1.Start();
@@ -153,7 +156,7 @@ namespace Automobile
                 IsAdmin();
             }
 
-            EmpresaController.DataAtual = DateTime.Today.Date;
+            
 
         }
 
@@ -200,6 +203,24 @@ namespace Automobile
 
             EmpresaController.DataAtual = EmpresaController.DataAtual.AddDays(1);
 
+            //veiculos Alugados
+            arrayListaSelecionadaCopia = (EmpresaController.Controlador.VeiculosAlugados).ToArray();
+
+            foreach (var objeto in arrayListaSelecionadaCopia)
+            {
+                if (((Veiculo)objeto).VeiculoStatus.DataFim.Date == EmpresaController.DataAtual.Date)
+                {
+                    veiculoEncontrado = (Veiculo)objeto;
+                    EmpresaController.Controlador.RemoveVeiculoDaLista((Veiculo)objeto, ((Veiculo)objeto).VeiculoStatus.Nome.ToString());
+
+                    veiculoEncontrado.RetornarDisponivel();
+                    EmpresaController.Controlador.AdicionarVeiculoNaLista(veiculoEncontrado,"Disponivel");
+                    veiculoEncontrado = null;
+                }
+                
+            }
+
+
         }
 
         private void lb_date_Click(object sender, EventArgs e)
@@ -211,5 +232,20 @@ namespace Automobile
         {
 
         }
+
+        private void btn_previous_Click(object sender, EventArgs e)
+        {
+            if (EmpresaController.DataAtual.Date > DateTime.Today.Date)
+            {
+                EmpresaController.DataAtual = EmpresaController.DataAtual.AddDays(-1);
+            }
+            else
+            {
+                MessageBox.Show("Limite de recuo no tempo excedido!");
+            }
+        }
+
+       
+
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Automobile
 {
@@ -31,6 +32,8 @@ namespace Automobile
 
             CriarListaDefaultUsers();
             CriarListaVeiculosDefault();
+
+            EmpresaController.DataAtual = DateTime.Today.Date;
 
         }
 
@@ -226,7 +229,7 @@ namespace Automobile
             else if (lista.Any(v => v.GetType().Name == tipoRequerido))
             {
 
-                if (lista.Any(v => ((Veiculo)v).VeiculoStatus.DataInicio >= dataAtual))
+                if (lista.Any(v => ((Veiculo)v).VeiculoStatus.DataInicio.Date >= dataAtual))
                 {
                     return true;
                 }
@@ -528,6 +531,63 @@ namespace Automobile
         }
 
 
+      
+        public void RemoveVeiculoDaLista(object veiculo,string status)
+        {
+            switch (status)
+            {
+                case "Disponivel":
+
+                    VeiculosDisponiveis.Remove(veiculo);
+                    break;
+
+                case "Alugado":
+
+                    VeiculosAlugados.Remove(veiculo);
+                    break;
+
+                case "Reservado":
+
+                    VeiculosReservados.Remove(veiculo);
+                    break;
+
+                case "EmManutencao":
+
+                    VeiculosEmManutencao.Remove(veiculo);
+                    break;
+
+                default:
+                    break;
+            }
+        }
+        public void AdicionarVeiculoNaLista(object veiculo, string status)
+        {
+            switch (status)
+            {
+                case "Disponivel":
+
+                    VeiculosDisponiveis.Add(veiculo);
+                    break;
+
+                case "Alugado":
+
+                    VeiculosAlugados.Add(veiculo);
+                    break;
+
+                case "Reservado":
+
+                    VeiculosReservados.Add(veiculo);
+                    break;
+
+                case "EmManutencao":
+
+                    VeiculosEmManutencao.Add(veiculo);
+                    break;
+
+                default:
+                    break;
+            }
+        }
 
 
 

@@ -117,38 +117,6 @@ namespace Automobile
 
         }
 
-        private void GetVeiculoDaLista(string id)
-        {
-            switch (cb_status.SelectedIndex)
-            {
-                case 0:
-
-                    listaSelecionada = EmpresaController.Controlador.VeiculosDisponiveis;
-                    veiculoSelecionado = (Veiculo)(EmpresaController.Controlador.GetVeiculo(id, listaSelecionada));
-                    break;
-
-                case 1:
-
-                    listaSelecionada = EmpresaController.Controlador.VeiculosAlugados;
-                    veiculoSelecionado = (Veiculo)(EmpresaController.Controlador.GetVeiculo(id, listaSelecionada));
-                    break;
-
-                case 2:
-
-                    listaSelecionada = EmpresaController.Controlador.VeiculosReservados;
-                    veiculoSelecionado = (Veiculo)(EmpresaController.Controlador.GetVeiculo(id, listaSelecionada));
-                    break;
-
-                case 3:
-
-                    listaSelecionada = EmpresaController.Controlador.VeiculosEmManutencao;
-                    veiculoSelecionado = (Veiculo)(EmpresaController.Controlador.GetVeiculo(id, listaSelecionada));
-                    break;
-
-                default:
-                    break;
-            }
-        }
         private void MudarEstadoVeiculo(string novoEstado)
         {
             if (Estado.Tipo.Disponivel.ToString() == novoEstado)
@@ -198,6 +166,39 @@ namespace Automobile
                 }
 
                 veiculoSelecionado.EmManutencao(inicio, fim);
+            }
+        }
+
+        private void GetVeiculoDaLista(string id)
+        {
+            switch (cb_status.SelectedIndex)
+            {
+                case 0:
+
+                    listaSelecionada = EmpresaController.Controlador.VeiculosDisponiveis;
+                    veiculoSelecionado = (Veiculo)(EmpresaController.Controlador.GetVeiculo(id, listaSelecionada));
+                    break;
+
+                case 1:
+
+                    listaSelecionada = EmpresaController.Controlador.VeiculosAlugados;
+                    veiculoSelecionado = (Veiculo)(EmpresaController.Controlador.GetVeiculo(id, listaSelecionada));
+                    break;
+
+                case 2:
+
+                    listaSelecionada = EmpresaController.Controlador.VeiculosReservados;
+                    veiculoSelecionado = (Veiculo)(EmpresaController.Controlador.GetVeiculo(id, listaSelecionada));
+                    break;
+
+                case 3:
+
+                    listaSelecionada = EmpresaController.Controlador.VeiculosEmManutencao;
+                    veiculoSelecionado = (Veiculo)(EmpresaController.Controlador.GetVeiculo(id, listaSelecionada));
+                    break;
+
+                default:
+                    break;
             }
         }
         private void RemoveVeiculoDaLista()
@@ -256,6 +257,7 @@ namespace Automobile
                     break;
             }
         }
+
         private void PreencheListaDeVeiculosDoStatus(List<object> listaRequerida, string TipoVeiculo, string status)
         {
             switch (TipoVeiculo)

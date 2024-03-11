@@ -46,7 +46,7 @@ namespace Automobile
         public Estado()
         {
             Nome = Tipo.Disponivel;
-            DataInicio = DateTime.Today.Date;
+            DataInicio = DateTime.Today.Date; // preciso resolver onde devo inicializar a data
             DataFim = DateTime.MaxValue.Date;
         }
         public Estado(Tipo nome, DateTime inicio, DateTime fim)
