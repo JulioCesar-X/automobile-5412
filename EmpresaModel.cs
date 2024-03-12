@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Automobile
 {
@@ -97,14 +96,14 @@ namespace Automobile
         {
 
 
-            Carro veiculo1 = new Carro("AA-01-BC", "Toyota Corolla", 90m, new Estado(), 5, "manual");
-            Mota veiculo2 = new Mota("AB-02-CD", "Honda CBR600RR", 45m, new Estado(), 300);
-            Camiao veiculo3 = new Camiao("AC-03-DE", "Volvo FH16", 175m, new Estado(), "44000");
-            Camioneta veiculo4 = new Camioneta("AD-04-EF", "Ford Explorer", 515m, new Estado(), 2, "5");
-            Carro veiculo5 = new Carro("BC-23-DE", "Volkswagen Golf", 45m, new Estado(), 5, "manual");
-            Mota veiculo6 = new Mota("DE-45-FG", "Harley-Davidson Sportster", 55.80m, new Estado(), 300);
-            Camiao veiculo7 = new Camiao("EF-56-GH", "Scania R500", 170m, new Estado(), "44000");
-            Camioneta veiculo8 = new Camioneta("5678-DEF", "Chevrolet Tahoe", 500.99m, new Estado(), 2, "5");
+            Carro veiculo1 = new Carro("AA-01-BC", "Toyota Corolla", 90m, new Estado(Estado.Tipo.Disponivel, DateTime.Today.Date, DateTime.MaxValue), 5, "manual");
+            Mota veiculo2 = new Mota("AB-02-CD", "Honda CBR600RR", 45m, new Estado(Estado.Tipo.Disponivel, DateTime.Today.Date, DateTime.MaxValue), 300);
+            Camiao veiculo3 = new Camiao("AC-03-DE", "Volvo FH16", 175m, new Estado(Estado.Tipo.Disponivel, DateTime.Today.Date, DateTime.MaxValue), "44000");
+            Camioneta veiculo4 = new Camioneta("AD-04-EF", "Ford Explorer", 515m, new Estado(Estado.Tipo.Disponivel, DateTime.Today.Date, DateTime.MaxValue), 2, "5");
+            Carro veiculo5 = new Carro("BC-23-DE", "Volkswagen Golf", 45m, new Estado(Estado.Tipo.Disponivel, DateTime.Today.Date, DateTime.MaxValue), 5, "manual");
+            Mota veiculo6 = new Mota("DE-45-FG", "Harley-Davidson Sportster", 55.80m, new Estado(Estado.Tipo.Disponivel, DateTime.Today.Date, DateTime.MaxValue), 300);
+            Camiao veiculo7 = new Camiao("EF-56-GH", "Scania R500", 170m, new Estado(Estado.Tipo.Disponivel, DateTime.Today.Date, DateTime.MaxValue), "44000");
+            Camioneta veiculo8 = new Camioneta("5678-DEF", "Chevrolet Tahoe", 500.99m, new Estado(Estado.Tipo.Disponivel, DateTime.Today.Date, DateTime.MaxValue), 2, "5");
 
             Carro veiculo9 = new Carro("GH-78-IJ", "Mustang shelby GT350", 135m, new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), 5, "manual");
             Mota veiculo10 = new Mota("HI-89-JK", "Yamaha MT-07", 55m, new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), 300);
@@ -229,7 +228,7 @@ namespace Automobile
             else if (lista.Any(v => v.GetType().Name == tipoRequerido))
             {
 
-                if (lista.Any(v => ((Veiculo)v).VeiculoStatus.DataInicio.Date >= dataAtual))
+                if (lista.Any(v => ((Veiculo)v).VeiculoStatus.DataFim.Date >= dataAtual))
                 {
                     return true;
                 }
@@ -531,8 +530,8 @@ namespace Automobile
         }
 
 
-      
-        public void RemoveVeiculoDaLista(object veiculo,string status)
+
+        public void RemoveVeiculoDaLista(object veiculo, string status)
         {
             switch (status)
             {
