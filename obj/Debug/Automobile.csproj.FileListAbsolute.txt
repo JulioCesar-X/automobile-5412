@@ -1,136 +1,9 @@
-C:\Users\julio\Source\Repos\RodrigoRocha10\Projeto-UFCD-5412\5412_TrabalhoPratico1\Automobile\bin\Debug\Automobile.exe.config
-C:\Users\julio\Source\Repos\RodrigoRocha10\Projeto-UFCD-5412\5412_TrabalhoPratico1\Automobile\bin\Debug\Automobile.exe
-C:\Users\julio\Source\Repos\RodrigoRocha10\Projeto-UFCD-5412\5412_TrabalhoPratico1\Automobile\bin\Debug\Automobile.pdb
-C:\Users\julio\Source\Repos\RodrigoRocha10\Projeto-UFCD-5412\5412_TrabalhoPratico1\Automobile\obj\Debug\Automobile.csproj.AssemblyReference.cache
-C:\Users\julio\Source\Repos\RodrigoRocha10\Projeto-UFCD-5412\5412_TrabalhoPratico1\Automobile\obj\Debug\Automobile.formAdicionarVeiculo.resources
-C:\Users\julio\Source\Repos\RodrigoRocha10\Projeto-UFCD-5412\5412_TrabalhoPratico1\Automobile\obj\Debug\Automobile.formChangeVehicleStatus.resources
-C:\Users\julio\Source\Repos\RodrigoRocha10\Projeto-UFCD-5412\5412_TrabalhoPratico1\Automobile\obj\Debug\Automobile.formManageFiles.resources
-C:\Users\julio\Source\Repos\RodrigoRocha10\Projeto-UFCD-5412\5412_TrabalhoPratico1\Automobile\obj\Debug\Automobile.formManageReservations.resources
-C:\Users\julio\Source\Repos\RodrigoRocha10\Projeto-UFCD-5412\5412_TrabalhoPratico1\Automobile\obj\Debug\Automobile.formVehicleMaintenance.resources
-C:\Users\julio\Source\Repos\RodrigoRocha10\Projeto-UFCD-5412\5412_TrabalhoPratico1\Automobile\obj\Debug\Automobile.formVeiculosDisponiveisAlugar.resources
-C:\Users\julio\Source\Repos\RodrigoRocha10\Projeto-UFCD-5412\5412_TrabalhoPratico1\Automobile\obj\Debug\Automobile.FormPainelControlo.resources
-C:\Users\julio\Source\Repos\RodrigoRocha10\Projeto-UFCD-5412\5412_TrabalhoPratico1\Automobile\obj\Debug\Automobile.Properties.Resources.resources
-C:\Users\julio\Source\Repos\RodrigoRocha10\Projeto-UFCD-5412\5412_TrabalhoPratico1\Automobile\obj\Debug\Automobile.csproj.GenerateResource.cache
-C:\Users\julio\Source\Repos\RodrigoRocha10\Projeto-UFCD-5412\5412_TrabalhoPratico1\Automobile\obj\Debug\Automobile.csproj.CoreCompileInputs.cache
-C:\Users\julio\Source\Repos\RodrigoRocha10\Projeto-UFCD-5412\5412_TrabalhoPratico1\Automobile\obj\Debug\Automobile.exe
-C:\Users\julio\Source\Repos\RodrigoRocha10\Projeto-UFCD-5412\5412_TrabalhoPratico1\Automobile\obj\Debug\Automobile.pdb
-C:\Users\julio\source\repos\RodrigoRocha10\Projeto-UFCD-5412\5412_TrabalhoPraticoAtualizado\obj\Debug\Automobile.csproj.AssemblyReference.cache
-C:\Users\julio\source\repos\RodrigoRocha10\Projeto-UFCD-5412\5412_TrabalhoPraticoAtualizado\obj\Debug\Automobile.FormLoginSystem.resources
-C:\Users\julio\source\repos\RodrigoRocha10\Projeto-UFCD-5412\5412_TrabalhoPraticoAtualizado\obj\Debug\_5412_TrabalhoPraticoAtualizado.Properties.Resources.resources
-C:\Users\julio\source\repos\RodrigoRocha10\Projeto-UFCD-5412\5412_TrabalhoPraticoAtualizado\obj\Debug\Automobile.csproj.GenerateResource.cache
-C:\Users\julio\source\repos\RodrigoRocha10\Projeto-UFCD-5412\5412_TrabalhoPraticoAtualizado\obj\Debug\Automobile.csproj.CoreCompileInputs.cache
-C:\Users\julio\source\repos\RodrigoRocha10\Projeto-UFCD-5412\5412_TrabalhoPraticoAtualizado\obj\Debug\5412_TrabalhoPraticoAtualizado.exe
-C:\Users\julio\source\repos\RodrigoRocha10\Projeto-UFCD-5412\5412_TrabalhoPraticoAtualizado\obj\Debug\5412_TrabalhoPraticoAtualizado.pdb
-C:\Users\julio\source\repos\RodrigoRocha10\Projeto-UFCD-5412\5412_TrabalhoPraticoAtualizado\bin\Debug\5412_TrabalhoPraticoAtualizado.exe.config
-C:\Users\julio\source\repos\RodrigoRocha10\Projeto-UFCD-5412\5412_TrabalhoPraticoAtualizado\bin\Debug\5412_TrabalhoPraticoAtualizado.exe
-C:\Users\julio\source\repos\RodrigoRocha10\Projeto-UFCD-5412\5412_TrabalhoPraticoAtualizado\bin\Debug\5412_TrabalhoPraticoAtualizado.pdb
-C:\Users\julio\source\repos\RodrigoRocha10\Projeto-UFCD-5412\5412_TrabalhoPraticoAtualizado\obj\Debug\Automobile.formAdicionarVeiculo.resources
-C:\Users\julio\source\repos\RodrigoRocha10\Projeto-UFCD-5412\5412_TrabalhoPraticoAtualizado\obj\Debug\Automobile.formChangeVehicleStatus.resources
-C:\Users\julio\source\repos\RodrigoRocha10\Projeto-UFCD-5412\5412_TrabalhoPraticoAtualizado\obj\Debug\Automobile.formManageFiles.resources
-C:\Users\julio\source\repos\RodrigoRocha10\Projeto-UFCD-5412\5412_TrabalhoPraticoAtualizado\obj\Debug\Automobile.formManageReservations.resources
-C:\Users\julio\source\repos\RodrigoRocha10\Projeto-UFCD-5412\5412_TrabalhoPraticoAtualizado\obj\Debug\Automobile.formVehicleMaintenance.resources
-C:\Users\julio\source\repos\RodrigoRocha10\Projeto-UFCD-5412\5412_TrabalhoPraticoAtualizado\obj\Debug\Automobile.formVeiculosDisponiveisAlugar.resources
-C:\Users\julio\source\repos\RodrigoRocha10\Projeto-UFCD-5412\5412_TrabalhoPraticoAtualizado\obj\Debug\Automobile.FormPainelControlo.resources
-C:\Users\julio\source\repos\RodrigoRocha10\Projeto-UFCD-5412\5412_TrabalhoPratico1\Automobile\obj\Debug\Automobile.FormLoginSystem.resources
-C:\Users\julio\Downloads\Automobile\bin\Debug\Automobile.exe.config
-C:\Users\julio\Downloads\Automobile\bin\Debug\Automobile.exe
-C:\Users\julio\Downloads\Automobile\bin\Debug\Automobile.pdb
-C:\Users\julio\Downloads\Automobile\obj\Debug\Automobile.csproj.AssemblyReference.cache
-C:\Users\julio\Downloads\Automobile\obj\Debug\Automobile.formAdicionarVeiculo.resources
-C:\Users\julio\Downloads\Automobile\obj\Debug\Automobile.formChangeVehicleStatus.resources
-C:\Users\julio\Downloads\Automobile\obj\Debug\Automobile.FormLoginSystem.resources
-C:\Users\julio\Downloads\Automobile\obj\Debug\Automobile.formManageFiles.resources
-C:\Users\julio\Downloads\Automobile\obj\Debug\Automobile.formManageReservations.resources
-C:\Users\julio\Downloads\Automobile\obj\Debug\Automobile.formVeiculosDisponiveisAlugar.resources
-C:\Users\julio\Downloads\Automobile\obj\Debug\Automobile.FormPainelControlo.resources
-C:\Users\julio\Downloads\Automobile\obj\Debug\Automobile.Properties.Resources.resources
-C:\Users\julio\Downloads\Automobile\obj\Debug\Automobile.csproj.GenerateResource.cache
-C:\Users\julio\Downloads\Automobile\obj\Debug\Automobile.csproj.CoreCompileInputs.cache
-C:\Users\julio\Downloads\Automobile\obj\Debug\Automobile.exe
-C:\Users\julio\Downloads\Automobile\obj\Debug\Automobile.pdb
-C:\AUTOMOBILE\automobile-5412\bin\Debug\Automobile.exe.config
-C:\AUTOMOBILE\automobile-5412\bin\Debug\Automobile.exe
-C:\AUTOMOBILE\automobile-5412\bin\Debug\Automobile.pdb
-C:\AUTOMOBILE\automobile-5412\obj\Debug\Automobile.csproj.AssemblyReference.cache
-C:\AUTOMOBILE\automobile-5412\obj\Debug\Automobile.csproj.SuggestedBindingRedirects.cache
-C:\AUTOMOBILE\automobile-5412\obj\Debug\Automobile.formAdicionarVeiculo.resources
-C:\AUTOMOBILE\automobile-5412\obj\Debug\Automobile.formChangeVehicleStatus.resources
-C:\AUTOMOBILE\automobile-5412\obj\Debug\Automobile.FormLoginSystem.resources
-C:\AUTOMOBILE\automobile-5412\obj\Debug\Automobile.formManageFiles.resources
-C:\AUTOMOBILE\automobile-5412\obj\Debug\Automobile.formManageReservations.resources
-C:\AUTOMOBILE\automobile-5412\obj\Debug\Automobile.formVeiculosDisponiveisAlugar.resources
-C:\AUTOMOBILE\automobile-5412\obj\Debug\Automobile.FormPainelControlo.resources
-C:\AUTOMOBILE\automobile-5412\obj\Debug\Automobile.Properties.Resources.resources
-C:\AUTOMOBILE\automobile-5412\obj\Debug\Automobile.csproj.GenerateResource.cache
-C:\AUTOMOBILE\automobile-5412\obj\Debug\Automobile.csproj.CoreCompileInputs.cache
-C:\AUTOMOBILE\automobile-5412\obj\Debug\Automobile.exe
-C:\AUTOMOBILE\automobile-5412\obj\Debug\Automobile.pdb
-C:\AUTOMOBILE\automobile-5412\obj\Debug\Automobile.formManageUsers.resources
-C:\Users\julio\Downloads\Automobile\obj\Debug\Automobile.formManageUsers.resources
-C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\bin\Debug\Automobile.exe.config
-C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\bin\Debug\Automobile.exe
-C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\bin\Debug\Automobile.pdb
-C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\obj\Debug\Automobile.csproj.AssemblyReference.cache
-C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\obj\Debug\Automobile.csproj.SuggestedBindingRedirects.cache
-C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\obj\Debug\Automobile.formAdicionarVeiculo.resources
-C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\obj\Debug\Automobile.formChangeVehicleStatus.resources
-C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\obj\Debug\Automobile.FormLoginSystem.resources
-C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\obj\Debug\Automobile.formManageFiles.resources
-C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\obj\Debug\Automobile.formManageReservations.resources
-C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\obj\Debug\Automobile.formManageUsers.resources
-C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\obj\Debug\Automobile.formVehicleMaintenance.resources
-C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\obj\Debug\Automobile.formVeiculosDisponiveisAlugar.resources
-C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\obj\Debug\Automobile.FormPainelControlo.resources
-C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\obj\Debug\Automobile.Properties.Resources.resources
-C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\obj\Debug\Automobile.csproj.GenerateResource.cache
-C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\obj\Debug\Automobile.csproj.CoreCompileInputs.cache
-C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\obj\Debug\Automobile.exe
-C:\Users\User\OneDrive - ATEC - Academia de Formação\Documents\projetoc#\automobile-5412\obj\Debug\Automobile.pdb
-C:\AUTOMOBILE\automobile-5412\obj\Debug\Automobile.formTimeSimulation.resources
-C:\Users\julio\Downloads\Automobile\obj\Debug\Automobile.formTimeSimulation.resources
-<<<<<<< HEAD
-C:\Users\T0118706\Desktop\branchgoncalo\automobile-5412\bin\Debug\Automobile.exe.config
-C:\Users\T0118706\Desktop\branchgoncalo\automobile-5412\bin\Debug\Automobile.exe
-C:\Users\T0118706\Desktop\branchgoncalo\automobile-5412\bin\Debug\Automobile.pdb
-C:\Users\T0118706\Desktop\branchgoncalo\automobile-5412\obj\Debug\Automobile.csproj.AssemblyReference.cache
-C:\Users\T0118706\Desktop\branchgoncalo\automobile-5412\obj\Debug\Automobile.formAdicionarVeiculo.resources
-C:\Users\T0118706\Desktop\branchgoncalo\automobile-5412\obj\Debug\Automobile.formChangeVehicleStatus.resources
-C:\Users\T0118706\Desktop\branchgoncalo\automobile-5412\obj\Debug\Automobile.FormLoginSystem.resources
-C:\Users\T0118706\Desktop\branchgoncalo\automobile-5412\obj\Debug\Automobile.FormManageFiles.resources
-C:\Users\T0118706\Desktop\branchgoncalo\automobile-5412\obj\Debug\Automobile.FormManageReservations.resources
-C:\Users\T0118706\Desktop\branchgoncalo\automobile-5412\obj\Debug\Automobile.formManageUsers.resources
-C:\Users\T0118706\Desktop\branchgoncalo\automobile-5412\obj\Debug\Automobile.FormTimeSimulation.resources
-C:\Users\T0118706\Desktop\branchgoncalo\automobile-5412\obj\Debug\Automobile.formVeiculosDisponiveisAlugar.resources
-C:\Users\T0118706\Desktop\branchgoncalo\automobile-5412\obj\Debug\Automobile.FormPainelControlo.resources
-C:\Users\T0118706\Desktop\branchgoncalo\automobile-5412\obj\Debug\Automobile.Properties.Resources.resources
-C:\Users\T0118706\Desktop\branchgoncalo\automobile-5412\obj\Debug\Automobile.csproj.GenerateResource.cache
-C:\Users\T0118706\Desktop\branchgoncalo\automobile-5412\obj\Debug\Automobile.csproj.CoreCompileInputs.cache
-C:\Users\T0118706\Desktop\branchgoncalo\automobile-5412\obj\Debug\Automobile.exe
-C:\Users\T0118706\Desktop\branchgoncalo\automobile-5412\obj\Debug\Automobile.pdb
-=======
-C:\Users\T0126209\Desktop\Branch Francisco\automobile-5412\bin\Debug\Automobile.exe.config
-C:\Users\T0126209\Desktop\Branch Francisco\automobile-5412\bin\Debug\Automobile.exe
-C:\Users\T0126209\Desktop\Branch Francisco\automobile-5412\bin\Debug\Automobile.pdb
-C:\Users\T0126209\Desktop\Branch Francisco\automobile-5412\obj\Debug\Automobile.csproj.AssemblyReference.cache
-C:\Users\T0126209\Desktop\Branch Francisco\automobile-5412\obj\Debug\Automobile.csproj.SuggestedBindingRedirects.cache
-C:\Users\T0126209\Desktop\Branch Francisco\automobile-5412\obj\Debug\Automobile.formAdicionarVeiculo.resources
-C:\Users\T0126209\Desktop\Branch Francisco\automobile-5412\obj\Debug\Automobile.formChangeVehicleStatus.resources
-C:\Users\T0126209\Desktop\Branch Francisco\automobile-5412\obj\Debug\Automobile.FormLoginSystem.resources
-C:\Users\T0126209\Desktop\Branch Francisco\automobile-5412\obj\Debug\Automobile.FormManageFiles.resources
-C:\Users\T0126209\Desktop\Branch Francisco\automobile-5412\obj\Debug\Automobile.FormManageReservations.resources
-C:\Users\T0126209\Desktop\Branch Francisco\automobile-5412\obj\Debug\Automobile.formManageUsers.resources
-C:\Users\T0126209\Desktop\Branch Francisco\automobile-5412\obj\Debug\Automobile.FormTimeSimulation.resources
-C:\Users\T0126209\Desktop\Branch Francisco\automobile-5412\obj\Debug\Automobile.formVeiculosDisponiveisAlugar.resources
-C:\Users\T0126209\Desktop\Branch Francisco\automobile-5412\obj\Debug\Automobile.FormPainelControlo.resources
-C:\Users\T0126209\Desktop\Branch Francisco\automobile-5412\obj\Debug\Automobile.Properties.Resources.resources
-C:\Users\T0126209\Desktop\Branch Francisco\automobile-5412\obj\Debug\Automobile.csproj.GenerateResource.cache
-C:\Users\T0126209\Desktop\Branch Francisco\automobile-5412\obj\Debug\Automobile.csproj.CoreCompileInputs.cache
-C:\Users\T0126209\Desktop\Branch Francisco\automobile-5412\obj\Debug\Automobile.exe
-C:\Users\T0126209\Desktop\Branch Francisco\automobile-5412\obj\Debug\Automobile.pdb
->>>>>>> c70f0be4639dffd7383b22665c69036decfc6a94
+C:\Users\julio\Desktop\projeto\automobile-5412\bin\Debug\Automobile.exe.config
+C:\Users\julio\Desktop\projeto\automobile-5412\bin\Debug\Automobile.exe
+C:\Users\julio\Desktop\projeto\automobile-5412\bin\Debug\Automobile.pdb
 C:\Users\julio\Desktop\projeto\automobile-5412\obj\Debug\Automobile.csproj.AssemblyReference.cache
-C:\Users\julio\Desktop\projeto\automobile-5412\obj\Debug\Automobile.formAdicionarVeiculo.resources
-C:\Users\julio\Desktop\projeto\automobile-5412\obj\Debug\Automobile.formChangeVehicleStatus.resources
+C:\Users\julio\Desktop\projeto\automobile-5412\obj\Debug\Automobile.FormAdicionarVeiculo.resources
+C:\Users\julio\Desktop\projeto\automobile-5412\obj\Debug\Automobile.FormListaVeiculos.resources
 C:\Users\julio\Desktop\projeto\automobile-5412\obj\Debug\Automobile.FormLoginSystem.resources
 C:\Users\julio\Desktop\projeto\automobile-5412\obj\Debug\Automobile.FormManageFiles.resources
 C:\Users\julio\Desktop\projeto\automobile-5412\obj\Debug\Automobile.FormManageReservations.resources
@@ -139,32 +12,8 @@ C:\Users\julio\Desktop\projeto\automobile-5412\obj\Debug\Automobile.FormTimeSimu
 C:\Users\julio\Desktop\projeto\automobile-5412\obj\Debug\Automobile.formVeiculosDisponiveisAlugar.resources
 C:\Users\julio\Desktop\projeto\automobile-5412\obj\Debug\Automobile.FormPainelControlo.resources
 C:\Users\julio\Desktop\projeto\automobile-5412\obj\Debug\Automobile.Properties.Resources.resources
+C:\Users\julio\Desktop\projeto\automobile-5412\obj\Debug\Automobile.SelecaoData.resources
 C:\Users\julio\Desktop\projeto\automobile-5412\obj\Debug\Automobile.csproj.GenerateResource.cache
 C:\Users\julio\Desktop\projeto\automobile-5412\obj\Debug\Automobile.csproj.CoreCompileInputs.cache
 C:\Users\julio\Desktop\projeto\automobile-5412\obj\Debug\Automobile.exe
 C:\Users\julio\Desktop\projeto\automobile-5412\obj\Debug\Automobile.pdb
-C:\Users\julio\Desktop\projeto\automobile-5412\bin\Debug\Automobile.exe.config
-C:\Users\julio\Desktop\projeto\automobile-5412\bin\Debug\Automobile.exe
-C:\Users\julio\Desktop\projeto\automobile-5412\bin\Debug\Automobile.pdb
-C:\Users\julio\Desktop\projeto\automobile-5412\obj\Debug\Automobile.FormListaVeiculos.resources
-C:\Users\julio\Desktop\projeto\automobile-5412\obj\Debug\Automobile.SelecaoData.resources
-C:\Users\T0126213.CIBER\OneDrive - ATEC - Academia de Formação\Desktop\automobile-5412\bin\Debug\Automobile.exe.config
-C:\Users\T0126213.CIBER\OneDrive - ATEC - Academia de Formação\Desktop\automobile-5412\bin\Debug\Automobile.exe
-C:\Users\T0126213.CIBER\OneDrive - ATEC - Academia de Formação\Desktop\automobile-5412\bin\Debug\Automobile.pdb
-C:\Users\T0126213.CIBER\OneDrive - ATEC - Academia de Formação\Desktop\automobile-5412\obj\Debug\Automobile.csproj.AssemblyReference.cache
-C:\Users\T0126213.CIBER\OneDrive - ATEC - Academia de Formação\Desktop\automobile-5412\obj\Debug\Automobile.csproj.SuggestedBindingRedirects.cache
-C:\Users\T0126213.CIBER\OneDrive - ATEC - Academia de Formação\Desktop\automobile-5412\obj\Debug\Automobile.FormAdicionarVeiculo.resources
-C:\Users\T0126213.CIBER\OneDrive - ATEC - Academia de Formação\Desktop\automobile-5412\obj\Debug\Automobile.FormListaVeiculos.resources
-C:\Users\T0126213.CIBER\OneDrive - ATEC - Academia de Formação\Desktop\automobile-5412\obj\Debug\Automobile.FormLoginSystem.resources
-C:\Users\T0126213.CIBER\OneDrive - ATEC - Academia de Formação\Desktop\automobile-5412\obj\Debug\Automobile.FormManageFiles.resources
-C:\Users\T0126213.CIBER\OneDrive - ATEC - Academia de Formação\Desktop\automobile-5412\obj\Debug\Automobile.FormManageReservations.resources
-C:\Users\T0126213.CIBER\OneDrive - ATEC - Academia de Formação\Desktop\automobile-5412\obj\Debug\Automobile.formManageUsers.resources
-C:\Users\T0126213.CIBER\OneDrive - ATEC - Academia de Formação\Desktop\automobile-5412\obj\Debug\Automobile.FormTimeSimulation.resources
-C:\Users\T0126213.CIBER\OneDrive - ATEC - Academia de Formação\Desktop\automobile-5412\obj\Debug\Automobile.formVeiculosDisponiveisAlugar.resources
-C:\Users\T0126213.CIBER\OneDrive - ATEC - Academia de Formação\Desktop\automobile-5412\obj\Debug\Automobile.FormPainelControlo.resources
-C:\Users\T0126213.CIBER\OneDrive - ATEC - Academia de Formação\Desktop\automobile-5412\obj\Debug\Automobile.Properties.Resources.resources
-C:\Users\T0126213.CIBER\OneDrive - ATEC - Academia de Formação\Desktop\automobile-5412\obj\Debug\Automobile.SelecaoData.resources
-C:\Users\T0126213.CIBER\OneDrive - ATEC - Academia de Formação\Desktop\automobile-5412\obj\Debug\Automobile.csproj.GenerateResource.cache
-C:\Users\T0126213.CIBER\OneDrive - ATEC - Academia de Formação\Desktop\automobile-5412\obj\Debug\Automobile.csproj.CoreCompileInputs.cache
-C:\Users\T0126213.CIBER\OneDrive - ATEC - Academia de Formação\Desktop\automobile-5412\obj\Debug\Automobile.exe
-C:\Users\T0126213.CIBER\OneDrive - ATEC - Academia de Formação\Desktop\automobile-5412\obj\Debug\Automobile.pdb
