@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Collections.Generic;
 
 namespace Automobile
 {
@@ -14,7 +13,7 @@ namespace Automobile
         {
             InitializeComponent();
 
-            
+
 
             lb_user_logado.Text = EmpresaController.userLogado;
             timer1.Start();
@@ -156,7 +155,7 @@ namespace Automobile
                 IsAdmin();
             }
 
-            
+
 
         }
 
@@ -203,23 +202,42 @@ namespace Automobile
 
             EmpresaController.DataAtual = EmpresaController.DataAtual.AddDays(1);
 
-            //veiculos Alugados
-            arrayListaSelecionadaCopia = (EmpresaController.Controlador.VeiculosAlugados).ToArray();
+            AtualizarListasVeiculos();
 
+
+        }
+
+        private void AtualizarListasVeiculos()
+        {
+            //veiculos Alugados, veiculos Reservados e EmManutencao
+            arrayListaSelecionadaCopia = EmpresaController.Controlador.VeiculosAlugados.ToArray();
+            AtualizarVeiculo();
+            arrayListaSelecionadaCopia = EmpresaController.Controlador.VeiculosReservados.ToArray();
+            AtualizarVeiculo();
+            arrayListaSelecionadaCopia = EmpresaController.Controlador.VeiculosReservados.ToArray();
+            AtualizarVeiculo();
+
+        }
+        private void AtualizarVeiculo()
+        {
             foreach (var objeto in arrayListaSelecionadaCopia)
             {
-                if (((Veiculo)objeto).VeiculoStatus.DataFim.Date == EmpresaController.DataAtual.Date)
-                {
-                    veiculoEncontrado = (Veiculo)objeto;
-                    EmpresaController.Controlador.RemoveVeiculoDaLista((Veiculo)objeto, ((Veiculo)objeto).VeiculoStatus.Nome.ToString());
+                Veiculo veiculo = objeto as Veiculo;
 
-                    veiculoEncontrado.RetornarDisponivel();
-                    EmpresaController.Controlador.AdicionarVeiculoNaLista(veiculoEncontrado,"Disponivel");
-                    veiculoEncontrado = null;
+                if (veiculo != null)
+                {
+                    if (veiculo.VeiculoStatus.DataFim.Date == EmpresaController.DataAtual.Date)
+                    {
+                        EmpresaController.Controlador.RemoveVeiculoDaLista(veiculo, veiculo.VeiculoStatus.Nome.ToString());
+
+                        veiculo.RetornarDisponivel(EmpresaController.DataAtual, DateTime.MaxValue);
+                        EmpresaController.Controlador.AdicionarVeiculoNaLista(veiculo, "Disponivel");
+                    }
                 }
-                
+
             }
 
+            arrayListaSelecionadaCopia = null;
 
         }
 
@@ -245,7 +263,7 @@ namespace Automobile
             }
         }
 
-       
+
 
     }
 }

@@ -121,7 +121,7 @@ namespace Automobile
         {
             if (Estado.Tipo.Disponivel.ToString() == novoEstado)
             {
-                veiculoSelecionado.RetornarDisponivel();
+                veiculoSelecionado.RetornarDisponivel(EmpresaController.DataAtual, DateTime.MaxValue);
 
             }
             else if (Estado.Tipo.Alugado.ToString() == novoEstado)

@@ -80,9 +80,9 @@ namespace Automobile
             VeiculoStatus = new Estado(Estado.Tipo.EmManutencao, dataInicio.Date, dataFim.Date);
         }
 
-        public void RetornarDisponivel()
+        public void RetornarDisponivel(DateTime dataInicio, DateTime dataFim)
         {
-            VeiculoStatus = new Estado();
+            VeiculoStatus = new Estado(Estado.Tipo.Disponivel, dataInicio.Date, dataFim.Date);
         }
 
 

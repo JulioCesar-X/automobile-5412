@@ -40,7 +40,7 @@ namespace Automobile
         {
             try
             {
-                Camiao camiao = new Camiao(veiculoMatricula, veiculoModelo, veiculoPreco, new Estado(), pesoMaximo);
+                Camiao camiao = new Camiao(veiculoMatricula, veiculoModelo, veiculoPreco, new Estado(Estado.Tipo.Disponivel,DataAtual.Date,DateTime.MaxValue), pesoMaximo);
                 Controlador.AdicionarVeiculo(camiao);
                 MessageBox.Show($"O veiculo \"{camiao.VeiculoModelo}\" com matricula \"{camiao.VeiculoMatricula}\" foi criado com sucesso!");
                 return true;
@@ -60,7 +60,7 @@ namespace Automobile
         {
             try
             {
-                Mota novaMota = new Mota(veiculoMatricula, veiculoModelo, veiculoPreco, new Estado(), cilindrada);
+                Mota novaMota = new Mota(veiculoMatricula, veiculoModelo, veiculoPreco, new Estado(Estado.Tipo.Disponivel,DataAtual.Date,DateTime.MaxValue), cilindrada);
                 Controlador.AdicionarVeiculo(novaMota);
                 MessageBox.Show($"O veiculo \"{novaMota.VeiculoModelo}\" com matricula \"{novaMota.VeiculoMatricula}\" foi criado com sucesso!");
 
@@ -78,7 +78,7 @@ namespace Automobile
         {
             try
             {
-                Carro novoCarro = new Carro(veiculoMatricula, veiculoModelo, veiculoPreco, new Estado(), numeroPortas, tipoCaixa);
+                Carro novoCarro = new Carro(veiculoMatricula, veiculoModelo, veiculoPreco, new Estado(Estado.Tipo.Disponivel,DataAtual.Date,DateTime.MaxValue), numeroPortas, tipoCaixa);
                 Controlador.AdicionarVeiculo(novoCarro);
                 MessageBox.Show($"O veiculo \"{novoCarro.VeiculoModelo}\" com matricula \"{novoCarro.VeiculoMatricula}\" foi criado com sucesso!");
                 return true;
@@ -104,7 +104,7 @@ namespace Automobile
         {
             try
             {
-                Camioneta novaCamioneta = new Camioneta(VeiculoMatricula, veiculoModelo, veiculoPreco, new Estado(), numeroEixos, numeroPassageiros);
+                Camioneta novaCamioneta = new Camioneta(VeiculoMatricula, veiculoModelo, veiculoPreco, new Estado(Estado.Tipo.Disponivel,DataAtual.Date,DateTime.MaxValue), numeroEixos, numeroPassageiros);
                 Controlador.AdicionarVeiculo(novaCamioneta);
                 MessageBox.Show($"O veiculo \"{novaCamioneta.VeiculoModelo}\" com matricula \"{novaCamioneta.VeiculoMatricula}\" foi criado com sucesso!");
                 return true;
