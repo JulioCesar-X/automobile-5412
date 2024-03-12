@@ -91,10 +91,8 @@ namespace Automobile
             Users.Add(func5);
 
         }
-
         private void CriarListaVeiculosDefault()
         {
-
 
             Carro veiculo1 = new Carro("AA-01-BC", "Toyota Corolla", 90m, new Estado(Estado.Tipo.Disponivel, DateTime.Today.Date, DateTime.MaxValue), 5, "manual");
             Mota veiculo2 = new Mota("AB-02-CD", "Honda CBR600RR", 45m, new Estado(Estado.Tipo.Disponivel, DateTime.Today.Date, DateTime.MaxValue), 300);
