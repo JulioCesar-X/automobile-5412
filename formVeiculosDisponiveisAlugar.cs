@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Automobile
 {
-    public partial class formVeiculosDisponiveisAlugar : Form
+    public partial class FormVeiculosDisponiveisAlugar : Form
     {
-        public formVeiculosDisponiveisAlugar()
+        public FormVeiculosDisponiveisAlugar()
         {
             InitializeComponent();
         }
