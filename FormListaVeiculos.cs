@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Automobile
@@ -16,6 +17,7 @@ namespace Automobile
         private DataGridViewComboBoxColumn cb_status2;
         public static string TipoVeiculo { get; set; }
 
+
         public FormListaVeiculos()
         {
             InitializeComponent();
@@ -25,6 +27,16 @@ namespace Automobile
 
             dgv_veiculos.EditingControlShowing += Dgv_veiculos_EditingControlShowing;
             cb_status.SelectedIndexChanged += Cb_status_SelectedIndexChanged;
+
+        }
+
+        public FormListaVeiculos(string filtroTipoVeiculo, string filtroStatusVeiculo, object objeto)
+        {
+            InitializeComponent();
+
+            this.cb_filtrar.Text = filtroTipoVeiculo;
+            this.cb_status.Text = filtroStatusVeiculo;
+            this.PintarVeiculoFimLimite(objeto);
 
         }
 
@@ -421,6 +433,32 @@ namespace Automobile
             AdicionarVeiculoNaLista(novoEstado);
             // Atualiza o estado selecionado no cb_status
             cb_status.SelectedItem = novoEstado;
+        }
+
+        public void PintarVeiculoFimLimite(object veiculo)
+        {
+            foreach (Dat linha in dgv_veiculos.Columns)  //preciso resolver
+            {
+                if (linha.Cells[0].Value != null &&
+                    linha.Cells[0].Value.ToString() == ((Veiculo)veiculo).VeiculoMatricula)
+                {
+                    CriarBordaVermelha(linha.Index);
+                }
+            }
+        }
+        private void CriarBordaVermelha(int indexLinha)
+        {
+            Rectangle retanguloDalinha = dgv_veiculos.GetRowDisplayRectangle(indexLinha, false);
+
+            // Criar a borda vermelha
+            Graphics g = dgv_veiculos.CreateGraphics();
+            Pen pen = new Pen(Color.LightCoral, 5);
+
+            g.DrawRectangle(pen, retanguloDalinha);
+
+            pen.Dispose();
+            g.Dispose();
+
         }
 
 

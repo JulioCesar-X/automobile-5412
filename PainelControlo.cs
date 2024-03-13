@@ -38,10 +38,10 @@ namespace Automobile
         {
             lb_title.Text = "Add Vehicle";
             this.PnlFormLoader.Controls.Clear();
-            FormAdicionarVeiculo FormAdicionarVeiculo = new FormAdicionarVeiculo() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            FormAdicionarVeiculo.FormBorderStyle = FormBorderStyle.None;
-            this.PnlFormLoader.Controls.Add(FormAdicionarVeiculo);
-            FormAdicionarVeiculo.Show();
+            FormAdicionarVeiculo formAdicionarVeiculo = new FormAdicionarVeiculo() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            formAdicionarVeiculo.FormBorderStyle = FormBorderStyle.None;
+            this.PnlFormLoader.Controls.Add(formAdicionarVeiculo);
+            formAdicionarVeiculo.Show();
         }
 
         //Button Change Vehicle Status
@@ -49,10 +49,10 @@ namespace Automobile
         {
             lb_title.Text = "List of Vehicles";
             this.PnlFormLoader.Controls.Clear();
-            FormListaVeiculos FormChangeVehicleStatus = new FormListaVeiculos() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            FormChangeVehicleStatus.FormBorderStyle = FormBorderStyle.None;
-            this.PnlFormLoader.Controls.Add(FormChangeVehicleStatus);
-            FormChangeVehicleStatus.Show();
+            FormListaVeiculos formChangeVehicleStatus = new FormListaVeiculos() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            formChangeVehicleStatus.FormBorderStyle = FormBorderStyle.None;
+            this.PnlFormLoader.Controls.Add(formChangeVehicleStatus);
+            formChangeVehicleStatus.Show();
 
             if (EmpresaController.userLogado == "#admin")
             {
@@ -66,10 +66,10 @@ namespace Automobile
         {
             lb_title.Text = "Vehicles Available for Rent";
             this.PnlFormLoader.Controls.Clear();
-            formVeiculosDisponiveisAlugar FormVeiculosDisponiveisAlugar = new formVeiculosDisponiveisAlugar() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            FormVeiculosDisponiveisAlugar.FormBorderStyle = FormBorderStyle.None;
-            this.PnlFormLoader.Controls.Add(FormVeiculosDisponiveisAlugar);
-            FormVeiculosDisponiveisAlugar.Show();
+            FormVeiculosDisponiveisAlugar formVeiculosDisponiveisAlugar = new FormVeiculosDisponiveisAlugar() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            formVeiculosDisponiveisAlugar.FormBorderStyle = FormBorderStyle.None;
+            this.PnlFormLoader.Controls.Add(formVeiculosDisponiveisAlugar);
+            formVeiculosDisponiveisAlugar.Show();
         }
 
         private void BtnVehicleMaintenance_Click(object sender, EventArgs e)
@@ -86,20 +86,20 @@ namespace Automobile
         {
             lb_title.Text = "Manage Reservations";
             this.PnlFormLoader.Controls.Clear();
-            FormManageReservations FormManageReservations = new FormManageReservations() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            FormManageReservations.FormBorderStyle = FormBorderStyle.None;
-            this.PnlFormLoader.Controls.Add(FormManageReservations);
-            FormManageReservations.Show();
+            FormManageReservations formManageReservations = new FormManageReservations() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            formManageReservations.FormBorderStyle = FormBorderStyle.None;
+            this.PnlFormLoader.Controls.Add(formManageReservations);
+            formManageReservations.Show();
         }
 
         private void BtnManageFiles_Click(object sender, EventArgs e)
         {
             lb_title.Text = "Manage Files";
             this.PnlFormLoader.Controls.Clear();
-            FormManageFiles FormManageFiles = new FormManageFiles() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            FormManageFiles.FormBorderStyle = FormBorderStyle.None;
-            this.PnlFormLoader.Controls.Add(FormManageFiles);
-            FormManageFiles.Show();
+            FormManageFiles formManageFiles = new FormManageFiles() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            formManageFiles.FormBorderStyle = FormBorderStyle.None;
+            this.PnlFormLoader.Controls.Add(formManageFiles);
+            formManageFiles.Show();
         }
 
 
@@ -115,10 +115,10 @@ namespace Automobile
         {
             lb_title.Text = "Manage Users";
             this.PnlFormLoader.Controls.Clear();
-            formManageUsers FormManageUsers = new formManageUsers() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            FormManageUsers.FormBorderStyle = FormBorderStyle.None;
-            this.PnlFormLoader.Controls.Add(FormManageUsers);
-            FormManageUsers.Show();
+            formManageUsers formManageUsers = new formManageUsers() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            formManageUsers.FormBorderStyle = FormBorderStyle.None;
+            this.PnlFormLoader.Controls.Add(formManageUsers);
+            formManageUsers.Show();
         }
 
         private void BtnChangeAccount_Click(object sender, EventArgs e)
@@ -214,11 +214,10 @@ namespace Automobile
             AtualizarVeiculo();
             arrayListaSelecionadaCopia = EmpresaController.Controlador.VeiculosReservados.ToArray();
             AtualizarVeiculo();
-            arrayListaSelecionadaCopia = EmpresaController.Controlador.VeiculosReservados.ToArray();
+            arrayListaSelecionadaCopia = EmpresaController.Controlador.VeiculosEmManutencao.ToArray();
             AtualizarVeiculo();
-
         }
-        private void AtualizarVeiculo()
+        private void AtualizarVeiculo(string statusDestino = "Disponivel")
         {
             foreach (var objeto in arrayListaSelecionadaCopia)
             {
@@ -228,10 +227,40 @@ namespace Automobile
                 {
                     if (veiculo.VeiculoStatus.DataFim.Date == EmpresaController.DataAtual.Date)
                     {
+                        string filtroTipoVeiculo = objeto.GetType().Name;
+                        string filtroStatusVeiculo = veiculo.VeiculoStatus.Nome.ToString();
+
                         EmpresaController.Controlador.RemoveVeiculoDaLista(veiculo, veiculo.VeiculoStatus.Nome.ToString());
 
-                        veiculo.RetornarDisponivel(EmpresaController.DataAtual, DateTime.MaxValue);
-                        EmpresaController.Controlador.AdicionarVeiculoNaLista(veiculo, "Disponivel");
+                        this.PnlFormLoader.Controls.Clear();
+                        FormListaVeiculos formChangeVehicleStatus = new FormListaVeiculos(filtroTipoVeiculo, filtroStatusVeiculo, objeto) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                        formChangeVehicleStatus.FormBorderStyle = FormBorderStyle.None;
+                        this.PnlFormLoader.Controls.Add(formChangeVehicleStatus);
+                        formChangeVehicleStatus.Show();
+
+
+
+                        if (statusDestino == "Disponivel")
+                        {
+                            veiculo.RetornarDisponivel(EmpresaController.DataAtual, DateTime.MaxValue);
+                        }
+                        else
+                        {
+                            SelecaoData formSelecaoData = new SelecaoData();
+                            formSelecaoData.StartPosition = FormStartPosition.CenterScreen;
+                            DialogResult caixa = formSelecaoData.ShowDialog();
+
+                            if (caixa == DialogResult.OK)
+                            {
+                                DateTime inicioAluguel = formSelecaoData.InicioSelecionado.Date;
+                                DateTime fimAluguel = formSelecaoData.FimSelecionado.Date;
+
+                                veiculo.Alugar(inicioAluguel, fimAluguel);
+                            }
+
+                        }
+
+                        EmpresaController.Controlador.AdicionarVeiculoNaLista(veiculo, statusDestino);
                     }
                 }
 
@@ -240,6 +269,8 @@ namespace Automobile
             arrayListaSelecionadaCopia = null;
 
         }
+
+
 
         private void lb_date_Click(object sender, EventArgs e)
         {

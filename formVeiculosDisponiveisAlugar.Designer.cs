@@ -1,6 +1,6 @@
 ﻿namespace Automobile
 {
-    partial class formVeiculosDisponiveisAlugar
+    partial class FormVeiculosDisponiveisAlugar
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // formVeiculosDisponiveisAlugar
+            // FormVeiculosDisponiveisAlugar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "formVeiculosDisponiveisAlugar";
-            this.Text = "formVeiculosDisponiveisAlugar";
+            this.Name = "FormVeiculosDisponiveisAlugar";
+            this.Text = "FormVeiculosDisponiveisAlugar";
             this.ResumeLayout(false);
 
         }

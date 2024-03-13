@@ -112,8 +112,8 @@ namespace Automobile
             Camiao veiculo15 = new Camiao("LM-23-NO", "Kawasaki Ninja 650", 100m, new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), "44000");
             Camioneta veiculo16 = new Camioneta("NO-45-PQ", "Toyota Land Cruiser", 500m, new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), 2, "5");
 
-            Carro veiculo17 = new Carro("OP-56-QR", "Renault Megane", 88.70m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(5)), 5, "manual");
-            Mota veiculo18 = new Mota("PQ-67-RS", "Suzuki V-Strom 650", 55.80m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(5)), 300);
+            Carro veiculo17 = new Carro("OP-56-QR", "Renault Megane", 88.70m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), 5, "manual");
+            Mota veiculo18 = new Mota("PQ-67-RS", "Suzuki V-Strom 650", 55.80m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), 300);
             Camiao veiculo19 = new Camiao("QR-78-ST", "Iveco Stralis", 150.99m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), "44000");
             Camioneta veiculo20 = new Camioneta("RS-89-TU", "Nissan Pathfinder", 500.99m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), 2, "5");
             Carro veiculo21 = new Carro("ST-90-UV", "Hyundai Elantra", 88.70m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), 5, "manual");
