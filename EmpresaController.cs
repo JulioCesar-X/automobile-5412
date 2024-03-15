@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Automobile
@@ -40,7 +41,7 @@ namespace Automobile
         {
             try
             {
-                Camiao camiao = new Camiao(veiculoMatricula, veiculoModelo, veiculoPreco, new Estado(Estado.Tipo.Disponivel,DataAtual.Date,DateTime.MaxValue), pesoMaximo);
+                Camiao camiao = new Camiao(veiculoMatricula, veiculoModelo, veiculoPreco, new Estado(Estado.Tipo.Disponivel, DataAtual.Date, DateTime.MaxValue), pesoMaximo);
                 Controlador.AdicionarVeiculo(camiao);
                 MessageBox.Show($"O veiculo \"{camiao.VeiculoModelo}\" com matricula \"{camiao.VeiculoMatricula}\" foi criado com sucesso!");
                 return true;
@@ -60,7 +61,7 @@ namespace Automobile
         {
             try
             {
-                Mota novaMota = new Mota(veiculoMatricula, veiculoModelo, veiculoPreco, new Estado(Estado.Tipo.Disponivel,DataAtual.Date,DateTime.MaxValue), cilindrada);
+                Mota novaMota = new Mota(veiculoMatricula, veiculoModelo, veiculoPreco, new Estado(Estado.Tipo.Disponivel, DataAtual.Date, DateTime.MaxValue), cilindrada);
                 Controlador.AdicionarVeiculo(novaMota);
                 MessageBox.Show($"O veiculo \"{novaMota.VeiculoModelo}\" com matricula \"{novaMota.VeiculoMatricula}\" foi criado com sucesso!");
 
@@ -78,7 +79,7 @@ namespace Automobile
         {
             try
             {
-                Carro novoCarro = new Carro(veiculoMatricula, veiculoModelo, veiculoPreco, new Estado(Estado.Tipo.Disponivel,DataAtual.Date,DateTime.MaxValue), numeroPortas, tipoCaixa);
+                Carro novoCarro = new Carro(veiculoMatricula, veiculoModelo, veiculoPreco, new Estado(Estado.Tipo.Disponivel, DataAtual.Date, DateTime.MaxValue), numeroPortas, tipoCaixa);
                 Controlador.AdicionarVeiculo(novoCarro);
                 MessageBox.Show($"O veiculo \"{novoCarro.VeiculoModelo}\" com matricula \"{novoCarro.VeiculoMatricula}\" foi criado com sucesso!");
                 return true;
@@ -104,7 +105,7 @@ namespace Automobile
         {
             try
             {
-                Camioneta novaCamioneta = new Camioneta(VeiculoMatricula, veiculoModelo, veiculoPreco, new Estado(Estado.Tipo.Disponivel,DataAtual.Date,DateTime.MaxValue), numeroEixos, numeroPassageiros);
+                Camioneta novaCamioneta = new Camioneta(VeiculoMatricula, veiculoModelo, veiculoPreco, new Estado(Estado.Tipo.Disponivel, DataAtual.Date, DateTime.MaxValue), numeroEixos, numeroPassageiros);
                 Controlador.AdicionarVeiculo(novaCamioneta);
                 MessageBox.Show($"O veiculo \"{novaCamioneta.VeiculoModelo}\" com matricula \"{novaCamioneta.VeiculoMatricula}\" foi criado com sucesso!");
                 return true;
@@ -127,7 +128,6 @@ namespace Automobile
             try
             {
                 Controlador.ValidarListaVeiculosDoTipo(tipo, status, DataAtual.Date);
-
                 return true;
 
             }
@@ -179,8 +179,7 @@ namespace Automobile
             {
 
                 Controlador.ValidarReserva(id, DataInicio, DataFim);
-                //veiculo.Reservar(inicio, fim);
-                //VeiculosReservados.Add(veiculo);
+
                 return true;
             }
             catch (ReservaException ex)
@@ -190,21 +189,6 @@ namespace Automobile
             }
 
         }
-
-        //public static bool SalvarDadosNoCsv(string folderPath, string nome)
-        //{
-        //    try
-        //    {
-        //        Controlador.SalvarDadosNoCsv(folderPath, nome);
-
-        //        return true;
-        //    }
-        //    catch (ArgumentException ex)
-        //    {
-        //        MessageBox.Show($"Erro: {ex.Message}");
-        //        return false;
-        //    }
-        //}
 
         public static bool GetListaVeciulosReservados(string tipo)
         {
@@ -216,6 +200,23 @@ namespace Automobile
             catch (ArgumentException ex)
             {
                 MessageBox.Show($"Erro: {ex.Message}");
+                return false;
+            }
+        }
+
+        public static bool ExportarParaCsv(string caminho)
+        {
+            string caminhoVeiculos = Path.Combine(caminho, $"Veiculos {DataAtual.ToString("_dd_MM_yyyy")}");
+            string caminhoUsers = Path.Combine(caminho, $"Users {DataAtual.ToString("_dd_MM_yyyy")}");
+            try
+            {
+                Controlador.ExportarParaCsv(caminho, caminhoVeiculos, caminhoUsers, DataAtual.Date);
+                MessageBox.Show("Dados salvos com sucesso em arquivos CSV.");
+                return true;
+
+            }
+            catch
+            {
                 return false;
             }
         }

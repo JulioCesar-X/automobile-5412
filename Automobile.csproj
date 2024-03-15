@@ -41,6 +41,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,6 +54,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EmpresaController.cs" />
+    <Compile Include="MensagemBoxPersonalizada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MensagemBoxPersonalizada.Designer.cs">
+      <DependentUpon>MensagemBoxPersonalizada.cs</DependentUpon>
+    </Compile>
     <Compile Include="Resources\ClassesModel\Estado.cs" />
     <Compile Include="FormAdicionarVeiculo.cs">
       <SubType>Form</SubType>
@@ -72,11 +79,11 @@
     <Compile Include="FormLoginSystem.Designer.cs">
       <DependentUpon>FormLoginSystem.cs</DependentUpon>
     </Compile>
-    <Compile Include="formManageFiles.cs">
+    <Compile Include="FormGerirDados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formManageFiles.Designer.cs">
-      <DependentUpon>formManageFiles.cs</DependentUpon>
+    <Compile Include="FormGerirDados.Designer.cs">
+      <DependentUpon>FormGerirDados.cs</DependentUpon>
     </Compile>
     <Compile Include="formManageReservations.cs">
       <SubType>Form</SubType>
@@ -133,8 +140,8 @@
     <EmbeddedResource Include="FormLoginSystem.resx">
       <DependentUpon>FormLoginSystem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formManageFiles.resx">
-      <DependentUpon>formManageFiles.cs</DependentUpon>
+    <EmbeddedResource Include="FormGerirDados.resx">
+      <DependentUpon>FormGerirDados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formManageReservations.resx">
       <DependentUpon>formManageReservations.cs</DependentUpon>
