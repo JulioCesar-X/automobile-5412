@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -7,8 +8,8 @@ namespace Automobile
     public partial class FormPainelControlo : Form
     {
 
-        private Veiculo veiculoEncontrado;
-        private object[] arrayListaSelecionadaCopia;
+        //private Veiculo veiculoEncontrado;
+        //private object[] arrayListaSelecionadaCopia;
         public FormPainelControlo()
         {
             InitializeComponent();
@@ -96,7 +97,7 @@ namespace Automobile
         {
             lb_title.Text = "Manage Files";
             this.PnlFormLoader.Controls.Clear();
-            FormManageFiles formManageFiles = new FormManageFiles() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            FormGerirDados formManageFiles = new FormGerirDados() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             formManageFiles.FormBorderStyle = FormBorderStyle.None;
             this.PnlFormLoader.Controls.Add(formManageFiles);
             formManageFiles.Show();
@@ -209,67 +210,80 @@ namespace Automobile
 
         private void AtualizarListasVeiculos()
         {
-            //veiculos Alugados, veiculos Reservados e EmManutencao
-            arrayListaSelecionadaCopia = EmpresaController.Controlador.VeiculosAlugados.ToArray();
-            AtualizarVeiculo();
-            arrayListaSelecionadaCopia = EmpresaController.Controlador.VeiculosReservados.ToArray();
-            AtualizarVeiculo();
-            arrayListaSelecionadaCopia = EmpresaController.Controlador.VeiculosEmManutencao.ToArray();
-            AtualizarVeiculo();
+            AtualizarVeiculo(EmpresaController.Controlador.VeiculosAlugados);
+            AtualizarVeiculo(EmpresaController.Controlador.VeiculosReservados, "Alugado");
+            AtualizarVeiculo(EmpresaController.Controlador.VeiculosEmManutencao);
         }
-        private void AtualizarVeiculo(string statusDestino = "Disponivel")
+
+        private void AtualizarVeiculo(List<object> listaRequerida, string statusDestino = "Disponivel")
         {
-            foreach (var objeto in arrayListaSelecionadaCopia)
+            foreach (var objeto in listaRequerida.ToArray())
             {
                 Veiculo veiculo = objeto as Veiculo;
 
-                if (veiculo != null)
+                if (veiculo != null && veiculo.VeiculoStatus.DataFim.Date == EmpresaController.DataAtual.Date)
                 {
-                    if (veiculo.VeiculoStatus.DataFim.Date == EmpresaController.DataAtual.Date)
+                    // Exibe um novo formulário de lista de veículos com os dados atualizados
+                    ExibirFormListaVeiculos(objeto.GetType().Name, veiculo.VeiculoStatus.Nome.ToString(), objeto);
+
+                    if (statusDestino == "Alugado" && MessageBox.Show("Deseja alugar o veículo?", "Confirmação de Aluguel", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
-                        string filtroTipoVeiculo = objeto.GetType().Name;
-                        string filtroStatusVeiculo = veiculo.VeiculoStatus.Nome.ToString();
-
-                        EmpresaController.Controlador.RemoveVeiculoDaLista(veiculo, veiculo.VeiculoStatus.Nome.ToString());
-
-                        this.PnlFormLoader.Controls.Clear();
-                        FormListaVeiculos formChangeVehicleStatus = new FormListaVeiculos(filtroTipoVeiculo, filtroStatusVeiculo, objeto) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-                        formChangeVehicleStatus.FormBorderStyle = FormBorderStyle.None;
-                        this.PnlFormLoader.Controls.Add(formChangeVehicleStatus);
-                        formChangeVehicleStatus.Show();
-
-
-
-                        if (statusDestino == "Disponivel")
-                        {
-                            veiculo.RetornarDisponivel(EmpresaController.DataAtual, DateTime.MaxValue);
-                        }
-                        else
-                        {
-                            SelecaoData formSelecaoData = new SelecaoData();
-                            formSelecaoData.StartPosition = FormStartPosition.CenterScreen;
-                            DialogResult caixa = formSelecaoData.ShowDialog();
-
-                            if (caixa == DialogResult.OK)
-                            {
-                                DateTime inicioAluguel = formSelecaoData.InicioSelecionado.Date;
-                                DateTime fimAluguel = formSelecaoData.FimSelecionado.Date;
-
-                                veiculo.Alugar(inicioAluguel, fimAluguel);
-                            }
-
-                        }
-
-                        EmpresaController.Controlador.AdicionarVeiculoNaLista(veiculo, statusDestino);
+                        ExibirFormSelecaoData(veiculo);
                     }
+
+                    RemoverVeiculoDaLista(veiculo, veiculo.VeiculoStatus.Nome.ToString());
+                    veiculo.RetornarDisponivel(EmpresaController.DataAtual, DateTime.MaxValue);
+
+                    AdicionarVeiculoNaLista(veiculo, statusDestino);
+
+
+
+
                 }
-
             }
+        }
 
-            arrayListaSelecionadaCopia = null;
+        private void RemoverVeiculoDaLista(Veiculo veiculo, string status)
+        {
+            EmpresaController.Controlador.RemoveVeiculoDaLista(veiculo, status);
+        }
+
+        private void AdicionarVeiculoNaLista(Veiculo veiculo, string novoStatus)
+        {
+            EmpresaController.Controlador.AdicionarVeiculoNaLista(veiculo, novoStatus);
+        }
+
+        private void ExibirFormListaVeiculos(string filtroTipoVeiculo, string filtroStatusVeiculo, object objeto)
+        {
+            this.PnlFormLoader.Controls.Clear();
+            // Cria uma instância do FormListaVeiculos
+            FormListaVeiculos formListaVeiculos = new FormListaVeiculos(filtroTipoVeiculo, filtroStatusVeiculo, objeto, PnlFormLoader);
+            // Define o formulário como filho do controle PnlFormLoader
+            formListaVeiculos.TopLevel = false;
+            formListaVeiculos.Dock = DockStyle.Fill;
+            PnlFormLoader.Controls.Add(formListaVeiculos);
+
+            // Exibe o formulário
+            formListaVeiculos.Show();
+
 
         }
 
+
+        private void ExibirFormSelecaoData(Veiculo veiculo)
+        {
+            SelecaoData formSelecaoData = new SelecaoData();
+            formSelecaoData.StartPosition = FormStartPosition.CenterScreen;
+            DialogResult caixa = formSelecaoData.ShowDialog();
+
+            if (caixa == DialogResult.OK)
+            {
+                DateTime inicioAluguel = formSelecaoData.InicioSelecionado.Date;
+                DateTime fimAluguel = formSelecaoData.FimSelecionado.Date;
+
+                veiculo.Alugar(inicioAluguel, fimAluguel);
+            }
+        }
 
 
         private void lb_date_Click(object sender, EventArgs e)

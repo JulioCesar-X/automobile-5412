@@ -70,6 +70,8 @@ namespace Automobile
             }
         }
 
+
+
         public string UserName
         {
             get
@@ -89,6 +91,8 @@ namespace Automobile
             Password = password;
             UserName = id + name;
         }
+
+
 
     }
 }

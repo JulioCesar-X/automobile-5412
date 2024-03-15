@@ -30,16 +30,39 @@ namespace Automobile
 
         }
 
-        public FormListaVeiculos(string filtroTipoVeiculo, string filtroStatusVeiculo, object objeto)
+        public FormListaVeiculos(string filtroTipoVeiculo, string filtroStatusVeiculo, object objeto, Panel pnlFormLoader)
         {
+
             InitializeComponent();
 
-            this.cb_filtrar.Text = filtroTipoVeiculo;
-            this.cb_status.Text = filtroStatusVeiculo;
-            this.PintarVeiculoFimLimite(objeto);
+            this.TopLevel = false;
+            this.Dock = DockStyle.Fill;
+            pnlFormLoader.Controls.Clear();
+            pnlFormLoader.Controls.Add(this);
+            this.Show();
+
+            lb_status.Visible = true;
+            cb_status.Visible = true;
+
+            cb_filtrar.Text = filtroTipoVeiculo;
+            cb_status.Text = filtroStatusVeiculo;
+
+            FormListaVeiculos_Load(objeto, EventArgs.Empty);
+            LimparCampos();
+
 
         }
+        private void FormListaVeiculos_Load(object sender, EventArgs e)
+        {
 
+            if (sender != null)
+            {
+
+                // Chamar o método PintarVeiculoFimLimite após a DataGridView ser carregada completamente
+                PintarVeiculoFimLimite(sender);
+
+            }
+        }
         private void ComboBoxFiltrar_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -123,9 +146,11 @@ namespace Automobile
 
         private void LimparCampos()
         {
-            dgv_veiculos.Rows.Clear();
+
             cb_status.SelectedItem = null;
+            cb_filtrar.SelectedItem = null;
             pb_list_veiculos.Visible = true;
+
 
         }
 
@@ -272,6 +297,8 @@ namespace Automobile
 
         private void PreencheListaDeVeiculosDoStatus(List<object> listaRequerida, string TipoVeiculo, string status)
         {
+            dgv_veiculos.Rows.Clear();
+
             switch (TipoVeiculo)
             {
                 case "Carro":
@@ -393,6 +420,7 @@ namespace Automobile
             }
 
             dgv_veiculos_.Columns.Add(cb_status2);
+
             dgv_veiculos_.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             dgv_veiculos_.EditingControlShowing += Dgv_veiculos_EditingControlShowing;
@@ -437,15 +465,41 @@ namespace Automobile
 
         public void PintarVeiculoFimLimite(object veiculo)
         {
-            foreach (Dat linha in dgv_veiculos.Columns)  //preciso resolver
+            dgv_veiculos.Update();
+            dgv_veiculos.Refresh();
+
+            if (veiculo is Veiculo)
             {
-                if (linha.Cells[0].Value != null &&
-                    linha.Cells[0].Value.ToString() == ((Veiculo)veiculo).VeiculoMatricula)
+                Veiculo veiculoSelecionado = (Veiculo)veiculo;
+
+                // Procurar pela linha correspondente ao veículo selecionado
+                foreach (DataGridViewRow linha in dgv_veiculos.Rows)
                 {
-                    CriarBordaVermelha(linha.Index);
+                    // Obtém o valor da célula na coluna 0 (primeira coluna) da linha atual
+                    string valorCelula = linha.Cells[0].Value?.ToString();
+
+                    // Verifica se o valor da célula é igual à matrícula do veículo
+                    if (valorCelula == veiculoSelecionado.VeiculoMatricula)
+                    {
+                        pb_list_veiculos.Visible = false;
+
+
+                        CriarBordaVermelha(linha.Index);
+                        MessageBox.Show("Veículo Selecionado: " + veiculoSelecionado.VeiculoMatricula, "Veículo Selecionado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Remove a marcação da linha
+                        RemoverBordaVermelha(linha.Index);
+                        break; // Sai do loop após encontrar a linha Sai do loop após encontrar a linha loop após encontrar a linha// Sai do loop após encontrar a linha
+                    }
                 }
             }
         }
+
+        private void RemoverBordaVermelha(int indexLinha)
+        {
+            dgv_veiculos.InvalidateRow(indexLinha);
+        }
+
         private void CriarBordaVermelha(int indexLinha)
         {
             Rectangle retanguloDalinha = dgv_veiculos.GetRowDisplayRectangle(indexLinha, false);
