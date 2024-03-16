@@ -190,7 +190,7 @@ namespace Automobile
             double precoHora = double.Parse(precoHoraString.Replace(" €", ""));
 
 
-            _intervalo = _dataFim - _dataInicio;
+
 
             double intervaloHoras = _intervalo.TotalHours;
 
@@ -219,7 +219,7 @@ namespace Automobile
         private void Bt_confirmar_Click(object sender, EventArgs e)
         {
 
-
+            _intervalo = _dataFim - _dataInicio;
 
             int minutos = (int)_intervalo.TotalMinutes;
 

@@ -11,10 +11,6 @@ namespace Automobile
     }
 
 
-
-
-    /*----- Personalização para exceptions especificas relacionadas aos veiculos ------*/
-
     //Para users
     public class UserDuplicadoException : EmpresaException
     {
@@ -24,21 +20,24 @@ namespace Automobile
         }
     }
 
-    public class IdUserException : EmpresaException
-    {
-        public IdUserException(string Id) : base($"O Id \"{Id}\" não pode ser atribuido ( tente semelhante a #000 ).")
-        {
+    //public class IdUserException : EmpresaException
+    //{
+    //    public IdUserException(string Id) : base($"O Id \"{Id}\" não pode ser atribuido ( tente semelhante a #000 ).")
+    //    {
 
-        }
-    }
+    //    }
+    //}
 
-    public class PasswordUserException : EmpresaException
-    {
-        public PasswordUserException(string password) : base($"A Password não pode superar 8 caracteres.")
-        {
+    //public class PasswordUserException : EmpresaException
+    //{
+    //    public PasswordUserException(string password) : base($"A Password não pode superar 8 caracteres.")
+    //    {
 
-        }
-    }
+    //    }
+    //}
+
+
+
 
 
 

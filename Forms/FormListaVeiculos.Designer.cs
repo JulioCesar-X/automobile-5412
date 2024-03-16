@@ -103,9 +103,9 @@
             this.pb_list_veiculos.BackColor = System.Drawing.Color.Transparent;
             this.pb_list_veiculos.BackgroundImage = global::Automobile.Properties.Resources.pngwing_com__40_;
             this.pb_list_veiculos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pb_list_veiculos.Location = new System.Drawing.Point(-2, 68);
+            this.pb_list_veiculos.Location = new System.Drawing.Point(-2, 83);
             this.pb_list_veiculos.Name = "pb_list_veiculos";
-            this.pb_list_veiculos.Size = new System.Drawing.Size(1212, 594);
+            this.pb_list_veiculos.Size = new System.Drawing.Size(1221, 600);
             this.pb_list_veiculos.TabIndex = 8;
             this.pb_list_veiculos.TabStop = false;
             // 
