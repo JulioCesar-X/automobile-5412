@@ -80,7 +80,7 @@ namespace Automobile
         }
         private void Btn_sistema_reserva_Click_1(object sender, EventArgs e)
         {
-            lb_title.Text = "Calculate Reserves";
+            lb_title.Text = "Manage Reservations";
             this.PnlFormLoader.Controls.Clear();
             FormSistemaReservas formSistemaReserva = new FormSistemaReservas
             {
@@ -96,7 +96,7 @@ namespace Automobile
 
         private void Btn_calcular_reserva_Click(object sender, EventArgs e)
         {
-            lb_title.Text = "Manage Reservations";
+            lb_title.Text = "Calculate Reserves";
             this.PnlFormLoader.Controls.Clear();
             FormCalcularReserva formCalcularReserva = new FormCalcularReserva
             {
@@ -244,10 +244,11 @@ namespace Automobile
                     {
                         ExibirFormSelecaoData(veiculo);
                     }
-
+                    else
+                    {
+                        veiculo.RetornarDisponivel(EmpresaController.DataAtual, DateTime.MaxValue);
+                    }
                     RemoverVeiculoDaLista(veiculo, veiculo.VeiculoStatus.Nome.ToString());
-                    veiculo.RetornarDisponivel(EmpresaController.DataAtual, DateTime.MaxValue);
-
                     AdicionarVeiculoNaLista(veiculo, statusDestino);
 
                 }
@@ -292,7 +293,6 @@ namespace Automobile
             {
                 DateTime inicioAluguel = formSelecaoData.InicioSelecionado.Date;
                 DateTime fimAluguel = formSelecaoData.FimSelecionado.Date;
-
                 veiculo.Alugar(inicioAluguel, fimAluguel);
             }
         }

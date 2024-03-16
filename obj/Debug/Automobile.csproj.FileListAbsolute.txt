@@ -4,7 +4,6 @@ C:\Users\julio\Desktop\projeto\automobile-5412\bin\Debug\Automobile.pdb
 C:\Users\julio\Desktop\projeto\automobile-5412\obj\Debug\Automobile.csproj.AssemblyReference.cache
 C:\Users\julio\Desktop\projeto\automobile-5412\obj\Debug\Automobile.FormAdicionarVeiculo.resources
 C:\Users\julio\Desktop\projeto\automobile-5412\obj\Debug\Automobile.FormListaVeiculos.resources
-C:\Users\julio\Desktop\projeto\automobile-5412\obj\Debug\Automobile.formVeiculosDisponiveisAlugar.resources
 C:\Users\julio\Desktop\projeto\automobile-5412\obj\Debug\Automobile.FormPainelControlo.resources
 C:\Users\julio\Desktop\projeto\automobile-5412\obj\Debug\Automobile.Properties.Resources.resources
 C:\Users\julio\Desktop\projeto\automobile-5412\obj\Debug\Automobile.csproj.GenerateResource.cache
