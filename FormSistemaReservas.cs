@@ -3,25 +3,20 @@ using System.Windows.Forms;
 
 namespace Automobile
 {
-    public partial class FormTimeSimulation : Form
+    public partial class FormSistemaReservas : Form
     {
-        private DateTime dataAtual;
+        private DateTime _dataAtual;
+        private DateTime _dataInicio;
+        private DateTime _dataFim;
 
-        private DateTime dataInicio;
-        private DateTime dataFim;
-
-        public FormTimeSimulation()
+        public FormSistemaReservas()
         {
             InitializeComponent();
 
-            dataAtual = DateTime.Today;
+            _dataAtual = EmpresaController.DataAtual.Date;
 
-
-            dateTimePickerInicio.MinDate = DateTime.Today;
-            dateTimePickerFim.MinDate = DateTime.Today;
-
-            dataInicio = dateTimePickerInicio.Value;
-            dataFim = dateTimePickerFim.Value;
+            dateTimePickerInicio.MinDate = _dataAtual;
+            dateTimePickerFim.MinDate = _dataAtual;
 
             dataGridViewVeiculosAlugados.Columns.Add("Matricula", "Matrícula");
             dataGridViewVeiculosAlugados.Columns.Add("Marca", "Marca");
@@ -37,49 +32,32 @@ namespace Automobile
 
         }
 
-        private void FormTimeSimulation_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-
-
-
-
         private void DateTimePickerInicio_ValueChanged(object sender, EventArgs e)
         {
-            dataInicio = dateTimePickerInicio.Value;
+            _dataInicio = dateTimePickerInicio.Value.Date;
         }
 
         private void DateTimePickerFim_ValueChanged(object sender, EventArgs e)
         {
-            dataFim = dateTimePickerFim.Value;
+            _dataFim = dateTimePickerFim.Value.Date;
             btnCalculate.Visible = true;
 
         }
 
-        private void DataGridViewVeiculosAlugados_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        //Aqui estamos apanhando apenas o tipo carro na simulação,se queremos mostrar todos reservados ou alugados na simulação de tempo,
-        //temos de criar um button filtro novamente ou TabControl para repetimos o processo de mostrar os veiculos de todos os tipos diferentes
         private void AdicionarListaVeiculosAlugados(string tipoVeiculo)
         {
             dataGridViewVeiculosAlugados.Rows.Clear();
-            foreach (var reserva in EmpresaController.Controlador.VeiculosReservados)
+
+            foreach (var alugado in EmpresaController.Controlador.VeiculosAlugados)
             {
-                if (reserva.GetType().Name == tipoVeiculo
-                    && ((Veiculo)reserva).VeiculoStatus.DataInicio.Date >= dateTimePickerInicio.Value.Date
-                    && ((Veiculo)reserva).VeiculoStatus.DataFim <= dateTimePickerFim.Value.Date)
+                if (alugado.GetType().Name == tipoVeiculo
+                    && ((Veiculo)alugado).VeiculoStatus.DataInicio.Date >= _dataInicio
+                    && ((Veiculo)alugado).VeiculoStatus.DataFim <= _dataFim)
                 {
                     switch (comboBoxTipoVeiculo.SelectedItem)
                     {
                         case "Carro":
-                            Carro carro = reserva as Carro;
+                            Carro carro = alugado as Carro;
                             dataGridViewVeiculosAlugados.Rows.Add(
                                            carro.VeiculoMatricula,
                                            carro.VeiculoModelo,
@@ -89,7 +67,7 @@ namespace Automobile
                             break;
 
                         case "Mota":
-                            Mota mota = reserva as Mota;
+                            Mota mota = alugado as Mota;
                             dataGridViewVeiculosAlugados.Rows.Add(
                                            mota.VeiculoMatricula,
                                            mota.VeiculoModelo,
@@ -99,7 +77,7 @@ namespace Automobile
                             break;
 
                         case "Camiao":
-                            Camiao camiao = reserva as Camiao;
+                            Camiao camiao = alugado as Camiao;
                             dataGridViewVeiculosAlugados.Rows.Add(
                                            camiao.VeiculoMatricula,
                                            camiao.VeiculoModelo,
@@ -109,7 +87,7 @@ namespace Automobile
                             break;
 
                         case "Camioneta":
-                            Camioneta camioneta = reserva as Camioneta;
+                            Camioneta camioneta = alugado as Camioneta;
                             dataGridViewVeiculosAlugados.Rows.Add(
                                            camioneta.VeiculoMatricula,
                                            camioneta.VeiculoModelo,
@@ -125,9 +103,8 @@ namespace Automobile
 
         }
 
-        private void comboBoxTipoVeiculo_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBoxTipoVeiculo_SelectedIndexChanged(object sender, EventArgs e)
         {
-
 
             switch (comboBoxTipoVeiculo.SelectedIndex)
             {
@@ -153,19 +130,18 @@ namespace Automobile
             }
         }
 
-        private void btnCalculate_Click(object sender, EventArgs e)
+        private void BtnCalculate_Click(object sender, EventArgs e)
         {
 
             decimal soma = 0;
-            foreach (var reserva in EmpresaController.Controlador.VeiculosReservados)
+            foreach (var alugado in EmpresaController.Controlador.VeiculosAlugados)
             {
-                Veiculo veiculo = (Veiculo)reserva;
+                Veiculo veiculo = (Veiculo)alugado;
 
 
-                if (veiculo.VeiculoStatus.DataInicio.Date >= dateTimePickerInicio.Value.Date &&
-                    veiculo.VeiculoStatus.DataFim <= dateTimePickerFim.Value.Date)
+                if (veiculo.VeiculoStatus.DataInicio.Date >= _dataInicio.Date && veiculo.VeiculoStatus.DataFim <= _dataFim.Date)
                 {
-                    soma += veiculo.VeiculoPreco;
+                    soma += decimal.Parse(veiculo.VeiculoPreco);
                 }
             }
 
@@ -174,24 +150,13 @@ namespace Automobile
             chb_ver_veiculos.Visible = true;
         }
 
-
-        private void lblPreco_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void chb_ver_veiculos_CheckedChanged(object sender, EventArgs e)
+        private void Chb_ver_veiculos_CheckedChanged(object sender, EventArgs e)
         {
             if (chb_ver_veiculos.Checked)
             {
                 comboBoxTipoVeiculo.Visible = true;
                 lb_filtro.Visible = true;
             }
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

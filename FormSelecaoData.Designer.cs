@@ -1,6 +1,6 @@
 ﻿namespace Automobile
 {
-    partial class SelecaoData
+    partial class FormSelecaoData
     {
         /// <summary>
         /// Required designer variable.

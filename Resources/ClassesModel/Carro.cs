@@ -2,10 +2,10 @@
 {
     public class Carro : Veiculo
     {
-        private int _numeroPortas;
+        private string _numeroPortas;
         private string _tipoCaixa;
 
-        public int NumeroPortas
+        public string NumeroPortas
         {
             get
             {
@@ -13,9 +13,11 @@
             }
             set
             {
-                if (value != 3 && value != 5)
+                if (!int.TryParse(value, out int numPortas) || numPortas != 3 && numPortas != 5)
                 {
+
                     throw new NumeroPortasInvalidoException(value);
+
                 }
                 else
                 {
@@ -44,7 +46,7 @@
             }
         }
 
-        public Carro(string veiculoMatricula, string veiculoModelo, decimal veiculoPreco, Estado veiculoStatus, int numeroPortas, string tipoCaixa) : base(veiculoMatricula, veiculoModelo, veiculoPreco, veiculoStatus)
+        public Carro(string veiculoMatricula, string veiculoModelo, string veiculoPreco, Estado veiculoStatus, string numeroPortas, string tipoCaixa) : base(veiculoMatricula, veiculoModelo, veiculoPreco, veiculoStatus)
         {
             NumeroPortas = numeroPortas;
             TipoCaixa = tipoCaixa;

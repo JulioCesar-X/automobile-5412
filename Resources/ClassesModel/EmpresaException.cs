@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Windows.Forms;
 
 namespace Automobile
 {
@@ -35,7 +34,7 @@ namespace Automobile
 
     public class PasswordUserException : EmpresaException
     {
-        public PasswordUserException(string password) : base($"A password deve ter no minimo 5 caracteres.")
+        public PasswordUserException(string password) : base($"A Password não pode superar 8 caracteres.")
         {
 
         }
@@ -47,9 +46,9 @@ namespace Automobile
 
     public class VeiculoDuplicadoException : EmpresaException
     {
-        public VeiculoDuplicadoException(string veiculoMatricula) : base($"Um veículo com a Matricula \"{veiculoMatricula}\" já existe na lista de veículos.")
+        public VeiculoDuplicadoException(string veiculoMatricula) : base($"Um veículo com a Matrícula \"{veiculoMatricula}\" já existe na lista de veículos.")
         {
-            
+
         }
     }
 
@@ -59,18 +58,13 @@ namespace Automobile
     //Para o camião
     public class PesoMaximoInvalidoException : EmpresaException
     {
-        public PesoMaximoInvalidoException(int PesoMaximo) : base($"O peso máximo suportado inválido: \"{PesoMaximo}\". Deve estar dentro do intervalo ( 1kg - 44000kg).")
+        public PesoMaximoInvalidoException(int PesoMaximo) : base($"O Peso máximo suportado inválido: \"{PesoMaximo}\". Deve estar dentro do intervalo ( 1kg - 44000kg).")
         {
 
         }
 
     }
 
-    public class TipoInvalidoException : EmpresaException
-    {
-        public TipoInvalidoException(string pesoMax):base($"O peso máximo não pode ser \"{pesoMax}\" ") { }
-
-    } 
 
 
 
@@ -79,14 +73,14 @@ namespace Automobile
     //Para o Carro
     public class NumeroPortasInvalidoException : EmpresaException
     {
-        public NumeroPortasInvalidoException(int numeroPortas) : base($"Número de portas inválido: \"{numeroPortas}\". Deve ser ( 3 ou 5 ).")
+        public NumeroPortasInvalidoException(string numeroPortas) : base($"Número de Portas inválido: \"{numeroPortas}\". Deve ser ( 3 ou 5 ).")
         {
 
         }
     }
     public class TipoCaixaInvalidoException : EmpresaException
     {
-        public TipoCaixaInvalidoException(string tipoCaixa) : base($"O tipo de caixa é inválido: \"{tipoCaixa}\". Deve ser ( manual ou automática ).")
+        public TipoCaixaInvalidoException(string tipoCaixa) : base($"O tipo de Caixa é inválido: \"{tipoCaixa}\". Deve ser ( manual ou automática ).")
         {
 
         }
@@ -98,7 +92,7 @@ namespace Automobile
     //Para Moto
     public class CilindradaInvalidaException : EmpresaException
     {
-        public CilindradaInvalidaException(int cilindrada) : base($"Cilindrada inválida: \"{cilindrada}\". Deve ser uma das opções válidas (50cc ,125cc ou 300cc).")
+        public CilindradaInvalidaException(string cilindrada) : base($"Cilindrada inválida: \"{cilindrada}\". Deve ser uma das opções válidas (50cc ,125cc ou 300cc).")
         {
 
         }
@@ -109,28 +103,28 @@ namespace Automobile
     //Para camioneta
     public class NumeroEixosInvalidoException : EmpresaException
     {
-        public NumeroEixosInvalidoException(int numeroEixos) : base($"Número de Eixos inválido: \"{numeroEixos}\". Deve ser ( 2 ou 3 ).")
+        public NumeroEixosInvalidoException(string numeroEixos) : base($"Número de Eixos inválido: \"{numeroEixos}\". Deve ser ( 2 ou 3 ).")
         {
 
         }
     }
     public class NumeroMaximoPassageirosInvalidoException : EmpresaException
     {
-        public NumeroMaximoPassageirosInvalidoException(int NumeroMaximoPassageiros) : base($"O Numero máximo de passageiros inválido: \"{NumeroMaximoPassageiros}\". Deve estar dentro do intervalo ( acima de zero ).")
+        public NumeroMaximoPassageirosInvalidoException(int NumeroMaximoPassageiros) : base($"O Numero máximo de Passageiros inválido: \"{NumeroMaximoPassageiros}\". Deve estar dentro do intervalo ( acima de zero ).")
         {
 
         }
     }
 
     //Para Reserva
-    public class ReservaException : EmpresaException 
+    public class ReservaException : EmpresaException
     {
-        public ReservaException(DateTime DataInicio) : base($"Data de Inicio inválida: \" {DataInicio}\".Pode reservar no dia atual ou depois.")
+        public ReservaException(DateTime DataInicio) : base($"Data de Inicio inválida: \" {DataInicio.Date.ToString()}\".Pode reservar no dia atual ou depois.")
         {
-            
+
         }
     }
 
-    
+
 
 }

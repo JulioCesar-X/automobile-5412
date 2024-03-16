@@ -49,6 +49,38 @@ namespace Automobile
             DataInicio = inicio.Date;
             DataFim = fim.Date;
         }
+        public Estado(string nome, DateTime inicio, DateTime fim)
+        {
+            switch (nome)
+            {
+                case "Disponivel":
+
+                    Nome = Tipo.Disponivel;
+                    break;
+
+                case "Alugado":
+
+                    Nome = Tipo.Alugado;
+                    break;
+
+                case "Reservado":
+
+                    Nome = Tipo.Reservado;
+                    break;
+
+                case "EmManutencao":
+
+                    Nome = Tipo.EmManutencao;
+                    break;
+
+                default:
+                    throw new ArgumentException("Status inválido");
+
+            }
+
+            DataInicio = inicio.Date;
+            DataFim = fim.Date;
+        }
 
 
     }

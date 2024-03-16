@@ -10,13 +10,10 @@ namespace Automobile
 
         private DateTime inicio;
         private DateTime fim;
-
         private List<object> listaSelecionada;
         private Veiculo veiculoSelecionado;
-
         private DataGridViewComboBoxColumn cb_status2;
         public static string TipoVeiculo { get; set; }
-
 
         public FormListaVeiculos()
         {
@@ -29,7 +26,6 @@ namespace Automobile
             cb_status.SelectedIndexChanged += Cb_status_SelectedIndexChanged;
 
         }
-
         public FormListaVeiculos(string filtroTipoVeiculo, string filtroStatusVeiculo, object objeto, Panel pnlFormLoader)
         {
 
@@ -52,20 +48,18 @@ namespace Automobile
 
 
         }
+
+
         private void FormListaVeiculos_Load(object sender, EventArgs e)
         {
-
             if (sender != null)
             {
-
                 // Chamar o método PintarVeiculoFimLimite após a DataGridView ser carregada completamente
                 PintarVeiculoFimLimite(sender);
-
             }
         }
         private void ComboBoxFiltrar_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             lb_status.Visible = true;
             cb_status.Visible = true;
             cb_status.SelectedItem = null;
@@ -106,8 +100,8 @@ namespace Automobile
                 if (EmpresaController.ValidarListaVeiculosDoTipo(TipoVeiculo, cb_status.SelectedItem.ToString()))
                 {
                     dgv_veiculos.Rows.Clear();
-                    var listaRequerida = new List<object>();
 
+                    List<object> listaRequerida;
                     switch (cb_status.SelectedIndex)
                     {
                         case 0:
@@ -143,29 +137,25 @@ namespace Automobile
 
 
         }
-
         private void LimparCampos()
         {
-
             cb_status.SelectedItem = null;
-            cb_filtrar.SelectedItem = null;
             pb_list_veiculos.Visible = true;
-
-
         }
-
         private void MudarEstadoVeiculo(string novoEstado)
         {
             if (Estado.Tipo.Disponivel.ToString() == novoEstado)
             {
                 veiculoSelecionado.RetornarDisponivel(EmpresaController.DataAtual, DateTime.MaxValue);
-
             }
             else if (Estado.Tipo.Alugado.ToString() == novoEstado)
             {
-                SelecaoData formSelecaoData = new SelecaoData();
-                formSelecaoData.StartPosition = FormStartPosition.CenterScreen;
+                FormSelecaoData formSelecaoData = new FormSelecaoData
+                {
+                    StartPosition = FormStartPosition.CenterScreen
+                };
                 DialogResult caixa = formSelecaoData.ShowDialog();
+
                 if (caixa == DialogResult.OK)
                 {
                     inicio = formSelecaoData.InicioSelecionado.Date;
@@ -174,13 +164,15 @@ namespace Automobile
                 }
 
                 veiculoSelecionado.Alugar(inicio, fim);
-
             }
             else if (Estado.Tipo.Reservado.ToString() == novoEstado)
             {
-                SelecaoData formSelecaoData = new SelecaoData();
-                formSelecaoData.StartPosition = FormStartPosition.CenterScreen;
+                FormSelecaoData formSelecaoData = new FormSelecaoData
+                {
+                    StartPosition = FormStartPosition.CenterScreen
+                };
                 DialogResult caixa = formSelecaoData.ShowDialog();
+
                 if (caixa == DialogResult.OK)
                 {
                     inicio = formSelecaoData.InicioSelecionado.Date;
@@ -192,20 +184,21 @@ namespace Automobile
             }
             else
             {
-                SelecaoData formSelecaoData = new SelecaoData();
-                formSelecaoData.StartPosition = FormStartPosition.CenterScreen;
+                FormSelecaoData formSelecaoData = new FormSelecaoData
+                {
+                    StartPosition = FormStartPosition.CenterScreen
+                };
                 DialogResult caixa = formSelecaoData.ShowDialog();
+
                 if (caixa == DialogResult.OK)
                 {
                     inicio = formSelecaoData.InicioSelecionado.Date;
                     fim = formSelecaoData.FimSelecionado.Date;
 
                 }
-
                 veiculoSelecionado.EmManutencao(inicio, fim);
             }
         }
-
         private void GetVeiculoDaLista(string id)
         {
             switch (cb_status.SelectedIndex)
@@ -294,7 +287,6 @@ namespace Automobile
                     break;
             }
         }
-
         private void PreencheListaDeVeiculosDoStatus(List<object> listaRequerida, string TipoVeiculo, string status)
         {
             dgv_veiculos.Rows.Clear();
@@ -319,7 +311,6 @@ namespace Automobile
                                     carro.TipoCaixa,
                                     carro.VeiculoPreco + " €",
                                     status
-
                                     );
                             }
                         }
@@ -409,9 +400,12 @@ namespace Automobile
                 dgv_veiculos_.Columns.Add(coluna, coluna);
             }
 
-            cb_status2 = new DataGridViewComboBoxColumn();
-            cb_status2.HeaderText = "Estado";
-            cb_status2.Name = "Estado";
+            cb_status2 = new DataGridViewComboBoxColumn
+            {
+                HeaderText = "Estado",
+                Name = "Estado"
+            };
+
             cb_status2.Items.AddRange("Disponivel", "Alugado", "Reservado", "EmManutencao");
 
             if (EmpresaController.userLogado != "#admin")
@@ -425,44 +419,47 @@ namespace Automobile
 
             dgv_veiculos_.EditingControlShowing += Dgv_veiculos_EditingControlShowing;
         }
-
         private void Dgv_veiculos_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
             var dgv = (DataGridView)sender;
-            var editingComboBox = e.Control as ComboBox;
+            ComboBox editarStatus = e.Control as ComboBox;
 
-            if (editingComboBox != null && dgv.CurrentCell is DataGridViewComboBoxCell comboBoxCell)
+            if (editarStatus != null && dgv.CurrentCell is DataGridViewComboBoxCell cb_status2)
             {
-                if (comboBoxCell.ColumnIndex == dgv.Columns["Estado"].Index)
+                if (cb_status2.ColumnIndex == dgv.Columns["Estado"].Index)
                 {
                     // Desabilita o evento SelectedIndexChanged
-                    editingComboBox.SelectedIndexChanged -= ComboBox_SelectedIndexChanged;
+                    editarStatus.SelectedIndexChanged -= ComboBox_SelectedIndexChanged;
 
                     // Habilita o evento SelectedIndexChanged apenas quando um item é selecionado
-                    editingComboBox.SelectedIndexChanged += ComboBox_SelectedIndexChanged;
+                    editarStatus.SelectedIndexChanged += ComboBox_SelectedIndexChanged;
                 }
             }
         }
-
         private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var comboBox = (ComboBox)sender;
-            var dgv = (DataGridView)cb_status2.DataGridView; // Acessa o DataGridView diretamente
-            var novoEstado = comboBox.SelectedItem.ToString();
+            var cb_status2 = (ComboBox)sender;
+
+            var dgv = (DataGridView)this.cb_status2.DataGridView; // Acessa o DataGridView diretamente
+
+            var novoEstado = cb_status2.SelectedItem.ToString();
+
             var id = dgv.CurrentRow.Cells[0].Value.ToString();
 
             // Desabilita novamente o evento SelectedIndexChanged
-            comboBox.SelectedIndexChanged -= ComboBox_SelectedIndexChanged;
+            cb_status2.SelectedIndexChanged -= ComboBox_SelectedIndexChanged;
 
-            // Realiza as alterações necessárias
+
             GetVeiculoDaLista(id);
-            MudarEstadoVeiculo(novoEstado);
-            RemoveVeiculoDaLista();
-            AdicionarVeiculoNaLista(novoEstado);
-            // Atualiza o estado selecionado no cb_status
-            cb_status.SelectedItem = novoEstado;
-        }
 
+            MudarEstadoVeiculo(novoEstado);
+
+            RemoveVeiculoDaLista();
+
+            AdicionarVeiculoNaLista(novoEstado);
+
+            cb_status.SelectedItem = novoEstado; //vai para o status destino
+        }
         public void PintarVeiculoFimLimite(object veiculo)
         {
             dgv_veiculos.Update();
@@ -472,43 +469,36 @@ namespace Automobile
             {
                 Veiculo veiculoSelecionado = (Veiculo)veiculo;
 
-                // Procurar pela linha correspondente ao veículo selecionado
                 foreach (DataGridViewRow linha in dgv_veiculos.Rows)
                 {
-                    // Obtém o valor da célula na coluna 0 (primeira coluna) da linha atual
                     string valorCelula = linha.Cells[0].Value?.ToString();
 
-                    // Verifica se o valor da célula é igual à matrícula do veículo
                     if (valorCelula == veiculoSelecionado.VeiculoMatricula)
                     {
                         pb_list_veiculos.Visible = false;
 
-
                         CriarBordaVermelha(linha.Index);
                         MessageBox.Show("Veículo Selecionado: " + veiculoSelecionado.VeiculoMatricula, "Veículo Selecionado", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        // Remove a marcação da linha
                         RemoverBordaVermelha(linha.Index);
-                        break; // Sai do loop após encontrar a linha Sai do loop após encontrar a linha loop após encontrar a linha// Sai do loop após encontrar a linha
+                        break;
                     }
                 }
             }
         }
-
         private void RemoverBordaVermelha(int indexLinha)
         {
             dgv_veiculos.InvalidateRow(indexLinha);
         }
-
         private void CriarBordaVermelha(int indexLinha)
         {
-            Rectangle retanguloDalinha = dgv_veiculos.GetRowDisplayRectangle(indexLinha, false);
+            Rectangle retanguloDaLinha = dgv_veiculos.GetRowDisplayRectangle(indexLinha, false);
 
             // Criar a borda vermelha
             Graphics g = dgv_veiculos.CreateGraphics();
             Pen pen = new Pen(Color.LightCoral, 5);
 
-            g.DrawRectangle(pen, retanguloDalinha);
+            g.DrawRectangle(pen, retanguloDaLinha);
 
             pen.Dispose();
             g.Dispose();
