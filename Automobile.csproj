@@ -55,111 +55,111 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EmpresaController.cs" />
-    <Compile Include="FormTratamentoErro.cs">
+    <Compile Include="Forms\FormTratamentoErro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTratamentoErro.Designer.cs">
+    <Compile Include="Forms\FormTratamentoErro.Designer.cs">
       <DependentUpon>FormTratamentoErro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Resources\ClassesModel\Estado.cs" />
-    <Compile Include="FormAdicionarVeiculo.cs">
+    <Compile Include="ClassesModel\Estado.cs" />
+    <Compile Include="Forms\FormAdicionarVeiculo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAdicionarVeiculo.Designer.cs">
+    <Compile Include="Forms\FormAdicionarVeiculo.Designer.cs">
       <DependentUpon>FormAdicionarVeiculo.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormListaVeiculos.cs">
+    <Compile Include="Forms\FormListaVeiculos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormListaVeiculos.Designer.cs">
+    <Compile Include="Forms\FormListaVeiculos.Designer.cs">
       <DependentUpon>FormListaVeiculos.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLoginSystem.cs">
+    <Compile Include="Forms\FormLoginSystem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLoginSystem.Designer.cs">
+    <Compile Include="Forms\FormLoginSystem.Designer.cs">
       <DependentUpon>FormLoginSystem.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormGerirDados.cs">
+    <Compile Include="Forms\FormGerirDados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormGerirDados.Designer.cs">
+    <Compile Include="Forms\FormGerirDados.Designer.cs">
       <DependentUpon>FormGerirDados.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCalcularReserva.cs">
+    <Compile Include="Forms\FormCalcularReserva.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCalcularReserva.Designer.cs">
+    <Compile Include="Forms\FormCalcularReserva.Designer.cs">
       <DependentUpon>FormCalcularReserva.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormGerirUsers.cs">
+    <Compile Include="Forms\FormGerirUsers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormGerirUsers.Designer.cs">
+    <Compile Include="Forms\FormGerirUsers.Designer.cs">
       <DependentUpon>FormGerirUsers.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormSistemaReservas.cs">
+    <Compile Include="Forms\FormSistemaReservas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSistemaReservas.Designer.cs">
+    <Compile Include="Forms\FormSistemaReservas.Designer.cs">
       <DependentUpon>FormSistemaReservas.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormGerirAluguer.cs">
+    <Compile Include="Forms\FormGerirAluguer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormGerirAluguer.Designer.cs">
+    <Compile Include="Forms\FormGerirAluguer.Designer.cs">
       <DependentUpon>FormGerirAluguer.cs</DependentUpon>
     </Compile>
-    <Compile Include="PainelControlo.cs">
+    <Compile Include="Forms\PainelControlo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PainelControlo.Designer.cs">
+    <Compile Include="Forms\PainelControlo.Designer.cs">
       <DependentUpon>PainelControlo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Forms\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\ClassesModel\Camiao.cs" />
-    <Compile Include="Resources\ClassesModel\Camioneta.cs" />
-    <Compile Include="Resources\ClassesModel\Carro.cs" />
+    <Compile Include="ClassesModel\Camiao.cs" />
+    <Compile Include="ClassesModel\Camioneta.cs" />
+    <Compile Include="ClassesModel\Carro.cs" />
     <Compile Include="EmpresaModel.cs" />
-    <Compile Include="Resources\ClassesModel\EmpresaException.cs" />
-    <Compile Include="Resources\ClassesModel\Mota.cs" />
-    <Compile Include="Resources\ClassesModel\User.cs" />
-    <Compile Include="Resources\ClassesModel\Veiculo.cs" />
-    <Compile Include="FormSelecaoData.cs">
+    <Compile Include="EmpresaException.cs" />
+    <Compile Include="ClassesModel\Mota.cs" />
+    <Compile Include="ClassesModel\User.cs" />
+    <Compile Include="ClassesModel\Veiculo.cs" />
+    <Compile Include="Forms\FormSelecaoData.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSelecaoData.Designer.cs">
+    <Compile Include="Forms\FormSelecaoData.Designer.cs">
       <DependentUpon>FormSelecaoData.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormAdicionarVeiculo.resx">
+    <EmbeddedResource Include="Forms\FormAdicionarVeiculo.resx">
       <DependentUpon>FormAdicionarVeiculo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormListaVeiculos.resx">
+    <EmbeddedResource Include="Forms\FormListaVeiculos.resx">
       <DependentUpon>FormListaVeiculos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLoginSystem.resx">
+    <EmbeddedResource Include="Forms\FormLoginSystem.resx">
       <DependentUpon>FormLoginSystem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormGerirDados.resx">
+    <EmbeddedResource Include="Forms\FormGerirDados.resx">
       <DependentUpon>FormGerirDados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCalcularReserva.resx">
+    <EmbeddedResource Include="Forms\FormCalcularReserva.resx">
       <DependentUpon>FormCalcularReserva.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormGerirUsers.resx">
+    <EmbeddedResource Include="Forms\FormGerirUsers.resx">
       <DependentUpon>FormGerirUsers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSistemaReservas.resx">
+    <EmbeddedResource Include="Forms\FormSistemaReservas.resx">
       <DependentUpon>FormSistemaReservas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTratamentoErro.resx">
+    <EmbeddedResource Include="Forms\FormTratamentoErro.resx">
       <DependentUpon>FormTratamentoErro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormGerirAluguer.resx">
+    <EmbeddedResource Include="Forms\FormGerirAluguer.resx">
       <DependentUpon>FormGerirAluguer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PainelControlo.resx">
+    <EmbeddedResource Include="Forms\PainelControlo.resx">
       <DependentUpon>PainelControlo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -172,7 +172,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="FormSelecaoData.resx">
+    <EmbeddedResource Include="Forms\FormSelecaoData.resx">
       <DependentUpon>FormSelecaoData.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\EmpresaController.datasource" />
