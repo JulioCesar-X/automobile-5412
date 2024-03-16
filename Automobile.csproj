@@ -39,6 +39,7 @@
     <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Security" />
@@ -54,11 +55,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EmpresaController.cs" />
-    <Compile Include="MensagemBoxPersonalizada.cs">
+    <Compile Include="FormTratamentoErro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MensagemBoxPersonalizada.Designer.cs">
-      <DependentUpon>MensagemBoxPersonalizada.cs</DependentUpon>
+    <Compile Include="FormTratamentoErro.Designer.cs">
+      <DependentUpon>FormTratamentoErro.cs</DependentUpon>
     </Compile>
     <Compile Include="Resources\ClassesModel\Estado.cs" />
     <Compile Include="FormAdicionarVeiculo.cs">
@@ -85,29 +86,29 @@
     <Compile Include="FormGerirDados.Designer.cs">
       <DependentUpon>FormGerirDados.cs</DependentUpon>
     </Compile>
-    <Compile Include="formManageReservations.cs">
+    <Compile Include="FormCalcularReserva.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formManageReservations.Designer.cs">
-      <DependentUpon>formManageReservations.cs</DependentUpon>
+    <Compile Include="FormCalcularReserva.Designer.cs">
+      <DependentUpon>FormCalcularReserva.cs</DependentUpon>
     </Compile>
-    <Compile Include="formManageUsers.cs">
+    <Compile Include="FormGerirUsers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formManageUsers.Designer.cs">
-      <DependentUpon>formManageUsers.cs</DependentUpon>
+    <Compile Include="FormGerirUsers.Designer.cs">
+      <DependentUpon>FormGerirUsers.cs</DependentUpon>
     </Compile>
-    <Compile Include="formTimeSimulation.cs">
+    <Compile Include="FormSistemaReservas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formTimeSimulation.Designer.cs">
-      <DependentUpon>formTimeSimulation.cs</DependentUpon>
+    <Compile Include="FormSistemaReservas.Designer.cs">
+      <DependentUpon>FormSistemaReservas.cs</DependentUpon>
     </Compile>
-    <Compile Include="formVeiculosDisponiveisAlugar.cs">
+    <Compile Include="FormGerirAluguer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formVeiculosDisponiveisAlugar.Designer.cs">
-      <DependentUpon>formVeiculosDisponiveisAlugar.cs</DependentUpon>
+    <Compile Include="FormGerirAluguer.Designer.cs">
+      <DependentUpon>FormGerirAluguer.cs</DependentUpon>
     </Compile>
     <Compile Include="PainelControlo.cs">
       <SubType>Form</SubType>
@@ -125,11 +126,11 @@
     <Compile Include="Resources\ClassesModel\Mota.cs" />
     <Compile Include="Resources\ClassesModel\User.cs" />
     <Compile Include="Resources\ClassesModel\Veiculo.cs" />
-    <Compile Include="SelecaoData.cs">
+    <Compile Include="FormSelecaoData.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SelecaoData.Designer.cs">
-      <DependentUpon>SelecaoData.cs</DependentUpon>
+    <Compile Include="FormSelecaoData.Designer.cs">
+      <DependentUpon>FormSelecaoData.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FormAdicionarVeiculo.resx">
       <DependentUpon>FormAdicionarVeiculo.cs</DependentUpon>
@@ -143,17 +144,20 @@
     <EmbeddedResource Include="FormGerirDados.resx">
       <DependentUpon>FormGerirDados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formManageReservations.resx">
-      <DependentUpon>formManageReservations.cs</DependentUpon>
+    <EmbeddedResource Include="FormCalcularReserva.resx">
+      <DependentUpon>FormCalcularReserva.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formManageUsers.resx">
-      <DependentUpon>formManageUsers.cs</DependentUpon>
+    <EmbeddedResource Include="FormGerirUsers.resx">
+      <DependentUpon>FormGerirUsers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formTimeSimulation.resx">
-      <DependentUpon>formTimeSimulation.cs</DependentUpon>
+    <EmbeddedResource Include="FormSistemaReservas.resx">
+      <DependentUpon>FormSistemaReservas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formVeiculosDisponiveisAlugar.resx">
-      <DependentUpon>formVeiculosDisponiveisAlugar.cs</DependentUpon>
+    <EmbeddedResource Include="FormTratamentoErro.resx">
+      <DependentUpon>FormTratamentoErro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGerirAluguer.resx">
+      <DependentUpon>FormGerirAluguer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PainelControlo.resx">
       <DependentUpon>PainelControlo.cs</DependentUpon>
@@ -168,8 +172,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SelecaoData.resx">
-      <DependentUpon>SelecaoData.cs</DependentUpon>
+    <EmbeddedResource Include="FormSelecaoData.resx">
+      <DependentUpon>FormSelecaoData.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\EmpresaController.datasource" />
     <None Include="Properties\Settings.settings">

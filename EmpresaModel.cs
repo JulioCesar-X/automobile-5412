@@ -19,9 +19,6 @@ namespace Automobile
 
 
 
-
-
-
         public EmpresaModel()
         {
 
@@ -35,9 +32,6 @@ namespace Automobile
             EmpresaController.DataAtual = DateTime.Today.Date;
 
         }
-
-
-
 
         public void AdicionarUser(User newUser)
         {
@@ -94,41 +88,41 @@ namespace Automobile
         private void CriarListaVeiculosDefault()
         {
 
-            Carro veiculo1 = new Carro("AA-01-BC", "Toyota Corolla", 90m, new Estado(Estado.Tipo.Disponivel, DateTime.Today.Date, DateTime.MaxValue), 5, "manual");
-            Mota veiculo2 = new Mota("AB-02-CD", "Honda CBR600RR", 45m, new Estado(Estado.Tipo.Disponivel, DateTime.Today.Date, DateTime.MaxValue), 300);
-            Camiao veiculo3 = new Camiao("AC-03-DE", "Volvo FH16", 175m, new Estado(Estado.Tipo.Disponivel, DateTime.Today.Date, DateTime.MaxValue), "44000");
-            Camioneta veiculo4 = new Camioneta("AD-04-EF", "Ford Explorer", 515m, new Estado(Estado.Tipo.Disponivel, DateTime.Today.Date, DateTime.MaxValue), 2, "5");
-            Carro veiculo5 = new Carro("BC-23-DE", "Volkswagen Golf", 45m, new Estado(Estado.Tipo.Disponivel, DateTime.Today.Date, DateTime.MaxValue), 5, "manual");
-            Mota veiculo6 = new Mota("DE-45-FG", "Harley-Davidson Sportster", 55.80m, new Estado(Estado.Tipo.Disponivel, DateTime.Today.Date, DateTime.MaxValue), 300);
-            Camiao veiculo7 = new Camiao("EF-56-GH", "Scania R500", 170m, new Estado(Estado.Tipo.Disponivel, DateTime.Today.Date, DateTime.MaxValue), "44000");
-            Camioneta veiculo8 = new Camioneta("5678-DEF", "Chevrolet Tahoe", 500.99m, new Estado(Estado.Tipo.Disponivel, DateTime.Today.Date, DateTime.MaxValue), 2, "5");
+            Carro veiculo1 = new Carro("AA-01-BC", "Toyota Corolla", "90", new Estado(Estado.Tipo.Disponivel, DateTime.Today.Date, DateTime.MaxValue), "5", "manual");
+            Mota veiculo2 = new Mota("AB-02-CD", "Honda CBR600RR", "45", new Estado(Estado.Tipo.Disponivel, DateTime.Today.Date, DateTime.MaxValue), "300");
+            Camiao veiculo3 = new Camiao("AC-03-DE", "Volvo FH16", "175", new Estado(Estado.Tipo.Disponivel, DateTime.Today.Date, DateTime.MaxValue), "44000");
+            Camioneta veiculo4 = new Camioneta("AD-04-EF", "Ford Explorer", "515", new Estado(Estado.Tipo.Disponivel, DateTime.Today.Date, DateTime.MaxValue), "2", "5");
+            Carro veiculo5 = new Carro("BC-23-DE", "Volkswagen Golf", "45", new Estado(Estado.Tipo.Disponivel, DateTime.Today.Date, DateTime.MaxValue), "5", "manual");
+            Mota veiculo6 = new Mota("DE-45-FG", "Harley-Davidson Sportster", "55.80", new Estado(Estado.Tipo.Disponivel, DateTime.Today.Date, DateTime.MaxValue), "300");
+            Camiao veiculo7 = new Camiao("EF-56-GH", "Scania R500", "170", new Estado(Estado.Tipo.Disponivel, DateTime.Today.Date, DateTime.MaxValue), "44000");
+            Camioneta veiculo8 = new Camioneta("5678-DEF", "Chevrolet Tahoe", "500.99", new Estado(Estado.Tipo.Disponivel, DateTime.Today.Date, DateTime.MaxValue), "2", "5");
 
-            Carro veiculo9 = new Carro("GH-78-IJ", "Mustang shelby GT350", 135m, new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), 5, "manual");
-            Mota veiculo10 = new Mota("HI-89-JK", "Yamaha MT-07", 55m, new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), 300);
-            Camiao veiculo11 = new Camiao("3456-JKL", "Mercedes-Benz Actros", 210m, new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), "44000");
-            Camioneta veiculo12 = new Camioneta("JK-01-LM", "Jeep Grand Cherokee", 500m, new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), 2, "5");
-            Carro veiculo13 = new Carro("KL-12-MN", "Fiat 500", 90m, new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), 5, "manual");
-            Mota veiculo14 = new Mota("LM-23-NO", "Kawasaki Ninja 650", 55m, new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), 300);
-            Camiao veiculo15 = new Camiao("LM-23-NO", "Kawasaki Ninja 650", 100m, new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), "44000");
-            Camioneta veiculo16 = new Camioneta("NO-45-PQ", "Toyota Land Cruiser", 500m, new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), 2, "5");
+            Carro veiculo9 = new Carro("GH-78-IJ", "Mustang shelby GT350", "135", new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), "5", "manual");
+            Mota veiculo10 = new Mota("HI-89-JK", "Yamaha MT-07", "55", new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), "300");
+            //Camiao veiculo11 = new Camiao("3456-JKL", "Mercedes-Benz Actros", "210", new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), "44000");
+            //Camioneta veiculo12 = new Camioneta("JK-01-LM", "Jeep Grand Cherokee", "500", new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), "2", "5");
+            //Carro veiculo13 = new Carro("KL-12-MN", "Fiat 500", "90", new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), "5", "manual");
+            //Mota veiculo14 = new Mota("LM-23-NO", "Kawasaki Ninja 650", "55", new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), "300");
+            //Camiao veiculo15 = new Camiao("LM-23-NO", "Kawasaki Ninja 650", "100", new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), "44000");
+            //Camioneta veiculo16 = new Camioneta("NO-45-PQ", "Toyota Land Cruiser", "500", new Estado(Estado.Tipo.Alugado, DateTime.Today, DateTime.Today.AddDays(1)), "2", "5");
 
-            Carro veiculo17 = new Carro("OP-56-QR", "Renault Megane", 88.70m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), 5, "manual");
-            Mota veiculo18 = new Mota("PQ-67-RS", "Suzuki V-Strom 650", 55.80m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), 300);
-            Camiao veiculo19 = new Camiao("QR-78-ST", "Iveco Stralis", 150.99m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), "44000");
-            Camioneta veiculo20 = new Camioneta("RS-89-TU", "Nissan Pathfinder", 500.99m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), 2, "5");
-            Carro veiculo21 = new Carro("ST-90-UV", "Hyundai Elantra", 88.70m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), 5, "manual");
-            Mota veiculo22 = new Mota("TU-01-VW", "Ducati Monster 821", 55m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), 300);
-            Camiao veiculo23 = new Camiao("UV-12-WX", "Kenworth W990", 150m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), "44000");
-            Camioneta veiculo24 = new Camioneta("VW-23-XY", "Subaru Outback", 500.99m, new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), 2, "5");
+            //Carro veiculo17 = new Carro("OP-56-QR", "Renault Megane", "88.70", new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), "5", "manual");
+            //Mota veiculo18 = new Mota("PQ-67-RS", "Suzuki V-Strom 650", "55.80", new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), "300");
+            //Camiao veiculo19 = new Camiao("QR-78-ST", "Iveco Stralis", "150.99", new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), "44000");
+            //Camioneta veiculo20 = new Camioneta("RS-89-TU", "Nissan Pathfinder", "500.99", new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), "2", "5");
+            //Carro veiculo21 = new Carro("ST-90-UV", "Hyundai Elantra", "88.70", new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), "5", "manual");
+            //Mota veiculo22 = new Mota("TU-01-VW", "Ducati Monster 821", "55", new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), "300");
+            //Camiao veiculo23 = new Camiao("UV-12-WX", "Kenworth W990", "150", new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), "44000");
+            //Camioneta veiculo24 = new Camioneta("VW-23-XY", "Subaru Outback", "500.99", new Estado(Estado.Tipo.Reservado, DateTime.Today, DateTime.Today.AddDays(1)), "2", "5");
 
-            Carro veiculo25 = new Carro("XYZ 123", "Chevrolet Camaro", 88.70m, new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), 5, "manual");
-            Mota veiculo26 = new Mota("CD-90-EF", "BMW S1000RR", 55.80m, new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), 300);
-            Camiao veiculo27 = new Camiao("DE-01-FG", "Peterbilt 389", 150m, new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), "44000");
-            Camioneta veiculo28 = new Camioneta("EF-12-GH", "Ford F-150", 500m, new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), 2, "5");
-            Carro veiculo29 = new Carro("9012-GHI", "Audi A3", 88.70m, new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), 5, "manual");
-            Mota veiculo30 = new Mota("HI-12-JK", "Triumph Bonneville", 55.50m, new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), 300);
-            Camiao veiculo31 = new Camiao("3456-JKL", "Freightliner Cascadia", 150m, new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), "44000");
-            Camioneta veiculo32 = new Camioneta("LM-678-MN", "Mitsubishi Outlander", 500m, new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), 2, "5");
+            Carro veiculo25 = new Carro("XYZ 123", "Chevrolet Camaro", "88.70", new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), "5", "manual");
+            Mota veiculo26 = new Mota("CD-90-EF", "BMW S1000RR", "55.80", new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), "300");
+            //Camiao veiculo27 = new Camiao("DE-01-FG", "Peterbilt 389", "150", new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), "44000");
+            //Camioneta veiculo28 = new Camioneta("EF-12-GH", "Ford F-150", "500", new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), "2", "5");
+            //Carro veiculo29 = new Carro("9012-GHI", "Audi A3", "88.70", new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), "5", "manual");
+            //Mota veiculo30 = new Mota("HI-12-JK", "Triumph Bonneville", "55.50", new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), "300");
+            //Camiao veiculo31 = new Camiao("3456-JKL", "Freightliner Cascadia", "150", new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), "44000");
+            //Camioneta veiculo32 = new Camioneta("LM-678-MN", "Mitsubishi Outlander", "500", new Estado(Estado.Tipo.EmManutencao, DateTime.Today, DateTime.Today.AddDays(1)), "2", "5");
 
 
             VeiculosDisponiveis.Add(veiculo1);
@@ -240,28 +234,6 @@ namespace Automobile
             }
         }
 
-
-
-        public void ValidarReserva(string matricula, DateTime inicio, DateTime fim)
-        {
-            Veiculo veiculo = (Veiculo)VeiculosReservados.Find(v => ((Veiculo)v).VeiculoMatricula == matricula);
-
-            if (veiculo != null)
-            {
-                if (inicio < veiculo.VeiculoStatus.DataFim)
-                {
-                    throw new ArgumentException($" O veiculo da matricula {matricula} na data {inicio} já está reservado");
-
-                }
-            }
-
-
-        }
-
-
-
-
-
         public List<object> GetListaVeciulosVeiculosReservadosDoTipo(string tipoRequerido)
         {
 
@@ -306,7 +278,7 @@ namespace Automobile
 
         public void ExportarParaCsv(string caminho, string caminhoVeiculos, string caminhoUsers, DateTime dataAtual)
         {
-            // Cria a pasta se ela não existir
+
             if (!Directory.Exists(caminho))
             {
                 Directory.CreateDirectory(caminho);
@@ -337,7 +309,7 @@ namespace Automobile
 
                     foreach (var tipo in new string[] { "Carro", "Mota", "Camioneta", "Camiao" })
                     {
-                        //Para cada tipo de objeto especificado vamos verificar  e criar o csv
+
                         try
                         {
                             if (ValidarListaVeiculosDoTipo(tipo, "Disponivel", dataAtual))
@@ -360,7 +332,7 @@ namespace Automobile
 
                     foreach (var tipo in new string[] { "Carro", "Mota", "Camioneta", "Camiao" })
                     {
-                        //Para cada tipo de objeto especificado vamos verificar  e criar o csv
+
                         try
                         {
                             if (ValidarListaVeiculosDoTipo(tipo, "Alugado", dataAtual))
@@ -383,7 +355,7 @@ namespace Automobile
 
                     foreach (var tipo in new string[] { "Carro", "Mota", "Camioneta", "Camiao" })
                     {
-                        //Para cada tipo de objeto especificado vamos verificar  e criar o csv
+
                         try
                         {
                             if (ValidarListaVeiculosDoTipo(tipo, "Reservado", dataAtual))
@@ -404,7 +376,7 @@ namespace Automobile
 
                     foreach (var tipo in new string[] { "Carro", "Mota", "Camioneta", "Camiao" })
                     {
-                        //Para cada tipo de objeto especificado vamos verificar  e criar o csv
+
                         try
                         {
                             if (ValidarListaVeiculosDoTipo(tipo, "EmManutencao", dataAtual))
@@ -553,10 +525,7 @@ namespace Automobile
             }
             finally
             {
-                if (Escritor != null)
-                {
-                    Escritor.Close();
-                }
+                Escritor?.Close();
             }
         }
 
@@ -573,7 +542,7 @@ namespace Automobile
                                $"{carro.NumeroPortas};" +
                                $"{carro.TipoCaixa};" +
                                $"{carro.VeiculoPreco} €;" +
-                               $"{carro.VeiculoStatus.Nome.ToString()}";
+                               $"{carro.VeiculoStatus.Nome}";
                     }
                     return "";
 
@@ -585,7 +554,7 @@ namespace Automobile
                                $"{mota.VeiculoModelo};" +
                                $"{mota.Cilindrada} cc;" +
                                $"{mota.VeiculoPreco} €;" +
-                               $"{mota.VeiculoStatus.Nome.ToString()}";
+                               $"{mota.VeiculoStatus.Nome}";
                     }
                     return "";
 
@@ -598,7 +567,7 @@ namespace Automobile
                                $"{camioneta.NumeroEixos};" +
                                $"{camioneta.NumeroPassageiros};" +
                                $"{camioneta.VeiculoPreco} €;" +
-                               $"{camioneta.VeiculoStatus.Nome.ToString()}";
+                               $"{camioneta.VeiculoStatus.Nome}";
                     }
                     return ""; ;
 
@@ -610,7 +579,7 @@ namespace Automobile
                                $"{camiao.VeiculoModelo};" +
                                $"{camiao.PesoMaximo} kg;" +
                                $"{camiao.VeiculoPreco} €;" +
-                               $"{camiao.VeiculoStatus.Nome.ToString()}";
+                               $"{camiao.VeiculoStatus.Nome}";
                     }
                     return "";
 
@@ -692,43 +661,41 @@ namespace Automobile
             //[ carro , mota, camiao]
             {
                 throw new VeiculoDuplicadoException(matriculaRequerida);
-            }               //ArgumentException()
+            }
 
             VeiculosReservados.Add(objeto);
         }
 
         private string EncripitarSenha(string senha)
         {
-            // Variável para armazenar a senha criptografada
+
             StringBuilder senhaCriptografada = new StringBuilder();
 
-            // Loop através de cada caractere da senha
+
             foreach (char caractere in senha)
             {
-                // Verifica se o caractere é uma letra
+
                 if (char.IsLetter(caractere))
                 {
-                    // Verifica se o caractere é maiúsculo ou minúsculo
+
                     char inicio = char.IsUpper(caractere) ? 'A' : 'a';
-                    // Aplica a cifra de César ao caractere
+
                     char caractereCriptografado = (char)(((caractere + 1 - inicio) % 26) + inicio);
-                    // Adiciona o caractere criptografado à senha criptografada
+
                     senhaCriptografada.Append(caractereCriptografado);
                 }
                 else
                 {
-                    // Se não for uma letra, adiciona o caractere original à senha criptografada
+
                     senhaCriptografada.Append(caractere);
                 }
             }
-            //Converte a senha criptografada em um array de caracteres e inverte a ordem dos caracteres
+
             char[] senhaInversa = senhaCriptografada.ToString().ToCharArray();
             Array.Reverse(senhaInversa);
 
-            // Converte o array de caracteres novamente em uma string
             string senhaEncriptada = new string(senhaInversa);
 
-            // Retorna a senha criptografada
             return senhaEncriptada;
         }
 
@@ -791,40 +758,33 @@ namespace Automobile
             }
         }
 
+        public void ValidarReserva(string matricula, DateTime inicio)
+        {
+            Veiculo veiculo = (Veiculo)VeiculosReservados.Find(v => ((Veiculo)v).VeiculoMatricula == matricula);
+
+            if (veiculo != null)
+            {
+                if (inicio.Date < veiculo.VeiculoStatus.DataFim.Date)
+                {
+                    throw new ArgumentException($" O veiculo da matricula {matricula} na data {inicio} já está reservado");
+
+                }
+            }
 
 
-        //public void CarregarDadosDoCsv(string folderPath, string nomeLista)
-        //{
-        //    // Simulando uma exceção caso o arquivo CSV não exista
-        //    if (!File.Exists(Path.Combine(folderPath, GetCaminhoPeloNomeDaLista(nomeLista))))
-        //    {
-        //        throw new FileNotFoundException("Arquivo CSV não encontrado.");
-        //    }
+        }
+        public void ValidarAluguer(string matricula, DateTime dataInicio)
+        {
+            Veiculo veiculo = (Veiculo)VeiculosAlugados.Find(v => ((Veiculo)v).VeiculoMatricula == matricula);
 
-        //    StreamReader leitor = null;
-        //    try
-        //    {
-        //        leitor = new StreamReader(Path.Combine(folderPath, GetCaminhoPeloNomeDaLista(nomeLista)));
-
-        //        string linha;
-        //        while ((linha = leitor.ReadLine()) != null)
-        //        {
-        //            // Processar cada linha do arquivo CSV
-        //            // Por exemplo, você pode converter a linha de volta para o objeto e adicioná-lo à tipo.
-        //        }
-        //    }
-        //    catch (IOException ex)
-        //    {
-        //        throw new IOException("Erro de E/S ao carregar dados: " + ex.Message);
-        //    }
-        //    finally
-        //    {
-        //        if (leitor != null)
-        //        {
-        //            leitor.Close();
-        //        }
-        //    }
-        //}  // ainda estou  refatorando
+            if (veiculo != null)
+            {
+                if (dataInicio.Date < veiculo.VeiculoStatus.DataFim.Date)
+                {
+                    throw new ArgumentException($" O veiculo da matricula {matricula} na data {dataInicio.Date} já está Alugado");
+                }
+            }
+        }
     }
 
 }

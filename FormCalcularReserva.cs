@@ -3,11 +3,9 @@ using System.Windows.Forms;
 
 namespace Automobile
 {
-    public partial class FormManageReservations : Form
+    public partial class FormCalcularReserva : Form
     {
-        //private string tipoVeiculoSelecionado;
-
-        public FormManageReservations()
+        public FormCalcularReserva()
         {
             InitializeComponent();
             LimparCampos();
@@ -16,22 +14,21 @@ namespace Automobile
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+            pb_reservations.Visible = false;
+            lb_veiculos_disponiveis.Visible = true;
+
             switch (cb_filtro.SelectedIndex)
             {
                 case 0:
 
                     lb_veiculos_disponiveis.Text = "Carros Disponiveis";
 
-                    AdicionarColunas(dgv_veiculos_disponiveis, "Carro", new string[] { "Matrícula", "Modelo", "Nº Portas", "Tipo de Caixa", "Preço /h" });
+                    AdicionarColunas(dgv_veiculos_disponiveis, new string[] { "Matrícula", "Modelo", "Nº Portas", "Tipo de Caixa", "Preço /h" });
 
                     foreach (var veiculo in EmpresaController.Controlador.VeiculosDisponiveis)
                     {
-
-
-
                         Carro carro = veiculo as Carro;
-
-
                         if (carro != null)
                         {
                             dgv_veiculos_disponiveis.Rows.Add(
@@ -50,7 +47,7 @@ namespace Automobile
 
                     lb_veiculos_disponiveis.Text = "Motas Disponiveis";
 
-                    AdicionarColunas(dgv_veiculos_disponiveis, "Mota", new string[] { "Matrícula", "Modelo", "Cilindrada", "Preço /h" });
+                    AdicionarColunas(dgv_veiculos_disponiveis, new string[] { "Matrícula", "Modelo", "Cilindrada", "Preço /h" });
 
                     foreach (var veiculo in EmpresaController.Controlador.VeiculosDisponiveis)
                     {
@@ -71,7 +68,7 @@ namespace Automobile
 
                     lb_veiculos_disponiveis.Text = "Camionetas Disponiveis";
 
-                    AdicionarColunas(dgv_veiculos_disponiveis, "Camioneta", new string[] { "Matrícula", "Modelo", "Nº de Eixos", "Nº Máx. Passageiros", "Preço /h" });
+                    AdicionarColunas(dgv_veiculos_disponiveis, new string[] { "Matrícula", "Modelo", "Nº de Eixos", "Nº Máx. Passageiros", "Preço /h" });
 
 
                     foreach (var veiculo in EmpresaController.Controlador.VeiculosDisponiveis)
@@ -94,7 +91,7 @@ namespace Automobile
 
                     lb_veiculos_disponiveis.Text = "Camiões Disponiveis";
 
-                    AdicionarColunas(dgv_veiculos_disponiveis, "Camiao", new string[] { "Matrícula", "Modelo", "Peso Máx. Suportado", "Preço /h" });
+                    AdicionarColunas(dgv_veiculos_disponiveis, new string[] { "Matrícula", "Modelo", "Peso Máx. Suportado", "Preço /h" });
 
 
                     foreach (var veiculo in EmpresaController.Controlador.VeiculosDisponiveis)
@@ -114,37 +111,25 @@ namespace Automobile
             }
         }
 
-
-
-
-
         private string FormatarIntervaloTempo(TimeSpan intervalo)
         {
-
             // Formata o intervalo de tempo no formato 'hh:mm'
             return $"{(int)intervalo.TotalHours:D2}:{intervalo.Minutes:D2}";
 
         }
 
-
-
-
-
-
-
-        private void AdicionarColunas(DataGridView dgv_veiculos_, string tipoVeiculo, string[] colunas)
+        private void AdicionarColunas(DataGridView dgv_veiculos_, string[] colunas)
         {
-            //limpamos a dgv anterior
+
             dgv_veiculos_.Columns.Clear();
 
-            //add as colunas especificas para a grid dgv_veiculos_
+
             foreach (var coluna in colunas)
             {
-                //add coluna name
+
                 dgv_veiculos_.Columns.Add(coluna, coluna);
             }
 
-            //completar os espaços vazios na grid
             dgv_veiculos_.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
         }
@@ -153,21 +138,19 @@ namespace Automobile
         {
             pb_reservations.Visible = true;
 
-            // Verifica se um veículo está selecionado na DataGridView
             if (tb_matricula.Text != null)
             {
 
-                // Procura o veículo na lista de veículos disponíveis
                 object veiculoSelecionado = EmpresaController.Controlador.GetVeiculo(tb_matricula.Text, EmpresaController.Controlador.VeiculosDisponiveis);
 
                 if (veiculoSelecionado != null)
                 {
                     Veiculo veiculo = veiculoSelecionado as Veiculo;
 
-                    // Adiciona a reserva para o veículo
+
                     veiculo.VeiculoStatus.DataInicio = dateTimePickerInicio.Value;
                     veiculo.VeiculoStatus.DataFim = dateTimePickerFim.Value;
-                    EmpresaController.Controlador.ValidarReserva(tb_matricula.Text, veiculo.VeiculoStatus.DataInicio, veiculo.VeiculoStatus.DataFim);
+                    EmpresaController.Controlador.ValidarReserva(tb_matricula.Text, veiculo.VeiculoStatus.DataInicio);
 
                     veiculo.Reservar(dateTimePickerInicio.Value, dateTimePickerFim.Value);
                     EmpresaController.Controlador.AdicionarVeiculoReservado(veiculo);
@@ -176,7 +159,6 @@ namespace Automobile
                     // Atualiza a DataGridView
                     ComboBox1_SelectedIndexChanged(null, null);
 
-                    // Mostra uma mensagem de sucesso
                     MessageBox.Show("Reserva criada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -195,16 +177,11 @@ namespace Automobile
 
         }
 
-        private void date_time_dias_ValueChanged(object sender, EventArgs e)
+        private void Date_time_dias_ValueChanged(object sender, EventArgs e)
         {
             cb_filtro.SelectedItem = null;
             lb_preco_total.Visible = false;
             btn_criar_reserva.Visible = false;
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Bt_calcular_valor_a_pagar_Click(object sender, EventArgs e)
@@ -217,29 +194,19 @@ namespace Automobile
             string precoHoraString = dgv_veiculos_disponiveis.CurrentRow.Cells["Preço /h"].Value.ToString();
             double precoHora = double.Parse(precoHoraString.Replace(" €", ""));
 
-            DateTime horaInicio = dateTimePickerInicio.Value;
-            DateTime horaFim = dateTimePickerFim.Value;
+            DateTime horaInicio = dateTimePickerInicio.Value.Date;
+            DateTime horaFim = dateTimePickerFim.Value.Date;
             TimeSpan intervalo = horaFim - horaInicio;
 
             double intervaloHoras = intervalo.TotalHours;
 
             double valorAluguer = intervaloHoras * precoHora;
 
-            lblPrecoFinal.Text = $"{valorAluguer.ToString("0.00")} €";
+            lblPrecoFinal.Text = $"{valorAluguer:0.00} €";
             lblMatriculaEscolhida.Text = $"{tb_matricula.Text}";
-
+            lb_matricula_r.Visible = true;
             lblMatriculaEscolhida.Visible = true;
             lblPrecoFinal.Visible = true;
-        }
-
-        private void dateTimePickerInicio_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tb_matricula_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void CellClick(object sender, DataGridViewCellEventArgs e)
@@ -263,7 +230,6 @@ namespace Automobile
             {
                 string intervaloDeTempo = FormatarIntervaloTempo(intervalo);
                 tb_valorfinaltempo.Text = intervaloDeTempo.ToString();
-                pb_reservations.Visible = false;
 
             }
             else
@@ -278,11 +244,11 @@ namespace Automobile
             tb_matricula.Clear();
             lblPrecoFinal.Text = string.Empty;
             lblMatriculaEscolhida.Text = string.Empty;
-
+            lb_veiculos_disponiveis.Visible = false;
             lb_preco_total.Visible = false;
             lb_matricula_r.Visible = false;
             btn_criar_reserva.Visible = false;
-            btn_criar_reserva.Visible = false;
+
             pb_reservations.Visible = true;
 
         }

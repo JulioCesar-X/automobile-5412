@@ -1,6 +1,6 @@
 ﻿namespace Automobile
 {
-    partial class FormManageReservations
+    partial class FormCalcularReserva
     {
         /// <summary>
         /// Required designer variable.
@@ -94,7 +94,6 @@
             this.tb_matricula.Name = "tb_matricula";
             this.tb_matricula.Size = new System.Drawing.Size(205, 26);
             this.tb_matricula.TabIndex = 26;
-            this.tb_matricula.TextChanged += new System.EventHandler(this.tb_matricula_TextChanged);
             // 
             // bt_calcular_valor_a_pagar
             // 
@@ -167,7 +166,7 @@
             this.btn_criar_reserva.FlatAppearance.BorderSize = 5;
             this.btn_criar_reserva.Font = new System.Drawing.Font("Bauhaus 93", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_criar_reserva.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_criar_reserva.Location = new System.Drawing.Point(70, 513);
+            this.btn_criar_reserva.Location = new System.Drawing.Point(78, 473);
             this.btn_criar_reserva.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_criar_reserva.Name = "btn_criar_reserva";
             this.btn_criar_reserva.Size = new System.Drawing.Size(162, 77);
@@ -205,7 +204,6 @@
             this.dateTimePickerInicio.Name = "dateTimePickerInicio";
             this.dateTimePickerInicio.Size = new System.Drawing.Size(252, 26);
             this.dateTimePickerInicio.TabIndex = 46;
-            this.dateTimePickerInicio.ValueChanged += new System.EventHandler(this.dateTimePickerInicio_ValueChanged);
             // 
             // dateTimePickerFim
             // 
@@ -265,13 +263,13 @@
             this.pb_reservations.BackColor = System.Drawing.Color.Transparent;
             this.pb_reservations.BackgroundImage = global::Automobile.Properties.Resources.pngwing_com__36_;
             this.pb_reservations.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pb_reservations.Location = new System.Drawing.Point(300, 43);
+            this.pb_reservations.Location = new System.Drawing.Point(300, 88);
             this.pb_reservations.Name = "pb_reservations";
-            this.pb_reservations.Size = new System.Drawing.Size(866, 595);
+            this.pb_reservations.Size = new System.Drawing.Size(866, 598);
             this.pb_reservations.TabIndex = 51;
             this.pb_reservations.TabStop = false;
             // 
-            // FormManageReservations
+            // FormCalcularReserva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -299,7 +297,7 @@
             this.Controls.Add(this.label10);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "FormManageReservations";
+            this.Name = "FormCalcularReserva";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formManageReservations";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_veiculos_disponiveis)).EndInit();

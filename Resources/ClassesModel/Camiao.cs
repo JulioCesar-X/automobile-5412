@@ -11,6 +11,11 @@
             }
             set
             {
+                if (value.Contains("kg"))
+                {
+                    string[] aux = value.Split('k');
+                    value = aux[0].Trim();
+                }
 
                 if (!int.TryParse(value, out int pesoMax) || pesoMax <= 0 || pesoMax > 44000)
                 {
@@ -28,7 +33,7 @@
 
         }
 
-        public Camiao(string veiculoMatricula, string veiculoModelo, decimal veiculoPreco, Estado veiculoStatus, string pesoMaximo) : base(veiculoMatricula, veiculoModelo, veiculoPreco, veiculoStatus)
+        public Camiao(string veiculoMatricula, string veiculoModelo, string veiculoPreco, Estado veiculoStatus, string pesoMaximo) : base(veiculoMatricula, veiculoModelo, veiculoPreco, veiculoStatus)
         {
 
             PesoMaximo = pesoMaximo;

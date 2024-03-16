@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace Automobile
 {
@@ -6,7 +7,7 @@ namespace Automobile
     {
         private string _veiculoMatricula;
         private string _veiculoModelo;
-        private decimal _veiculoPreco;
+        private string _veiculoPreco;
 
         public string VeiculoMatricula
         {
@@ -17,8 +18,6 @@ namespace Automobile
             }
             set
             {
-
-                //TODO: Checar na empresa se ja tem algum veiculo com esse id registrado antes de trocar
                 _veiculoMatricula = value;
             }
 
@@ -37,7 +36,7 @@ namespace Automobile
             }
 
         }
-        public decimal VeiculoPreco
+        public string VeiculoPreco
         {
 
             get
@@ -47,8 +46,18 @@ namespace Automobile
 
             set
             {
+                if (value.Contains("€"))
+                {
+                    string[] precoE = value.Split('€');
+                    value = precoE[0].Trim();
 
-                //TODO: Validar se o preço inserido é superior a zero e se não é letra
+                }
+
+                CultureInfo culture = CultureInfo.InvariantCulture;
+                if (!decimal.TryParse(value, NumberStyles.AllowDecimalPoint, culture, out decimal preco) || preco <= 0)
+                {
+                    throw new ArgumentException("preço invalido!");
+                }
                 _veiculoPreco = value;
 
             }
@@ -57,7 +66,7 @@ namespace Automobile
         }
         public Estado VeiculoStatus { get; set; }
 
-        public Veiculo(string veiculoMatricula, string veiculoModelo, decimal veiculoPreco, Estado veiculoStatus)
+        public Veiculo(string veiculoMatricula, string veiculoModelo, string veiculoPreco, Estado veiculoStatus)
         {
             VeiculoMatricula = veiculoMatricula;
             VeiculoModelo = veiculoModelo;

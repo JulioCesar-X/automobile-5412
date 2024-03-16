@@ -46,6 +46,7 @@
             // 
             // btn_open_file_explorer
             // 
+            this.btn_open_file_explorer.BackColor = System.Drawing.Color.White;
             this.btn_open_file_explorer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_open_file_explorer.Location = new System.Drawing.Point(774, 129);
             this.btn_open_file_explorer.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -53,7 +54,7 @@
             this.btn_open_file_explorer.Size = new System.Drawing.Size(87, 35);
             this.btn_open_file_explorer.TabIndex = 0;
             this.btn_open_file_explorer.Text = "Open";
-            this.btn_open_file_explorer.UseVisualStyleBackColor = true;
+            this.btn_open_file_explorer.UseVisualStyleBackColor = false;
             this.btn_open_file_explorer.Click += new System.EventHandler(this.Btn_open_file_explorer_Click);
             // 
             // label1
@@ -76,14 +77,16 @@
             // 
             // btn_export
             // 
-            this.btn_export.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_export.Location = new System.Drawing.Point(542, 198);
+            this.btn_export.BackColor = System.Drawing.Color.Black;
+            this.btn_export.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_export.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_export.Location = new System.Drawing.Point(518, 194);
             this.btn_export.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btn_export.Name = "btn_export";
-            this.btn_export.Size = new System.Drawing.Size(94, 35);
+            this.btn_export.Size = new System.Drawing.Size(118, 45);
             this.btn_export.TabIndex = 4;
             this.btn_export.Text = "Export";
-            this.btn_export.UseVisualStyleBackColor = true;
+            this.btn_export.UseVisualStyleBackColor = false;
             this.btn_export.Click += new System.EventHandler(this.Btn_export_Click);
             // 
             // panel2
@@ -109,14 +112,16 @@
             // 
             // btn_import
             // 
-            this.btn_import.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_import.Location = new System.Drawing.Point(542, 529);
+            this.btn_import.BackColor = System.Drawing.Color.Black;
+            this.btn_import.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_import.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_import.Location = new System.Drawing.Point(518, 526);
             this.btn_import.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btn_import.Name = "btn_import";
-            this.btn_import.Size = new System.Drawing.Size(94, 35);
+            this.btn_import.Size = new System.Drawing.Size(118, 44);
             this.btn_import.TabIndex = 9;
             this.btn_import.Text = "Import";
-            this.btn_import.UseVisualStyleBackColor = true;
+            this.btn_import.UseVisualStyleBackColor = false;
             this.btn_import.Click += new System.EventHandler(this.Btn_import_Click);
             // 
             // tb_path_import
@@ -139,6 +144,7 @@
             // 
             // btn_open_import
             // 
+            this.btn_open_import.BackColor = System.Drawing.Color.White;
             this.btn_open_import.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_open_import.Location = new System.Drawing.Point(782, 460);
             this.btn_open_import.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -146,7 +152,7 @@
             this.btn_open_import.Size = new System.Drawing.Size(87, 35);
             this.btn_open_import.TabIndex = 6;
             this.btn_open_import.Text = "Open";
-            this.btn_open_import.UseVisualStyleBackColor = true;
+            this.btn_open_import.UseVisualStyleBackColor = false;
             this.btn_open_import.Click += new System.EventHandler(this.Btn_open_import_Click);
             // 
             // panel1

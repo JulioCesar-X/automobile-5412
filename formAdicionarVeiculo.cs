@@ -11,7 +11,6 @@ namespace Automobile
         private string _matricula;
         private string _preco;
 
-
         private bool CamposVeiculosPreenchidos
         {
             get
@@ -70,8 +69,6 @@ namespace Automobile
             }
         }
 
-
-
         public FormAdicionarVeiculo()
         {
             InitializeComponent();
@@ -80,8 +77,6 @@ namespace Automobile
             lb_matricula.Visible = false;
             tb_id_matricula.Visible = false;
             tb_modelo_marca.Visible = false;
-
-
 
         }
 
@@ -102,7 +97,6 @@ namespace Automobile
         private void PintarBordaVermelho()
         {
 
-            //campos comuns 
             if (string.IsNullOrEmpty(_matricula))
             {
                 CriarBordaVermelha(tb_id_matricula);
@@ -121,12 +115,6 @@ namespace Automobile
                 MessageBox.Show("Insira um preco válido!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-
-
-
-
-
-            //campos especificos
             if (cb_tipo.SelectedIndex == 0)
             {
                 if (comboBoxNmrPortas.SelectedItem == null)
@@ -166,13 +154,11 @@ namespace Automobile
                 }
             }
 
-
         }
 
         private bool ChecarCampos()
         {
-            bool flagCamposPreenchidos = true;
-
+            bool flagCamposPreenchidos;
             switch (cb_tipo.SelectedIndex)
             {
                 case 0:
@@ -196,7 +182,6 @@ namespace Automobile
                     break;
             }
 
-            // Se for falso ele entra no if
             if (!flagCamposPreenchidos)
             {
                 PintarBordaVermelho();
@@ -206,9 +191,7 @@ namespace Automobile
 
         }
 
-
-        //apenas a view que mostra o local de preenchimento 
-        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void Cb_filtro_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             pb_add_veiculos.Visible = false;
 
@@ -336,8 +319,7 @@ namespace Automobile
 
         }
 
-        //Caso preenchido e ao click cria de facto o objeto
-        private void btn_criar_Click(object sender, EventArgs e)
+        private void Btn_criar_Click(object sender, EventArgs e)
         {
             if (ChecarCampos())
             {
@@ -345,10 +327,10 @@ namespace Automobile
                 {
                     case 0:
 
-                        int numPortas = int.Parse(comboBoxNmrPortas.SelectedItem.ToString());
+                        string numPortas = comboBoxNmrPortas.SelectedItem.ToString();
                         string tipoCaixa = comboBoxTipoCaixa.SelectedItem.ToString();
 
-                        if (EmpresaController.CriarCarro(_matricula, _modelo, decimal.Parse(_preco), numPortas, tipoCaixa))
+                        if (EmpresaController.CriarCarro(_matricula, _modelo, _preco, numPortas, tipoCaixa))
                         {
                             LimparCampos();
                         }
@@ -357,11 +339,10 @@ namespace Automobile
 
                     case 1:
 
-                        string[] aux = comboBoxCilindrada.SelectedItem.ToString().Split('c'); // [150 , cc]
+                        string cilindrada = comboBoxCilindrada.SelectedItem.ToString();
 
-                        int cilindrada = int.Parse(aux[0]);
 
-                        if (EmpresaController.CriarMota(_matricula, _modelo, decimal.Parse(_preco), cilindrada))
+                        if (EmpresaController.CriarMota(_matricula, _modelo, _preco, cilindrada))
                         {
                             LimparCampos();
                         }
@@ -370,10 +351,10 @@ namespace Automobile
                         break;
                     case 2:
 
-                        int numEixos = int.Parse(comboBoxNmrEixos.SelectedItem.ToString());
+                        string numEixos = comboBoxNmrEixos.SelectedItem.ToString();
                         string numPassageiros = textBoxNmrMaxPassageiros.Text;
 
-                        if (EmpresaController.CriarCamioneta(_matricula, _modelo, decimal.Parse(_preco), numEixos, numPassageiros))
+                        if (EmpresaController.CriarCamioneta(_matricula, _modelo, _preco, numEixos, numPassageiros))
                         {
                             LimparCampos();
                         }
@@ -383,7 +364,7 @@ namespace Automobile
 
                         string pesoMax = textBoxPesoMaxSuportado.Text;
 
-                        if (EmpresaController.CriarCamiao(_matricula, _modelo, decimal.Parse(_preco), pesoMax))
+                        if (EmpresaController.CriarCamiao(_matricula, _modelo, _preco, pesoMax))
                         {
                             LimparCampos();
                         }
@@ -399,18 +380,18 @@ namespace Automobile
 
         }
 
-        private void tb_modelo_marca_TextChanged(object sender, EventArgs e)
+        private void Tb_modelo_marca_TextChanged(object sender, EventArgs e)
         {
             _modelo = tb_modelo_marca.Text;
         }
 
-        private void tb_id_matricula_TextChanged(object sender, EventArgs e)
+        private void Tb_id_matricula_TextChanged(object sender, EventArgs e)
         {
             _matricula = tb_id_matricula.Text.Trim();
         }
 
 
-        private void tb_preco_TextChanged(object sender, EventArgs e)
+        private void Tb_preco_TextChanged(object sender, EventArgs e)
         {
             _preco = tb_preco.Text;
 

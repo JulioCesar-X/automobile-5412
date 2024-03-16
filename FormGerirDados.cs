@@ -12,66 +12,100 @@ namespace Automobile
 
         private void Btn_open_file_explorer_Click(object sender, EventArgs e)
         {
-            using (FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog())
+            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog
             {
-                // Define as propriedades do FolderBrowserDialog
-                folderBrowserDialog.Description = "Selecionar pasta para salvar o arquivo";
-                folderBrowserDialog.RootFolder = Environment.SpecialFolder.MyComputer; // Define o diretório raiz (por exemplo, Computador)
+                Description = "Selecionar pasta",
+                RootFolder = Environment.SpecialFolder.MyComputer
+            };
 
-                DialogResult result = folderBrowserDialog.ShowDialog();
-
-                // Se o usuário clicar em "OK" na janela do FolderBrowserDialog
-                if (result == DialogResult.OK)
-                {
-
-                    string pastaSelecionada = folderBrowserDialog.SelectedPath;
+            DialogResult result = folderBrowserDialog.ShowDialog();
 
 
-                    MessageBox.Show("Pasta selecionada: " + pastaSelecionada, "Pasta selecionada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+            if (result == DialogResult.OK)
+            {
 
-                tb_path_export.Text = folderBrowserDialog.SelectedPath;
+                string pastaSelecionada = folderBrowserDialog.SelectedPath;
+
+                MessageBox.Show("Pasta selecionada: " + pastaSelecionada, "Pasta selecionada", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
+            tb_path_export.Text = folderBrowserDialog.SelectedPath;
         }
 
         private void Btn_open_import_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
-            {
-                // Define as propriedades do OpenFileDialog
-                openFileDialog.Filter = "Arquivos do Excel|*.xlsx;*.xls|Todos os arquivos|*.*"; // Especifica o filtro para arquivos do Excel, permitindo .xlsx e .xls
-                openFileDialog.Title = "Selecionar arquivo do Excel para abrir";
-                openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments); // Define o diretório inicial (neste caso, a pasta Documentos do usuário)
+            MessageBox.Show("Parte ainda não implementada .... (Em construção)");
+            //OpenFileDialog openFileDialog = new OpenFileDialog();
 
-                // Abre a janela do OpenFileDialog e aguarda o usuário selecionar o arquivo
-                DialogResult result = openFileDialog.ShowDialog();
+            //// Define as propriedades do OpenFileDialog
+            //openFileDialog.Filter = "Arquivos CSV|*.csv"; // Especifica o filtro para arquivos CSV
+            //openFileDialog.Title = "Selecionar arquivo CSV para abrir";
+            //openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyComputer); // Define o diretório inicial (neste caso, a pasta Documentos do usuário)
+            //openFileDialog.Multiselect = false; // Define que apenas um arquivo pode ser selecionado
 
-                // Se o usuário clicar em "OK" na janela do OpenFileDialog
-                if (result == DialogResult.OK)
-                {
-                    // Obtém o caminho completo do arquivo selecionado pelo usuário
-                    string caminhoArquivo = openFileDialog.FileName;
+            //// Abre a janela do OpenFileDialog e aguarda o usuário selecionar o arquivo
+            //DialogResult result = openFileDialog.ShowDialog();
 
-                    // Agora você pode usar o caminho do arquivo para abrir e ler o conteúdo do arquivo, ou realizar qualquer outra operação desejada
-                    // Por exemplo, para abrir o arquivo no Excel:
-                    // System.Diagnostics.Process.Start("excel.exe", "\"" + caminhoArquivo + "\"");
+            //// Se o usuário clicar em "OK" na janela do OpenFileDialog
+            //if (result == DialogResult.OK)
+            //{
+            //    // Obtém o caminho completo do arquivo selecionado pelo usuário
+            //    string caminhoArquivo = openFileDialog.FileName;
 
-                    MessageBox.Show("Arquivo do Excel selecionado: " + caminhoArquivo, "Arquivo selecionado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+            //    // Verifica se o arquivo selecionado é vazio
+            //    if (new FileInfo(caminhoArquivo).Length == 0)
+            //    {
+            //        MessageBox.Show("O arquivo selecionado está vazio.", "Arquivo vazio", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Arquivo CSV selecionado: " + caminhoArquivo, "Arquivo selecionado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //        tb_path_import.Text = openFileDialog.FileName;
+            //    }
+            //}
 
-                tb_path_import.Text = openFileDialog.FileName;
-            }
+            //// Libera os recursos do OpenFileDialog
+            //openFileDialog.Dispose();
+
+
         }
 
         private void Btn_import_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Parte ainda não implementada .... (Em construção)");
+            //// Verifica se o usuário selecionou uma pasta para salvar os arquivos CSV
+            //string caminho = tb_path_import.Text;
 
+            //if (!string.IsNullOrWhiteSpace(caminho))
+            //{
+            //    var (resultado, erro, dados) = EmpresaController.ImportarDoCsv(caminho);
+
+            //    if (resultado == "Dados carregados com sucesso.")
+            //    {
+            //        MessageBox.Show(resultado, "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    }
+            //    else
+            //    {
+            //        // Exibir o formulário de tratamento de erro com as informações relevantes
+            //        FormTratamentoErro formTratamentoErro = new FormTratamentoErro(caminho, resultado, erro, dados);
+
+            //        // Centralizar o formulário
+            //        formTratamentoErro.StartPosition = FormStartPosition.CenterParent;
+
+            //        // Exibir o formulário de tratamento de erro como um diálogo
+            //        formTratamentoErro.ShowDialog(this);
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Por favor, selecione um arquivo CSV para carregar os seus dados.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //}
         }
 
 
         private void Btn_export_Click(object sender, EventArgs e)
         {
-            // Verifica se o usuário selecionou uma pasta para salvar os arquivos CSV
+
             string caminho = tb_path_export.Text;
 
             if (!string.IsNullOrWhiteSpace(caminho))
